@@ -3,7 +3,7 @@
     <!-- Brand -->
     <div class="sidenav-header  align-items-center">
       <a class="navbar-brand" href="/">
-        <img src="/static/assets/img/brand/Logo_MaterialDigital.png" class="navbar-brand-img" alt="Argon Dashboard - Flask Template Logo."> - LeBeDigital
+        <img src="/static/assets/img/brand/Logo_MaterialDigital.png" class="navbar-brand-img" alt="Argon Dashboard - Flask Template Logo."> <strong style="color: blue;"> - LeBeDigital</strong>
       </a>
     </div>
     <div class="navbar-inner">
@@ -14,62 +14,33 @@
           <li class="nav-item">
             <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="/">
               <i class="ni ni-tv-2 text-primary"></i>
-              <span class="nav-link-text">Dashboard</span>
+              <span class="nav-link-text">Information</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if 'icons' in segment %} active {% endif %}" href="/icons.html">
+            <a class="nav-link {% if 'icons' in segment %} active {% endif %}" href="/search">
+              <i class="ni ni-active-40 text-primary"></i>
+              <span class="nav-link-text">Search</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'icons' in segment %} active {% endif %}" href="/icons">
               <i class="ni ni-planet text-orange"></i>
               <span class="nav-link-text">Icons</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if 'map' in segment %} active {% endif %}" href="/map.html">
-              <i class="ni ni-pin-3 text-primary"></i>
-              <span class="nav-link-text">Google</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i>
-              <span class="nav-link-text">Profile</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if 'tables' in segment %} active {% endif %}" href="/tables.html">
-              <i class="ni ni-bullet-list-67 text-default"></i>
-              <span class="nav-link-text">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login.html">
-              <i class="ni ni-key-25 text-info"></i>
-              <span class="nav-link-text">Login</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/register.html">
-              <i class="ni ni-circle-08 text-pink"></i>
-              <span class="nav-link-text">Register</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('base_blueprint.logout') }}">
-              <i class="ni ni-user-run text-red"></i>
-              <span class="nav-link-text">Logout</span>
-            </a>
-          </li>
+          
         </ul>
         <!-- Divider -->
         <hr class="my-3">
         <!-- Heading -->
-        <h6 class="navbar-heading p-0 text-muted">
+        <!-- <h6 class="navbar-heading p-0 text-muted">
           <span class="docs-normal">Resources</span>
-        </h6>
+        </h6> -->
         <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">
+        <!-- <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="https://www.creative-tim.com/product/argon-dashboard-flask" target="_blank">
+            <a class="nav-link" href="https://github.com/vandungdo/lebedigital_UI_prototype" target="_blank">
               <i class="ni ni-palette"></i>
               <span class="nav-link-text">Product Info</span>
             </a>
@@ -81,15 +52,8 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link active active-pro" 
-               target="_blank" 
-               href="https://www.creative-tim.com/templates/flask">
-              <i class="ni ni-send text-dark"></i>
-              <span class="nav-link-text">More Starters</span>
-            </a>
-          </li>
-        </ul>
+          
+        </ul> -->
       </div>
     </div>
   </div>

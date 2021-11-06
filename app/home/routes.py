@@ -28,7 +28,9 @@ def route_template(template):
         segment = get_segment( request )
 
         # Serve the file (if exists) from app/templates/FILE.html
-        return render_template( template, segment=segment )
+        realRouter = template
+        template = template.replace('.html','')
+        return render_template( realRouter, segment=segment)
 
     except TemplateNotFound:
         return render_template('page-404.html'), 404
