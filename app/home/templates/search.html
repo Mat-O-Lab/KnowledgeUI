@@ -20,10 +20,10 @@
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Search Engine</h5>
                       
-                      <form action="">
+                      <form role="form" method="POST">
                         <div class="form-group">
                           <!-- <label class="form-control-label" for="input-username">Search Text</label> -->
-                          <input type="text" id="input-search" class="form-control" placeholder="search" value="">
+                          <input type="text" name="experiment" id="input-search" class="form-control" placeholder="search" >
                         </div>
                         <div class="form-group">
                           <input type="submit" id="input-submit" class="col-lg-3 btn btn-primary" value="Search">
@@ -60,7 +60,14 @@
             <div class="card-body">
               <h1>
                 Results
+                
               </h1>
+              {% if data != None %}
+                {{data}}
+              {% else %}
+                
+              {% endif %}
+              
             </div>
           </div>
         </div>
@@ -76,5 +83,20 @@
 {% block javascripts %}
 
 <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    
+    <script>
+      $(document).ready( function () {
+          $('#tb').DataTable(
+            {
+                "order": [],
+                scrollY:        500,
+                deferRender:    true,
+                scroller:       true
+            }
+          );
+          $('#tb').show();
+      } ); -->
 
 {% endblock javascripts %}

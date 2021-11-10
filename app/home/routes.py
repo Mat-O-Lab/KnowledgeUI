@@ -8,6 +8,8 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
+from .query import input_emodul_data_for_calibration
+import json
 
 @blueprint.route('/index')
 @login_required
@@ -37,6 +39,26 @@ def route_template(template):
     
     except:
         return render_template('page-500.html'), 500
+
+@blueprint.route('/search', methods = ('GET','POST'))
+@login_required
+def search():
+    try:
+        if request.method == 'POST':
+            experimentName = request.form['experiment']
+            data = input_emodul_data_for_calibration(experimentName)
+            data = json.dumps(data, indent=4)
+        else:
+            experimentName = ''
+            data = None
+        return render_template('search.html',data = data)
+    except TemplateNotFound:
+        return render_template('page-404.html'), 404
+    
+    except:
+        return render_template('page-500.html'), 500
+
+
 
 # Helper - Extract current page name from request 
 def get_segment( request ): 
