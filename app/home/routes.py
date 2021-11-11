@@ -18,53 +18,63 @@ def index():
 
     return render_template('index.html', segment='index')
 
+
 @blueprint.route('/<template>')
 @login_required
 def route_template(template):
 
     try:
 
-        if not template.endswith( '.html' ):
+        if not template.endswith('.html'):
             template += '.html'
 
         # Detect the current page
-        segment = get_segment( request )
+        segment = get_segment(request)
 
         # Serve the file (if exists) from app/templates/FILE.html
         realRouter = template
-        template = template.replace('.html','')
-        return render_template( realRouter, segment=segment)
+        template = template.replace('.html', '')
+        return render_template(realRouter, segment=segment)
 
     except TemplateNotFound:
         return render_template('page-404.html'), 404
-    
+
     except:
         return render_template('page-500.html'), 500
 
-@blueprint.route('/search', methods = ('GET','POST'))
+
+@blueprint.route('/search', methods=('GET', 'POST'))
 @login_required
 def search():
     # try:
     if request.method == 'POST':
-        search = request.form['experiment']
-        temp = input_emodul_data_for_calibration(search)
-        columnNames = temp.columns.values
-        temp = temp.to_dict('records')
+        try:
+            search = request.form['experiment']
+            temp = input_emodul_data_for_calibration(search)
+            columnNames = temp.columns.values
+            temp = temp.to_dict('records')
+        except:
+            search = float(request.form['experiment'])
+            temp = input_emodul_data_for_calibration(search)
+            columnNames = temp.columns.values
+            temp = temp.to_dict('records')
     else:
         search = ''
         temp = {}
         columnNames = []
-    return render_template('search.html',search = search,records=temp, colnames=columnNames)
+    return render_template('search.html',
+                           search=search,
+                           records=temp,
+                           colnames=columnNames)
     # except TemplateNotFound:
     #     return render_template('page-404.html'), 404
-    
+
     # except:
     #     return render_template('page-500.html'), 500
 
 
-
-# Helper - Extract current page name from request 
-def get_segment( request ): 
+# Helper - Extract current page name from request
+def get_segment(request):
 
     try:
 
@@ -73,7 +83,7 @@ def get_segment( request ):
         if segment == '':
             segment = 'index'
 
-        return segment    
+        return segment
 
     except:
-        return None  
+        return None

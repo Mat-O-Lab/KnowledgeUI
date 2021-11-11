@@ -50,11 +50,7 @@ def input_emodul_data_for_calibration(search):
             search = search
 
     else:
-        try:
-
-            search = "{:e}".format(search)
-        except:
-            search = search
+        search = "{:e}".format(search)
     s = []
     p = []
     o = []
@@ -65,30 +61,7 @@ def input_emodul_data_for_calibration(search):
                 
                 select ?s ?p ?o
                 where {{
-                    {{
-                        pf:{search}
-                        ?p
-                        ?o
-                    }}
-                    union
-                    {{
-                        ?s
-                        ?p
-                        pf:{search}
-                    }}
-                    union
-                    {{
-                        "{search}"
-                        ?p
-                        ?o
-                    }}
-                    union
-                    {{
-                        ?s
-                        ?p
-                        "{search}"
-                    }}
-                    union
+                    
                     {{
                         {search}
                         ?p
@@ -128,3 +101,6 @@ def input_emodul_data_for_calibration(search):
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
+
+
+print(input_emodul_data_for_calibration(300.2))
