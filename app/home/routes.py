@@ -11,6 +11,7 @@ from jinja2 import TemplateNotFound
 from .query import input_emodul_data_for_calibration
 import json
 
+
 @blueprint.route('/index')
 @login_required
 def index():
@@ -43,20 +44,22 @@ def route_template(template):
 @blueprint.route('/search', methods = ('GET','POST'))
 @login_required
 def search():
-    try:
-        if request.method == 'POST':
-            experimentName = request.form['experiment']
-            data = input_emodul_data_for_calibration(experimentName)
-            data = json.dumps(data, indent=4)
-        else:
-            experimentName = ''
-            data = None
-        return render_template('search.html',data = data)
-    except TemplateNotFound:
-        return render_template('page-404.html'), 404
+    # try:
+    if request.method == 'POST':
+        search = request.form['experiment']
+        temp = input_emodul_data_for_calibration(search)
+        columnNames = temp.columns.values
+        temp = temp.to_dict('records')
+    else:
+        search = ''
+        temp = {}
+        columnNames = []
+    return render_template('search.html',search = search,records=temp, colnames=columnNames)
+    # except TemplateNotFound:
+    #     return render_template('page-404.html'), 404
     
-    except:
-        return render_template('page-500.html'), 500
+    # except:
+    #     return render_template('page-500.html'), 500
 
 
 

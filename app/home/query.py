@@ -5,6 +5,7 @@ from SPARQLWrapper import SPARQLWrapper
 import os
 from pathlib import Path
 import sys
+import pandas as pd
 
 baseDir0 = Path(__file__).resolve().parents[0]
 baseDir1 = Path(__file__).resolve().parents[1]
@@ -21,131 +22,69 @@ graph.parse(triplePath, format='n3')
 
 # sparql = SPARQLWrapper("http://127.0.0.1:8080/fuseki/lebedigital")
 
-def input_emodul_data_for_calibration(nameOfExperiment):
-    nameOfExperiment = 'E-modul experiment '.replace(' ','_') + nameOfExperiment.replace(' ','_').replace('.','_')
-    q1 = f"""
-            prefix bwmd: <{prefixPath}https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
-            prefix mseo: <{prefixPath}https%3A//purl.matolab.org/mseo/mid/>
-            prefix cco: <{prefixPath}http%3A//www.ontologyrepository.com/CommonCoreOntologies/>
-            prefix obo: <{prefixPath}http%3A//purl.obolibrary.org/obo/>
-            prefix con: <{prefixPath}https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl#>
-            select ?rawdatapath
-            where {{
-                {{
-                    select ?info
-                    where {{
-                        {{
-                            select ?analyseddata
-                            where{{
-                                {{
-                                    select ?bfo
-                                    where {{
-                                        {{
-                                            select ?rawdata
-                                            where {{
-                                                mseo:{nameOfExperiment}
-                                                cco:has_output
-                                                ?rawdata
-                                            }}
-                                        }}
-                                        ?rawdata
-                                        cco:is_input_of
-                                        ?bfo
-                                    }}
-                                }}
-                                ?bfo
-                                cco:has_output
-                                ?analyseddata
-                            }}
-                        }}
-                        ?analyseddata
-                        obo:RO_0010001
-                        ?info
+prefixes = [
+    '<{}https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>'.format(prefixPath),
+    '<{}https%3A//purl.matolab.org/mseo/mid/>'.format(prefixPath),
+    '<{}http%3A//www.ontologyrepository.com/CommonCoreOntologies/>'.format(prefixPath),
+    '<{}http%3A//purl.obolibrary.org/obo/>'.format(prefixPath),
+    '<{}https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl#>'.format(prefixPath)
+]
+
+def get_name_from_uri(uri):
+    i = uri.rfind('/') + 1
+    name = uri[i:]
+    return name
+
+def input_emodul_data_for_calibration(search):
+    search = search.replace(' ','_').replace('.','_')
+    s = []
+    p = []
+    o = []
+    for pref in prefixes:
+
+        q1 = f"""
+                prefix pf: {pref}
+                
+                select ?s ?p ?o
+                where {{
+                    {{
+                        pf:{search}
+                        ?p
+                        ?o
                     }}
-                    
-                }}
-                ?info
-                cco:has_URI_value
-                ?rawdatapath
-            }}
-            limit 1
-        """
-    results = graph.query(q1)
-    processedDataPath = ''
-    for result in results:
-        if sys.platform == 'win32':
-            processedDataPath = result['rawdatapath'].value
-        else:
-            processedDataPath = str(result['rawdatapath'])
-
-
-    
-    specimenParameterNames = ['Mass', 'Diameter', 'Length']
-    specimenParameters = []
-    for parameter in specimenParameterNames:
-        q2 = f"""
-            prefix bwmd: <{prefixPath}https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
-            prefix mseo: <{prefixPath}https%3A//purl.matolab.org/mseo/mid/>
-            prefix cco: <{prefixPath}http%3A//www.ontologyrepository.com/CommonCoreOntologies/>
-            prefix obo: <{prefixPath}http%3A//purl.obolibrary.org/obo/>
-            prefix con: <{prefixPath}https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl#>
-            select ?parametervalue
-            where {{
-                {{
-                    select ?info
-                    where {{
-                        {{
-                            select ?parameterclass
-                            where {{
-                                {{
-                                    select ?parameterclass
-                                    where {{
-                                        {{
-                                            select ?measurementregion
-                                            where {{
-                                                {{
-                                                    select ?specimen
-                                                    where {{
-                                                        ?specimen
-                                                        cco:is_input_of
-                                                        mseo:{nameOfExperiment}
-                                                    }}
-                                                }}
-                                                ?specimen
-                                                obo:BFO_0000051
-                                                ?measurementregion
-                                            }}
-                                        }}
-                                        ?measurementregion
-                                        obo:RO_0000086
-                                        ?parameterclass
-                                    }}
-                                }}
-                                ?parameterclass
-                                a
-                                cco:{parameter}
-                            }}
-                        }}
-                        ?parameterclass
-                        obo:RO_0010001
-                        ?info
+                    union
+                    {{
+                        ?s
+                        ?p
+                        pf:{search}
+                    }}
+                    union
+                    {{
+                        "{search}"^^xsd:string
+                        ?p
+                        ?o
+                    }}
+                    union
+                    {{
+                        ?s
+                        ?p
+                        "{search}"^^xsd:string
                     }}
                 }}
-                ?info
-                cco:has_decimal_value
-                ?parametervalue
-            }}
             """
-        results = graph.query(q2)
+        results = graph.query(q1)
+        
         for result in results:
             if sys.platform == 'win32':
-                specimenParameters.append(result['parametervalue'].value)
+                s.append(get_name_from_uri(result['s'].value) if result['s'].value != None else search)
+                p.append(get_name_from_uri(result['p'].value) if result['p'].value != None else search)
+                o.append(get_name_from_uri(result['o'].value) if result['o'].value != None else search)
             else:
-                specimenParameters.append(float(str(result['parametervalue'])))
-    return {
-        'processedDataPath': processedDataPath,
-        'specimenMass': specimenParameters[0],
-        'specimenDiameter': specimenParameters[1],
-        'specimenLength': specimenParameters[2]
-    }
+                s.append(get_name_from_uri(result['s']) if result['s'] != None else search)
+                p.append(get_name_from_uri(result['p']) if result['p'] != None else search)
+                o.append(get_name_from_uri(result['o']) if result['o'] != None else search)
+
+
+    df = pd.DataFrame({'s':s,'p':p,'o':o})
+    return df
 

@@ -62,8 +62,27 @@
                 Results
                 
               </h1>
-              {% if data != None %}
-                {{data}}
+              {% if search != '' %}
+              <table id="tb" class="display"  >
+                <!-- <caption style="caption-side:top;text-align:center;
+                font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
+                  <thead>
+                      <tr>
+                          {% for col in colnames %}
+                          <th>{{ col }}</th>
+                          {% endfor %}
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for record in records %}
+                      <tr>
+                          {% for col in colnames %}
+                          <td>{{ record[col] }}</td>
+                          {% endfor %}
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
               {% else %}
                 
               {% endif %}
@@ -82,8 +101,8 @@
 <!-- Specific JS goes HERE --> 
 {% block javascripts %}
 
-<script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
-<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     
     <script>
@@ -91,12 +110,15 @@
           $('#tb').DataTable(
             {
                 "order": [],
-                scrollY:        500,
-                deferRender:    true,
-                scroller:       true
+                scrollY:        300,
+                // deferRender:    true,
+                scroller:       true,
+                fixedColumns: true
+                
             }
           );
           $('#tb').show();
-      } ); -->
-
+      } );
+    </script>
+      <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
 {% endblock javascripts %}
