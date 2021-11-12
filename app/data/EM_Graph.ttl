@@ -10315,7 +10315,7 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
@@ -10324,7 +10324,7 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -10332,14 +10332,14 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
@@ -10348,7 +10348,7 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -10356,14 +10356,14 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
@@ -10372,7 +10372,7 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -10380,14 +10380,14 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -10397,21 +10397,21 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -10421,21 +10421,21 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299,8> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299_8> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -10445,158 +10445,158 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_V-4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-4300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-4300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-45428,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-45428_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-498,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-498_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_V-4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_V-5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-5300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-5300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-55454,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-55454_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-598,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-598_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_V-5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_V-6> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-6300,1> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-6300_1> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-65439,0> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-65439_0> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-698,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-698_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_V-6_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_VI-4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-4300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-4300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-45354,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-45354_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-498,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-498_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_VI-4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_VI-5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-5300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-5300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-55340,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-55340_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-598,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-598_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_VI-5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_VI-6> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-6300,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-6300_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-65367,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-65367_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-698,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-698_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/BA_Los_M_VI-6_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
@@ -10740,7 +10740,7 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
@@ -10764,7 +10764,7 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
@@ -10788,7 +10788,7 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
@@ -10804,16 +10804,16 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299,9> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299_9> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10821,23 +10821,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199,1> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199_1> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785,9> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785_9> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10845,23 +10845,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803,8> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803_8> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10869,23 +10869,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10893,23 +10893,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10917,23 +10917,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10941,23 +10941,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805,9> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805_9> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10965,23 +10965,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -10989,23 +10989,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199,9> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199_9> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776,0> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776_0> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -11013,23 +11013,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -11037,23 +11037,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777,8> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777_8> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -11061,23 +11061,23 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
@@ -11085,7 +11085,7 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
@@ -11214,7 +11214,7 @@ in the case of an compression test this means wether of not we had multiple cycl
 <https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -11224,21 +11224,21 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298,1> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298_1> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -11248,21 +11248,21 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -11272,165 +11272,165 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369,5> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369_5> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392,1> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392_1> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351,9> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351_9> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300,2> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300_2> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
@@ -11440,62 +11440,62 @@ in the case of an compression test this means wether of not we had multiple cycl
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300,3> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300_3> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498,6> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498_6> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
 <https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5> a ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/Specimen> .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299,8> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299_8> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Length,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349,4> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349_4> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns2:Mass,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598,7> a ns2:Diameter,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598_7> a ns2:Diameter,
         ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
 <https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5_Kraftgeregelt> a ns2:InformationBearingEntity,
         ns1:NamedIndividual .
 
-<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen.dat> a ns2:InformationBearingEntity,
+<https://purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen_dat> a ns2:InformationBearingEntity,
         ns1:NamedIndividual,
         <https://purl.matolab.org/mseo/mid/RawDataSet> .
 
@@ -14608,64 +14608,64 @@ ns2:uses_time_zone_identifier a ns1:ObjectProperty ;
         <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Wolf_8_2_Probe_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA-Losert_E-Modul_28d_v__04_08_14_Probe_4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300%2C3>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300_3>,
         <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_45342>,
-        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA-Losert_E-Modul_28d_v__04_08_14_Probe_5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300%2C2>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300_2>,
         <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_55404>,
-        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598%2C7> .
+        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA-Losert_E-Modul_28d_v__04_08_14_Probe_6> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300%2C6>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300_6>,
         <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_65314>,
-        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300%2C2>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300_2>,
         <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_45374>,
-        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300%2C2>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300_2>,
         <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_55365>,
-        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598%2C7> .
+        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299%2C8>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299_8>,
         <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_65359>,
-        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA_Los_M_V-4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4300%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-45428%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-498%2C5> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4300_2>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-45428_5>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-498_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA_Los_M_V-5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5300%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-55454%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-598%2C7> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5300_2>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-55454_6>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-598_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA_Los_M_V-6> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6300%2C1>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-65439%2C0>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-698%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6300_1>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-65439_0>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-698_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA_Los_M_VI-4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4300%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-45354%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-498%2C5> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4300_2>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-45354_5>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-498_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA_Los_M_VI-5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5300%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-55340%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-598%2C5> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5300_2>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-55340_6>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-598_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_BA_Los_M_VI-6> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6300%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-65367%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-698%2C7> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6300_3>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-65367_6>,
+        <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-698_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Hsken__E-Modul_Probe_2-1> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
     ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1100>,
@@ -14683,124 +14683,124 @@ ns2:uses_time_zone_identifier a ns1:ObjectProperty ;
         <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-399> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_11_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299%2C9>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645%2C2> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299_9>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645_2> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_B2B2> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199%2C1>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785%2C9> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199_1>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785_9> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_03_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803%2C8> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100_6>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200_5>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803_8> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_05_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758%2C2> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100_6>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200_2>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758_2> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_06_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785%2C7> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100_2>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200_6>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_07_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810%2C5> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_08_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805%2C9> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199_5>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805_9> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_09_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732%2C5> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200_2>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_10_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199%2C9>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776%2C0> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199_9>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776_0> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Drucklversuch_Probe_BK_12_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425%2C7> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_E-Modul_Probe_BK_04_B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777%2C8> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300_5>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777_8> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Maack_8_2_Probe_BK_01B> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744%2C5> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100_6>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300_5>,
+        <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744_5> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_SL51_28d_11_03_14_Probe1> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298%2C4>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298_4>,
         <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe13981>,
-        <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_SL51_28d_11_03_14_Probe2> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298%2C1>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298_1>,
         <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe23903>,
-        <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298%2C7> .
+        <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_SL51_28d_11_03_14_Probe3> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298%2C2>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298_2>,
         <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe33906>,
-        <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300_2>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350_5>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369%2C5>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369_5>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361%2C6>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361_6>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392%2C1>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392_1>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300%2C2>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351%2C9>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598%2C7> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300_2>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351_9>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598_7> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335%2C7>,
-        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335_7>,
+        <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Wolf_8_2_Probe_1> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300%2C2>,
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300_2>,
         <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_15328>,
-        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198%2C6> .
+        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Wolf_8_2_Probe_4> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300%2C3>,
-        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498%2C6> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300_3>,
+        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498_6> .
 
 <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion_Wolf_8_2_Probe_5> a <https%3A//purl.matolab.org/mseo/mid/MeasurementRegion> ;
-    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299%2C8>,
-        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349%2C4>,
-        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598%2C7> .
+    ns7:RO_0000086 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299_8>,
+        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349_4>,
+        <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598_7> .
 
 <https://github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl#ActuatorEquipment> a ns1:Class ;
     rdfs:subClassOf <https://purl.matolab.org/mseo/mid/Equipment> .
@@ -18098,9 +18098,9 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     rdfs:range ns2:ReferenceSystem ;
     rdfs:subPropertyOf ns3:RO_0010002 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300%2C3> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300_3> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4300_3> ;
     ns6:has_decimal_value 3.003e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_45342> a ns6:InformationBearingEntity,
@@ -18108,20 +18108,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_45342> ;
     ns6:has_decimal_value 5.342e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498_6> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_498_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA-Losert MI E-Modul 28d v. 04.08.14 Probe 4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA-Losert_E-Modul_28d_v__04_08_14_Probe_4> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300%2C2> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300_2> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_55404> a ns6:InformationBearingEntity,
@@ -18129,20 +18129,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_55404> ;
     ns6:has_decimal_value 5.404e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598%2C7> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598_7> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_598_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA-Losert MI E-Modul 28d v. 04.08.14 Probe 5" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA-Losert_E-Modul_28d_v__04_08_14_Probe_5> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6300_6> ;
     ns6:has_decimal_value 3.006e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_65314> a ns6:InformationBearingEntity,
@@ -18150,20 +18150,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_65314> ;
     ns6:has_decimal_value 5.314e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698_6> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_698_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA-Losert MI E-Modul 28d v. 04.08.14 Probe 6" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA-Losert_E-Modul_28d_v__04_08_14_Probe_6> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_45374> a ns6:InformationBearingEntity,
@@ -18171,20 +18171,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_45374> ;
     ns6:has_decimal_value 5.374e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_498_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA-Losert MII E-Modul 28d v. 04.08.14 Probe 4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_55365> a ns6:InformationBearingEntity,
@@ -18192,20 +18192,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_55365> ;
     ns6:has_decimal_value 5.365e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598%2C7> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598_7> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_598_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA-Losert MII E-Modul 28d v. 04.08.14 Probe 5-" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299%2C8> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299_8> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299%2C8> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6299_8> ;
     ns6:has_decimal_value 2.998e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_65359> a ns6:InformationBearingEntity,
@@ -18213,336 +18213,336 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_65359> ;
     ns6:has_decimal_value 5.359e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_698_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA-Losert MII E-Modul 28d v. 04.08.14 Probe 6" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-45428%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-45428_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-45428%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-45428_5> ;
     ns6:has_decimal_value 5.4285e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-498%2C5> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-498_5> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-498%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-498_5> ;
     ns6:has_decimal_value 9.85e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA Los M V-4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA_Los_M_V-4> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-55454%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-55454_6> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-55454%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-55454_6> ;
     ns6:has_decimal_value 5.4546e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-598%2C7> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-598_7> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-598%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-598_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA Los M V-5" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA_Los_M_V-5> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6300%2C1> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6300_1> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6300%2C1> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6300_1> ;
     ns6:has_decimal_value 3.001e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-65439%2C0> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-65439_0> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-65439%2C0> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-65439_0> ;
     ns6:has_decimal_value 5.439e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-698%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-698_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-698%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-698_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA Los M V-6" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA_Los_M_V-6> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-45354%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-45354_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-45354%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-45354_5> ;
     ns6:has_decimal_value 5.3545e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-498%2C5> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-498_5> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-498%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-498_5> ;
     ns6:has_decimal_value 9.85e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA Los M VI-4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA_Los_M_VI-4> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-55340%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-55340_6> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-55340%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-55340_6> ;
     ns6:has_decimal_value 5.3406e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-598%2C5> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-598_5> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-598%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-598_5> ;
     ns6:has_decimal_value 9.85e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA Los M VI-5-" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA_Los_M_VI-5> .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6300%2C3> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6300_3> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6300%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6300_3> ;
     ns6:has_decimal_value 3.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-65367%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-65367_6> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-65367%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-65367_6> ;
     ns6:has_decimal_value 5.3676e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-698%2C7> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-698_7> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-698%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-698_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/BA Los M VI-6" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_BA_Los_M_VI-6> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/01.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5-> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/01.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_MII_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/01.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA-Losert_MI_E-Modul_28d_v__04_08_14_Probe_4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/01.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA-Losert_MI_E-Modul_28d_v__04_08_14_Probe_5> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/01.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA-Losert_MI_E-Modul_28d_v__04_08_14_Probe_6> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA-Losert_E-Modul_28d_v__04_08_14_Probe_6specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/01.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA_Los_M_V-4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/11.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA_Los_M_V-5> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/11.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA_Los_M_V-6> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_V-6specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/11.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA_Los_M_VI-4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/11.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA_Los_M_VI-5-> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/11.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_BA_Los_M_VI-6> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/BA_Los_M_VI-6specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/11.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_H%C3%BCsken__E-Modul_Probe_2-1> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.3.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_H%C3%BCsken__E-Modul_Probe_3-1-> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.3.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_H%C3%BCsken__E-Modul_Probe_3-3-> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.3.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_11_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_B2B2> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_03_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/17.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_05_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_06_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_07_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_08_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_09_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_10_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_Drucklversuch_Probe_BK_12_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/18.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_E-Modul_Probe_BK_01_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/17.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Maack_8_2_E-Modul_Probe_BK_04_B> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/17.7.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_SL51_28d_11_03_14_Probe1> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/8.4.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_SL51_28d_11_03_14_Probe2> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/8.4.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_SL51_28d_11_03_14_Probe3> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Machura%2C_Be> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/8.4.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/03.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/03.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/03.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/03.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/03.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/03.09.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Wolf_8_2_Probe_1> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/28.02.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Wolf_8_2_Probe_4> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/28.02.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/E-modul_experiment_Wolf_8_2_Probe_5> a <https%3A//github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl%23DeterminationOfSecantModulusOfElasticity> ;
     ns6:has_agent <https%3A//purl.matolab.org/mseo/mid/Kh> ;
-    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen.dat> ;
+    ns6:has_output <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen_dat> ;
     ns6:occures_on <https%3A//purl.matolab.org/mseo/mid/28.02.2014> .
 
 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1100> a ns6:Diameter,
@@ -18560,9 +18560,9 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-15853> ;
     ns6:has_decimal_value 5.853e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_2-1specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Hüsken  E-Modul Probe 2-1" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Hsken__E-Modul_Probe_2-1> .
 
@@ -18581,9 +18581,9 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-15830> ;
     ns6:has_decimal_value 5.83e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-1specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Hüsken  E-Modul Probe 3-1-" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Hsken__E-Modul_Probe_3-1> .
 
@@ -18602,267 +18602,267 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-399> ;
     ns6:has_decimal_value 9.9e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Hsken__E-Modul_Probe_3-3specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Hüsken  E-Modul Probe 3-3-" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Hsken__E-Modul_Probe_3-3> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100%2C3> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100_3> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B100_3> ;
     ns6:has_decimal_value 1.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299%2C9> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299_9> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299%2C9> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B299_9> ;
     ns6:has_decimal_value 2.999e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645_2> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_B5645_2> ;
     ns6:has_decimal_value 5.6452e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_11_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe 11 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_11_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100%2C4> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100_4> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2100_4> ;
     ns6:has_decimal_value 1.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199%2C1> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199_1> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199%2C1> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2199_1> ;
     ns6:has_decimal_value 1.991e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785%2C9> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785_9> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785%2C9> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B23785_9> ;
     ns6:has_decimal_value 3.7859e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_B2B2specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe B2B2" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_B2B2> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B100_6> ;
     ns6:has_decimal_value 1.006e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200_5> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B200_5> ;
     ns6:has_decimal_value 2.005e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803%2C8> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803_8> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803%2C8> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_B3803_8> ;
     ns6:has_decimal_value 3.8038e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_03_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 03 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_03_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B100_6> ;
     ns6:has_decimal_value 1.006e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B200_2> ;
     ns6:has_decimal_value 2.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758_2> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_B3758_2> ;
     ns6:has_decimal_value 3.7582e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_05_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 05 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_05_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100%2C2> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100_2> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B100_2> ;
     ns6:has_decimal_value 1.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200_6> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B200_6> ;
     ns6:has_decimal_value 2.006e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785%2C7> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785_7> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_B3785_7> ;
     ns6:has_decimal_value 3.7857e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_06_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 06 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_06_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100%2C3> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100_3> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B100_3> ;
     ns6:has_decimal_value 1.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200%2C3> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200_3> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B200_3> ;
     ns6:has_decimal_value 2.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_B3810_5> ;
     ns6:has_decimal_value 3.8105e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_07_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 07 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_07_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100%2C4> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100_4> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B100_4> ;
     ns6:has_decimal_value 1.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199_5> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B199_5> ;
     ns6:has_decimal_value 1.995e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805%2C9> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805_9> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805%2C9> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_B3805_9> ;
     ns6:has_decimal_value 3.8059e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_08_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 08 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_08_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100%2C3> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100_3> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B100_3> ;
     ns6:has_decimal_value 1.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B200_2> ;
     ns6:has_decimal_value 2.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_B3732_5> ;
     ns6:has_decimal_value 3.7325e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_09_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 09 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_09_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100%2C3> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100_3> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B100_3> ;
     ns6:has_decimal_value 1.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199%2C9> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199_9> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199%2C9> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B199_9> ;
     ns6:has_decimal_value 1.999e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776%2C0> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776_0> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776%2C0> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_B3776_0> ;
     ns6:has_decimal_value 3.776e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_10_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 10 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_10_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100%2C4> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100_4> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B100_4> ;
     ns6:has_decimal_value 1.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180_4> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B180_4> ;
     ns6:has_decimal_value 1.804e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425%2C7> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425_7> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_B3425_7> ;
     ns6:has_decimal_value 3.4257e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Drucklversuch_Probe_BK_12_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 Drucklversuch Probe BK 12 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Drucklversuch_Probe_BK_12_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100%2C4> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100_4> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B100_4> ;
     ns6:has_decimal_value 1.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300_5> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B300_5> ;
     ns6:has_decimal_value 3.005e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777%2C8> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777_8> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777%2C8> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_B5777_8> ;
     ns6:has_decimal_value 5.7778e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_E-Modul_Probe_BK_04_Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 E-Modul Probe BK 04 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_E-Modul_Probe_BK_04_B> .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B100_6> ;
     ns6:has_decimal_value 1.006e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300_5> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B300_5> ;
     ns6:has_decimal_value 3.005e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01B5744_5> ;
     ns6:has_decimal_value 5.7445e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Maack_8_2_Probe_BK_01Bspecimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Maack 8.2 E-Modul Probe BK 01 B" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Maack_8_2_Probe_BK_01B> .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298_4> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1298_4> ;
     ns6:has_decimal_value 2.984e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe13981> a ns6:InformationBearingEntity,
@@ -18870,20 +18870,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe13981> ;
     ns6:has_decimal_value 3.981e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe198_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe1specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/SL51 28d 11.03.14 Probe1" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_SL51_28d_11_03_14_Probe1> .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298%2C1> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298_1> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298%2C1> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2298_1> ;
     ns6:has_decimal_value 2.981e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe23903> a ns6:InformationBearingEntity,
@@ -18891,20 +18891,20 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe23903> ;
     ns6:has_decimal_value 3.903e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298%2C7> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298_7> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe298_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe2specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/SL51 28d 11.03.14 Probe2" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_SL51_28d_11_03_14_Probe2> .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3298_2> ;
     ns6:has_decimal_value 2.982e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe33906> a ns6:InformationBearingEntity,
@@ -18912,146 +18912,146 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe33906> ;
     ns6:has_decimal_value 3.906e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe398_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/SL51_28d_11_03_14_Probe3specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/SL51 28d 11.03.14 Probe3" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_SL51_28d_11_03_14_Probe3> .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_45350_5> ;
     ns6:has_decimal_value 5.3505e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_498_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_4> .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300_4> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5300_4> ;
     ns6:has_decimal_value 3.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369%2C5> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369_5> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369%2C5> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_55369_5> ;
     ns6:has_decimal_value 5.3695e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_598_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 5" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_5> .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300_4> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6300_4> ;
     ns6:has_decimal_value 3.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361%2C6> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361_6> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_65361_6> ;
     ns6:has_decimal_value 5.3616e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_698_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Werner 7.0 M III E-Modul 28d v. 06.08.14 Probe 6" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Werner_7_0_M_III_E-Modul_28d_v__06_08_14_Probe_6> .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300%2C3> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300_3> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4300_3> ;
     ns6:has_decimal_value 3.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392%2C1> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392_1> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392%2C1> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_45392_1> ;
     ns6:has_decimal_value 5.3921e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_498_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_4> .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351%2C9> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351_9> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351%2C9> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_55351_9> ;
     ns6:has_decimal_value 5.3519e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598%2C7> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598_7> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_598_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 5" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_5> .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300_4> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6300_4> ;
     ns6:has_decimal_value 3.004e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335%2C7> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335_7> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_65335_7> ;
     ns6:has_decimal_value 5.3357e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_698_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Werner 7.0 M IV E-Modul 28d v. 06.08.14 Probe 6" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Werner_7_0_M_IV_E-Modul_28d_v__06_08_14_Probe_6> .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300%2C2> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300_2> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300%2C2> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1300_2> ;
     ns6:has_decimal_value 3.002e+02 .
 
 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_15328> a ns6:InformationBearingEntity,
@@ -19059,56 +19059,56 @@ ns2:uses_reference_system a ns1:ObjectProperty ;
     ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_15328> ;
     ns6:has_decimal_value 5.328e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_198_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_1specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Wolf 8.2 Probe 1" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Wolf_8_2_Probe_1> .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300%2C3> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300_3> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300%2C3> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4300_3> ;
     ns6:has_decimal_value 3.003e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352_4> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_45352_4> ;
     ns6:has_decimal_value 5.3524e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498%2C6> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498_6> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498%2C6> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_498_6> ;
     ns6:has_decimal_value 9.86e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_4specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Wolf 8.2 Probe 4" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Wolf_8_2_Probe_4> .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299%2C8> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299_8> a ns6:InformationBearingEntity,
         ns6:Length ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299%2C8> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5299_8> ;
     ns6:has_decimal_value 2.998e+02 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349%2C4> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349_4> a ns6:InformationBearingEntity,
         ns6:Mass ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349%2C4> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_55349_4> ;
     ns6:has_decimal_value 5.3494e+03 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598%2C7> a ns6:Diameter,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598_7> a ns6:Diameter,
         ns6:InformationBearingEntity ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598%2C7> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_598_7> ;
     ns6:has_decimal_value 9.87e+01 .
 
-<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen.dat> a ns6:InformationBearingEntity,
+<https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen_dat> a ns6:InformationBearingEntity,
         <https%3A//purl.matolab.org/mseo/mid/RawDataSet> ;
-    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen.dat> ;
+    ns7:RO_0010001 <https%3A//purl.matolab.org/mseo/mid/Wolf_8_2_Probe_5specimen_dat> ;
     ns6:has_URI_value "https://github.com/BAMresearch/ModelCalibration/tree/main/usecases/Concrete/Data/E-modul/Wolf 8.2 Probe 5" ;
     ns6:is_input_of <https%3A//purl.matolab.org/mseo/mid/processed_Wolf_8_2_Probe_5> .
 

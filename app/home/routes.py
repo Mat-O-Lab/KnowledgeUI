@@ -8,7 +8,7 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
-from .query import input_emodul_data_for_calibration
+from .query import search_string, search_number
 import json
 
 
@@ -49,13 +49,14 @@ def search():
     # try:
     if request.method == 'POST':
         try:
-            search = request.form['experiment']
-            temp = input_emodul_data_for_calibration(search)
+            search = float(request.form['experiment'])
+            temp = search_number(search)
             columnNames = temp.columns.values
             temp = temp.to_dict('records')
+
         except:
-            search = float(request.form['experiment'])
-            temp = input_emodul_data_for_calibration(search)
+            search = request.form['experiment']
+            temp = search_string(search)
             columnNames = temp.columns.values
             temp = temp.to_dict('records')
     else:

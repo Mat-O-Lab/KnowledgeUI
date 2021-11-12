@@ -41,20 +41,19 @@ def get_name_from_uri(uri):
     return name
 
 
-def input_emodul_data_for_calibration(search):
-    if isinstance(search, str):
+def search_string(search):
 
-        try:
-            search = search.replace(' ', '_').replace('.', '_')
-        except:
-            search = search
+    try:
+        search = search.replace(' ', '_').replace('.', '_')
+    except:
+        search = search
 
-    else:
-        try:
+    # else:
+    #     try:
 
-            search = "{:e}".format(search)
-        except:
-            search = search
+    #         search = "{:e}".format(search)
+    #     except:
+    #         search = search
     s = []
     p = []
     o = []
@@ -76,6 +75,7 @@ def input_emodul_data_for_calibration(search):
                         ?p
                         pf:{search}
                     }}
+                    
                     union
                     {{
                         "{search}"
@@ -88,7 +88,49 @@ def input_emodul_data_for_calibration(search):
                         ?p
                         "{search}"
                     }}
-                    union
+                }}
+            """
+        results = graph.query(q1)
+
+        for result in results:
+            if sys.platform == 'win32':
+                s.append(
+                    get_name_from_uri(result['s'].value)
+                    if result['s'].value != None else search)
+                p.append(
+                    get_name_from_uri(result['p'].value)
+                    if result['p'].value != None else search)
+                o.append(
+                    get_name_from_uri(result['o'].value)
+                    if result['o'].value != None else search)
+            else:
+                s.append(
+                    get_name_from_uri(result['s']
+                                      ) if result['s'] != None else search)
+                p.append(
+                    get_name_from_uri(result['p']
+                                      ) if result['p'] != None else search)
+                o.append(
+                    get_name_from_uri(result['o']
+                                      ) if result['o'] != None else search)
+
+    df = pd.DataFrame({'s': s, 'p': p, 'o': o})
+    return df
+
+
+def search_number(search):
+    search = "{:e}".format(search)
+    s = []
+    p = []
+    o = []
+    for pref in prefixes:
+
+        q1 = f"""
+                prefix pf: {pref}
+                
+                select ?s ?p ?o
+                where {{
+                    
                     {{
                         {search}
                         ?p
