@@ -20,13 +20,13 @@
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Search Engine</h5>
                       
-                      <form role="form" method="POST">
+                      <form role="form" method="POST" action="{{ url_for('home_blueprint.search') }}">
                         <div class="form-group">
                           <!-- <label class="form-control-label" for="input-username">Search Text</label> -->
                           <input type="text" name="experiment" id="input-search" class="form-control" placeholder="search" >
                         </div>
                         <div class="form-group">
-                          <input type="submit" id="input-submit" class="col-lg-3 btn btn-primary" value="Search">
+                          <input required type="submit" id="input-submit" name="search" class="col-lg-3 btn btn-primary" value="Search">
                         </div>
                       </form>
                     </div>
@@ -77,7 +77,12 @@
                       {% for record in records %}
                       <tr>
                           {% for col in colnames %}
-                          <td>{{ record[col] }}</td>
+                          <td>
+                            <form method="POST" role="form" action="{{ url_for('home_blueprint.search') }}">
+                              <input name="search" style="border: none;padding: 0;background: none; color: cornflowerblue;" required type="submit" value="{{ record[col] }}">
+                            <!-- {{ record[col] }} -->
+                          </form>
+                          </td>
                           {% endfor %}
                       </tr>
                       {% endfor %}

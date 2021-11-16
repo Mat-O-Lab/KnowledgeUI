@@ -47,7 +47,7 @@ def route_template(template):
 @login_required
 def search():
     # try:
-    if request.method == 'POST':
+    if request.method == 'POST' and request.form.get('search') == 'Search':
         try:
             search = float(request.form['experiment'])
             temp = search_number(search)
@@ -59,10 +59,16 @@ def search():
             temp = search_string(search)
             columnNames = temp.columns.values
             temp = temp.to_dict('records')
+    elif request.method == 'POST' and request.form.get('search') != 'Search':
+        print(request.form.get('search'))
+        search = ''
+        temp = {}
+        columnNames = []
     else:
         search = ''
         temp = {}
         columnNames = []
+   
     return render_template('search.html',
                            search=search,
                            records=temp,

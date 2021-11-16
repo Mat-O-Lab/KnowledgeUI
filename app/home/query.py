@@ -170,3 +170,5 @@ def search_number(search):
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
+
+# def continue_search(search):
