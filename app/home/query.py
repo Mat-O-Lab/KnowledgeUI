@@ -97,14 +97,14 @@ def search_string(search):
         for result in results:
             if sys.platform == 'win32':
                 s.append(
-                    get_name_from_uri(result['s'].value)
-                    if result['s'].value != None else search)
+                    get_name_from_uri(result['s'])
+                    if result['s'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p'].value)
-                    if result['p'].value != None else search)
+                    get_name_from_uri(result['p'])
+                    if result['p'] != None else search)
                 o.append(
-                    get_name_from_uri(result['o'].value)
-                    if result['o'].value != None else search)
+                    get_name_from_uri(result['o'])
+                    if result['o'] != None else search)
             else:
                 s.append(
                     get_name_from_uri(result['s']
@@ -151,14 +151,14 @@ def search_number(search):
         for result in results:
             if sys.platform == 'win32':
                 s.append(
-                    get_name_from_uri(result['s'].value)
-                    if result['s'].value != None else search)
+                    get_name_from_uri(result['s'])
+                    if result['s'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p'].value)
-                    if result['p'].value != None else search)
+                    get_name_from_uri(result['p'])
+                    if result['p'] != None else search)
                 o.append(
-                    get_name_from_uri(result['o'].value)
-                    if result['o'].value != None else search)
+                    get_name_from_uri(result['o'])
+                    if result['o'] != None else search)
             else:
                 s.append(
                     get_name_from_uri(result['s']
@@ -227,17 +227,17 @@ def continue_string_search(search):
         for result in results:
             if sys.platform == 'win32':
                 s.append(
-                    get_name_from_uri(result['s'].value)
-                    if result['s'].value != None else search)
+                    get_name_from_uri(result['s'])
+                    if result['s'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p'].value)
-                    if result['p'].value != None else search)
+                    get_name_from_uri(result['p'])
+                    if result['p'] != None else search)
                 if get_name_from_uri(result['p']) in dataPropertiesList:
-                    o.append(result['o'].value)
+                    o.append(result['o'])
                 else:
                     o.append(
-                        get_name_from_uri(result['o'].value)
-                        if result['o'].value != None else search)
+                        get_name_from_uri(result['o'])
+                        if result['o'] != None else search)
             else:
                 s.append(
                     get_name_from_uri(result['s']
