@@ -232,9 +232,12 @@ def continue_string_search(search):
                 p.append(
                     get_name_from_uri(result['p'].value)
                     if result['p'].value != None else search)
-                o.append(
-                    get_name_from_uri(result['o'].value)
-                    if result['o'].value != None else search)
+                if get_name_from_uri(result['p']) in dataPropertiesList:
+                    o.append(result['o'].value)
+                else:
+                    o.append(
+                        get_name_from_uri(result['o'].value)
+                        if result['o'].value != None else search)
             else:
                 s.append(
                     get_name_from_uri(result['s']
