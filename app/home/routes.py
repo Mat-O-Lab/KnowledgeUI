@@ -8,7 +8,7 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
-from .query import search_string, search_number
+from .query import search_string, search_number, continue_string_search
 import json
 
 
@@ -60,15 +60,22 @@ def search():
             columnNames = temp.columns.values
             temp = temp.to_dict('records')
     elif request.method == 'POST' and request.form.get('search') != 'Search':
-        print(request.form.get('search'))
-        search = ''
-        temp = {}
-        columnNames = []
+        try:
+            search = float(request.form.get('search'))
+            temp = search_number(search)
+            columnNames = temp.columns.values
+            temp = temp.to_dict('records')
+
+        except:
+            search = request.form.get('search')
+            temp = continue_string_search(search)
+            columnNames = temp.columns.values
+            temp = temp.to_dict('records')
     else:
         search = ''
         temp = {}
         columnNames = []
-   
+
     return render_template('search.html',
                            search=search,
                            records=temp,

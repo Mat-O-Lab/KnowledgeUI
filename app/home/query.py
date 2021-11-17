@@ -34,6 +34,8 @@ prefixes = [
     .format(prefixPath)
 ]
 
+dataPropertiesList = ['has_URI_value', 'has_text_value', 'has_decimal_value']
+
 
 def get_name_from_uri(uri):
     i = uri.rfind('/') + 1
@@ -171,4 +173,81 @@ def search_number(search):
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
 
-# def continue_search(search):
+
+def continue_string_search(search):
+    try:
+        search = search.replace(' ', '_').replace('.', '_')
+    except:
+        search = search
+
+    # else:
+    #     try:
+
+    #         search = "{:e}".format(search)
+    #     except:
+    #         search = search
+    s = []
+    p = []
+    o = []
+    for pref in prefixes:
+
+        q1 = f"""
+                prefix pf: {pref}
+                
+                select ?s ?p ?o
+                where {{
+                    {{
+                        pf:{search}
+                        ?p
+                        ?o
+                    }}
+                    union
+                    {{
+                        ?s
+                        ?p
+                        pf:{search}
+                    }}
+                    
+                    union
+                    {{
+                        "{search}"
+                        ?p
+                        ?o
+                    }}
+                    union
+                    {{
+                        ?s
+                        ?p
+                        "{search}"
+                    }}
+                }}
+            """
+        results = graph.query(q1)
+
+        for result in results:
+            if sys.platform == 'win32':
+                s.append(
+                    get_name_from_uri(result['s'].value)
+                    if result['s'].value != None else search)
+                p.append(
+                    get_name_from_uri(result['p'].value)
+                    if result['p'].value != None else search)
+                o.append(
+                    get_name_from_uri(result['o'].value)
+                    if result['o'].value != None else search)
+            else:
+                s.append(
+                    get_name_from_uri(result['s']
+                                      ) if result['s'] != None else search)
+                p.append(
+                    get_name_from_uri(result['p']
+                                      ) if result['p'] != None else search)
+                if get_name_from_uri(result['p']) in dataPropertiesList:
+                    o.append(result['o'])
+                else:
+                    o.append(
+                        get_name_from_uri(result['o']
+                                          ) if result['o'] != None else search)
+
+    df = pd.DataFrame({'s': s, 'p': p, 'o': o})
+    return df
