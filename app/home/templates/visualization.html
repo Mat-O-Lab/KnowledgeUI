@@ -67,5 +67,35 @@
 {% block javascripts %}
 
 <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+<script src="/static/assets/js/three.js"></script>
+<script>
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color( 0x94a8a8 );
+  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize( window.innerWidth, window.innerHeight );
+  // renderer.setClearColor( 0xffffff, 0);
+  document.body.appendChild( renderer.domElement );
+
+  const geometry = new THREE.CylinderGeometry( 5, 5, 20, 32 );
+  const material = new THREE.MeshBasicMaterial( {color: 0xfff00} );
+  const cylinder = new THREE.Mesh( geometry, material );
+  scene.add( cylinder );
+
+  camera.position.z = 50;
+
+  const animate = function () {
+    requestAnimationFrame( animate );
+
+    cylinder.rotation.x += 0.01;
+    cylinder.rotation.y += 0.01;
+    cylinder.rotation.z += 0.01;
+
+    renderer.render( scene, camera );
+  };
+
+  animate();
+</script>
 
 {% endblock javascripts %}
