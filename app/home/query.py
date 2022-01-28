@@ -17,11 +17,12 @@ if sys.platform == 'win32':
 else:
     prefixPath = 'file://' + os.path.join(baseDir1, 'data') + '/'
 
-triplePath = os.path.join(baseDir1, 'data/EM_Graph.ttl')
+"""triplePath = os.path.join(baseDir1, 'data/EM_Graph.ttl')
 graph = rdflib.Graph()
-graph.parse(triplePath, format='n3')
+graph.parse(triplePath, format='n3')"""
 
-# sparql = SPARQLWrapper("http://127.0.0.1:8080/fuseki/lebedigital")
+#We just need to change the name with the actual database to be useds
+sparql = SPARQLWrapper("https://dataconnect.bam.de/graph/test/sparql")
 
 prefixes = [
     '<{}https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>'.
@@ -42,6 +43,11 @@ def get_name_from_uri(uri):
     name = uri[i:]
     return name
 
+def send_query(q1):
+    sparql.setQuery(q1)
+    sparql.setReturnFormat(JSON)
+    return sparql.query().convert()
+
 
 def search_string(search):
 
@@ -49,7 +55,6 @@ def search_string(search):
         search = search.replace(' ', '_').replace('.', '_')
     except:
         search = search
-
     # else:
     #     try:
 
@@ -91,30 +96,31 @@ def search_string(search):
                         "{search}"
                     }}
                 }}
-            """
-        results = graph.query(q1)
+         """
+           
+        results = send_query(q1)
 
-        for result in results:
+        for result in results['results']['bindings']:
             if sys.platform == 'win32':
                 s.append(
-                    get_name_from_uri(result['s'])
-                    if result['s'] != None else search)
+                    get_name_from_uri(result['s']['value'])
+                    if result['s']['value'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p'])
-                    if result['p'] != None else search)
+                    get_name_from_uri(result['p']['value'])
+                    if result['p']['value'] != None else search)
                 o.append(
-                    get_name_from_uri(result['o'])
-                    if result['o'] != None else search)
+                    get_name_from_uri(result['o']['value'])
+                    if result['o']['value'] != None else search)
             else:
                 s.append(
-                    get_name_from_uri(result['s']
-                                      ) if result['s'] != None else search)
+                    get_name_from_uri(result['s']['value']
+                                      ) if result['s']['value'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p']
-                                      ) if result['p'] != None else search)
+                    get_name_from_uri(result['p']['value']
+                                      ) if result['p']['value'] != None else search)
                 o.append(
-                    get_name_from_uri(result['o']
-                                      ) if result['o'] != None else search)
+                    get_name_from_uri(result['o']['value']
+                                      ) if result['o']['value'] != None else search)
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
@@ -125,6 +131,7 @@ def search_number(search):
     s = []
     p = []
     o = []
+   
     for pref in prefixes:
 
         q1 = f"""
@@ -146,29 +153,28 @@ def search_number(search):
                     }}
                 }}
             """
-        results = graph.query(q1)
-
-        for result in results:
+        results = send_query(q1)
+        for result in results['results']['bindings']:
             if sys.platform == 'win32':
                 s.append(
-                    get_name_from_uri(result['s'])
-                    if result['s'] != None else search)
+                    get_name_from_uri(result['s']['value'])
+                    if result['s']['value'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p'])
-                    if result['p'] != None else search)
+                    get_name_from_uri(result['p']['value'])
+                    if result['p']['value'] != None else search)
                 o.append(
-                    get_name_from_uri(result['o'])
-                    if result['o'] != None else search)
+                    get_name_from_uri(result['o']['value'])
+                    if result['o']['value'] != None else search)
             else:
                 s.append(
-                    get_name_from_uri(result['s']
-                                      ) if result['s'] != None else search)
+                    get_name_from_uri(result['s']['value']
+                                      ) if result['s']['value'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p']
-                                      ) if result['p'] != None else search)
+                    get_name_from_uri(result['p']['value']
+                                      ) if result['p']['value'] != None else search)
                 o.append(
-                    get_name_from_uri(result['o']
-                                      ) if result['o'] != None else search)
+                    get_name_from_uri(result['o']['value']
+                                      ) if result['o']['value'] != None else search)
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
@@ -222,35 +228,35 @@ def continue_string_search(search):
                     }}
                 }}
             """
-        results = graph.query(q1)
+        results = send_query(q1)
 
-        for result in results:
+        for result in results['results']['bindings']:
             if sys.platform == 'win32':
                 s.append(
-                    get_name_from_uri(result['s'])
-                    if result['s'] != None else search)
+                    get_name_from_uri(result['s']['value'])
+                    if result['s']['value'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p'])
-                    if result['p'] != None else search)
-                if get_name_from_uri(result['p']) in dataPropertiesList:
-                    o.append(result['o'])
+                    get_name_from_uri(result['p']['value'])
+                    if result['p']['value'] != None else search)
+                if get_name_from_uri(result['p']['value']) in dataPropertiesList:
+                    o.append(result['o']['value'])
                 else:
                     o.append(
-                        get_name_from_uri(result['o'])
-                        if result['o'] != None else search)
+                        get_name_from_uri(result['o']['value'])
+                        if result['o']['value'] != None else search)
             else:
                 s.append(
-                    get_name_from_uri(result['s']
-                                      ) if result['s'] != None else search)
+                    get_name_from_uri(result['s']['value']
+                                      ) if result['s']['value'] != None else search)
                 p.append(
-                    get_name_from_uri(result['p']
-                                      ) if result['p'] != None else search)
-                if get_name_from_uri(result['p']) in dataPropertiesList:
-                    o.append(result['o'])
+                    get_name_from_uri(result['p']['value']
+                                      ) if result['p']['value'] != None else search)
+                if get_name_from_uri(result['p']['value']) in dataPropertiesList:
+                    o.append(result['o']['value'])
                 else:
                     o.append(
-                        get_name_from_uri(result['o']
-                                          ) if result['o'] != None else search)
+                        get_name_from_uri(result['o']['value']
+                                          ) if result['o']['value'] != None else search)
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
