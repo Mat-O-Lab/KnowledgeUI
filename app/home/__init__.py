@@ -4,6 +4,8 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from flask import Blueprint
+import json
+from .query import initAutocompleteList
 
 blueprint = Blueprint(
     'home_blueprint',
@@ -12,3 +14,5 @@ blueprint = Blueprint(
     template_folder='templates',
     static_folder='static'
 )
+
+autoCompList = initAutocompleteList()

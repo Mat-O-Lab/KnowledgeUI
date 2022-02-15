@@ -63,7 +63,7 @@
                 
               </h1>
               {% if search != '' %}
-              <table id="tb" class="display"  >
+              <table id="tb" class="display"  width="100%">
                 <!-- <caption style="caption-side:top;text-align:center;
                 font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
                   <thead>
@@ -75,11 +75,11 @@
                   </thead>
                   <tbody>
                       {% for record in records %}
-                      <tr>
+                      <tr style="width: 100%;">
                           {% for col in colnames %}
-                          <td>
+                          <td style="width: 33%;">
                             <form method="POST" role="form" action="{{ url_for('home_blueprint.search') }}">
-                              <input name="search" style="border: none;padding: 0;background: none; color: cornflowerblue;" required type="submit" value="{{ record[col] }}">
+                              <input name="search" style="border: none; padding: 20;background: none; white-space: normal; color: cornflowerblue;" class="hover" required type="submit" value="{{ record[col] }}">
                             <!-- {{ record[col] }} -->
                           </form>
                           </td>
@@ -107,17 +107,20 @@
 {% block javascripts %}
 
 
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     
     <script>
       $(document).ready( function () {
           $('#tb').DataTable(
             {
                 "order": [],
-                scrollY:        300,
-                // deferRender:    true,
-                scroller:       true,
+                scrollY: 300,
+                scroller: true,
                 fixedColumns: true
                 
             }
@@ -125,5 +128,16 @@
           $('#tb').show();
       } );
     </script>
-      <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
-{% endblock javascripts %}
+
+   <script>
+      function autoComp(data) {
+        var availableTags = data;
+        $("#input-search" ).autocomplete({
+          source: availableTags,
+          minLength: 3
+        });
+      };
+      autoComp({{ autoCompList|tojson|safe }});
+    </script>
+    <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+    {% endblock javascripts %}

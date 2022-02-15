@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from app.home import blueprint
+from app.home import blueprint, autoCompList
 from flask import render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from app import login_manager
@@ -75,11 +75,11 @@ def search():
         search = ''
         temp = {}
         columnNames = []
-
     return render_template('search.html',
                            search=search,
                            records=temp,
-                           colnames=columnNames)
+                           colnames=columnNames,
+                           autoCompList=autoCompList)
     # except TemplateNotFound:
     #     return render_template('page-404.html'), 404
 
