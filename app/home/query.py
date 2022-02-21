@@ -17,10 +17,6 @@ if sys.platform == 'win32':
 else:
     prefixPath = 'file://' + os.path.join(baseDir1, 'data') + '/'
 
-"""triplePath = os.path.join(baseDir1, 'data/EM_Graph.ttl')
-graph = rdflib.Graph()
-graph.parse(triplePath, format='n3')"""
-
 #We just need to change the name with the actual database to be useds
 sparql = SPARQLWrapper("https://dataconnect.bam.de/graph/lebedigital-emodul/query")
 
@@ -37,7 +33,9 @@ dataPropertiesList = ['has_URI_value', 'has_text_value', 'has_decimal_value']
 
 def get_name_from_uri(uri):
     i = uri.rfind('/') + 1
-    name = uri[i:]
+    k = uri.rfind('#') + 1
+
+    name = uri[i:] if k < i else uri[k:]
     return name
 
 def send_query(q1):
@@ -260,47 +258,17 @@ def continue_string_search(search):
 #For the moment s, p ans o in the same list and doing that only once
 def initAutocompleteList():
     results = send_query("""
-        prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix owl: <http://www.w3.org/2002/07/owl#>
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix owl: <http://www.w3.org/2002/07/owl#>
 
-        SELECT ?wanted (count(?wanted) AS ?count)
-        WHERE {
-        ?material ?wanted ?object .
-        }
-        GROUP BY ?wanted
-        ORDER BY ?count
-    """)
-
-    results1 = send_query("""
-        prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix owl: <http://www.w3.org/2002/07/owl#>
-
-        SELECT ?wanted (count(?wanted) AS ?count)
-        WHERE {
-         ?wanted ?p ?object .
-        }
-        GROUP BY ?wanted
-        ORDER BY ?count
-        """)
-
-    results2 = send_query("""
-        prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix owl: <http://www.w3.org/2002/07/owl#>
-
-        SELECT ?wanted (count(?wanted) AS ?count)
-        WHERE {
-        ?s ?p ?wanted .
-        }
-        GROUP BY ?wanted
-        ORDER BY ?count
-    """)
+    SELECT ?wanted 
+    WHERE {
+       ?wanted a owl:Class .
+    }
+""")
 
     l = list()
-    for s in results1["results"]["bindings"]:
-        l.append(get_name_from_uri(s['wanted']['value']))
     for s in results["results"]["bindings"]:
-        l.append(get_name_from_uri(s['wanted']['value']))
-    for s in results2["results"]["bindings"]:
         l.append(get_name_from_uri(s['wanted']['value']))
     return l
     

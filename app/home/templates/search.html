@@ -134,7 +134,7 @@
         var availableTags = data;
         $("#input-search" ).autocomplete({
           source: availableTags,
-          minLength: 3
+          minLength: 1
         });
       };
       autoComp({{ autoCompList|tojson|safe }});
