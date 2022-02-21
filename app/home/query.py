@@ -51,6 +51,64 @@ def send_query(q1):
     sparql.setReturnFormat(JSON)
     return sparql.query().convert()
 
+def search_instances(search):
+
+    try:
+        search = search.replace(' ', '_').replace('.', '_')
+    except:
+        search = search
+    # else:
+    #     try:
+
+    #         search = "{:e}".format(search)
+    #     except:
+    #         search = search
+    s = []
+    p = []
+    o = []
+    for pref in prefixes:
+
+        q1 = f"""
+                prefix pf: {pref}
+                
+                select ?s ?p ?o
+                where {{
+                    {{
+                        ?s
+                        a
+                        pf:{search}
+                    }} 
+                    union
+                    {{
+                        ?s
+                        a   
+                        "{search}"
+                    }}
+                }}
+         """
+        results = send_query(q1)
+
+        for result in results['results']['bindings']:
+            if sys.platform == 'win32':
+                s.append(
+                    get_name_from_uri(result['s']['value'])
+                    if 's' in result else search)
+                p.append("a")
+                o.append(
+                    get_name_from_uri(result['o']['value'])
+                    if 'o' in result  else search)
+            else:
+                s.append(
+                    get_name_from_uri(result['s']['value']
+                                      )if 's' in result else search)
+                p.append("a")
+                o.append(
+                    get_name_from_uri(result['o']['value']
+                                      ) if 'o' in result else search)
+
+    df = pd.DataFrame({'s': s, 'p': p, 'o': o})
+    return df
+
 def search_string(search):
 
     try:

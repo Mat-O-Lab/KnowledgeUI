@@ -3,12 +3,13 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from numpy import record
 from app.home import blueprint, autoCompList
 from flask import render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
-from .query import search_string, search_number, continue_string_search
+from .query import search_string, search_number, continue_string_search, search_instances
 import json
 
 
@@ -52,33 +53,46 @@ def search():
             search = float(request.form['experiment'])
             temp = search_number(search)
             columnNames = temp.columns.values
+            columnNamesInstances = columnNames
             temp = temp.to_dict('records')
+            tempInstances = temp
 
         except:
             search = request.form['experiment']
             temp = search_string(search)
+            tempInstances = search_instances(search)
             columnNames = temp.columns.values
+            columnNamesInstances = tempInstances.columns.values
             temp = temp.to_dict('records')
+            tempInstances = tempInstances.to_dict('records')
     elif request.method == 'POST' and request.form.get('search') != 'Search':
         try:
             search = float(request.form.get('search'))
             temp = search_number(search)
             columnNames = temp.columns.values
+            columnNamesInstances = columnNames
             temp = temp.to_dict('records')
+            tempInstances = temp
 
         except:
             search = request.form.get('search')
             temp = continue_string_search(search)
             columnNames = temp.columns.values
+            columnNamesInstances = columnNames
             temp = temp.to_dict('records')
+            tempInstances = temp
     else:
         search = ''
         temp = {}
+        tempInstances = {}
         columnNames = []
+        columnNamesInstances = []
     return render_template('search.html',
                            search=search,
                            records=temp,
+                           recordsInstances = tempInstances,
                            colnames=columnNames,
+                           colnamesInstances=columnNamesInstances,
                            autoCompList=autoCompList)
     # except TemplateNotFound:
     #     return render_template('page-404.html'), 404

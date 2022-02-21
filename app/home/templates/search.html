@@ -114,15 +114,15 @@
                 font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
                   <thead>
                       <tr>
-                          {% for col in colnames %}
+                          {% for col in colnamesInstances %}
                           <th>{{ col }}</th>
                           {% endfor %}
                       </tr>
                   </thead>
                   <tbody>
-                      {% for record in records %}
+                      {% for record in recordsInstances %}
                       <tr style="width: 100%;">
-                          {% for col in colnames %}
+                          {% for col in colnamesInstances %}
                           <td style="width: 33%;">
                             <form method="POST" role="form" action="{{ url_for('home_blueprint.search') }}">
                               <input name="search" style="border: none; padding: 20;background: none; white-space: normal; color: cornflowerblue;" class="hover" required type="submit" value="{{ record[col] }}">
