@@ -55,7 +55,53 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header bg-transparent">
-              <h3 class="mb-0">Results Header</h3>
+              <h3 class="mb-0">Classes</h3>
+            </div>
+            <div class="card-body">
+              <h1>
+                Results
+                
+              </h1>
+              {% if search != '' %}
+              <table id="tb" class="display"  width="100%">
+                <!-- <caption style="caption-side:top;text-align:center;
+                font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
+                  <thead>
+                      <tr>
+                          {% for col in colnames %}
+                          <th>{{ col }}</th>
+                          {% endfor %}
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for record in records %}
+                      <tr style="width: 100%;">
+                          {% for col in colnames %}
+                          <td style="width: 33%;">
+                            <form method="POST" role="form" action="{{ url_for('home_blueprint.search') }}">
+                              <input name="search" style="border: none; padding: 20;background: none; white-space: normal; color: cornflowerblue;" class="hover" required type="submit" value="{{ record[col] }}">
+                            <!-- {{ record[col] }} -->
+                          </form>
+                          </td>
+                          {% endfor %}
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+              {% else %}
+                
+              {% endif %}
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <h3 class="mb-0">Instances</h3>
             </div>
             <div class="card-body">
               <h1>

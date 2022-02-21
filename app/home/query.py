@@ -21,12 +21,20 @@ else:
 sparql = SPARQLWrapper("https://dataconnect.bam.de/graph/lebedigital-emodul/query")
 
 prefixes = [
-    '<https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>',
-    '<https://purl.matolab.org/mseo/mid/>',
-    '<http://www.ontologyrepository.com/CommonCoreOntologies/>',
-    '<http://purl.obolibrary.org/obo/>',
-    '<https://github.com/BAMresearch/ModelCalibration/blob/Datasets/usecases/Concrete/ConcreteOntology/Concrete_Ontology_MSEO.owl#>',
-    '<http://www.w3.org/2002/07/>'
+            '<http://www.w3.org/2002/07/owl#>',
+            '<https://www.materials.fraunhofer.de/ontologies/graph_designer#>',
+            '<http://purl.org/dc/terms/>',
+            '<http://www.ontologyrepository.com/CommonCoreOntologies/>',
+            '<http://purl.obolibrary.org/obo/>',
+            '<http://www.geneontology.org/formats/oboInOwl#>',
+            '<http://www.daml.org/2003/01/periodictable/PeriodicTable#>',
+            '<http://www.ontologyrepository.com/CommonCoreOntologies/>',
+            '<http://purl.obolibrary.org/obo/>',
+            '<http://purl.org/dc/elements/1.1/>',
+            '<https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>',
+            '<http://www.w3.org/1999/02/22-rdf-syntax-ns#>',
+            '<http://www.w3.org/2000/01/rdf-schema#>',
+            '<http://www.w3.org/2001/XMLSchema#>'
 ]
 
 dataPropertiesList = ['has_URI_value', 'has_text_value', 'has_decimal_value']
@@ -75,8 +83,7 @@ def search_string(search):
                         ?s
                         ?p
                         pf:{search}
-                    }}
-                    
+                    }} 
                     union
                     {{
                         "{search}"
