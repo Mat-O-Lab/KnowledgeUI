@@ -34,7 +34,8 @@ prefixes = [
             '<https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>',
             '<http://www.w3.org/1999/02/22-rdf-syntax-ns#>',
             '<http://www.w3.org/2000/01/rdf-schema#>',
-            '<http://www.w3.org/2001/XMLSchema#>'
+            '<http://www.w3.org/2001/XMLSchema#>',
+            '<https://purl.matolab.org/mseo/mid/>'
 ]
 
 dataPropertiesList = ['has_URI_value', 'has_text_value', 'has_decimal_value']
