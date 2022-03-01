@@ -130,30 +130,38 @@ def search_string(search):
         q1 = f"""
                 prefix pf: {pref}
                 
-                select ?s ?p ?o
+                select distinct ?s ?p ?o
                 where {{
                     {{
                         pf:{search}
                         ?p
-                        ?o
+                        ?o .
+                        bind(pf:{search} as ?s)
                     }}
                     union
                     {{
                         ?s
                         ?p
-                        pf:{search}
+                        pf:{search} .
+                        bind(pf:{search} as ?o)
                     }} 
                     union
                     {{
                         "{search}"
                         ?p
-                        ?o
+                        ?o .
+                        bind("{search}" as ?s)
                     }}
                     union
                     {{
                         ?s
                         ?p
-                        "{search}"
+                        "{search}" .
+                        bind("{search}" as ?o)
+                    }}
+                    FILTER NOT EXISTS
+                    {{
+                        ?s a  pf:{search} .
                     }}
                 }}
          """
@@ -182,7 +190,7 @@ def search_string(search):
                                       ) if 'o' in result else search)
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
-    return df
+    return df.drop_duplicates()
 
 
 def search_number(search):
