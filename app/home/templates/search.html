@@ -63,7 +63,8 @@
                 
               </h1>
               {% if search != '' %}
-              <table id="tb" class="display"  width="100%">
+              <!-- <table id="tb" class="display"  width="100%"> -->
+                <table id="tb" class="table display responsive dataTable no-footer" role="grid" aria-describedby="devices_info" style="width:  100%; display: none;"> 
                 <!-- <caption style="caption-side:top;text-align:center;
                 font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
                   <thead>
@@ -154,23 +155,36 @@
 
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<link rel="stylesheet" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"></link>
+  
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap4.min.css"></link>
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    
+    <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
     <script>
       $(document).ready( function () {
           $('#tb').DataTable(
             {
                 "order": [],
+                "searching": false,
                 scrollY: 300,
                 scroller: true,
-                fixedColumns: true
+                fixedColumns: true,
+                language:{
+                  paginate:{
+                    next: '&#8594;', // or '→'
+                    previous: '&#8592;' // or '←'                   },
+                }
+              },
+                "pagingType": "simple_numbers"
                 
-            }
-          );
+            });
           $('#tb').show();
       } );
     </script>
@@ -185,5 +199,4 @@
       };
       autoComp({{ autoCompList|tojson|safe }});
     </script>
-    <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
     {% endblock javascripts %}
