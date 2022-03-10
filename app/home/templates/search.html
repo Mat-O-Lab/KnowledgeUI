@@ -53,6 +53,7 @@
 
       <div class="row">
         <div class="col">
+          {% if search != '' %}
           <div class="card shadow">
             <div class="card-header bg-transparent">
               <h3 class="mb-0">Classes</h3>
@@ -60,9 +61,7 @@
             <div class="card-body">
               <h1>
                 Results
-                
               </h1>
-              {% if search != '' %}
               <!-- <table id="tb" class="display"  width="100%"> -->
                 <table id="tb1" class="table display responsive dataTable no-footer" role="grid" aria-describedby="devices_info" style="width:  100%; display: none;"> 
                 <!-- <caption style="caption-side:top;text-align:center;
@@ -89,17 +88,17 @@
                       {% endfor %}
                   </tbody>
               </table>
-              {% else %}
-                
-              {% endif %}
-              
             </div>
           </div>
+          {% else %}
+          
+          {% endif %}
         </div>
       </div>
 
       <div class="row">
         <div class="col">
+          {% if search != '' %}
           <div class="card shadow">
             <div class="card-header bg-transparent">
               <h3 class="mb-0">Instances</h3>
@@ -109,7 +108,6 @@
                 Results
                 
               </h1>
-              {% if search != '' %}
              <!-- <table id="tb" class="display"  width="100%">-->
               <table id="tb2" class="table display responsive dataTable no-footer" role="grid" aria-describedby="devices_info" style="width:  100%; display: none;">
                 <!-- <caption style="caption-side:top;text-align:center;
@@ -136,12 +134,11 @@
                       {% endfor %}
                   </tbody>
               </table>
-              {% else %}
-                
-              {% endif %}
-              
             </div>
           </div>
+          {% else %}
+                
+          {% endif %}
         </div>
       </div>
 
