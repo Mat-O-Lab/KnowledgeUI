@@ -75,45 +75,50 @@ def search_instances(search):
     s = []
     p = []
     o = []
-    for pref in prefixes:
-
+   # for pref in prefixes:
+    pref = classPrefixDic[search] if search in classPrefixDic else ""
+    q1 = f"""
+            prefix pf:<{pref}>
+            
+            select ?s ?p ?o
+            where {{
+                {{
+                    ?s
+                    a
+                    pf:{search}
+                }} 
+            }}
+        """
+    if pref == "":
         q1 = f"""
-                prefix pf:{pref}
-                
-                select ?s ?p ?o
-                where {{
-                    {{
-                        ?s
-                        a
-                        pf:{search}
-                    }} 
-                    union
-                    {{
-                        ?s
-                        a   
-                        "{search}"
-                    }}
-                }}
-         """
-        results = send_query(q1)
+        select ?s ?p ?o
+        where {{
+            {{
+                ?s
+                a
+                "{search}"
+            }} 
+        }}
+        """
+    results = send_query(q1)
 
-        for result in results['results']['bindings']:
-            if sys.platform == 'win32':
-                s.append(
-                    get_name_from_uri(result['s']['value'])
-                    if 's' in result else search)
-                p.append("a")
-                o.append(
-                    get_name_from_uri(result['o']['value'])
-                    if 'o' in result  else search)
-            else:
-                s.append(
-                    get_name_from_uri(result['s']['value']
-                                      )if 's' in result else search)
-                p.append("a")
-                o.append(
-                    get_name_from_uri(result['o']['value']
-                                      ) if 'o' in result else search)
+    for result in results['results']['bindings']:
+        if sys.platform == 'win32':
+            s.append(
+                get_name_from_uri(result['s']['value'])
+                if 's' in result else search)
+            p.append("a")
+            o.append(
+                get_name_from_uri(result['o']['value'])
+                if 'o' in result  else search)
+        else:
+            s.append(
+                get_name_from_uri(result['s']['value']
+                                    )if 's' in result else search)
+            p.append("a")
+            o.append(
+                get_name_from_uri(result['o']['value']
+                                    ) if 'o' in result else search)
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
