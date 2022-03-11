@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import sys
 import pandas as pd
+from app.home import classPrefixDic
 
 baseDir0 = Path(__file__).resolve().parents[0]
 baseDir1 = Path(__file__).resolve().parents[1]
@@ -19,8 +20,6 @@ else:
 
 #We just need to change the name with the actual database to be useds
 sparql = SPARQLWrapper("https://dataconnect.bam.de/graph/lebedigital-emodul/query")
-
-classPrefixDic = dict()
 
 prefixes = [
             '<http://www.w3.org/2002/07/owl#>',
@@ -79,7 +78,7 @@ def search_instances(search):
     for pref in prefixes:
 
         q1 = f"""
-                prefix pf: {pref}
+                prefix pf:{pref}
                 
                 select ?s ?p ?o
                 where {{
@@ -134,69 +133,79 @@ def search_string(search):
     s = []
     p = []
     o = []
-    for pref in prefixes:
-
-        q1 = f"""
-                prefix pf: {pref}
-                
-                select distinct ?s ?p ?o
-                where {{
-                    {{
-                        pf:{search}
-                        ?p
-                        ?o .
-                        bind(pf:{search} as ?s)
-                    }}
-                    union
-                    {{
-                        ?s
-                        ?p
-                        pf:{search} .
-                        bind(pf:{search} as ?o)
-                    }} 
-                    union
-                    {{
-                        "{search}"
-                        ?p
-                        ?o .
-                        bind("{search}" as ?s)
-                    }}
-                    union
-                    {{
-                        ?s
-                        ?p
-                        "{search}" .
-                        bind("{search}" as ?o)
-                    }}
-                    FILTER NOT EXISTS
-                    {{
-                        ?s a  pf:{search} .
-                    }}
+    #for pref in prefixes: 
+    pref = classPrefixDic[search] if search in classPrefixDic else ""
+    
+    q1 = f"""
+            prefix pf: <{pref}>
+            
+            select distinct ?s ?p ?o
+            where {{
+                {{
+                    pf:{search}
+                    ?p
+                    ?o .
+                    bind(pf:{search} as ?s)
                 }}
-         """
-        results = send_query(q1)
+                union
+                {{
+                    ?s
+                    ?p
+                    pf:{search} .
+                    bind(pf:{search} as ?o)
+                }} 
+                FILTER NOT EXISTS
+                {{
+                    ?s a  pf:{search} .
+                }}
+            }}
+        """
+    if pref == "":
+        q1 = f"""
+            select distinct ?s ?p ?o
+            where {{
+                {{
+                    "{search}"
+                    ?p
+                    ?o .
+                    bind("{search}" as ?s)
+                }}
+                union
+                {{
+                    ?s
+                    ?p
+                    "{search}" .
+                    bind("{search}" as ?o)
+                }} 
+                FILTER NOT EXISTS
+                {{
+                    ?s a  "{search}" .
+                }}
+            }}
+        """
+    results = send_query(q1)
 
-        for result in results['results']['bindings']:
-            if sys.platform == 'win32':
-                s.append(
-                    get_name_from_uri(result['s']['value'])
-                    if 's' in result else search)
-                p.append(
-                    get_name_from_uri(result['p']['value'])
-                    if 'p' in result else search)
-                o.append(
-                    get_name_from_uri(result['o']['value'])
-                    if 'o' in result  else search)
-            else:
-                s.append(
-                    get_name_from_uri(result['s']['value']
-                                      )if 's' in result else search)
-                p.append(
-                    get_name_from_uri(result['p']['value']
-                                      ) if 'p' in result else search)
-                o.append(
-                    get_name_from_uri(result['o']['value']
-                                      ) if 'o' in result else search)
+    for result in results['results']['bindings']:
+        if sys.platform == 'win32':
+            s.append(
+                get_name_from_uri(result['s']['value'])
+                if 's' in result else search)
+            p.append(
+                get_name_from_uri(result['p']['value'])
+                if 'p' in result else search)
+            o.append(
+                get_name_from_uri(result['o']['value'])
+                if 'o' in result  else search)
+        else:
+            s.append(
+                get_name_from_uri(result['s']['value']
+                                    )if 's' in result else search)
+            p.append(
+                get_name_from_uri(result['p']['value']
+                                    ) if 'p' in result else search)
+            o.append(
+                get_name_from_uri(result['o']['value']
+                                    ) if 'o' in result else search)
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df.drop_duplicates()
@@ -336,27 +345,3 @@ def continue_string_search(search):
 
     df = pd.DataFrame({'s': s, 'p': p, 'o': o})
     return df
-
-def initclassPrefixDic():
-    results = send_query("""
-    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    prefix owl: <http://www.w3.org/2002/07/owl#>
-
-    SELECT ?wanted 
-    WHERE {
-       ?wanted a owl:Class .
-    }
-    """)
-
-    dc =dict()
-    for s in results["results"]["bindings"]:
-        dc[get_name_from_uri(s['wanted']['value'])] = get_prefix_from_uri(s['wanted']['value'])
-    return dc
-    
-#Allows to get a list with all the occurencies in the DB
-#For the moment s, p ans o in the same list and doing that only once
-def initAutocompleteList():
-    
-    classPrefixDic = initclassPrefixDic()
-    l = list(classPrefixDic.keys())
-    return l
