@@ -53,17 +53,17 @@
 
       <div class="row">
         <div class="col">
+          {% if search != '' %}
           <div class="card shadow">
             <div class="card-header bg-transparent">
-              <h3 class="mb-0">Results Header</h3>
+              <h3 class="mb-0">Classes</h3>
             </div>
             <div class="card-body">
               <h1>
                 Results
-                
               </h1>
-              {% if search != '' %}
-              <table id="tb" class="display"  >
+              <!-- <table id="tb" class="display"  width="100%"> -->
+                <table id="tb1" class="table display responsive dataTable no-footer" role="grid" aria-describedby="devices_info" style="width:  100%; display: none;"> 
                 <!-- <caption style="caption-side:top;text-align:center;
                 font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
                   <thead>
@@ -75,11 +75,11 @@
                   </thead>
                   <tbody>
                       {% for record in records %}
-                      <tr>
+                      <tr style="width: 100%;">
                           {% for col in colnames %}
-                          <td>
+                          <td style="width: 33%;">
                             <form method="POST" role="form" action="{{ url_for('home_blueprint.search') }}">
-                              <input name="search" style="border: none;padding: 0;background: none; color: cornflowerblue;" required type="submit" value="{{ record[col] }}">
+                              <input name="search" style="border: none; padding: 20;background: none; white-space: normal; color: cornflowerblue;" class="hover" required type="submit" value="{{ record[col] }}">
                             <!-- {{ record[col] }} -->
                           </form>
                           </td>
@@ -88,12 +88,57 @@
                       {% endfor %}
                   </tbody>
               </table>
-              {% else %}
-                
-              {% endif %}
-              
             </div>
           </div>
+          {% else %}
+          
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          {% if search != '' %}
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <h3 class="mb-0">Instances</h3>
+            </div>
+            <div class="card-body">
+              <h1>
+                Results
+                
+              </h1>
+             <!-- <table id="tb" class="display"  width="100%">-->
+              <table id="tb2" class="table display responsive dataTable no-footer" role="grid" aria-describedby="devices_info" style="width:  100%; display: none;">
+                <!-- <caption style="caption-side:top;text-align:center;
+                font-size: 30px;color: purple;font-weight:bold"> Data for the request: {{query}}</caption> -->
+                  <thead>
+                      <tr>
+                          {% for col in colnamesInstances %}
+                          <th>{{ col }}</th>
+                          {% endfor %}
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for record in recordsInstances %}
+                      <tr style="width: 100%;">
+                          {% for col in colnamesInstances %}
+                          <td style="width: 33%;">
+                            <form method="POST" role="form" action="{{ url_for('home_blueprint.search') }}">
+                              <input name="search" style="border: none; padding: 20;background: none; white-space: normal; color: cornflowerblue;" class="hover" required type="submit" value="{{ record[col] }}">
+                            <!-- {{ record[col] }} -->
+                          </form>
+                          </td>
+                          {% endfor %}
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          {% else %}
+                
+          {% endif %}
         </div>
       </div>
 
@@ -107,23 +152,69 @@
 {% block javascripts %}
 
 
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"></link>
+  
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap4.min.css"></link>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+    <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
     <script>
       $(document).ready( function () {
-          $('#tb').DataTable(
+          $('#tb1').DataTable(
             {
                 "order": [],
-                scrollY:        300,
-                // deferRender:    true,
-                scroller:       true,
-                fixedColumns: true
+                "searching": false,
+                scrollY: 300,
+                scroller: true,
+                fixedColumns: true,
+                language:{
+                  paginate:{
+                    next: '&#8594;', // or '→'
+                    previous: '&#8592;' // or '←'                   },
+                }
+              },
+                "pagingType": "simple_numbers"
                 
-            }
-          );
-          $('#tb').show();
+            });
+          $('#tb1').show();
       } );
     </script>
-      <script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
-{% endblock javascripts %}
+    <script>
+      $(document).ready( function () {
+          $('#tb2').DataTable(
+            {
+                "order": [],
+                "searching": false,
+                scrollY: 300,
+                scroller: true,
+                fixedColumns: true,
+                language:{
+                  paginate:{
+                    next: '&#8594;', // or '→'
+                    previous: '&#8592;' // or '←'                   },
+                }
+              },
+                "pagingType": "simple_numbers"
+                
+            });
+          $('#tb2').show();
+      } );
+    </script>
+   <script>
+      function autoComp(data) {
+        var availableTags = data;
+        $("#input-search" ).autocomplete({
+          source: availableTags,
+          minLength: 1
+        });
+      };
+      autoComp({{ autoCompList|tojson|safe }});
+    </script>
+    {% endblock javascripts %}

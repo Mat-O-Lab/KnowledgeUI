@@ -23,6 +23,11 @@ _build
 _static
 _templates
 
+.vscode
+
 # javascript
 package-lock.json
 .vscode/symbols.json
+
+listAutoComplete.json
+countOccurenciesInDB.py
