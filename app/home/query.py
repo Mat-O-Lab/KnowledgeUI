@@ -43,6 +43,12 @@ prefixes = [
 dataPropertiesList = ['has_URI_value', 'has_text_value', 'has_decimal_value']
 
 def get_name_from_uri(uri):
+    """
+    Takes an uri and returns a string containing the name at the end of the uri
+    
+    Example: get_name_from_uri("http://www.w3.org/2002/07/owl#type") returns type
+    """
+
     i = uri.rfind('/') + 1
     k = uri.rfind('#') + 1
 
@@ -50,6 +56,12 @@ def get_name_from_uri(uri):
     return name
 
 def get_prefix_from_uri(uri):
+    """Takes an uri and returns it's prefix
+    
+    Example: get_name_from_uri("http://www.w3.org/2002/07/owl#type") 
+    returns http://www.w3.org/2002/07/owl#
+    """
+
     i = uri.rfind('/') + 1
     k = uri.rfind('#') + 1
 
@@ -57,26 +69,23 @@ def get_prefix_from_uri(uri):
     return pf
 
 def send_query(q1):
+    """Send a SPARQL query to the database and return the result"""
+
     sparql.setQuery(q1)
     sparql.setReturnFormat(JSON)
     return sparql.query().convert()
 
 def search_instances(search):
-
+    """Search for instances from a given class and return the in dataframe."""
     try:
         search = search.replace(' ', '_').replace('.', '_')
     except:
         search = search
-    # else:
-    #     try:
 
-    #         search = "{:e}".format(search)
-    #     except:
-    #         search = search
     s = []
     p = []
     o = []
-   # for pref in prefixes:
+
     pref = classPrefixDic[search] if search in classPrefixDic else ""
     q1 = f"""
             prefix pf:<{pref}>
@@ -125,21 +134,19 @@ def search_instances(search):
     return df
 
 def search_string(search):
-
+    """
+    Search all triplets related to a given class except it's instances.
+    Returns a dataframe.
+    """
     try:
         search = search.replace(' ', '_').replace('.', '_')
     except:
         search = search
-    # else:
-    #     try:
-
-    #         search = "{:e}".format(search)
-    #     except:
-    #         search = search
+    
     s = []
     p = []
     o = []
-    #for pref in prefixes: 
+
     pref = classPrefixDic[search] if search in classPrefixDic else ""
     
     q1 = f"""
@@ -218,6 +225,10 @@ def search_string(search):
 
 
 def search_number(search):
+    """
+    Search for all triplets containing a givent numeric value
+    Returns a dataframe
+    """
     search = "{:e}".format(search)
     s = []
     p = []
@@ -272,17 +283,12 @@ def search_number(search):
 
 
 def continue_string_search(search):
+    """This is used when we do a search by clicking on link"""
     try:
         search = search.replace(' ', '_').replace('.', '_')
     except:
         search = search
 
-    # else:
-    #     try:
-
-    #         search = "{:e}".format(search)
-    #     except:
-    #         search = search
     s = []
     p = []
     o = []
