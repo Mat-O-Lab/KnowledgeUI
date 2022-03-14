@@ -3,6 +3,7 @@ from xml.dom.minidom import NamedNodeMap
 import rdflib
 from SPARQLWrapper import SPARQLWrapper
 import os
+from decouple import config
 from pathlib import Path
 import sys
 import pandas as pd
@@ -19,7 +20,7 @@ else:
     prefixPath = 'file://' + os.path.join(baseDir1, 'data') + '/'
 
 #We just need to change the name with the actual database to be useds
-sparql = SPARQLWrapper("https://dataconnect.bam.de/graph/lebedigital-emodul/query")
+sparql = SPARQLWrapper(config('DATASET_LINK'))
 
 prefixes = [
             '<http://www.w3.org/2002/07/owl#>',

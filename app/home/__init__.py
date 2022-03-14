@@ -6,6 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 from flask import Blueprint
 from SPARQLWrapper import SPARQLWrapper, JSON
 import json
+from decouple import config
 
 def get_name_from_uri_init(uri):
     i = uri.rfind('/') + 1
@@ -22,7 +23,7 @@ def get_prefix_from_uri_init(uri):
     return pf
 
 def initclassPrefixDic():
-    sparql = SPARQLWrapper("https://dataconnect.bam.de/graph/lebedigital-emodul/query")
+    sparql = SPARQLWrapper(config('DATASET_LINK'))
 
     sparql.setQuery("""
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
