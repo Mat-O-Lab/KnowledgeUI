@@ -8,6 +8,14 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 import json
 from decouple import config
 
+"""
+ReadMe:
+Here there some clear technical debt to clean later on.
+I intentionally put some repetition, with query.py 
+because I the dictionary (classPrefixDic) to bein the main flask
+context. I need this global variable to keep it's memory all the time
+the app is running. Duplicate the code here allows to prevent circular dependencies.
+"""
 def get_name_from_uri_init(uri):
     i = uri.rfind('/') + 1
     k = uri.rfind('#') + 1
@@ -23,6 +31,16 @@ def get_prefix_from_uri_init(uri):
     return pf
 
 def initclassPrefixDic():
+    """
+    Generate a dictionary that maps each class, from a triple store, to it's prefix
+    
+    Arguments:
+    None
+    
+    Returns:
+    dict[]
+    """
+
     sparql = SPARQLWrapper(config('DATASET_LINK'))
 
     sparql.setQuery("""
@@ -43,9 +61,16 @@ def initclassPrefixDic():
     return dc
     
 #Allows to get a list with all the occurencies in the DB
-#For the moment s, p ans o in the same list and doing that only once
 def initAutocompleteList():
+    """
+    Generate a list with all the class names from a triple store
     
+    Arguments:
+    None
+    
+    Returns:
+    list, dict[]
+    """
     classPrefixDic = initclassPrefixDic()
     l = list(classPrefixDic.keys())
     return l, classPrefixDic
