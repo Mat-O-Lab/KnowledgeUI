@@ -19,9 +19,12 @@ if sys.platform == 'win32':
 else:
     prefixPath = 'file://' + os.path.join(baseDir1, 'data') + '/'
 
-#We just need to change the name with the actual database to be useds
+# Global that connects to the dataset. 
+# To change the link to the dataset change it in the file .env
 sparql = SPARQLWrapper(config('DATASET_LINK'))
 
+# We will get rid of those prefixes when all the query functions will be
+# compatible with the global variable classPrefixDic in __init__.py
 prefixes = [
             '<http://www.w3.org/2002/07/owl#>',
             '<https://www.materials.fraunhofer.de/ontologies/graph_designer#>',
@@ -45,6 +48,12 @@ dataPropertiesList = ['has_URI_value', 'has_text_value', 'has_decimal_value']
 def get_name_from_uri(uri):
     """
     Takes an uri and returns a string containing the name at the end of the uri
+
+    Arguments:
+    uri -> a string
+
+    Returns:
+    name -> a string
     
     Example: get_name_from_uri("http://www.w3.org/2002/07/owl#type") returns type
     """
@@ -56,7 +65,14 @@ def get_name_from_uri(uri):
     return name
 
 def get_prefix_from_uri(uri):
-    """Takes an uri and returns it's prefix
+    """
+    Takes an uri and returns it's prefix
+
+    Arguments:
+    uri -> a string
+
+    Returns:
+    name -> a string
     
     Example: get_name_from_uri("http://www.w3.org/2002/07/owl#type") 
     returns http://www.w3.org/2002/07/owl#
@@ -69,14 +85,40 @@ def get_prefix_from_uri(uri):
     return pf
 
 def send_query(q1):
-    """Send a SPARQL query to the database and return the result"""
-
+    """Send a SPARQL query to the database and return the result
+    
+    Arguments:
+    q1 -> string containing query
+    
+    Returns:
+    Result of the query -> dict[]
+    """
     sparql.setQuery(q1)
     sparql.setReturnFormat(JSON)
     return sparql.query().convert()
 
 def search_instances(search):
-    """Search for instances from a given class and return the in dataframe."""
+    """
+    Search for instances from a given class and return the in dataframe.
+    
+    Arguments:
+    search -> string representing a class name
+
+    Returns:
+    df -> a dataframe of the following shape
+
+    s    |    p     |      o
+    ---------------------------------
+    S1   |    P1    |      O1
+    ---------------------------------
+    S2   |    P1    |      O2        
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .         
+    """
     try:
         search = search.replace(' ', '_').replace('.', '_')
     except:
@@ -136,7 +178,24 @@ def search_instances(search):
 def search_string(search):
     """
     Search all triplets related to a given class except it's instances.
-    Returns a dataframe.
+   
+    Arguments:
+    search -> string representing a class name
+
+    Returns:
+    df -> a dataframe of the following shape
+
+    s    |    p     |      o
+    ---------------------------------
+    S1   |    P1    |      O1
+    ---------------------------------
+    S2   |    P1    |      O2        
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .  
     """
     try:
         search = search.replace(' ', '_').replace('.', '_')
@@ -227,8 +286,26 @@ def search_string(search):
 def search_number(search):
     """
     Search for all triplets containing a givent numeric value
-    Returns a dataframe
+    
+    Arguments:
+    search -> float
+
+    Returns:
+    df -> a dataframe of the following shape
+
+    s    |    p     |      o
+    ---------------------------------
+    S1   |    P1    |      O1
+    ---------------------------------
+    S2   |    P1    |      O2        
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .  
     """
+
     search = "{:e}".format(search)
     s = []
     p = []
@@ -283,7 +360,26 @@ def search_number(search):
 
 
 def continue_string_search(search):
-    """This is used when we do a search by clicking on link"""
+    """This is used when we do a search by clicking on link
+    
+    Arguments:
+    search -> string representing a class name
+
+    Returns:
+    df -> a dataframe of the following shape
+
+    s    |    p     |      o
+    ---------------------------------
+    S1   |    P1    |      O1
+    ---------------------------------
+    S2   |    P1    |      O2        
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .         
+    ---------------------------------
+    .    |     .    |      .  
+    """
     try:
         search = search.replace(' ', '_').replace('.', '_')
     except:
