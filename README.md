@@ -40,8 +40,12 @@ by the version you downloaded and same goes for Python39 not only your username<
 
 
 ## What if you find that really to bothersome:
-Try to run the script: createNewVirtualEnv.py
+Try to run the script: createNewVirtualEnv.py<br />
     ```python createNewVirtualEnv.py```
+ 
+ *Disclaimer:*<br />
+ The script may not work on all the machines. It needs to be more tested to certify that.
+ Do not hesitate to make any feedback :)
 ## Activate virtualenv:
 - In your working directory type:
 ```venv\Scripts\activate```
