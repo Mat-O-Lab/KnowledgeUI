@@ -1,11 +1,9 @@
-FROM python:3.6
+FROM docker.io/python:3.8
 
-ENV FLASK_APP run.py
+RUN apt-get -y update && apt-get install -y apt-utils gcc g++
+RUN apt-get -y upgrade
+RUN git clone https://github.com/Mat-O-Lab/CSVtoCSVW.git /src
+RUN pip install -r /src/requirements.txt
+WORKDIR /src
 
-COPY run.py gunicorn-cfg.py requirements.txt config.py .env ./
-COPY app app
-
-RUN pip install -r requirements.txt
-
-EXPOSE 5005
-CMD ["gunicorn", "--config", "gunicorn-cfg.py", "run:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "wsgi:app", "--workers=3"]
