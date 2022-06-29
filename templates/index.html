@@ -1,4 +1,5 @@
 {% extends "bootstrap/base.html" %}
+{% from 'macros.html' import navigation %}
 {% block title %}Knowledge UI{% endblock %}
 
 {% block head %}
@@ -25,20 +26,7 @@
 </header>
 
 <body class="bg-light rounded-3 px-3">
-  <ul class="nav justify-content-center navbar-light bg-light">
-        <li class="nav-item px-5 h3 active">
-          <a class="nav-link" href="#">Overview<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item px-5 h3">
-          <a class="nav-link" href="osparklis.html">Explore</a>
-        </li>
-        <li class="nav-item px-5 h3">
-          <a class="nav-link" href="#">Predict</a>
-        </li>
-        <li class="nav-item px-5 h3">
-          <a class="nav-link" href="#">Optimize</a>
-        </li>
-      </ul>
+  {{navigation()}}
 
   <div class="container-fluid mb-3">
     <p class="col-md-12 ps-0 fs-4">
