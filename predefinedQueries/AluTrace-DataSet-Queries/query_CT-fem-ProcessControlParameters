@@ -1,0 +1,23 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select * 
+WHERE 
+{ 
+    ?TechProduct_i mid:BWMD_00337 ?CTScan;
+                a [rdfs:label "TechnologicalProduct"@en];
+                mid:BWMD_00319 ?oid_i.
+    ?oid_i a mid:BWMD_00358; #ObjectID
+           mid:BWMD_00313 ?object_name.
+	?CTScan a [rdfs:label "ThreeDimensionalXRayComputerTomography"@en];
+                         mid:BWMD_00339 ?processDataSet.
+    ?processDataSet a [rdfs:label "ProcessParameterSet"@en];
+                    mid:BWMD_00323 ?ControlParameter_i.
+    ?ControlParameter_i mid:BWMD_00314 ?ControlParameter_value;
+          mid:BWMD_00312 ?ControlParameter_unit.
+ 
+}

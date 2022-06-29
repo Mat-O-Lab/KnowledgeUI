@@ -1,0 +1,69 @@
+PREFIX : <https://www.iwm.fraunhofer.de/ontologies/bwmd-ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+select ?specimen_name 
+?cast_part_name
+?weightfraction
+?weightfraction_unit
+?weightfraction_element
+?temperature_aging
+?temperature_aging_unit
+?duration_aging
+?duration_aging_unit
+?temperatue_annealing
+?temperatue_annealing_unit
+?duration_annealing
+?duration_annealing_unit
+
+where {
+    ## pattern for specimen name
+    {?si a :MetallographicSpecimen.} union {?si a :CylindricalTensileTestSpecimen.}
+        ?si :hasIdentifier ?oidi;
+        :isInputFor ?pi.
+    ?oidi a :ObjectID;
+          :hasStringLiteral ?specimen_name.
+    
+    {?pi a :BrinellIndentation.} union {?pi a :QuasiStaticTensileTest.}
+    
+    ## pattern for material composition
+    ?si (^:hasOutput|^:isInputFor|^owl:sameAs)+ ?s_casting.
+    ?s_casting a :CastPart;
+               :hasIdentifier ?oid_cp_i;
+               :hasStructuralInfo ?s_info.
+    ?oid_cp_i a :ObjectID;
+          :hasStringLiteral ?cast_part_name.
+    ?s_info :hasPart/:hasPart ?weightfraction_in, ?baseelement_n.
+    ?weightfraction_in a :WeightFraction;
+                      :hasDoubleLiteral ?weightfraction;
+                      :hasUnitSymbol ?weightfraction_unit;
+                      :refersToElementSymbol ?weightfraction_element.
+    ?baseelement_n a :BaseElementOfComposition;
+                   :refersToElementSymbol ?base_element.
+    
+    optional{
+            # pattern for Artificial Aging
+            ?si (^:hasOutput|^:isInputFor|^owl:sameAs)+ ?s_aging.
+            ?s_aging a :ArtificialAging;
+                     :hasControlInfo ?control_info_aging.
+            ?control_info_aging :hasPart ?temperature_aging_n, ?duration_aging_n.
+            ?temperature_aging_n a :ArtificialAgingTemperatureAsSupposed;
+                              :hasDoubleLiteral ?temperature_aging;
+                              :hasUnitSymbol ?temperature_aging_unit.
+            ?duration_aging_n a :ArtificialAgingDurationAsSupposed;
+                           :hasDoubleLiteral ?duration_aging;
+                           :hasUnitSymbol ?duration_aging_unit.
+
+            ## pattern for Solution Annealing
+            ?s_aging (^:hasOutput|^:isInputFor|^owl:sameAs)+ ?s_annealing.
+            ?s_annealing a :SolutionAnnealing;
+                         :hasControlInfo ?control_info_annealing.
+            ?control_info_annealing :hasPart ?temperatue_annealing_n, ?duration_annealing_n.
+            ?temperatue_annealing_n a :SolutionAnnealingTemperatureAsSupposed;
+                               :hasDoubleLiteral ?temperatue_annealing;
+                               :hasUnitSymbol ?temperatue_annealing_unit.
+            ?duration_annealing_n a :SolutionAnnealingDurationAsSupposed;
+                                :hasDoubleLiteral ?duration_annealing;
+                               :hasUnitSymbol ?duration_annealing_unit.
+    }
+    
+}

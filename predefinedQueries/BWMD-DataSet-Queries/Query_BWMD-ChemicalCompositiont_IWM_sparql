@@ -1,0 +1,37 @@
+PREFIX : <https://www.iwm.fraunhofer.de/ontologies/bwmd-ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+select 
+?specimen_name 
+?cast_part_name
+?weightfraction
+?weightfraction_unit
+?weightfraction_element
+
+where {
+    ## pattern for specimen name
+    {?si a :MetallographicSpecimen.} union {?si a :CylindricalTensileTestSpecimen.}
+        ?si :hasIdentifier ?oidi;
+        :isInputFor ?pi.
+    ?oidi a :ObjectID;
+          :hasStringLiteral ?specimen_name.
+    
+    {?pi a :BrinellIndentation.} union {?pi a :QuasiStaticTensileTest.}
+    
+    ## pattern for material composition
+    ?si (^:hasOutput|^:isInputFor|^owl:sameAs)+ ?s_casting.
+    ?s_casting a :CastPart;
+               :hasIdentifier ?oid_cp_i;
+               :hasStructuralInfo ?s_info.
+    ?oid_cp_i a :ObjectID;
+          :hasStringLiteral ?cast_part_name.
+    ?s_info :hasPart/:hasPart ?weightfraction_in, ?baseelement_n.
+    ?weightfraction_in a :WeightFraction;
+                      :hasDoubleLiteral ?weightfraction;
+                      :hasUnitSymbol ?weightfraction_unit;
+                      :refersToElementSymbol ?weightfraction_element.
+    ?baseelement_n a :BaseElementOfComposition;
+                   :refersToElementSymbol ?base_element.
+    
+   
+}

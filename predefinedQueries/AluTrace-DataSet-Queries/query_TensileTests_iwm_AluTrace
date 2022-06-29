@@ -1,0 +1,53 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?TensilePartSetID_Extern ?TensileTestID_Intern ?TemperatureControlParameterValue  ?TemperatureUnitSymbol ?Ym_value ?Ym_unit ?Rp02_value ?Rp02_unit ?R_UTS_value ?R_UTS_unit ?A_value ?A_unit ?Ag_value ?Ag_unit ?HeatTreatment_ID ?TensileTestURL
+where { 
+    #SERVICE <http://153.97.176.152:7200/AluTrace_trell/sparql> {
+    ?TensileTest a [rdfs:label "QuasiStaticTensileTest"@en].
+    ?TensileSpecimen mid:BWMD_00337 ?TensileTest. #isInputFor (mid:BWMD_00337) QuasiStaticTensileTest (domain:BWMD_00526)
+    ?TensileSpecimen mid:BWMD_00319 [a mid:BWMD_00360;        
+                     mid:BWMD_00313 ?TensilePartSetID_Extern].
+    ?TensileSpecimen  mid:BWMD_00319 [a domain:BWMD_00544; #TensileTestSpecimen
+                      mid:BWMD_00313 ?TensileTestID_Intern].       #hasIdentifier (mid:BWMD_00319) hasStringLiteral (mid:BWMD_00313)
+    ?TensileSpecimen  mid:BWMD_00322 ?EngineeringMaterial.#isComposedOf EngineeringMaterial
+    ?EngineeringMaterial a mid:BWMD_00002;
+                      mid:BWMD_00319 ?HTreatID. #hasIdentifier
+    ?HTreatID a domain:BWMD_00060;#of class HeatreatmentID
+              mid:BWMD_00313 ?HeatTreatment_ID.  #hasStringValue      
+    ?TensileTest (mid:BWMD_00339)+ ?TTProcessParameterSet. #Process hasControlInfo (mid:BWMD_00339) TTProcessParameterSet (mid:BWMD_00009)
+    ?TTProcessParameterSet mid:BWMD_00323 ?TempTTParameter. #hasPart
+    ?TempTTParameter a domain:BWMD_00743. #MaterialSurfaceTemperatureAsSupposed
+    ?TempTTParameter mid:BWMD_00316 ?TemperatureControlParameterValue. #hasIntegerLiteral (mid:BWMD_00314)  
+    ?TempTTParameter mid:BWMD_00312 ?TemperatureUnitSymbol.  #hasUnitSymbol (mid:BWMD_00312)  
+	
+    # Tensile Test Data
+# Tensile Test Data
+    ?TensileTest mid:BWMD_00331 ?TTDataSet.     #hasOutput           
+    ?TTDataSet a mid:BWMD_00068; #Class TTDataSet
+                    mid:BWMD_00323 ?MatProp_i.
+    ?MatProp_i mid:BWMD_00323 ?rm_i, ?rp02_i, ?A_i, ?Ag_i, ?Ym_i.
+    ?rm_i a domain:BWMD_00595.#:MaximumTensileStrength 
+    ?rm_i mid:BWMD_00314 ?R_UTS_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?R_UTS_unit.
+    ?rp02_i a domain:BWMD_00350.#:YieldStrength
+    ?rp02_i mid:BWMD_00314 ?Rp02_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?Rp02_unit.
+    ?A_i a domain:BWMD_00500. #ElongationAfterFracture
+    ?A_i mid:BWMD_00314 ?A_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?A_unit.
+    ?Ag_i a domain:AT_00061. #StrainAtUTS
+    ?Ag_i mid:BWMD_00314 ?Ag_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?Ag_unit.
+    
+    ?Ym_i a domain:BWMD_00471.#YoungsModul
+    ?Ym_i mid:BWMD_00314 ?Ym_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?Ym_unit.
+    
+    ?TensileSpecimen (mid:BWMD_00337/mid:BWMD_00331/mid:BWMD_00323/mid:BWMD_00319/mid:BWMD_00345) ?TensileTestURL. 
+   # }
+}

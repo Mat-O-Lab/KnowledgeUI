@@ -1,0 +1,20 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select * 
+WHERE 
+{ 
+    ?TechProduct_i mid:BWMD_00337 ?Separation;
+                a [rdfs:label "TechnologicalProduct"@en];
+                mid:BWMD_00319 ?oid_i.
+    ?oid_i a mid:BWMD_00358; #ObjectID
+           mid:BWMD_00313 ?object_name.
+	?Separation a [rdfs:label "Separating"@en];
+                         mid:BWMD_00331 ?OutputObject_i.
+    ?OutputObject_i a [rdfs:label "TechnologicalProduct"@en];
+                    mid:BWMD_00319/mid:BWMD_00313 ?OutputObject_name.
+}
