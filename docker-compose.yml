@@ -1,17 +1,17 @@
 version: "3"
 services:
-  csvtocsvw_flask:
+  knowledgeui:
     build: .
-    container_name: CSVToCSVW_with_Flask
+    container_name: knowledgeui
     volumes:
       - .:/src
     ports:
       - 5000:5000
     restart: always
     networks:
-      - CSVToCSVW
+      - knowledgeui_net
 
 networks:
-  CSVToCSVW:
-    name: CSVToCSVW
+  knowledgeui_net:
+    name: knowledgeui
     driver: bridge
