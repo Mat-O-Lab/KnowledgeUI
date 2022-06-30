@@ -3,34 +3,35 @@
 
   This file is part of Sparklis.
   -->
-  {% extends "bootstrap/base.html" %}
-  {% from 'macros.html' import navigation %}
-  {% block title %}Knowledge UI{% endblock %}
-  
-  {% block head %}
-  {{ super() }}
-  <link rel="shortcut icon" href="#">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+{% extends "bootstrap/base.html" %}
+{% from 'macros.html' import navigation %}
+{% block title %}Knowledge UI{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="#">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script>
+<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() { dataLayer.push(arguments); }
 	gtag('js', new Date());
-  
+
 	gtag('config', 'your_analytiks_tag');
-  </script>
-  <link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css"/>
-  <script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
-  {% endblock %}
-  
-  {% block html_attribs %} lang="en"{% endblock %}
-  
-  {% block content %}
-  <header class="pb-3 mb-4 border-bottom">
+</script>
+<link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
+{% endblock %}
+
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block content %}
+<header class="pb-3 mb-4 border-bottom">
 	<a href="/" class="d-flex align-items-center text-dark text-decoration-none m-3 pb-1">
-	  <img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
+		<img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
 	</a>
-  </header>
+</header>
+
 <body>
 	{{ navigation() }}
 
@@ -45,60 +46,6 @@
       <span class="texte lang-es">NUEVO en 2016 : agregaciones anidadas y expresiones de cómputo/filtrado !!</span>
 	  <span class="texte lang-nl">Nieuw in 2016: nested aggregations en berekening/filtering expressions !!</span>
 -->
-
-
-	<div id="download-results-modal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<strong>
-						<span class="texte lang-en">Download results as a CSV file</span>
-						<span class="texte lang-fr">Télécharger les résultats sous forme de fichier CSV</span>
-						<span class="texte lang-es">Descargar los resultados en un archivo CSV</span>
-						<span class="texte lang-nl">Resultaten downloaden als CSV-bestand</span>
-					</strong>
-				</div>
-				<div class="modal-body">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<div class="config-param">
-								<input id="input-csv-raw-terms" type="checkbox">
-								<span class="texte lang-en">Fill cells with raw URIs and literals rather than as
-									displayed in the table</span>
-								<span class="texte lang-fr">Remplir les cellules avec des URI et des littéraux bruts
-									plutôt que comme indiqué dans le tableau</span>
-								<span class="texte lang-es">Rellenar las celdas con URIs y literales en bruto en lugar
-									de como se muestra en la tabla</span>
-								<span class="texte lang-nl">Vul cellen met ruwe URI's en literalen in plaats van zoals
-									weergegeven in de tabel</span>
-							</div>
-						</li>
-						<li class="list-group-item">
-							<div class="config-param">
-								<span class="texte lang-en">Compute at most </span>
-								<span class="texte lang-fr">Calculer au plus </span>
-								<span class="texte lang-es">Calcular como máximo </span>
-								<span class="texte lang-nl">Bereken hooguit </span>
-								<input id="input-csv-max-results" type="number" value="">
-								<span class="texte lang-en"> query results</span>
-								<span class="texte lang-fr"> résultats à la requête</span>
-								<span class="texte lang-es"> resultados de la consulta</span>
-								<span class="texte lang-nl"> query resultaten</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">
-						<span class="glyphicon glyphicon-remove"></span>
-					</button>
-					<button id="ok-download-results" type="button" class="btn btn-primary" data-dismiss="modal">
-						<span class="glyphicon glyphicon-ok"></span>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div id="control-navig" class="navbar navbar-expand-lg" data-spy="affix" data-offset-top="75">
 		<div class="">
@@ -181,24 +128,22 @@
 			<div id="query" class="panel panel-info">
 				<div class="panel-heading">
 					<h5 class="panel-title">
-						<a data-toggle="collapse" data-target="#collapse-query">
-							<span class="texte lang-en">Your query and its <span class="highlighted">current
-									focus</span></span>
-							<span class="texte lang-fr">Votre requête et son <span class="highlighted">focus
-									actuel</span></span>
-							<span class="texte lang-es">Tu consulta y su <span class="highlighted">foco
-									actual</span></span>
-							<span class="texte lang-nl">Uw query en zijn <span class="highlighted">huidige
-									focus</span></span>
+						<span class="texte lang-en">Your query and its <span class="highlighted">current
+								focus</span></span>
+						<span class="texte lang-fr">Votre requête et son <span class="highlighted">focus
+								actuel</span></span>
+						<span class="texte lang-es">Tu consulta y su <span class="highlighted">foco
+								actual</span></span>
+						<span class="texte lang-nl">Uw query en zijn <span class="highlighted">huidige
+								focus</span></span>
 
-							<span class="texte lang-en"> (click on different parts of the query to change it)</span>
-							<span class="texte lang-fr"> (cliquer sur différentes parties de la requêtes pour le
-								changer)</span>
-							<span class="texte lang-es"> (Haga clic sobre las diferentes partes de la consulta para
-								cambiarlo)</span>
-							<span class="texte lang-nl"> (Klik op verschillende delen van de query om deze te
-								wijzingen)</span>
-						</a>
+						<span class="texte lang-en"> (click on different parts of the query to change it)</span>
+						<span class="texte lang-fr"> (cliquer sur différentes parties de la requêtes pour le
+							changer)</span>
+						<span class="texte lang-es"> (Haga clic sobre las diferentes partes de la consulta para
+							cambiarlo)</span>
+						<span class="texte lang-nl"> (Klik op verschillende delen van de query om deze te
+							wijzingen)</span>
 					</h5>
 				</div>
 				<div id="collapse-query" class="panel-collapse collapse show">
@@ -218,14 +163,11 @@
 
 			<div id="increments" class="panel panel-info">
 				<div class="panel-heading">
-					<!--	<button id="show-hide-increments" class="btn btn-default btn-md"><span class="glyphicon glyphicon-collapse-up"></span></button> -->
 					<h5 class="panel-title">
-						<a data-toggle="collapse" data-target="#collapse-increments">
-							<span class="texte lang-en">Sparklis suggestions to refine your query</span>
-							<span class="texte lang-fr">Suggestions de Sparklis pour affiner votre requête</span>
-							<span class="texte lang-es">Sugerencias de Sparklis para refinar tu consulta</span>
-							<span class="texte lang-nl">Sparklis suggesties om uw query te verfijnen</span>
-						</a>
+						<span class="texte lang-en">Sparklis suggestions to refine your query</span>
+						<span class="texte lang-fr">Suggestions de Sparklis pour affiner votre requête</span>
+						<span class="texte lang-es">Sugerencias de Sparklis para refinar tu consulta</span>
+						<span class="texte lang-nl">Sparklis suggesties om uw query te verfijnen</span>
 					</h5>
 				</div>
 				<div id="collapse-increments" class="panel-collapse collapse show">
@@ -608,12 +550,10 @@
 			<div id="results" class="panel panel-info">
 				<div class="panel-heading">
 					<h5 class="panel-title">
-						<a data-toggle="collapse " data-target="#collapse-results">
-							<span class="texte lang-en">Results of your query</span>
-							<span class="texte lang-fr">Résultats de votre requête</span>
-							<span class="texte lang-es">Resultados de tu consulta</span>
-							<span class="texte lang-nl">Resultaten van uw query</span>
-						</a>
+						<span class="texte lang-en">Results of your query</span>
+						<span class="texte lang-fr">Résultats de votre requête</span>
+						<span class="texte lang-es">Resultados de tu consulta</span>
+						<span class="texte lang-nl">Resultaten van uw query</span>
 						&nbsp;
 						<span class="tooltiped">
 							<span class="tooltip lang-en">Download results as a CSV file</span>
@@ -812,7 +752,10 @@
 
 	<footer>
 		<hr />
-		<span class="site-footer-owner"><a href="https://github.com/Mat-O-Lab/NaturalMSEQueries">NaturalMSEQueries</a> is maintained by <a href="https://matolab.org"><img src="https://github.com/Mat-O-Lab/CSVToCSVW/raw/main/static/resources/MatOLab-Logo.svg" width="5%" alt="mat-o-lab-logo"/></a>.</span>
+		<span class="site-footer-owner"><a href="https://github.com/Mat-O-Lab/NaturalMSEQueries">NaturalMSEQueries</a>
+			is maintained by <a href="https://matolab.org"><img
+					src="https://github.com/Mat-O-Lab/CSVToCSVW/raw/main/static/resources/MatOLab-Logo.svg" width="5%"
+					alt="mat-o-lab-logo" /></a>.</span>
 		<!-- licence CC-BY-NC -->
 		<a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"><img
 				alt="Creative Commons Licence" style="border-width:0"
