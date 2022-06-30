@@ -1,0 +1,113 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX  lpbfo: <https://www.emi.fraunhofer.de/ontologies/LPBFO#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT  ?PartID_fem ?PartType ?PowderName ?InputObjectNext_name ?OutputObjectNext_name ?BuildOrientationAngle ?LayerThickness ?LayerThicknessUnit ?NameOfProcessParameter ?BuildPlatformTemperature ?TemperatureControlParameterValue ?TemperatureUnitSymbol ?StrainRateValue ?StrainRateUnitSymbol ?Ym_value ?Ym_unit ?Rp02_value ?Rp02_unit ?R_UTS_value ?R_UTS_unit ?A5_value ?A5_unit ?Ag_value ?Ag_unit ?HeatTreatment_ID ?Surface
+WHERE
+{ #SERVICE <https://fuseki.materials.digital/AluTrace_femLPBF/sparql> {
+  		?LPBFProcess  rdf:type [rdfs:label "LaserPowderBedFusion"@en];
+        		  mid:BWMD_00331  ?BuildPlatformobject .
+        ?BuildPlatformobject rdf:type [rdfs:label "BuildPlatformWithPartSet"@en];
+         		mid:BWMD_00337 ?Separating .
+        ?Separating  mid:BWMD_00331  ?Part .
+        ?Part rdf:type [rdfs:label "Part"@en];
+        	mid:BWMD_00319  _:b0.
+		_:b0 rdf:type _:b1 ;
+       		mid:BWMD_00313  ?PartID_fem .
+        _:b1 rdfs:label "PartID"@en.
+
+        ?LPBFProcess  mid:BWMD_00339  ?ProcessParameterSet .
+        ?ProcessParameterSet rdf:type [rdfs:label "ProcessParameterSet"@en] .
+        
+        ?Part  mid:BWMD_00319  ?BuildOrientationobject .
+        ?BuildOrientationobject rdf:type [rdfs:label "BuildOrientationAngleRelativeToBuildPlatform"@en];
+                  mid:BWMD_00314  ?BuildOrientationAngle ;
+                  mid:BWMD_00312  ?BuildOrientationUnit .
+        
+        ?Part  mid:BWMD_00319  ?PartTypeobject .
+        ?PartTypeobject rdf:type [rdfs:label "PartType"@en];
+        		mid:BWMD_00313  ?PartType .
+        
+        ?ProcessParameterSet mid:BWMD_00323 ?LayerThicknessobject .
+        ?LayerThicknessobject rdf:type  [rdfs:label "AdditiveManufacturingLayerThickness"@en];  
+                  mid:BWMD_00314  ?LayerThickness ;
+                  mid:BWMD_00312  ?LayerThicknessUnit .
+    
+    	?ProcessParameterSet mid:BWMD_00323 ?BPTempobject.
+    	?BPTempobject rdf:type [rdfs:label "BuildPlatformTemperature"@en];
+                  mid:BWMD_00314  ?BuildPlatformTemperature ;
+                  mid:BWMD_00312  ?BuildPlatformTemperatureUnit .                                                                     
+        
+        ?ProcessParameterSet mid:BWMD_00323  ?ProcessParametersobject .
+        ?ProcessParametersobject rdf:type [rdfs:label "ProcessParameters"@en];
+        			mid:BWMD_00319  ?ProcessParameterNameobject .
+        ?ProcessParameterNameobject mid:BWMD_00313  ?NameOfProcessParameter .
+        
+        ?MetalPowder mid:BWMD_00337 ?LPBFProcess;
+         	rdf:type [rdfs:label "MetalPowder"@en];
+			mid:BWMD_00322 ?Material .
+        ?Material rdf:type [rdfs:label "EngineeringMaterial"@en];
+            #mid:BWMD_00319 ?MaterialNameobject ;
+        	mid:BWMD_00319 ?MaterialStateIDobject .
+        ?MaterialStateIDobject rdf:type [rdfs:label "MaterialStateID"@en];
+            mid:BWMD_00313 ?PowderName.
+    #SERVICE <https://fuseki.materials.digital/AluTrace_IWM/sparql> {     
+        
+    ?InputObjectNext_i mid:BWMD_00337 ?ProcessNext;
+                a [rdfs:label "TechnologicalProduct"@en];
+                mid:BWMD_00319 ?oidNext_1.#, ?oid_2.
+    ?oidNext_1 a mid:BWMD_00358; #ObjectID
+           mid:BWMD_00313 ?InputObjectNext_name.
+
+	?ProcessNext a [rdfs:label "QuasiStaticTensileTest"@en];
+                         mid:BWMD_00331 ?OutputObjectNext_i.
+    
+    ?OutputObjectNext_i a [rdfs:label "TechnologicalProduct"@en];
+                    mid:BWMD_00319/mid:BWMD_00313 ?OutputObjectNext_name.
+    #HT and surface info: 
+    ?InputObjectNext_i ((mid:BWMD_00337/mid:BWMD_00323)/mid:BWMD_00331)/mid:BWMD_00313 ?Surface .
+    ?InputObjectNext_i mid:BWMD_00322  ?EngineeringMaterial .
+    ?EngineeringMaterial a mid:BWMD_00002 ;
+                      mid:BWMD_00319  ?HTreatID .
+    ?HTreatID  a  domain:BWMD_00060 ;
+              mid:BWMD_00313  ?HeatTreatment_ID .
+    #Tensile Test control parameters:
+    ?ProcessNext (mid:BWMD_00339)+ ?TTProcessParameterSet. #Process hasControlInfo (mid:BWMD_00339) TTProcessParameterSet (mid:BWMD_00009)
+    ?TTProcessParameterSet mid:BWMD_00323 ?TempTTParameter, ?TTStrainRate. #hasPart
+    ?TempTTParameter a domain:BWMD_00743; #MaterialSurfaceTemperatureAsSupposed
+                  mid:BWMD_00316 ?TemperatureControlParameterValue; #hasIntegerLiteral (mid:BWMD_00314)  
+                  mid:BWMD_00312 ?TemperatureUnitSymbol.  #hasUnitSymbol (mid:BWMD_00312)
+    ?TTStrainRate a [rdfs:label "StrainRate"@en]; #CrossheadSeparationRate
+                  mid:BWMD_00314 ?StrainRateValue; #hasDoubleLiteral (mid:BWMD_00314)  
+                  mid:BWMD_00312 ?StrainRateUnitSymbol.  #hasUnitSymbol (mid:BWMD_00312)
+    #Tensile Test Data:
+    ?ProcessNext mid:BWMD_00331 ?TTDataSet.     #hasOutput           
+    ?TTDataSet a mid:BWMD_00068; #Class TTDataSet
+                    mid:BWMD_00323 ?MatProp_i.
+    ?MatProp_i mid:BWMD_00323 ?rm_i, ?rp02_i, ?A_i, ?Ag_i, ?Ym_i.
+            ?rm_i     rdf:type        domain:BWMD_00595 ;
+                      mid:BWMD_00314  ?R_UTS_value ;
+                      mid:BWMD_00312  ?R_UTS_unit .
+            ?rp02_i   rdf:type        domain:BWMD_00350 ;
+                      mid:BWMD_00314  ?Rp02_value ;
+                      mid:BWMD_00312  ?Rp02_unit .
+            ?A_i      rdf:type        domain:BWMD_00500 ;
+                      mid:BWMD_00314  ?A5_value ;
+                      mid:BWMD_00312  ?A5_unit .
+            ?Ag_i     rdf:type        domain:AT_00061; #StrainAtUTS
+                      mid:BWMD_00314 ?Ag_value; #hasDoubleLiteral  
+                      mid:BWMD_00312 ?Ag_unit.
+            ?Ym_i     rdf:type        domain:BWMD_00471 ;
+                      mid:BWMD_00314  ?Ym_value ;
+                      mid:BWMD_00312  ?Ym_unit.
+    
+     ?TensileSpecimen (mid:BWMD_00337/mid:BWMD_00331/mid:BWMD_00323/mid:BWMD_00319/mid:BWMD_00345) ?TensileTestFile.    #if actives it retrieves the download link for the AluTrace tensile tests     
+        
+        
+     FILTER ( ?PartID_fem = xsd:string(?InputObjectNext_name) )
+       
+    }

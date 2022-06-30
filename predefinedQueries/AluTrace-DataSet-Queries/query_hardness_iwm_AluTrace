@@ -1,0 +1,27 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ?object_name ?HT_name ?AvgHardness_value ?AvgHardness_unit
+WHERE 
+{ 
+    ?TechProduct_i mid:BWMD_00337 ?HardnessMeasurement;
+                a [rdfs:label "MetallographicSpecimen"@en];
+                mid:BWMD_00319 ?oid_i.
+    ?oid_i a mid:BWMD_00358; #ObjectID
+           mid:BWMD_00313 ?object_name.
+    ?TechProduct_i mid:BWMD_00322/mid:BWMD_00319 ?HT_ID.
+    ?HT_ID a domain:BWMD_00060;
+           mid:BWMD_00313 ?HT_name.#HeatTreatmentID
+    
+    #retrive hardness measurements
+    ?HardnessMeasurement a [rdfs:label "BrinellIndentation"@en];
+                         mid:BWMD_00331 ?processDataSet.
+    ?processDataSet a [rdfs:label "ProcessDataSet"@en];
+                     mid:BWMD_00323 ?AvgHardness.
+    ?AvgHardness mid:BWMD_00314 ?AvgHardness_value;
+          mid:BWMD_00312 ?AvgHardness_unit.
+}

@@ -1,0 +1,73 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX fatigue: <http://www.materials.fraunhofer.de/ontologies/AluTrace_ontology/fatigue#>
+PREFIX def: <http://www.materials.fraunhofer.de/ontologies/AluTrace_ontology/defects#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?HCFPartSetID_Extern ?HCFTestID_Intern ?HeatTreatment_ID ?SLMLayerThickness_Value ?SLMLayerThickness_Unit ?SLMLayerThickness_Value ?SLMLayerThickness_Unit ?Surface_Value ?Temperature_Value ?Temperature_Unit ?SSa_Value ?SSa_Unit  ?Ym_Value ?Epsa_Value ?Epsa_Unit ?Nf_Value ?Nf_Unit ?FractureDescript_Value ?a0_Murakami_Value ?a0_Murakami_Unit #?SSlimit_Value ?SSlimit_Unit
+WHERE { 
+    ?specimenHCF a [rdfs:label "FatigueTestSpecimen"@en].  
+    ?HCFtest a [rdfs:label "HighCycleFatigueTest"@en].
+    ?specimenHCF mid:BWMD_00337 ?HCFtest. #isInputFor 
+    ?specimenHCF mid:BWMD_00319 [a mid:BWMD_00360;       #exten_object_ID 
+                     mid:BWMD_00313 ?HCFPartSetID_Extern].#hasStringLiteral
+    ?specimenHCF  mid:BWMD_00319 [a mid:BWMD_00358; #FatigueTestSpecimen
+                      mid:BWMD_00313 ?HCFTestID_Intern].       #hasIdentifier (mid:BWMD_00319) hasStringLiteral (mid:BWMD_00313)
+    ?specimenHCF  mid:BWMD_00322 ?EngineeringMaterial.#isComposedOf EngineeringMaterial
+    ?EngineeringMaterial a mid:BWMD_00002;
+                      mid:BWMD_00319 ?HTreatID. #hasIdentifier
+    ?HTreatID a fatigue:BWMD_00060;#of class HeatreatmentID
+              mid:BWMD_00313 ?HeatTreatment_ID.  #hasStringValue  
+        #get SLM info (modelled as participant, only as back up)
+    ?specimenHCF mid:BWMD_00337/mid:BWMD_00328 ?SLMLayerThickness. # instance of length. 
+    ?SLMLayerThickness a mid:BWMD_00127; #Length
+                mid:BWMD_00314 ?SLMLayerThickness_Value; #hasIntegerLiteral (mid:BWMD_00314)  
+                mid:BWMD_00312 ?SLMLayerThickness_Unit.  #hasUnitSymbol (mid:BWMD_00312) 
+    ?specimenHCF mid:BWMD_00337/mid:BWMD_00328 ?SLMBuildingOrientation. # instance of length. 
+    ?SLMBuildingOrientation a mid:BWMD_00098; #Angle
+                mid:BWMD_00313 ?SLMBuildingOrientation_Value; #
+                mid:BWMD_00312 ?SLMBuildingOrientation_Unit.  #hasUnitSymbol (mid:BWMD_00312) 
+    ?specimenHCF mid:BWMD_00337/mid:BWMD_00323/mid:BWMD_00331 ?Surface. # Surface. #update with precedes
+    ?Surface a mid:BWMD_00179; #MaterialSurfaceStructureInfo
+                mid:BWMD_00313 ?Surface_Value. #
+
+        
+        #get control info
+    ?specimenHCF mid:BWMD_00337/mid:BWMD_00339/mid:BWMD_00323 ?TempHCFPar. 
+    ?TempHCFPar a fatigue:BWMD_00062; #MaterialSurfaceTemperatureAsSupposed
+                mid:BWMD_00314 ?Temperature_Value; #hasIntegerLiteral (mid:BWMD_00314)  
+                mid:BWMD_00312 ?Temperature_Unit.  #hasUnitSymbol (mid:BWMD_00312) 
+   ?specimenHCF mid:BWMD_00337/mid:BWMD_00339/mid:BWMD_00323 ?SS_aPar.
+   ?SS_aPar a fatigue:AT_00070; #StrainAmp
+                mid:BWMD_00314 ?SSa_Value; #hasIntegerLiteral (mid:BWMD_00314)  
+                mid:BWMD_00312 ?SSa_Unit.  #hasUnitSymbol (mid:BWMD_00312) 
+        #get MatProp
+  #  ?specimenHCF (mid:BWMD_00337/mid:BWMD_00331/(mid:BWMD_00323)+) ?SSlimit. #precedes (mid:BWMD_00335)
+  #  ?SSlimit a [rdfs:label "FatigueLimit"@en].
+  #  ?SSlimit mid:BWMD_00314 ?SSlimit_Value;
+  #        mid:BWMD_00312 ?SSlimit_Unit.
+    ?specimenHCF (mid:BWMD_00337/mid:BWMD_00331/(mid:BWMD_00323)+) ?Ym. #precedes (mid:BWMD_00335)
+    ?Ym a [rdfs:label "YoungsModulus"@de].
+    ?Ym mid:BWMD_00314 ?Ym_Value;
+        mid:BWMD_00312 ?Ym_Unit.
+     #get evaluated  stress_a and lifetime-->analyzed data set
+    ?specimenHCF (mid:BWMD_00337/mid:BWMD_00331/(mid:BWMD_00323)+) ?N_f. #precedes (mid:BWMD_00335)
+    ?N_f a [rdfs:label "CyclesUntilFailure"@en].
+    ?N_f mid:BWMD_00316 ?Nf_Value;
+          mid:BWMD_00312 ?Nf_Unit.
+    ?specimenHCF (mid:BWMD_00337/mid:BWMD_00331/(mid:BWMD_00323)+) ?Eps_a. #precedes (mid:BWMD_00335)
+    ?Eps_a a [rdfs:label "StrainMechAmplitudeFatigueTest"@en].
+    ?Eps_a mid:BWMD_00314 ?Epsa_Value;
+          mid:BWMD_00312 ?Epsa_Unit.
+    ?specimenHCF (mid:BWMD_00337/mid:BWMD_00331/(mid:BWMD_00323)+) ?FractureDescript. #precedes (mid:BWMD_00335)
+    ?FractureDescript a [rdfs:label "SpecimenFractureDescription"@en];                                                      
+              mid:BWMD_00313 ?FractureDescript_Value.  
+     #get analyzed defects-->modelled as subprocess in the same graph
+     ?specimenHCF (mid:BWMD_00337/mid:BWMD_00331/mid:BWMD_00337/mid:BWMD_00331)/(mid:BWMD_00323+) ?a0_Murakami. #precedes (mid:BWMD_00335)
+     ?a0_Murakami a [rdfs:label "InferredInitialCrackLengthMurakami"@de];
+          mid:BWMD_00314 ?a0_Murakami_Value;
+          mid:BWMD_00312 ?a0_Murakami_Unit.           
+}
+LIMIT 10
