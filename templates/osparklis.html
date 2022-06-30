@@ -19,6 +19,8 @@
   
 	gtag('config', 'your_analytiks_tag');
   </script>
+  <link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
   {% endblock %}
   
   {% block html_attribs %} lang="en"{% endblock %}
@@ -98,11 +100,10 @@
 		</div>
 	</div>
 
-
-	<div id="control-navig" class="navbar" data-spy="affix" data-offset-top="75">
-		<div class="nav navbar-nav navbar-left">
+	<div id="control-navig" class="navbar navbar-expand-lg" data-spy="affix" data-offset-top="75">
+		<div class="">
 			<span class="btn-group">
-				<button id="button-home" class="btn btn-primary btn-md navbar-btn">
+				<button id="button-home" class="btn btn-primary btn-lg navbar-btn">
 					<span class="tooltiped">
 						<span class="tooltip lang-en">Click to reset the query</span>
 						<span class="tooltip lang-fr">Cliquer pour réinitialiser la requête</span>
@@ -111,7 +112,7 @@
 						<span class="glyphicon glyphicon-home"></span>
 					</span>
 				</button>
-				<button id="button-back" class="btn btn-primary btn-md navbar-btn">
+				<button id="button-back" class="btn btn-primary btn-lg navbar-btn">
 					<span class="tooltiped">
 						<span class="tooltip lang-en">Click to go back in navigation history</span>
 						<span class="tooltip lang-fr">Cliquer pour revenir à la requête précédente</span>
@@ -120,7 +121,7 @@
 						<span class="glyphicon glyphicon-arrow-left"></span>
 					</span>
 				</button>
-				<button id="button-forward" class="btn btn-primary btn-md navbar-btn">
+				<button id="button-forward" class="btn btn-primary btn-lg navbar-btn">
 					<span class="tooltiped">
 						<span class="tooltip lang-en">Click to go forward in navigation history</span>
 						<span class="tooltip lang-fr">Cliquer pour retourner à la requête suivante</span>
@@ -129,7 +130,7 @@
 						<span class="glyphicon glyphicon-arrow-right"></span>
 					</span>
 				</button>
-				<button id="button-refresh" class="btn btn-primary btn-md navbar-btn">
+				<button id="button-refresh" class="btn btn-primary btn-lg navbar-btn">
 					<span class="tooltiped">
 						<span class="tooltip lang-en">Click to refresh the current view, e.g. after changing the
 							configuration</span>
@@ -149,7 +150,7 @@
 				<span class="tooltip lang-fr">Cliquer pour afficher le lien permanent vers la vue actuelle</span>
 				<span class="tooltip lang-es">Haga clic para mostrar el enlace permanente a la vista actual</span>
 				<span class="tooltip lang-nl">Klik om de permanente link naar de huidige weergave weer te geven </span>
-				<button id="permalink" class="btn btn-info btn-md navbar-btn">Permalink</button>
+				<button id="permalink" class="btn btn-info btn-lg navbar-btn">Permalink</button>
 			</span>
 
 			<div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -200,7 +201,7 @@
 						</a>
 					</h5>
 				</div>
-				<div id="collapse-query" class="panel-collapse collapse out">
+				<div id="collapse-query" class="panel-collapse collapse show">
 					<div id="query-body" class="panel-body">
 						<span class="tooltiped">
 							<span class="tooltip lang-en">Click on a query element to change focus</span>
@@ -227,7 +228,7 @@
 						</a>
 					</h5>
 				</div>
-				<div id="collapse-increments" class="panel-collapse collapse in">
+				<div id="collapse-increments" class="panel-collapse collapse show">
 					<div id="increments-body" class="panel-body">
 						<!--
 	  <div id="current-focus">
@@ -607,7 +608,7 @@
 			<div id="results" class="panel panel-info">
 				<div class="panel-heading">
 					<h5 class="panel-title">
-						<a data-toggle="collapse" data-target="#collapse-results">
+						<a data-toggle="collapse " data-target="#collapse-results">
 							<span class="texte lang-en">Results of your query</span>
 							<span class="texte lang-fr">Résultats de votre requête</span>
 							<span class="texte lang-es">Resultados de tu consulta</span>
@@ -626,7 +627,7 @@
 						</span>
 					</h5>
 				</div>
-				<div id="collapse-results" class="panel-collapse collapse in">
+				<div id="collapse-results" class="panel-collapse collapse show">
 					<div class="panel-body">
 						<ul class="nav nav-tabs">
 							<li id="nav-results-nested-table" class="active"><a id="nav-tab-nested-table"
@@ -659,7 +660,7 @@
 						</ul>
 						<div class="tab-content">
 
-							<div id="results-nested-table" class="tab-pane fade in active">
+							<div id="results-nested-table" class="tab-pane active">
 								<div id="nested-table">
 									No nested table
 								</div>
@@ -673,7 +674,7 @@
 								</div>
 							</div>
 
-							<div id="results-table" class="tab-pane fade">
+							<div id="results-table" class="tab-pane">
 								<div id="control-results">
 									<span class="tooltiped">
 										<span class="tooltip lang-en">Click to show the previous page of results</span>

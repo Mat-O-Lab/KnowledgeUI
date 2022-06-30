@@ -3,12 +3,14 @@ import os
 from flask import Flask, flash, request, jsonify, render_template
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
+from flask_cors import CORS
 
 from config import config
 
 config_name = os.environ.get("APP_MODE") or "development"
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
 
