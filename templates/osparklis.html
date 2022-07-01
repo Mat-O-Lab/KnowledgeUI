@@ -55,6 +55,9 @@
 <script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
+
+	alert = function(){}
+
 	function filterNodesById(nodes, id) {
 		return nodes.filter(function (n) { return n.id === id; });
 	}
