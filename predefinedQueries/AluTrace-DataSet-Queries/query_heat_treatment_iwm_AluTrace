@@ -1,0 +1,56 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+select distinct * #?specimen_name 
+#?part_name
+#?temperature_aging
+#?temperature_aging_unit
+#?duration_aging
+#?duration_aging_unit
+#?temperatue_annealing
+#?temperatue_annealing_unit
+#?duration_annealing
+#?duration_annealing_unit
+
+where {
+    ## pattern for specimen name
+    ?si mid:BWMD_00337 ?pi;#input
+                a [rdfs:label "TechnologicalProduct"@en];
+                mid:BWMD_00319 ?oid_i.
+    ?oid_i a mid:BWMD_00358; #ObjectID
+           mid:BWMD_00313 ?object_name.
+    
+    {?pi a domain:BWMD_00678.} union {?pi a domain:BWMD_00526.} #hardness or tensile testing
+        ## pattern for Solution Annealing
+    
+    ?si (^mid:BWMD_00331|^mid:BWMD_00337|^owl:sameAs)+ ?s_annealing. #input or output
+    ?s_annealing a domain:BWMD_00548;  #:SolutionAnnealing
+                   mid:BWMD_00339 ?control_info_annealing. #:hasControlInfo
+    ?control_info_annealing mid:BWMD_00323 ?temperatue_annealing_n, ?duration_annealing_n.#:hasPart
+    ?temperatue_annealing_n a domain:BWMD_00469; #:SolutionAnnealingTemperatureAsSupposed
+                              mid:BWMD_00314 ?temperatue_annealing; #:hasDoubleLiteral
+                              mid:BWMD_00312 ?temperatue_annealing_unit.#:hasUnitSymbol
+    ?duration_annealing_n a domain:BWMD_00651; # :SolutionAnnealingDurationAsSupposed
+                             mid:BWMD_00314 ?duration_annealing; #:hasDoubleLiteral
+                             mid:BWMD_00312 ?duration_annealing_unit.#:hasUnitSymbol
+   # pattern for Artificial Aging
+     ?si (^mid:BWMD_00331|^mid:BWMD_00337|^owl:sameAs)+ ?s_aging.
+     ?s_aging a domain:BWMD_00736; #:ArtificialAging;
+                 mid:BWMD_00339  ?control_info_aging.#:hasControlInfo
+     ?control_info_aging mid:BWMD_00323 ?temperature_aging_n, ?duration_aging_n. #:hasPart
+     ?temperature_aging_n a domain:BWMD_00581; #:ArtificialAgingTemperatureAsSupposed
+                            mid:BWMD_00314 ?temperature_aging;#:hasDoubleLiteral
+                            mid:BWMD_00312 ?temperature_aging_unit.#:hasUnitSymbol
+     ?duration_aging_n a domain:BWMD_00609;#:ArtificialAgingDurationAsSupposed
+                           mid:BWMD_00314 ?duration_aging;#:hasDoubleLiteral
+                           mid:BWMD_00312 ?duration_aging_unit.#:hasUnitSymbol
+
+
+ 
+   }

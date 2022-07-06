@@ -1,0 +1,8 @@
+This folder contains different SPARQL queries to access the specific information of the AluTrace graph. Most of the queries included in this folder are also integrated in the Jupyter Notebook which aims to analyze the aluTrace process data and have been saved as well as SPARQL queries in the MatOLab GraphDB instance.
+
+The [process chain query](RDF-DataSets-IWM/AluTrace-DataSet/SPARQL-Queries/query_ProcessChain_iwm_AluTrace) is not included in the Jupyter Notebook, but it has been saved as query in the MatOLab GraphDB Free instance. This query retrieves the digital process chain of one specific object, by giving its object identifier or label.
+
+Note that by matching the object identifiers from the [heat treatment query](RDF-DataSets-IWM/AluTrace-DataSet/SPARQL-Queries/query_heat_treatment_iwm_AluTrace) and the [hardness query](RDF-DataSets-IWM/AluTrace-DataSet/SPARQL-Queries/query_hardness-LPBF_iwm_AluTrace), it is possible to study the influence of the heat treatment againg duration on the hardness value. However, possible variations of the LPBF production parameters for the additive manufacturing of the processed specimens should be accounted for, as they could possibly impact as well on the hardness value. The influence of the LPBF parameters variationon the hardness can be studied via the [Material data analysis Jupyter Notebook](RDF-DataSets-IWM/AluTrace-DataSet/Demo_AluTrace_ParameterStudy_IWM_github.ipynb).
+
+In order to write new queries, have a look at the [KDB template files](KnowledgeBase-CallMeAL/RDF-DataSets-IWM/AluTrace-DataSet/KDB-Process_templates/) for the different process, which show the pattern used to link the different instances.
+

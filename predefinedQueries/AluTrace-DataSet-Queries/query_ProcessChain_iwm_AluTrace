@@ -1,0 +1,22 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+construct{
+    ?s ?p ?o.
+}
+where {
+    ## connect component to component name and filter it
+    ?component a mid:BWMD_00036; ##mid:BWMD_00036 --> TechnologicalProduct
+              mid:BWMD_00319 ?componentNamei. ##mid:BWMD_00319 --> hasIdentifier
+    ?componentNamei a mid:BWMD_00001; ##mid:BWMD_00001 --> Identifier
+                   mid:BWMD_00313 ?componentName. ##mid:BWMD_00313 --> hasStringLiteral
+    filter(strends(str(?componentName), "E54D59")).
+    
+    ## find process chain of the component
+    ?component (mid:BWMD_00324)*|(^mid:BWMD_00324)+ ?s. ##mid:BWMD_00324 --> hasChronologicalConnection
+    ?s ?p ?o.
+    #?p rdfs:subPropertyOf mid:BWMD_00324.
+    filter(?p = mid:BWMD_00331 || ?p = mid:BWMD_00337).
+}

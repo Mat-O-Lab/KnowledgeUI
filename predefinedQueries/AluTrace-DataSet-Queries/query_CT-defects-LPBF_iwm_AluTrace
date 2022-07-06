@@ -1,0 +1,91 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX def: <http://www.materials.fraunhofer.de/ontologies/AluTrace_ontology/defects#>
+PREFIX  lpbfo: <https://www.emi.fraunhofer.de/ontologies/LPBFO#>
+PREFIX  domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+select distinct ?PartID_fem ?PartType ?PowderName  ?BuildOrientationAngle ?LayerThickness ?LayerThicknessUnit ?BuildPlatformTemperature ?object_name  ?VoxelEdgeLength_value ?VoxelEdgeLength_unit ?PowerXRayTube_value ?PowerXRayTube_unit ?PoreCount_value ?AvgPoreDiameter_value ?AvgPoreDiameter_unit
+?StdPoreDiameter_value ?StdPoreDiameter_unit
+WHERE {
+    ###Defects and CT
+        ?TechProduct_i mid:BWMD_00337 ?CTScan;
+                a [rdfs:label "TechnologicalProduct"@en];
+                mid:BWMD_00319 ?oid_i.
+        ?oid_i a mid:BWMD_00358; #ObjectID
+           mid:BWMD_00313 ?object_name.
+
+        ?CTScan a [rdfs:label "ThreeDimensionalXRayComputerTomography"@en].
+	    ?CTScan mid:BWMD_00339 ?processDataSet.
+                        
+        ?processDataSet a [rdfs:label "ProcessParameterSet"@en];
+                    mid:BWMD_00323 ?VoxelEdgeLength,?PowerXRayTube.
+        ?VoxelEdgeLength a  [rdfs:label "VoxelEdgeLength"@en];
+          mid:BWMD_00314 ?VoxelEdgeLength_value;
+          mid:BWMD_00312 ?VoxelEdgeLength_unit.
+        ?PowerXRayTube a  [rdfs:label "PowerXRayTube"@en];
+          mid:BWMD_00314 ?PowerXRayTube_value;
+          mid:BWMD_00312 ?PowerXRayTube_unit.
+        ?TechProduct_i (mid:BWMD_00337/mid:BWMD_00331)*/mid:BWMD_00323 ?AnalyzedDataSet.
+        ?AnalyzedDataSet a [rdfs:label "AnalysedDataSet"@en];
+                    mid:BWMD_00323 ?PoreCount,?AvgPoreDiameter,?StdPoreDiameter.
+        ?PoreCount a  [rdfs:label "PoreCount"@en];
+          mid:BWMD_00316 ?PoreCount_value.
+        ?AvgPoreDiameter a  [rdfs:label "AveragePoreDiameter"@en];
+          mid:BWMD_00314 ?AvgPoreDiameter_value;
+          mid:BWMD_00312 ?AvgPoreDiameter_unit.
+        ?StdPoreDiameter a  [rdfs:label "StandardDeviationOfPoreDiameter"@en];
+          mid:BWMD_00314 ?StdPoreDiameter_value;
+          mid:BWMD_00312 ?StdPoreDiameter_unit.
+   ####LPBF
+     #SERVICE <https://fuseki.materials.digital/AluTrace_femLPBF/sparql> {
+  		?LPBFProcess  rdf:type [rdfs:label "LaserPowderBedFusion"@en];
+        		  mid:BWMD_00331  ?BuildPlatformobject .
+        ?BuildPlatformobject rdf:type [rdfs:label "BuildPlatformWithPartSet"@en];
+         		mid:BWMD_00337 ?Separating .
+        ?Separating  mid:BWMD_00331  ?Part .
+        ?Part rdf:type [rdfs:label "Part"@en];
+        	mid:BWMD_00319  _:b0.
+		_:b0 rdf:type _:b1 ;
+       		mid:BWMD_00313  ?PartID_fem .
+        _:b1 rdfs:label "PartID"@en.
+
+        ?LPBFProcess  mid:BWMD_00339  ?ProcessParameterSet .
+        ?ProcessParameterSet rdf:type [rdfs:label "ProcessParameterSet"@en] .
+        
+        ?Part  mid:BWMD_00319  ?BuildOrientationobject .
+        ?BuildOrientationobject rdf:type [rdfs:label "BuildOrientationAngleRelativeToBuildPlatform"@en];
+                  mid:BWMD_00314  ?BuildOrientationAngle ;
+                  mid:BWMD_00312  ?BuildOrientationUnit .
+        
+        ?Part  mid:BWMD_00319  ?PartTypeobject .
+        ?PartTypeobject rdf:type [rdfs:label "PartType"@en];
+        		mid:BWMD_00313  ?PartType .
+        
+        ?ProcessParameterSet mid:BWMD_00323 ?LayerThicknessobject .
+        ?LayerThicknessobject rdf:type  [rdfs:label "AdditiveManufacturingLayerThickness"@en];  
+                  mid:BWMD_00314  ?LayerThickness ;
+                  mid:BWMD_00312  ?LayerThicknessUnit .
+    
+    	?ProcessParameterSet mid:BWMD_00323 ?BPTempobject.
+    	?BPTempobject rdf:type [rdfs:label "BuildPlatformTemperature"@en];
+                  mid:BWMD_00314  ?BuildPlatformTemperature ;
+                  mid:BWMD_00312  ?BuildPlatformTemperatureUnit .                                                                     
+        
+        ?ProcessParameterSet mid:BWMD_00323  ?ProcessParametersobject .
+        ?ProcessParametersobject rdf:type [rdfs:label "ProcessParameters"@en];
+        			mid:BWMD_00319  ?ProcessParameterNameobject .
+        ?ProcessParameterNameobject mid:BWMD_00313  ?NameOfProcessParameter .
+        
+        ?MetalPowder mid:BWMD_00337 ?LPBFProcess;
+         	rdf:type [rdfs:label "MetalPowder"@en];
+			mid:BWMD_00322 ?Material .
+        ?Material rdf:type [rdfs:label "EngineeringMaterial"@en];
+            #mid:BWMD_00319 ?MaterialNameobject ;
+        	mid:BWMD_00319 ?MaterialStateIDobject .
+        ?MaterialStateIDobject rdf:type [rdfs:label "MaterialStateID"@en];
+            mid:BWMD_00313 ?PowderName.
+       FILTER ( ?PartID_fem = xsd:string(?object_name) )
+ }

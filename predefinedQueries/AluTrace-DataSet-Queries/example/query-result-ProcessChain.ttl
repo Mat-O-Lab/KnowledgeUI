@@ -1,0 +1,107 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#SolutionAnnealing__1_d59d79d6-5400-4ad3-ac38-a472746ed14b>
+  mid:BWMD_00331 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#ProcessDataSet__1_d59d79d6-5400-4ad3-ac38-a472746ed14b>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__2+%28after+process%29_d59d79d6-5400-4ad3-ac38-a472746ed14b>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_aaea71fb-198b-4c61-8f74-8a1fa2250ff0> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#ArtificialAging__1_aaea71fb-198b-4c61-8f74-8a1fa2250ff0>
+  mid:BWMD_00331 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#ProcessDataSet__1_aaea71fb-198b-4c61-8f74-8a1fa2250ff0>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__2+%28after+process%29_aaea71fb-198b-4c61-8f74-8a1fa2250ff0>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#Component__1+%28before+test%29_2eb7601b-21fb-4df1-9c74-76dc3fca0054> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#ComponentTestCompressiveLoading__1_2eb7601b-21fb-4df1-9c74-76dc3fca0054>
+  mid:BWMD_00331 <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#Component__2+%28after+test%29_2eb7601b-21fb-4df1-9c74-76dc3fca0054>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#ProcessDataSet__1_2eb7601b-21fb-4df1-9c74-76dc3fca0054> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_d59d79d6-5400-4ad3-ac38-a472746ed14b>
+  mid:BWMD_00337 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#SolutionAnnealing__1_d59d79d6-5400-4ad3-ac38-a472746ed14b> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_10>
+  mid:BWMD_00337 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#SolutionAnnealing__1_d59d79d6-5400-4ad3-ac38-a472746ed14b> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__2+%28after+process%29_d59d79d6-5400-4ad3-ac38-a472746ed14b>
+  mid:BWMD_00337 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#ArtificialAging__1_aaea71fb-198b-4c61-8f74-8a1fa2250ff0> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_aaea71fb-198b-4c61-8f74-8a1fa2250ff0>
+  mid:BWMD_00337 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#ArtificialAging__1_aaea71fb-198b-4c61-8f74-8a1fa2250ff0> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__2+%28after+process%29_aaea71fb-198b-4c61-8f74-8a1fa2250ff0>
+  mid:BWMD_00337 <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#ComponentTestCompressiveLoading__1_2eb7601b-21fb-4df1-9c74-76dc3fca0054>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#Preparation__1_2eb7601b-21fb-4df1-9c74-76dc3fca0054> .
+
+<http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#Component__1+%28before+test%29_2eb7601b-21fb-4df1-9c74-76dc3fca0054>
+  mid:BWMD_00337 <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#ComponentTestCompressiveLoading__1_2eb7601b-21fb-4df1-9c74-76dc3fca0054>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#Preparation__1_2eb7601b-21fb-4df1-9c74-76dc3fca0054> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#Separation+Process+%28Parts+from+Build+Platform%29_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00331 <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1_975cdb22-1255-468b-9182-62697b3d9d77>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_25>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1_35cdf17d-29ae-4213-a1d8-eecd7dcc248f>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_26>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1_99f5bd39-fb26-445d-9626-bef2b7a761a9>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_24>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1_e9b3c45d-9d00-4f3e-9b6e-276cb442d7f1>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_1>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1_41385712-98cb-4f6e-a1c1-9279f63681d5>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_20>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_d59d79d6-5400-4ad3-ac38-a472746ed14b>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_10>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_dc17c659-1447-4bd0-b825-f48416b673a5>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_2>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_353b5b73-1b2a-4cd3-b64b-3a380b057ea5>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_18>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_574126d6-e1f6-4107-b7a5-2aab7e499b9f>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_17>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_11>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#Component__1+%28before+test%29_91c61f84-5e58-45bb-a62d-8740d3e98f5b>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_12>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_b5e84d67-9c58-4d62-953e-3611c1aaaa63>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_13>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_154fac48-f976-4b1a-993c-f6150bfe8091>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_14>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_6124cb95-cece-4f25-86c6-0eda4ce44db3>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_15>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_868c7953-3422-4193-8bcf-45046c6676c4>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_16>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_1d3eda63-123f-424a-b066-09a0938a46fc>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_19>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/BWMD_merged_domain#CylindricalTensileTestSpecimen__1+%28before+test%29_0888a588-6766-4606-b6ca-e017644f83c6>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_21>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_22>,
+    <http://www.semanticweb.org/trell/ontologies/2020/10/merged_HDF5#TechnologicalProduct__1+%28before+process%29_b5fcf1bb-afa6-4b1c-9698-2d44766d796f>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_23>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_3>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_4>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_5>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_6>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_7>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_8>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separated+Part_08086b36-d12a-4145-a045-9f024ce990f8_9> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#LPBF+Process_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00331 <https://www.emi.fraunhofer.de/ontologies/LPBFO#Build+Platform+with+Part+Set+%28after+LPBF+Process%29_08086b36-d12a-4145-a045-9f024ce990f8>,
+    <https://www.emi.fraunhofer.de/ontologies/LPBFO#Metal+Powder+%28Remainder+after+LPBF+Prozess%29_08086b36-d12a-4145-a045-9f024ce990f8> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#Part+positioning+on+build+platform_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00331 <https://www.emi.fraunhofer.de/ontologies/LPBFO#Build+Job+File+%28.ilt%29_08086b36-d12a-4145-a045-9f024ce990f8> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#Build+Platform+with+Part+Set+%28after+LPBF+Process%29_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00337 <https://www.emi.fraunhofer.de/ontologies/LPBFO#Separation+Process+%28Parts+from+Build+Platform%29_08086b36-d12a-4145-a045-9f024ce990f8> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#Metal+Powder+%28before+LPBF+Process%29_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00337 <https://www.emi.fraunhofer.de/ontologies/LPBFO#LPBF+Process_08086b36-d12a-4145-a045-9f024ce990f8> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#Build+Job+File+%28.ilt%29_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00337 <https://www.emi.fraunhofer.de/ontologies/LPBFO#LPBF+Process_08086b36-d12a-4145-a045-9f024ce990f8> .
+
+<https://www.emi.fraunhofer.de/ontologies/LPBFO#CAD+Component+Design+%28.stl%29_08086b36-d12a-4145-a045-9f024ce990f8>
+  mid:BWMD_00337 <https://www.emi.fraunhofer.de/ontologies/LPBFO#Part+positioning+on+build+platform_08086b36-d12a-4145-a045-9f024ce990f8> .

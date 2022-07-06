@@ -1,0 +1,91 @@
+PREFIX mid: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX emislm: <https://www.emi.fraunhofer.de/ontologies/EMISLM_ontology#>
+PREFIX domain: <https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select distinct  ?PartID_fem ?FEM_ID ?IWM_ID ?PartType ?PowderName  ?BuildOrientationAngle ?LayerThickness ?LayerThicknessUnit ?BuildPlatformTemperature    ?HT_ID ?TemperatureControlParameterValue ?TemperatureUnitSymbol ?Fmax_value ?Fmax_unit ?Displmax_value ?Displmax_unit
+where { 
+    ?ComponentTest a [rdfs:label "ComponentTestCompressiveLoading"@en].
+    ?Component mid:BWMD_00337 ?ComponentTest. #isInputFor (mid:BWMD_00337) QuasiStaticTensileTest (domain:BWMD_00526)
+    ?Component mid:BWMD_00319 [a mid:BWMD_00360;        
+                     mid:BWMD_00313 ?FEM_ID].
+    ?Component  mid:BWMD_00319 [a mid:BWMD_00358; #TensileTestSpecimen
+                      mid:BWMD_00313 ?IWM_ID].       #hasIdentifier (mid:BWMD_00319) hasStringLiteral (mid:BWMD_00313)
+    ?Component  mid:BWMD_00322 ?EngineeringMaterial.#isComposedOf EngineeringMaterial
+    ?EngineeringMaterial a mid:BWMD_00002;
+                      mid:BWMD_00319 ?HTreatID. #hasIdentifier
+    ?HTreatID a domain:BWMD_00060;#of class HeatreatmentID
+              mid:BWMD_00313 ?HT_ID .  #hasStringValue      
+    ?ComponentTest mid:BWMD_00339 ?controlParameterSet. #Process hasControlInfo (mid:BWMD_00339) TTProcessParameterSet (mid:BWMD_00009)
+    ?TTProcessParameterSet mid:BWMD_00323 ?TempTTParameter. #hasPart
+    ?TempTTParameter a domain:BWMD_00743. #MaterialSurfaceTemperatureAsSupposed
+    ?TempTTParameter mid:BWMD_00316 ?TemperatureControlParameterValue. #hasIntegerLiteral (mid:BWMD_00314)  
+    ?TempTTParameter mid:BWMD_00312 ?TemperatureUnitSymbol.  #hasUnitSymbol (mid:BWMD_00312)  
+	
+
+# ComponentTest Data
+    ?ComponentTest mid:BWMD_00331/mid:BWMD_00323 ?AnalyzedDataSet.     #hasOutput           
+    ?AnalyzedDataSet a mid:BWMD_00138; #Class TTDataSet
+                   mid:BWMD_00323  ?Fmax_i, ?Displmax_i.
+
+    ?Fmax_i a domain:BWMD_00729.#MaximumTensileForce
+    ?Fmax_i mid:BWMD_00314 ?Fmax_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?Fmax_unit.
+    ?Displmax_i a domain:BWMD_00505. #CrossheadDisplacementAfterFracture
+    ?Displmax_i mid:BWMD_00314 ?Displmax_value; #hasDoubleLiteral  
+          mid:BWMD_00312 ?Displmax_unit.
+    FILTER( REGEX( str(?IWM_ID), "E54" ) ) .
+    optional{
+        #SERVICE <https://fuseki.materials.digital/AluTrace_femLPBF/sparql> {
+  		?LPBFProcess  rdf:type [rdfs:label "LaserPowderBedFusion"@en];
+        		  mid:BWMD_00331  ?BuildPlatformobject .
+        ?BuildPlatformobject rdf:type [rdfs:label "BuildPlatformWithPartSet"@en];
+         		mid:BWMD_00337 ?Separating .
+        ?Separating  mid:BWMD_00331  ?Part .
+        ?Part rdf:type [rdfs:label "Part"@en];
+        	mid:BWMD_00319  _:b0.
+		_:b0 rdf:type _:b1 ;
+       		mid:BWMD_00313  ?PartID_fem .
+        _:b1 rdfs:label "PartID"@en.
+
+        ?LPBFProcess  mid:BWMD_00339  ?ProcessParameterSet .
+        ?ProcessParameterSet rdf:type [rdfs:label "ProcessParameterSet"@en] .
+        
+        ?Part  mid:BWMD_00319  ?BuildOrientationobject .
+        ?BuildOrientationobject rdf:type [rdfs:label "BuildOrientationAngleRelativeToBuildPlatform"@en];
+                  mid:BWMD_00314  ?BuildOrientationAngle ;
+                  mid:BWMD_00312  ?BuildOrientationUnit .
+        
+        ?Part  mid:BWMD_00319  ?PartTypeobject .
+        ?PartTypeobject rdf:type [rdfs:label "PartType"@en];
+        		mid:BWMD_00313  ?PartType .
+        
+        ?ProcessParameterSet mid:BWMD_00323 ?LayerThicknessobject .
+        ?LayerThicknessobject rdf:type  [rdfs:label "AdditiveManufacturingLayerThickness"@en];  
+                  mid:BWMD_00314  ?LayerThickness ;
+                  mid:BWMD_00312  ?LayerThicknessUnit .
+    
+    	?ProcessParameterSet mid:BWMD_00323 ?BPTempobject.
+    	?BPTempobject rdf:type [rdfs:label "BuildPlatformTemperature"@en];
+                  mid:BWMD_00314  ?BuildPlatformTemperature ;
+                  mid:BWMD_00312  ?BuildPlatformTemperatureUnit .                                                                     
+        
+        ?ProcessParameterSet mid:BWMD_00323  ?ProcessParametersobject .
+        ?ProcessParametersobject rdf:type [rdfs:label "ProcessParameters"@en];
+        			mid:BWMD_00319  ?ProcessParameterNameobject .
+        ?ProcessParameterNameobject mid:BWMD_00313  ?NameOfProcessParameter .
+        
+        ?MetalPowder mid:BWMD_00337 ?LPBFProcess;
+         	rdf:type [rdfs:label "MetalPowder"@en];
+			mid:BWMD_00322 ?Material .
+        ?Material rdf:type [rdfs:label "EngineeringMaterial"@en];
+            #mid:BWMD_00319 ?MaterialNameobject ;
+        	mid:BWMD_00319 ?MaterialStateIDobject .
+        ?MaterialStateIDobject rdf:type [rdfs:label "MaterialStateID"@en];
+            mid:BWMD_00313 ?PowderName.
+        #}
+        FILTER ( ?PartID_fem = xsd:string(?FEM_ID ) )
+    }
+}
