@@ -3,12 +3,14 @@ import os
 from flask import Flask, flash, request, jsonify, render_template
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
+from flask_cors import CORS
 
 from config import config
 
 config_name = os.environ.get("APP_MODE") or "development"
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
 
@@ -23,6 +25,12 @@ def index():
         message=message,
         result=result
         )
+
+@app.route('/osparklis.html', methods=['GET'])
+def explore():
+    return render_template(
+        "osparklis.html"
+    )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

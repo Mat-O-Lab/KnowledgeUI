@@ -1,0 +1,1026 @@
+<!--
+  Copyright 2013 Sébastien Ferré, IRISA, Université de Rennes 1
+
+  This file is part of Sparklis.
+  -->
+{% extends "bootstrap/base.html" %}
+{% from 'macros.html' import navigation %}
+{% block title %}Knowledge UI{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="#">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<style type="text/css">
+		.node {
+			stroke: #fff;
+			fill: #ddd;
+			stroke-width: 1.5px;
+		}
+
+		.link {
+			stroke: #999;
+			stroke-opacity: .6;
+			stroke-width: 1px;
+		}
+
+		marker {
+			stroke: #999;
+			fill: rgba(124, 240, 10, 0);
+		}
+
+		.node-text {
+			font: 11px sans-serif;
+			fill: black;
+		}
+
+		.link-text {
+			font: 9px sans-serif;
+			fill: grey;
+		}
+
+		svg {
+			border: 1px solid black;
+		}
+	</style>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'your_analytiks_tag');
+</script>
+<link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+	alert = function(){}
+
+	function filterNodesById(nodes, id) {
+		return nodes.filter(function (n) { return n.id === id; });
+	}
+
+	function triplesToGraph(triples) {
+
+		svg.html("");
+		//Graph
+		var graph = { nodes: [], links: [] };
+
+		//Initial Graph from triples
+		triples.forEach(function (triple) {
+			var subjId = triple.subject;
+			var predId = triple.predicate;
+			var objId = triple.object;
+
+			var subjNode = filterNodesById(graph.nodes, subjId)[0];
+			var objNode = filterNodesById(graph.nodes, objId)[0];
+
+			if (subjNode == null) {
+				subjNode = { id: subjId, label: subjId, weight: 1 };
+				graph.nodes.push(subjNode);
+			}
+
+			if (objNode == null) {
+				objNode = { id: objId, label: objId, weight: 1 };
+				graph.nodes.push(objNode);
+			}
+
+
+			graph.links.push({ source: subjNode, target: objNode, predicate: predId, weight: 1 });
+		});
+
+		return graph;
+	}
+
+
+	function update() {
+		// ==================== Add Marker ====================
+		svg.append("svg:defs").selectAll("marker")
+			.data(["end"])
+			.enter().append("svg:marker")
+			.attr("id", String)
+			.attr("viewBox", "0 -5 10 10")
+			.attr("refX", 30)
+			.attr("refY", -0.5)
+			.attr("markerWidth", 6)
+			.attr("markerHeight", 6)
+			.attr("orient", "auto")
+			.append("svg:polyline")
+			.attr("points", "0,-5 10,0 0,5")
+			;
+
+		// ==================== Add Links ====================
+		var links = svg.selectAll(".link")
+			.data(graph.links)
+			.enter()
+			.append("line")
+			.attr("marker-end", "url(#end)")
+			.attr("class", "link")
+			.attr("stroke-width", 1)
+			;//links
+
+		// ==================== Add Link Names =====================
+		var linkTexts = svg.selectAll(".link-text")
+			.data(graph.links)
+			.enter()
+			.append("text")
+			.attr("class", "link-text")
+			.text(function (d) { return d.predicate; })
+			;
+
+		//linkTexts.append("title")
+		//		.text(function(d) { return d.predicate; });
+
+		// ==================== Add Link Names =====================
+		var nodeTexts = svg.selectAll(".node-text")
+			.data(graph.nodes)
+			.enter()
+			.append("text")
+			.attr("class", "node-text")
+			.text(function (d) { return d.label; })
+			;
+
+		//nodeTexts.append("title")
+		//		.text(function(d) { return d.label; });
+
+		// ==================== Add Node =====================
+		var nodes = svg.selectAll(".node")
+			.data(graph.nodes)
+			.enter()
+			.append("circle")
+			.attr("class", "node")
+			.attr("r", 8)
+			.call(force.drag)
+			;//nodes
+
+		// ==================== Force ====================
+		force.on("tick", function () {
+			nodes
+				.attr("cx", function (d) { return d.x; })
+				.attr("cy", function (d) { return d.y; })
+				;
+
+			links
+				.attr("x1", function (d) { return d.source.x; })
+				.attr("y1", function (d) { return d.source.y; })
+				.attr("x2", function (d) { return d.target.x; })
+				.attr("y2", function (d) { return d.target.y; })
+				;
+
+			nodeTexts
+				.attr("x", function (d) { return d.x + 12; })
+				.attr("y", function (d) { return d.y + 3; })
+				;
+
+
+			linkTexts
+				.attr("x", function (d) { return 4 + (d.source.x + d.target.x) / 2; })
+				.attr("y", function (d) { return 4 + (d.source.y + d.target.y) / 2; })
+				;
+		});
+
+		// ==================== Run ====================
+		force
+			.nodes(graph.nodes)
+			.links(graph.links)
+			.charge(-500)
+			.linkDistance(100)
+			.start()
+			;
+	}
+
+
+</script>
+{% endblock %}
+
+{% block html_attribs %} lang="en" {% endblock %}
+
+{% block content %}
+<header class="pb-3 mb-4 border-bottom">
+	<a href="/" class="d-flex align-items-center text-dark text-decoration-none m-3 pb-1">
+		<img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
+	</a>
+</header>
+
+<body>
+	{{ navigation() }}
+
+	<!--
+    <h2 class="texte lang-en">Sparklis - <small><em>Complex queries and exploratory search on SPARQL endpoints at your fingertips!</em></small></h2>
+    <h2 class="texte lang-fr">Sparklis - <small><em>Requêtes complexes et recherche exploratoire du bout des doigts!</em></small></h2>
+    <h2 class="texte lang-es">Sparklis - <small><em>Consultas complejas y búsqueda exploratoria sobre SPARQL endpoints en la punta de tus dedos!</em></small></h2>
+	<h2 class="texte lang-nl">Sparklis - <small><em>Complexe queries en exploratief zoeken in SPARQL endpoints binnen handbereik!</em></small></h2>
+
+      <span class="texte lang-en">NEW in 2016: nested aggregations, and computation/filtering expressions !!</span>
+      <span class="texte lang-fr">NOUVEAU en 2016 : agrégations imbriquées et expressions de calcul/filtrage !!</span>
+      <span class="texte lang-es">NUEVO en 2016 : agregaciones anidadas y expresiones de cómputo/filtrado !!</span>
+	  <span class="texte lang-nl">Nieuw in 2016: nested aggregations en berekening/filtering expressions !!</span>
+-->
+
+	<div id="control-navig" class="navbar navbar-expand-lg" data-spy="affix" data-offset-top="75">
+		<div class="">
+			<span class="btn-group">
+				<button id="button-home" class="btn btn-primary btn-lg navbar-btn">
+					<span class="tooltiped">
+						<span class="tooltip lang-en">Click to reset the query</span>
+						<span class="tooltip lang-fr">Cliquer pour réinitialiser la requête</span>
+						<span class="tooltip lang-es">Haga clic para restablecer la consulta</span>
+						<span class="tooltip lang-nl">Klik om de query opnieuw in te stellen</span>
+						<span class="glyphicon glyphicon-home"></span>
+					</span>
+				</button>
+				<button id="button-back" class="btn btn-primary btn-lg navbar-btn">
+					<span class="tooltiped">
+						<span class="tooltip lang-en">Click to go back in navigation history</span>
+						<span class="tooltip lang-fr">Cliquer pour revenir à la requête précédente</span>
+						<span class="tooltip lang-es">Haga clic para volver a la anterior consulta</span>
+						<span class="tooltip lang-nl">Klik om terug te gaan in de navigatie geschiedenis</span>
+						<span class="glyphicon glyphicon-arrow-left"></span>
+					</span>
+				</button>
+				<button id="button-forward" class="btn btn-primary btn-lg navbar-btn">
+					<span class="tooltiped">
+						<span class="tooltip lang-en">Click to go forward in navigation history</span>
+						<span class="tooltip lang-fr">Cliquer pour retourner à la requête suivante</span>
+						<span class="tooltip lang-es">Haga clic aquí para volver a la siguiente consulta</span>
+						<span class="tooltip lang-nl">Klik om verder te gaan in de navigatie geschiedenis</span>
+						<span class="glyphicon glyphicon-arrow-right"></span>
+					</span>
+				</button>
+				<button id="button-refresh" class="btn btn-primary btn-lg navbar-btn">
+					<span class="tooltiped">
+						<span class="tooltip lang-en">Click to refresh the current view, e.g. after changing the
+							configuration</span>
+						<span class="tooltip lang-fr">Cliquer pour rafraîchir la vue actuelle, ex. après avoir changer
+							la configuration</span>
+						<span class="tooltip lang-es">Haga clic para refrescar la vista actual, ej., después de cambiar
+							la configuración</span>
+						<span class="tooltip lang-nl">Klik om de huidige weergave te vernieuwen, bijv. na het wijzigen
+							van de configuratie</span>
+						<span class="glyphicon glyphicon-refresh"></span>
+					</span>
+				</button>
+			</span>
+
+			<span class="tooltiped">
+				<span class="tooltip lang-en">Click to display the permanent link to the current view</span>
+				<span class="tooltip lang-fr">Cliquer pour afficher le lien permanent vers la vue actuelle</span>
+				<span class="tooltip lang-es">Haga clic para mostrar el enlace permanente a la vista actual</span>
+				<span class="tooltip lang-nl">Klik om de permanente link naar de huidige weergave weer te geven </span>
+				<button id="permalink" class="btn btn-info btn-lg navbar-btn">Permalink</button>
+			</span>
+
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label id="button-sparklis-view" class="btn btn-default btn-md navbar-btn active">
+					<input type="radio" name="options" autocomplete="off" checked>
+					Sparklis
+				</label>
+				<!-- <label id="button-yasgui-view" class="btn btn-default btn-md navbar-btn">
+					<input type="radio" name="options" autocomplete="off">
+					YASGUI
+				</label> -->
+				<label id="button-log-view" class="btn btn-default btn-md navbar-btn">
+					<input type="radio" name="options" autocomplete="off">
+					<span class="texte lang-en">History</span>
+					<span class="texte lang-fr">Historique</span>
+					<span class="texte lang-es">Historial</span>
+					<span class="texte lang-nl">Geschiedenis</span>
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="container-fluid">
+
+		<div id="sparklis-view" class="panel-group">
+
+			<div id="query" class="panel panel-info">
+				<div class="panel-heading">
+					<h5 class="panel-title">
+						<span class="texte lang-en">Your query and its <span class="highlighted">current
+								focus</span></span>
+						<span class="texte lang-fr">Votre requête et son <span class="highlighted">focus
+								actuel</span></span>
+						<span class="texte lang-es">Tu consulta y su <span class="highlighted">foco
+								actual</span></span>
+						<span class="texte lang-nl">Uw query en zijn <span class="highlighted">huidige
+								focus</span></span>
+
+						<span class="texte lang-en"> (click on different parts of the query to change it)</span>
+						<span class="texte lang-fr"> (cliquer sur différentes parties de la requêtes pour le
+							changer)</span>
+						<span class="texte lang-es"> (Haga clic sobre las diferentes partes de la consulta para
+							cambiarlo)</span>
+						<span class="texte lang-nl"> (Klik op verschillende delen van de query om deze te
+							wijzingen)</span>
+					</h5>
+				</div>
+				<div id="collapse-query" class="panel-collapse collapse show">
+					<div id="query-body" class="panel-body">
+						<span class="tooltiped">
+							<span class="tooltip lang-en">Click on a query element to change focus</span>
+							<span class="tooltip lang-fr">Cliquer sur un élément de requête pour changer le focus</span>
+							<span class="tooltip lang-es">Haga clic en un elemento de consulta para cambiar el
+								foco</span>
+							<span class="tooltip lang-nl">Klik op een query-element om de focus te wijzigen</span>
+							<div id="lisql">
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div id="increments" class="panel panel-info">
+				<div class="panel-heading">
+					<h5 class="panel-title">
+						<span class="texte lang-en">Sparklis suggestions to refine your query</span>
+						<span class="texte lang-fr">Suggestions de Sparklis pour affiner votre requête</span>
+						<span class="texte lang-es">Sugerencias de Sparklis para refinar tu consulta</span>
+						<span class="texte lang-nl">Sparklis suggesties om uw query te verfijnen</span>
+					</h5>
+				</div>
+				<div id="collapse-increments" class="panel-collapse collapse show">
+					<div id="increments-body" class="panel-body">
+						<!--
+	  <div id="current-focus">
+	    <span class="texte lang-en">The current focus is </span>
+	    <span class="texte lang-fr">Le focus actuel est </span>
+	    <span class="texte lang-es">El foco actual es </span>
+	    <span class="texte lang-nl">De huidige focus is </span>
+	    <span class="increments-focus highlighted">the thing</span>
+	    <em>The following suggestions are relative to</em> ''<span class="focus-np">the thing</span>'' <em>(the focus entity) and the <span class="highlighted">highlighted subquery</span></em>
+	  </div>
+	  -->
+
+						<div class="row">
+							<div class="incr-box col-sm-4">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<span class="texte lang-en">Types and Relations of</span>
+										<span class="texte lang-fr">Types et Relations de</span>
+										<span class="texte lang-es">Tipos y Relaciones de</span>
+										<span class="texte lang-nl">Typen en Relaties van</span>
+										<span class="focus-np">the thing</span>
+									</div>
+									<span class="tooltiped panel-body panel-body-incrs">
+										<span class="tooltip lang-en">Click a concept to insert in the query at the
+											focus</span>
+										<span class="tooltip lang-fr">Cliquer un concept pour l'insérer au focus de la
+											requête</span>
+										<span class="tooltip lang-es">Haga clic para insertar un concepto en el foco de
+											la consulta</span>
+										<span class="tooltip lang-nl">Klik op een concept om deze toe te voegen aan de
+											focus van de query</span>
+										<div class="row">
+											<div class="col-xs-4 no-padding">
+												<select id="select-properties" class="select-incrs form-control">
+													<option value="matchesAll">matches all</option>
+													<option value="matchesAny">matches any</option>
+												</select>
+											</div>
+											<div class="tooltiped col-xs-8 no-padding">
+												<span class="tooltip lang-en">Input keywords to filter concepts</span>
+												<span class="tooltip lang-fr">Saisir des mots-clés pour filtrer les
+													concepts</span>
+												<span class="tooltip lang-es">Introduzca palabras clave para filtrar los
+													conceptos</span>
+												<span class="tooltip lang-nl">Voer trefwoorden in om concepten te
+													filteren</span>
+												<input id="pattern-properties" class="pattern-incrs form-control"
+													type="text">
+											</div>
+										</div>
+
+										<span class="tooltiped">
+											<span class="tooltip lang-en">Click to activate multi-selection</span>
+											<span class="tooltip lang-fr">Cliquer pour activer la multi-sélection</span>
+											<span class="tooltip lang-es">Haga clic para activar la
+												multiselección</span>
+											<span class="tooltip lang-nl">Klik om multi-selectie te activeren</span>
+											<button id="selection-properties-button"
+												class="btn btn-default btn-xs btn-block selection-incrs-button">
+												<span class="texte lang-en">multi-selection</span>
+												<span class="texte lang-fr">multi-sélection</span>
+												<span class="texte lang-es">multiselección</span>
+												<span class="texte lang-nl">multi-selectie</span>
+											</button>
+										</span>
+										<div id="selection-properties" class="selection-incrs" style="display:none">
+											<span class="texte lang-en">Insert the</span>
+											<span class="texte lang-fr">Insérer les</span>
+											<span class="texte lang-es">Insertar los</span>
+											<span class="texte lang-nl">Voeg de</span>
+											<span class="selection-count"></span>
+											<span class="texte lang-en">selected items with</span>
+											<span class="texte lang-fr">éléments sélectionnés avec</span>
+											<span class="texte lang-es">elementos seleccionados con</span>
+											<span class="texte lang-nl">geselecteerde items in met</span>
+											<span id="selection-properties-items"></span>
+										</div>
+										<div id="list-properties" class="list-incrs css-treeview">
+										</div>
+									</span>
+									<div class="panel-footer">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-4 btn-group buttons-incrs">
+													<span class="tooltiped btn btn-default btn-sm">
+														<span class="tooltip lang-en">Turn the hierarchy
+															upside-down</span>
+														<span class="tooltip lang-fr">Retourner la hiérarchie à
+															l'envers</span>
+														<span class="tooltip lang-es">Darle la vuelta a la
+															jerarquía</span>
+														<span class="tooltip lang-nl">Breng de hiërarchie
+															ondersteboven</span>
+														<input id="input-inverse-properties" class="input-inverse"
+															type="checkbox">
+														<label for="input-inverse-properties"
+															class="label-checked glyphicon glyphicon-chevron-up"></label>
+														<label for="input-inverse-properties"
+															class="label-unchecked glyphicon glyphicon-chevron-down"></label>
+													</span>
+													<span id="button-expand-properties" type="button"
+														class="tooltiped btn btn-default btn-sm">
+														<span class="tooltip lang-en">Expand all items</span>
+														<span class="tooltip lang-fr">Développer tous les
+															éléments</span>
+														<span class="tooltip lang-es">Expandir todos los
+															elementos</span>
+														<span class="tooltip lang-nl">Vouw alle items uit</span>
+														▼
+													</span>
+													<span id="button-collapse-properties" type="button"
+														class="tooltiped btn btn-default btn-sm">
+														<span class="tooltip lang-en">Collapse all items</span>
+														<span class="tooltip lang-fr">Réduire tous les éléments</span>
+														<span class="tooltip lang-es">Contraer todos los
+															elementos</span>
+														<span class="tooltip lang-nl">Alle items samenvouwen</span>
+														►
+													</span>
+												</div>
+												<div class="col-xs-4 no-padding">
+													<select id="select-sorting-properties"
+														class="select-sorting-incrs form-control">
+														<!-- dynamically generated
+			<option value="frequency">decreasing frequency</option>
+			<option value="alphanum">alphanumeric order</option>
+			-->
+													</select>
+												</div>
+												<div id="count-properties" class="col-xs-4 count-incrs pull-right">
+													<span class="texte lang-en">No concept</span>
+													<span class="texte lang-fr">Aucun concept</span>
+													<span class="texte lang-es">Ningún concepto</span>
+													<span class="texte lang-nl">Geen concept</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="incr-box col-sm-4">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<span class="texte lang-en">Identities or Values of</span>
+										<span class="texte lang-fr">Identités ou Valeurs de</span>
+										<span class="texte lang-es">Identidades o Valores de</span>
+										<span class="texte lang-nl">Identiteiten of Waarden van</span>
+										<span class="focus-np">the thing</span>
+									</div>
+									<span class="tooltiped panel-body panel-body-incrs">
+										<span class="tooltip lang-en">Click an entity to insert in the query at the
+											focus</span>
+										<span class="tooltip lang-fr">Cliquer une entité pour l'insérer au focus de la
+											requête</span>
+										<span class="tooltip lang-es">Haga clic en una entidad para insertarla en el
+											foco de la consulta</span>
+										<span class="tooltip lang-nl">Klik op een entiteit om deze toe te voegen aan de
+											focus van de query</span>
+
+										<div class="row">
+											<div class="tooltiped col-xs-4 no-padding">
+												<span class="tooltip lang-en">Select a filtering operator</span>
+												<span class="tooltip lang-fr">Sélectionner un opérateur de
+													filtrage</span>
+												<span class="tooltip lang-es">Seleccionar un operador de filtrado</span>
+												<span class="tooltip lang-nl">Selecteer een filter operator</span>
+												<select id="select-terms" class="select-incrs form-control">
+													<!-- dynamically generated
+		      <option value="matchesAll">matches all</option>
+		      <option value="matchesAny">matches any</option>
+		      <option value="after">after</option>
+		      <option value="before">before</option>
+		      <option value="fromTo">from to</option>
+		      <option value="higherThan">higher or equal to</option>
+		      <option value="lowerThan">lower or equal to</option>
+		      <option value="between">between</option>
+		      <option value="hasLang">has language</option>
+		      <option value="hasDatatype">has datatype</option>
+		      -->
+												</select>
+											</div>
+											<div class="tooltiped col-xs-7 no-padding">
+												<span class="tooltip lang-en">Input keywords to filter entities</span>
+												<span class="tooltip lang-fr">Saisir des mots-clés pour filtrer les
+													entités</span>
+												<span class="tooltip lang-es">Introduzca palabras clave para filtrar las
+													entidades</span>
+												<span class="tooltip lang-nl">Voer trefwoorden in om entiteiten te
+													filteren</span>
+												<input id="pattern-terms" class="pattern-incrs form-control"
+													type="text">
+											</div>
+											<div class="tooltiped col-xs-1 no-padding">
+												<span class="tooltip lang-en">Click this button to insert this filter at
+													the query focus</span>
+												<span class="tooltip lang-fr">Cliquer ce bouton pour insérer ce filtre
+													au focus de la requête</span>
+												<span class="tooltip lang-es">Haga clic en este botón para insertar este
+													filtro en el foco de consulta</span>
+												<span class="tooltip lang-nl">Klik op deze knop om dit filter toe te
+													voegen aan de focus van de query</span>
+												<button id="button-terms" class="btn btn-block btn-primary">
+													<span class="glyphicon glyphicon-ok"></span>
+												</button>
+											</div>
+										</div>
+										<span class="tooltiped">
+											<span class="tooltip lang-en">Click to activate multi-selection</span>
+											<span class="tooltip lang-fr">Cliquer pour activer la multi-sélection</span>
+											<span class="tooltip lang-es">Haga clic para activar la
+												multiselección</span>
+											<span class="tooltip lang-nl">Klik om multi-selectie te activeren</span>
+											<button id="selection-terms-button"
+												class="btn btn-default btn-xs btn-block selection-incrs-button">
+												<span class="texte lang-en">multi-selection</span>
+												<span class="texte lang-fr">multi-sélection</span>
+												<span class="texte lang-es">multiselección</span>
+												<span class="texte lang-nl">multi-selectie</span>
+											</button>
+										</span>
+										<div id="selection-terms" class="selection-incrs" style="display:none">
+											<span class="texte lang-en">Insert the</span>
+											<span class="texte lang-fr">Insérer les</span>
+											<span class="texte lang-es">Insertar los</span>
+											<span class="texte lang-nl">Voeg de</span>
+											<span class="selection-count"></span>
+											<span class="texte lang-en">selected items with</span>
+											<span class="texte lang-fr">éléments sélectionnés avec</span>
+											<span class="texte lang-es">elementos seleccionados con</span>
+											<span class="texte lang-nl">geselecteerde items in met</span>
+											<span id="selection-terms-items"></span>
+										</div>
+										<div id="list-terms" class="list-incrs css-treeview">
+										</div>
+									</span>
+									<div class="panel-footer">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-4 btn-group buttons-incrs">
+													<span class="tooltiped btn btn-default btn-sm">
+														<span class="tooltip lang-en">Turn the hierarchy
+															upside-down</span>
+														<span class="tooltip lang-fr">Retourner la hiérarchie à
+															l'envers</span>
+														<span class="tooltip lang-es">Darle la vuelta a la
+															jerarquía</span>
+														<span class="tooltip lang-nl">Breng de hiërarchie
+															ondersteboven</span>
+														<input id="input-inverse-terms" class="input-inverse"
+															type="checkbox">
+														<label for="input-inverse-terms"
+															class="label-checked glyphicon glyphicon-chevron-up"></label>
+														<label for="input-inverse-terms"
+															class="label-unchecked glyphicon glyphicon-chevron-down"></label>
+													</span>
+													<span id="button-expand-terms" type="button"
+														class="tooltiped btn btn-default btn-sm">
+														<span class="tooltip lang-en">Expand all items</span>
+														<span class="tooltip lang-fr">Développer tous les
+															éléments</span>
+														<span class="tooltip lang-es">Expandir todos los
+															elementos</span>
+														<span class="tooltip lang-nl">Vouw alle items uit</span>
+														▼
+													</span>
+													<span id="button-collapse-terms" type="button"
+														class="tooltiped btn btn-default btn-sm">
+														<span class="tooltip lang-en">Collapse all items</span>
+														<span class="tooltip lang-fr">Réduire tous les éléments</span>
+														<span class="tooltip lang-es">Contraer todos los
+															elementos</span>
+														<span class="tooltip lang-nl">Alle items samenvouwen</span>
+														►
+													</span>
+												</div>
+												<div class="col-xs-4 no-padding">
+													<select id="select-sorting-terms"
+														class="select-sorting-incrs form-control">
+														<!-- dynamically generated
+			<option value="frequency">decreasing frequency</option>
+			<option value="alphanum">alphanumeric order</option>
+			-->
+													</select>
+												</div>
+												<div id="count-terms" class="col-xs-4 count-incrs pull-right">
+													<span class="texte lang-en">No entity</span>
+													<span class="texte lang-fr">Aucune entité</span>
+													<span class="texte lang-es">Ninguna entidad</span>
+													<span class="texte lang-nl">Geen entiteit</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="incr-box col-sm-4">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<span class="texte lang-en">Aggregations and Operators</span>
+										<span class="texte lang-fr">Agrégations et Opérateurs</span>
+										<span class="texte lang-es">Agregaciones y Operadores</span>
+										<span class="texte lang-nl">Aggregatien en Operatoren</span>
+									</div>
+									<span class="tooltiped panel-body panel-body-incrs">
+										<span class="tooltip lang-en">Click a modifier to insert in the query at the
+											focus</span>
+										<span class="tooltip lang-fr">Cliquer un modifieur pour l'insérer au focus de la
+											requête</span>
+										<span class="tooltip lang-es">Haga clic en un modificador para insertarlo en el
+											foco de la consulta</span>
+										<span class="tooltip lang-nl">Klik op een modifier om deze toe te voegen aan de
+											focus van de query</span>
+										<div class="row">
+											<div class="col-xs-5 no-padding">
+												<select id="select-modifiers" class="select-incrs form-control">
+													<option value="matchesAll">matches all</option>
+													<option value="matchesAny">matches any</option>
+												</select>
+											</div>
+											<div class="tooltiped col-xs-7 no-padding">
+												<span class="tooltip lang-en">Input keywords to filter modifiers</span>
+												<span class="tooltip lang-fr">Saisir des mots-clés pour filtrer les
+													modifieurs</span>
+												<span class="tooltip lang-es">Introduzca palabras clave para filtrar los
+													modificadores</span>
+												<span class="tooltip lang-nl">Voer trefwoorden in om de modifiers te
+													filteren</span>
+												<input id="pattern-modifiers" class="pattern-incrs form-control"
+													type="text">
+											</div>
+										</div>
+										<span class="tooltiped">
+											<span class="tooltip lang-en">Click to activate multi-selection</span>
+											<span class="tooltip lang-fr">Cliquer pour activer la multi-sélection</span>
+											<span class="tooltip lang-es">Haga clic para activar la
+												multiselección</span>
+											<span class="tooltip lang-nl">Klik om multi-selectie te activeren</span>
+											<button id="selection-modifiers-button"
+												class="btn btn-default btn-xs btn-block selection-incrs-button">
+												<span class="texte lang-en">multi-selection</span>
+												<span class="texte lang-fr">multi-sélection</span>
+												<span class="texte lang-es">multiselección</span>
+												<span class="texte lang-nl">multi-selectie</span>
+											</button>
+										</span>
+										<div id="selection-modifiers" class="selection-incrs" style="display:none">
+											<span class="texte lang-en">Insert the</span>
+											<span class="texte lang-fr">Insérer les</span>
+											<span class="texte lang-es">Insertar los</span>
+											<span class="texte lang-nl">Voeg de</span>
+											<span class="selection-count"></span>
+											<span class="texte lang-en">selected items with</span>
+											<span class="texte lang-fr">éléments sélectionnés avec</span>
+											<span class="texte lang-es">artículos seleccionados con</span>
+											<span class="texte lang-nl">geselecteerde items in met</span>
+											<span id="selection-modifiers-items"></span>
+										</div>
+										<div id="list-modifiers" class="list-incrs css-treeview">
+										</div>
+									</span>
+									<div id="count-modifiers" class="count-incrs panel-footer">
+										<span class="texte lang-en">No modifier</span>
+										<span class="texte lang-fr">Aucun modifieur</span>
+										<span class="texte lang-es">Ningún modificador</span>
+										<span class="texte lang-nl">Geen modifier</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="results" class="panel panel-info">
+				<div class="panel-heading">
+					<h5 class="panel-title">
+						<span class="texte lang-en">Results of your query</span>
+						<span class="texte lang-fr">Résultats de votre requête</span>
+						<span class="texte lang-es">Resultados de tu consulta</span>
+						<span class="texte lang-nl">Resultaten van uw query</span>
+						&nbsp;
+						<span class="tooltiped">
+							<span class="tooltip lang-en">Download results as a CSV file</span>
+							<span class="tooltip lang-fr">Télécharger les résultats sous forme de fichier CSV</span>
+							<span class="tooltip lang-es">Descargar los resultados en un archivo CSV</span>
+							<span class="tooltip lang-nl">Resultaten downloaden als CSV-bestand</span>
+							<button id="button-download-results" data-toggle="modal"
+								data-target="#download-results-modal" class="btn btn-primary btn-xs">
+								<span class="glyphicon glyphicon-download-alt"></span>
+							</button>
+						</span>
+					</h5>
+				</div>
+				<div id="collapse-results" class="panel-collapse collapse show">
+					<div class="panel-body">
+						<ul class="nav nav-tabs">
+							<li id="nav-results-nested-table" class="active"><a id="nav-tab-nested-table"
+									data-toggle="tab" data-target="#results-nested-table">
+									<span class="texte lang-en">Nested Table</span>
+									<span class="texte lang-fr">Tableau imbriqué</span>
+									<span class="texte lang-es">Tabla anidada</span>
+									<span class="texte lang-nl">Geneste Tafel</span>
+								</a></li>
+							<li id="nav-results-table"><a data-toggle="tab" data-target="#results-table">
+									<span class="texte lang-en">Table</span>
+									<span class="texte lang-fr">Tableau</span>
+									<span class="texte lang-es">Tabla</span>
+									<span class="texte lang-nl">Tafel</span>
+								</a></li>
+							<li id="nav-results-map"><a id="nav-tab-map" data-toggle="tab" data-target="#results-map"
+									title="Click on this tab again if the map is not displayed correctly">
+									<span class="texte lang-en">Map</span>
+									<span class="texte lang-fr">Carte</span>
+									<span class="texte lang-es">Mapa</span>
+									<span class="texte lang-nl">Kaart</span>
+								</a></li>
+							<li id="nav-results-slideshow"><a id="nav-tab-slideshow" data-toggle="tab"
+									data-target="#results-slideshow">
+									<span class="texte lang-en">Slideshow</span>
+									<span class="texte lang-fr">Diaporama</span>
+									<span class="texte lang-es">Diapositivas</span>
+									<span class="texte lang-nl">Diavoorstelling</span>
+								</a></li>
+								<li id="nav-results-view"><a id="nav-tab-view" data-toggle="tab"
+									data-target="#results-view">
+									<span class="texte lang-en">View</span>
+								</a></li>
+						</ul>
+						<div class="tab-content">
+
+							<div id="results-nested-table" class="tab-pane active">
+								<div id="nested-table">
+									No nested table
+								</div>
+								<div id="div-next-nested-table" class="tooltiped">
+									<span class="tooltip lang-en">Click to show more results</span>
+									<span class="tooltip lang-fr">Cliquer pour afficher plus de résultats</span>
+									<span class="tooltip lang-es">Haga clic para mostrar mas resultados</span>
+									<span class="tooltip lang-nl">Klik om meer resultaten te tonen</span>
+									<button id="next-nested-table" class="btn btn-default"><span
+											class="glyphicon glyphicon-chevron-down"></span></button>
+								</div>
+							</div>
+
+							<div id="results-table" class="tab-pane">
+								<div id="control-results">
+									<span class="tooltiped">
+										<span class="tooltip lang-en">Click to show the previous page of results</span>
+										<span class="tooltip lang-fr">Cliquer pour afficher la page de résultats
+											précédente</span>
+										<span class="tooltip lang-es">Haga clic para mostrar la página anterior de
+											resultados</span>
+										<span class="tooltip lang-nl">Klik om de vorige pagina met resultaten weer te
+											geven</span>
+										<button id="previous-results" class="btn btn-default btn-md"><span
+												class="glyphicon glyphicon-step-backward"></span></button>
+									</span>
+									<span id="count-results">
+										<span class="texte lang-en">No result</span>
+										<span class="texte lang-fr">Aucun résultat</span>
+										<span class="texte lang-es">Ningún resultado</span>
+										<span class="texte lang-nl">Geen resultaat</span>
+									</span>
+									<span class="tooltiped">
+										<span class="tooltip lang-en">Click to show the next page of results</span>
+										<span class="tooltip lang-fr">Cliquer pour afficher la page de résultats
+											suivante</span>
+										<span class="tooltip lang-es">Haga clic para mostrar la siguiente página de
+											resultados</span>
+										<span class="tooltip lang-nl">Klik om de volgende pagina met resultaten weer te
+											geven</span>
+										<button id="next-results" class="btn btn-default btn-md"><span
+												class="glyphicon glyphicon-step-forward"></span></button>
+									</span>
+									<span class="texte lang-en">Show</span>
+									<span class="texte lang-fr">Montrer</span>
+									<span class="texte lang-es">Mostrar</span>
+									<span class="texte lang-nl">Toon</span>
+									<select id="limit-results" data-width="fit">
+										<!-- NOT WORKING!!! -->
+										<option value="10">10</option>
+										<option value="20">20</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+									<span class="texte lang-en">results</span>
+									<span class="texte lang-fr">résultats</span>
+									<span class="texte lang-es">resultados</span>
+									<span class="texte lang-nl">resultaten</span>
+								</div>
+								<span class="tooltiped">
+									<span class="tooltip lang-en">Click an entity to insert in the query at the column's
+										focus</span>
+									<span class="tooltip lang-fr">Cliquer une entité pour l'insérer au focus de la
+										requête</span>
+									<span class="tooltip lang-es">Haga clic en una entidad para insertarla (en la
+										consulta) en el foco de la columna </span>
+									<span class="tooltip lang-nl">Klik op een entiteit om deze toe te voegen aan de
+										focus van de query kolom</span>
+									<div id="list-results">
+									</div>
+								</span>
+							</div>
+
+							<div id="results-map" class="tab-pane fade">
+								<div id="map">
+									No geolocalized data
+								</div>
+							</div>
+
+							<div id="results-slideshow" class="tab-pane fade">
+								<div id="results-carousel" class="carousel slide" data-interval="false">
+									<!-- Wrapper for slides -->
+									<div id="carousel-slides" class="carousel-inner">
+										No media
+									</div>
+									<!-- Left and right controls -->
+									<a class="left carousel-control" href="#results-carousel" data-slide="prev">
+										<span class="glyphicon glyphicon-chevron-left"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="right carousel-control" href="#results-carousel" data-slide="next">
+										<span class="glyphicon glyphicon-chevron-right"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+							</div>
+
+							<div id="results-view" class="tab-pane fade show">
+								<div id="svg-body" class="panel-body"></div>
+								<script>
+
+									function parseThisShit(weirdObject) {
+										var triples = [];
+										for (let i = 0; i < test.rows.length; i++) {
+											triples.push({ subject: weirdObject.rows[i][0].uri, predicate: weirdObject.rows[i][1].uri, object: weirdObject.rows[i][2].uri });
+										}
+										//console.log(triples);
+										return triples;
+									}
+
+									var triples = [
+										{ subject: "ex:ThaiLand", predicate: "ex:hasFood", object: "ex:TomYumKung" },
+										{ subject: "ex:TomYumKung", predicate: "rdf:type", object: "ex:SpicyFood" },
+										{ subject: "ex:TomYumKung", predicate: "ex:includes", object: "ex:camarao" },
+										{ subject: "ex:TomYumKung", predicate: "ex:includes", object: "ex:chilly" },
+										{ subject: "ex:TomYumKung", predicate: "ex:includes", object: "ex:lemon" },
+										{ subject: "ex:lemon", predicate: "ex:hasTaste", object: "ex:sour" },
+										{ subject: "ex:chilly", predicate: "ex:hasTaste", object: "ex:spicy" }
+									];
+
+									var svg = d3.select("#svg-body").append("svg")
+										.attr("width", 800)
+										.attr("height", 600)
+										;
+
+									var force = d3.layout.force().size([800, 600]);
+
+									var graph = triplesToGraph(triples);
+
+									update();
+
+								</script>
+							</div>
+						</div> <!-- .tab-content -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="yasgui-view" class="panel panel-info" style="display:none">
+			<div class="panel-heading">
+				<h5 class="panel-title">
+					<span class="texte lang-en">Your query in SPARQL + results (with YASGUI)</span>
+					<span class="texte lang-fr">Votre requête en SPARQL + résultats (avec YASGUI)</span>
+					<span class="texte lang-es">Tu consulta en SPARQL + resultados (con YASGUI)</span>
+					<span class="texte lang-nl">Uw query in SPARQL + resultaten (met YASGUI)</span>
+				</h5>
+			</div>
+			<div class="panel-body">
+				<div id="sparql-query"></div>
+				<div id="sparklis-yasgui"></div>
+			</div>
+		</div>
+
+		<div id="log-view" class="panel panel-info" style="display:none">
+			<div class="panel-heading">
+				<h5 class="panel-title">
+					<span class="texte lang-en">Your navigation history on this endpoint</span>
+					<span class="texte lang-fr">Votre historique de navigation sur ce point d'accès</span>
+					<span class="texte lang-es">Su historial de navegación en este SPARQL endpoint</span>
+					<span class="texte lang-nl">Uw navigatiegeschiedenis op dit SPARQL endpoint</span>
+					<button id="clear-log" class="btn btn-primary btn-xs" style="float: right">
+						<span class="tooltiped">
+							<span class="tooltip lang-en">Clear this history</span>
+							<span class="tooltip lang-fr">Effacer cet historique</span>
+							<span class="tooltip lang-es">Borrar este historial</span>
+							<span class="tooltip lang-nl">Wis deze geschiedenis</span>
+							<span class="glyphicon glyphicon-trash"></span>
+						</span>
+					</button>
+				</h5>
+			</div>
+			<div class="panel-body">
+				<div id="endpoint-log">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	</div>
+
+
+	<footer>
+		<hr />
+		<span class="site-footer-owner"><a href="https://github.com/Mat-O-Lab/NaturalMSEQueries">NaturalMSEQueries</a>
+			is maintained by <a href="https://matolab.org"><img
+					src="https://github.com/Mat-O-Lab/CSVToCSVW/raw/main/static/resources/MatOLab-Logo.svg" width="5%"
+					alt="mat-o-lab-logo" /></a>.</span>
+		<!-- licence CC-BY-NC -->
+		<a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"><img
+				alt="Creative Commons Licence" style="border-width:0"
+				src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
+
+		<span class="texte lang-en">Created by </span>
+		<span class="texte lang-fr">Créé par </span>
+		<span class="texte lang-es">Creado por </span>
+		<span class="texte lang-nl">Gemaakt door </span>
+		<a target="_blank" href="https://people.irisa.fr/Sebastien.Ferre">Sébastien Ferré</a>
+		<a target="_blank" href="https://www-semlis.irisa.fr/"><img src="semlis.png" alt="SemLIS team" height="30"></a>
+		<a target="_blank" href="https://www.irisa.fr/"><img src="irisa.jpg" alt="IRISA" height="30"></a>
+		<a target="_blank" href="https://www.univ-rennes1.fr/"><img src="UR1.png" alt="Université Rennes 1"
+				height="40"></a>
+		<br />
+
+		<span class="texte lang-es">
+			Traducido al Español por <a target="_blank" href="mailto:jose.ortizv@ucuenca.ec">José Enrique Ortiz
+				Vivar</a>, revisado por <a target="_blank" href="https://webdiis.unizar.es/people/cbobed">Carlos
+				Bobed</a>.
+			<br />
+		</span>
+		<span class="texte lang-nl">
+			Vertaald naar het Nederlands door <a target="_blank" href="mailto:Erwin.Folmer@kadaster.nl">Erwin
+				Folmer</a>.
+			<br />
+		</span>
+
+		<span>Citation: <em>Ferré, Sébastien. ‘Sparklis: An Expressive Query Builder for SPARQL Endpoints with Guidance
+				in Natural Language’. Semantic Web 8(3) : 405-418. IOS Press, 2017.</em> (<a
+				href="https://hal.inria.fr/hal-01485093/file/sparklis-preprint.pdf">PDF</a>)</span>
+
+		<br />
+
+		<span class="texte lang-en">Last modified May 26th, 2021. Visit </span>
+		<span class="texte lang-fr">Dernière modification le 26 mai 2021. Visiter </span>
+		<span class="texte lang-es">Última modificación el 26 de Mayo 2021. Visite </span>
+		<span class="texte lang-nl">Voor het laatst gewijzigd op 26 Mei 2021. Bezoek </span>
+		<a target="_blank" href="https://people.irisa.fr/Sebastien.Ferre/software/">
+			<span class="texte lang-en">my homepage</span>
+			<span class="texte lang-fr">ma page Web</span>
+			<span class="texte lang-es">mi página Web</span>
+			<span class="texte lang-nl">mijn website </span>
+		</a>
+		<span class="texte lang-en"> for more information.</span>
+		<span class="texte lang-fr"> pour plus d'information.</span>
+		<span class="texte lang-es"> para más información.</span>
+		<span class="texte lang-nl"> voor meer informatie.</span>
+	</footer>
+</body>
+{% endblock %}
+
+
+
+
+</html>

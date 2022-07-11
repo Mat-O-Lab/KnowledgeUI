@@ -4,5 +4,6 @@ flask
 flask-bootstrap
 flask_wtf
 flask_swagger_ui
+flask_cors
 wtforms
 pandas
