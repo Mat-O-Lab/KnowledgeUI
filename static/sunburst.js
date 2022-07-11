@@ -1,327 +1,103 @@
-// Dimensions of sunburst.
-var width = 550;
-var height = 400;
-var radius = Math.min(width, height) / 2;
+// Copyright 2021 Observable, Inc.
+// Released under the ISC license.
+// https://observablehq.com/@d3/sunburst
+function Sunburst(data, { // data is either tabular (array of objects) or hierarchy (nested objects)
+    path, // as an alternative to id and parentId, returns an array identifier, imputing internal nodes
+    id = Array.isArray(data) ? d => d.id : null, // if tabular data, given a d in data, returns a unique identifier (string)
+    parentId = Array.isArray(data) ? d => d.parentId : null, // if tabular data, given a node d, returns its parent’s identifier
+    children, // if hierarchical data, given a d in data, returns its children
+    value, // given a node d, returns a quantitative value (for area encoding; null for count)
+    sort = (a, b) => d3.descending(a.value, b.value), // how to sort nodes prior to layout
+    label, // given a node d, returns the name to display on the rectangle
+    title, // given a node d, returns its hover text
+    link, // given a node d, its link (if any)
+    linkTarget = "_blank", // the target attribute for links (if any)
+    width = 640, // outer width, in pixels
+    height = 400, // outer height, in pixels
+    margin = 1, // shorthand for margins
+    marginTop = margin, // top margin, in pixels
+    marginRight = margin, // right margin, in pixels
+    marginBottom = margin, // bottom margin, in pixels
+    marginLeft = margin, // left margin, in pixels
+    padding = 1, // separation between arcs
+    radius = Math.min(width - marginLeft - marginRight, height - marginTop - marginBottom) / 2, // outer radius
+    color = d3.interpolateRainbow, // color scheme, if any
+    fill = "#ccc", // fill for arcs (if no color encoding)
+    fillOpacity = 0.6, // fill opacity for arcs
+} = {}) {
 
-// Breadcrumb dimensions: width, height, spacing, width of tip/tail.
-var b = {
-  w: 75, h: 30, s: 3, t: 10
-};
+    // If id and parentId options are specified, or the path option, use d3.stratify
+    // to convert tabular data to a hierarchy; otherwise we assume that the data is
+    // specified as an object {children} with nested objects (a.k.a. the “flare.json”
+    // format), and use d3.hierarchy.
+    const root = path != null ? d3.stratify().path(path)(data)
+        : id != null || parentId != null ? d3.stratify().id(id).parentId(parentId)(data)
+            : d3.hierarchy(data, children);
 
-// Mapping of step names to colors.
-var colors = {
-  "Topic B": "#5687d1",
-  "Sub B1": "#7b615c",
-  "search": "#de783b",
-  "account": "#6ab975",
-  "other": "#a173d1",
-  "end": "#bbbbbb"
-};
+    // Compute the values of internal nodes by aggregating from the leaves.
+    value == null ? root.count() : root.sum(d => Math.max(0, value(d)));
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+    // Sort the leaves (typically by descending value for a pleasing layout).
+    if (sort != null) root.sort(sort);
+
+    // Compute the partition layout. Note polar coordinates: x is angle and y is radius.
+    d3.partition().size([2 * Math.PI, radius])(root);
+
+    // Construct a color scale.
+    if (color != null) {
+        color = d3.scaleSequential([0, root.children.length - 1], color).unknown(fill);
+        root.children.forEach((child, i) => child.index = i);
     }
-    return color;
-  }
 
-// Total size of all segments; we set this later, after loading the data.
-var totalSize = 0; 
+    // Construct an arc generator.
+    const arc = d3.arc()
+        .startAngle(d => d.x0)
+        .endAngle(d => d.x1)
+        .padAngle(d => Math.min((d.x1 - d.x0) / 2, 2 * padding / radius))
+        .padRadius(radius / 2)
+        .innerRadius(d => d.y0)
+        .outerRadius(d => d.y1 - padding);
 
-var vis = d3.select("#chart").append("svg:svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("svg:g")
-    .attr("id", "container")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    const svg = d3.create("svg")
+        .attr("viewBox", [
+            marginRight - marginLeft - width / 2,
+            marginBottom - marginTop - height / 2,
+            width,
+            height
+        ])
+        .attr("width", width)
+        .attr("height", height)
+        .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", 10)
+        .attr("text-anchor", "middle");
 
-var partition = d3.layout.partition()
-    .size([2 * Math.PI, radius * radius])
-    .value(function(d) { return d.size; });
+    const cell = svg
+        .selectAll("a")
+        .data(root.descendants())
+        .join("a")
+        .attr("xlink:href", link == null ? null : d => link(d.data, d))
+        .attr("target", link == null ? null : linkTarget);
 
-var arc = d3.svg.arc()
-    .startAngle(function(d) { return d.x; })
-    .endAngle(function(d) { return d.x + d.dx; })
-    .innerRadius(function(d) { return Math.sqrt(d.y); })
-    .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
+    cell.append("path")
+        .attr("d", arc)
+        .attr("fill", color ? d => color(d.ancestors().reverse()[1]?.index) : fill)
+        .attr("fill-opacity", fillOpacity);
 
-// Use d3.text and d3.csv.parseRows so that we do not need to have a header
-// row, and can receive the csv as an array of arrays.
-d3.text("visit-sequences.csv", function(text) {
-  // var csv = d3.csv.parseRows(text);
-  // var json = buildHierarchy(csv);
-  var nodeData = {
-    "name": "TOPICS", "children": [{
-        "name": "Topic A",
-        "children": [{"name": "Sub A1", "size": 4}, {"name": "Sub A2", "size": 4}]
-    }, {
-        "name": "Topic B",
-        "children": [{"name": "Sub B1", "size": 3}, {"name": "Sub B2", "size": 3}, {
-            "name": "Sub B3", "size": 3}]
-    }, {
-        "name": "Topic C",
-        "children": [{"name": "Sub A1", "size": 4}, {"name": "Sub A2", "size": 4}]
-    }]
-};
-  createVisualization(nodeData);
-});
+    if (label != null) cell
+        .filter(d => (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10)
+        .append("text")
+        .attr("transform", d => {
+            if (!d.depth) return;
+            const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+            const y = (d.y0 + d.y1) / 2;
+            return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+        })
+        .attr("dy", "0.32em")
+        .text(d => label(d.data, d));
 
-// Main function to draw and set up the visualization, once we have the data.
-function createVisualization(json) {
+    if (title != null) cell.append("title")
+        .text(d => title(d.data, d));
 
-  // Basic setup of page elements.
-  initializeBreadcrumbTrail();
-  drawLegend();
-  d3.select("#togglelegend").on("click", toggleLegend);
-
-  // Bounding circle underneath the sunburst, to make it easier to detect
-  // when the mouse leaves the parent g.
-  vis.append("svg:circle")
-      .attr("r", radius)
-      .style("opacity", 0);
-
-  // For efficiency, filter nodes to keep only those large enough to see.
-  var nodes = partition.nodes(json)
-      .filter(function(d) {
-      return (d.dx > 0.005); // 0.005 radians = 0.29 degrees
-      });
-
-  var path = vis.data([json]).selectAll("path")
-      .data(nodes)
-      .enter().append("svg:path")
-      .attr("display", function(d) { return d.depth ? null : "none"; })
-      .attr("d", arc)
-      .attr("fill-rule", "evenodd")
-      .style("fill", function(d) { /*return colors[d.name];*/ return getRandomColor() })
-      .style("opacity", 1)
-      .on("mouseover", mouseover);
-
-  // Add the mouseleave handler to the bounding circle.
-  d3.select("#container").on("mouseleave", mouseleave);
-
-  // Get total size of the tree = value of root node from partition.
-  totalSize = path.node().__data__.value;
- };
-
-// Fade all but the current sequence, and show it in the breadcrumb trail.
-function mouseover(d) {
-
-  var percentage = (100 * d.value / totalSize).toPrecision(3);
-  var percentageString = percentage + "%";
-  if (percentage < 0.1) {
-    percentageString = "< 0.1%";
-  }
-
-  d3.select("#percentage")
-      .text(percentageString);
-
-  d3.select("#explanation")
-      .style("visibility", "");
-
-  var sequenceArray = getAncestors(d);
-  updateBreadcrumbs(sequenceArray, percentageString);
-
-  // Fade all the segments.
-  d3.selectAll("path")
-      .style("opacity", 0.3);
-
-  // Then highlight only those that are an ancestor of the current segment.
-  vis.selectAll("path")
-      .filter(function(node) {
-                return (sequenceArray.indexOf(node) >= 0);
-              })
-      .style("opacity", 1);
+    return svg.node();
 }
-
-// Restore everything to full opacity when moving off the visualization.
-function mouseleave(d) {
-
-  // Hide the breadcrumb trail
-  d3.select("#trail")
-      .style("visibility", "hidden");
-
-  // Deactivate all segments during transition.
-  d3.selectAll("path").on("mouseover", null);
-
-  // Transition each segment to full opacity and then reactivate it.
-  d3.selectAll("path")
-      .transition()
-      .duration(1000)
-      .style("opacity", 1)
-      .each("end", function() {
-              d3.select(this).on("mouseover", mouseover);
-            });
-
-  d3.select("#explanation")
-      .style("visibility", "hidden");
-}
-
-// Given a node in a partition layout, return an array of all of its ancestor
-// nodes, highest first, but excluding the root.
-function getAncestors(node) {
-  var path = [];
-  var current = node;
-  while (current.parent) {
-    path.unshift(current);
-    current = current.parent;
-  }
-  return path;
-}
-
-function initializeBreadcrumbTrail() {
-  // Add the svg area.
-  var trail = d3.select("#sequence").append("svg:svg")
-      .attr("width", width)
-      .attr("height", 50)
-      .attr("id", "trail");
-  // Add the label at the end, for the percentage.
-  trail.append("svg:text")
-    .attr("id", "endlabel")
-    .style("fill", "#000");
-}
-
-// Generate a string that describes the points of a breadcrumb polygon.
-function breadcrumbPoints(d, i) {
-  var points = [];
-  points.push("0,0");
-  points.push(b.w + ",0");
-  points.push(b.w + b.t + "," + (b.h / 2));
-  points.push(b.w + "," + b.h);
-  points.push("0," + b.h);
-  if (i > 0) { // Leftmost breadcrumb; don't include 6th vertex.
-    points.push(b.t + "," + (b.h / 2));
-  }
-  return points.join(" ");
-}
-
-// Update the breadcrumb trail to show the current sequence and percentage.
-function updateBreadcrumbs(nodeArray, percentageString) {
-
-  // Data join; key function combines name and depth (= position in sequence).
-  var g = d3.select("#trail")
-      .selectAll("g")
-      .data(nodeArray, function(d) { return d.name + d.depth; });
-
-  // Add breadcrumb and label for entering nodes.
-  var entering = g.enter().append("svg:g");
-
-  entering.append("svg:polygon")
-      .attr("points", breadcrumbPoints)
-      .style("fill", function(d) { return colors[d.name]; });
-
-  entering.append("svg:text")
-      .attr("x", (b.w + b.t) / 2)
-      .attr("y", b.h / 2)
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.name; });
-
-  // Set position for entering and updating nodes.
-  g.attr("transform", function(d, i) {
-    return "translate(" + i * (b.w + b.s) + ", 0)";
-  });
-
-  // Remove exiting nodes.
-  g.exit().remove();
-
-  // Now move and update the percentage at the end.
-  d3.select("#trail").select("#endlabel")
-      .attr("x", (nodeArray.length + 0.5) * (b.w + b.s))
-      .attr("y", b.h / 2)
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "middle")
-      .text(percentageString);
-
-  // Make the breadcrumb trail visible, if it's hidden.
-  d3.select("#trail")
-      .style("visibility", "");
-
-}
-
-function drawLegend() {
-
-  // Dimensions of legend item: width, height, spacing, radius of rounded rect.
-  var li = {
-    w: 75, h: 30, s: 3, r: 3
-  };
-
-  var legend = d3.select("#legend").append("svg:svg")
-      .attr("width", li.w)
-      .attr("height", d3.keys(colors).length * (li.h + li.s));
-
-  var g = legend.selectAll("g")
-      .data(d3.entries(colors))
-      .enter().append("svg:g")
-      .attr("transform", function(d, i) {
-              return "translate(0," + i * (li.h + li.s) + ")";
-           });
-
-  g.append("svg:rect")
-      .attr("rx", li.r)
-      .attr("ry", li.r)
-      .attr("width", li.w)
-      .attr("height", li.h)
-      .style("fill", function(d) { return d.value; });
-
-  g.append("svg:text")
-      .attr("x", li.w / 2)
-      .attr("y", li.h / 2)
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.key; });
-}
-
-function toggleLegend() {
-  var legend = d3.select("#legend");
-  if (legend.style("visibility") == "hidden") {
-    legend.style("visibility", "");
-  } else {
-    legend.style("visibility", "hidden");
-  }
-}
-
-// Take a 2-column CSV and transform it into a hierarchical structure suitable
-// for a partition layout. The first column is a sequence of step names, from
-// root to leaf, separated by hyphens. The second column is a count of how 
-// often that sequence occurred.
-function buildHierarchy(csv) {
-  var root = {"name": "root", "children": []};
-  for (var i = 0; i < csv.length; i++) {
-    var sequence = csv[i][0];
-    var size = +csv[i][1];
-    if (isNaN(size)) { // e.g. if this is a header row
-      continue;
-    }
-    var parts = sequence.split("-");
-    var currentNode = root;
-    for (var j = 0; j < parts.length; j++) {
-      var children = currentNode["children"];
-      var nodeName = parts[j];
-      var childNode;
-      if (j + 1 < parts.length) {
-   // Not yet at the end of the sequence; move down the tree.
- 	var foundChild = false;
- 	for (var k = 0; k < children.length; k++) {
- 	  if (children[k]["name"] == nodeName) {
- 	    childNode = children[k];
- 	    foundChild = true;
- 	    break;
- 	  }
- 	}
-  // If we don't already have a child node for this branch, create it.
- 	if (!foundChild) {
- 	  childNode = {"name": nodeName, "children": []};
- 	  children.push(childNode);
- 	}
- 	currentNode = childNode;
-      } else {
- 	// Reached the end of the sequence; create a leaf node.
- 	childNode = {"name": nodeName, "size": size};
- 	children.push(childNode);
-      }
-    }
-  }
-  return root;
-};
