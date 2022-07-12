@@ -4,8 +4,6 @@ from flask import Flask, flash, request, jsonify, render_template
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
-from numpy import TooHardError
-
 from config import config
 
 config_name = os.environ.get("APP_MODE") or "development"
