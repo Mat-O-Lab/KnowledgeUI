@@ -4,6 +4,7 @@ from flask import Flask, flash, request, jsonify, render_template
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
+from numpy import TooHardError
 
 from config import config
 
@@ -26,10 +27,14 @@ def index():
         result=result
         )
 
+# TODO: add logo, message and result to a general function instead of defining in every function separately
+
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
+    logo = './static/resources/MatOLab-Logo.svg'
     return render_template(
-        "osparklis.html"
+        "osparklis.html",
+        logo=logo
     )
 
 if __name__ == "__main__":
