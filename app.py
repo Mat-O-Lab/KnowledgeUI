@@ -5,8 +5,6 @@ from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
 
-from rdflib import Graph
-
 from config import config
 
 config_name = os.environ.get("APP_MODE") or "development"
@@ -35,18 +33,14 @@ def index():
         result=result
         )
 
+# TODO: add logo, message and result to a general function instead of defining in every function separately
+
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
-
     logo = './static/resources/MatOLab-Logo.svg'
-    message = ''
-    result = ''
-
     return render_template(
         "osparklis.html",
-        logo=logo,
-        message=message,
-        result=result,
+        logo=logo
     )
 
 if __name__ == "__main__":
