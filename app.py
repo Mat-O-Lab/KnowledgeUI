@@ -28,8 +28,18 @@ def index():
 
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
+    logo = './static/resources/MatOLab-Logo.svg'
     return render_template(
-        "osparklis.html"
+        "osparklis.html", 
+        logo=logo
+    )
+
+@app.route('/predef.html', methods=['GET'])
+def query():
+    logo = './static/resources/MatOLab-Logo.svg'
+    return render_template(
+        "predef.html",
+        logo=logo
     )
 
 if __name__ == "__main__":
