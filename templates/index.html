@@ -19,6 +19,7 @@
 </script>
 
 <script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 
   function filterNodesById(nodes, id) {
@@ -72,57 +73,20 @@
   {{navigation()}}
 
   <div id="chart">
-    <svg id="sunburst" width="500" height="500"></svg>
+    <meta id="sunburst_data" data-nodes="{{ sunburst_data }}">
+    <svg id="sunburst" width="1000" height="1000"></svg>
     <script>
-      var nodeData = {
-        "name": "TOPICS", "children": [{
-          "name": "Topic A",
-          "children": [{ "name": "Sub A1", "size": 4 }, { "name": "Sub A2", "size": 4 }]
-        }, {
-          "name": "Topic B",
-          "children": [{ "name": "Sub B1", "size": 3 }, { "name": "Sub B2", "size": 3 }, {
-            "name": "Sub B3", "size": 3
-          }]
-        }, {
-          "name": "Topic C",
-          "children": [{ "name": "Sub A1", "size": 4 }, {
-            "name": "Sub A2",
-            "children": [
-              {
-                "name": "Sub Sub C1",
-                size: 5
-              },
-              {
-                "name": "Sub Sub C2",
-                size: 2
-              }
-            ]
-          }]
-        }
-          , {
-          "name": "Topic D",
-          "size": 5
-        },
-        {
-          "name": "Topic E",
-          "size": 5
-        },
-        {
-          "name": "Topic F",
-          "size": 5
-        },
-        ]
-      };
+      var nodeData = $('#sunburst_data').data("nodes")
 
       prefix = "http://example.com/"
 
       chart = Sunburst(nodeData, {
         value: d => d.size, // size of each node (file); null for internal nodes (folders)
-        label: d => d.name, // display name for each cell
+        label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
         title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
-        link: (d, n) => `${prefix + d.name}`,
-        width: 500,
-        height: 500
+        link: (d, n) => d.iri,
+        width: 1000,
+        height: 1000
       });
 
       svg = document.getElementById("sunburst");

@@ -45,8 +45,8 @@ function Sunburst(data, { // data is either tabular (array of objects) or hierar
 
     // Construct a color scale.
     if (color != null) {
-        color = d3.scaleSequential([0, root.children.length - 1], color).unknown(fill);
-        root.children.forEach((child, i) => child.index = i);
+        color = d3.scaleSequential([0, 15], color).unknown(fill);
+        root.children.forEach((child, i) => child.index = i*2);
     }
 
     // Construct an arc generator.
@@ -81,7 +81,7 @@ function Sunburst(data, { // data is either tabular (array of objects) or hierar
 
     cell.append("path")
         .attr("d", arc)
-        .attr("fill", color ? d => color(d.ancestors().reverse()[1]?.index) : fill)
+        .attr("fill", color ? d => color(d.ancestors().reverse()[1]?.index + d.ancestors().length) : fill)
         .attr("fill-opacity", fillOpacity);
 
     if (label != null) cell
