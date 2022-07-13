@@ -14,13 +14,6 @@ CORS(app)
 app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
 
-"""
-Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
-"""
-@app.context_processor
-def init_global_vars_template():
-    return dict(endpoint=app.config['SPARQL_ENDPOINT'])
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     logo = './static/resources/MatOLab-Logo.svg'
@@ -33,13 +26,19 @@ def index():
         result=result
         )
 
-# TODO: add logo, message and result to a general function instead of defining in every function separately
-
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
     logo = './static/resources/MatOLab-Logo.svg'
     return render_template(
-        "osparklis.html",
+        "osparklis.html", 
+        logo=logo
+    )
+
+@app.route('/predef.html', methods=['GET'])
+def query():
+    logo = './static/resources/MatOLab-Logo.svg'
+    return render_template(
+        "predef.html",
         logo=logo
     )
 
