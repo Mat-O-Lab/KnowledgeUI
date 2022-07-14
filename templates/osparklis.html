@@ -3,46 +3,41 @@
 
   This file is part of Sparklis.
   -->
-{% extends "bootstrap/base.html" %}
-{% from 'macros.html' import navigation with context %}
-{% block title %}Knowledge UI{% endblock %}
+{% extends "base.html" %}
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="#">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<style type="text/css">
-		.node {
-			stroke: #fff;
-			fill: #ddd;
-			stroke-width: 1.5px;
-		}
+<style type="text/css">
+	.node {
+		stroke: #fff;
+		fill: #ddd;
+		stroke-width: 1.5px;
+	}
 
-		.link {
-			stroke: #999;
-			stroke-opacity: .6;
-			stroke-width: 1px;
-		}
+	.link {
+		stroke: #999;
+		stroke-opacity: .6;
+		stroke-width: 1px;
+	}
 
-		marker {
-			stroke: #999;
-			fill: rgba(124, 240, 10, 0);
-		}
+	marker {
+		stroke: #999;
+		fill: rgba(124, 240, 10, 0);
+	}
 
-		.node-text {
-			font: 11px sans-serif;
-			fill: black;
-		}
+	.node-text {
+		font: 11px sans-serif;
+		fill: black;
+	}
 
-		.link-text {
-			font: 9px sans-serif;
-			fill: grey;
-		}
+	.link-text {
+		font: 9px sans-serif;
+		fill: grey;
+	}
 
-		svg {
-			border: 1px solid black;
-		}
+	svg {
+		border: 1px solid black;
+	}
 	</style>
 <script>
 	window.dataLayer = window.dataLayer || [];
@@ -256,30 +251,7 @@
 </script>
 {% endblock %}
 
-{% block html_attribs %} lang="en" {% endblock %}
-
-{% block content %}
-<header class="pb-3 mb-4 border-bottom">
-	<a href="/" class="d-flex align-items-center text-dark text-decoration-none m-3 pb-1">
-		<img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
-	</a>
-</header>
-
-<body>
-	{{ navigation() }}
-
-	<!--
-    <h2 class="texte lang-en">Sparklis - <small><em>Complex queries and exploratory search on SPARQL endpoints at your fingertips!</em></small></h2>
-    <h2 class="texte lang-fr">Sparklis - <small><em>Requêtes complexes et recherche exploratoire du bout des doigts!</em></small></h2>
-    <h2 class="texte lang-es">Sparklis - <small><em>Consultas complejas y búsqueda exploratoria sobre SPARQL endpoints en la punta de tus dedos!</em></small></h2>
-	<h2 class="texte lang-nl">Sparklis - <small><em>Complexe queries en exploratief zoeken in SPARQL endpoints binnen handbereik!</em></small></h2>
-
-      <span class="texte lang-en">NEW in 2016: nested aggregations, and computation/filtering expressions !!</span>
-      <span class="texte lang-fr">NOUVEAU en 2016 : agrégations imbriquées et expressions de calcul/filtrage !!</span>
-      <span class="texte lang-es">NUEVO en 2016 : agregaciones anidadas y expresiones de cómputo/filtrado !!</span>
-	  <span class="texte lang-nl">Nieuw in 2016: nested aggregations en berekening/filtering expressions !!</span>
--->
-
+{% block main %}
 	<div id="control-navig" class="navbar navbar-expand-lg" data-spy="affix" data-offset-top="75">
 		<div class="">
 			<span class="btn-group">
@@ -986,74 +958,14 @@
 		</div>
 
 	</div>
-	<script>
-		//Global variables for vizualization. Will probably get changed.
-		var svg = d3.select("#svg-body").append("svg")
-			.attr("width", 800)
-			.attr("height", 600)
-			.call(responsivefy)
-			;
-		var force = d3.layout.force();
-	</script>
-
+		<script>
+			//Global variables for vizualization. Will probably get changed.
+			var svg = d3.select("#svg-body").append("svg")
+				.attr("width", 800)
+				.attr("height", 600)
+				.call(responsivefy)
+				;
+			var force = d3.layout.force();
+		</script>
 	</div>
-
-
-	<footer>
-		<hr />
-		<span class="site-footer-owner"><a href="https://github.com/Mat-O-Lab/NaturalMSEQueries">NaturalMSEQueries</a>
-			is maintained by <a href="https://matolab.org"><img
-					src="https://github.com/Mat-O-Lab/CSVToCSVW/raw/main/static/resources/MatOLab-Logo.svg" width="5%"
-					alt="mat-o-lab-logo" /></a>.</span>
-		<!-- licence CC-BY-NC -->
-		<a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"><img
-				alt="Creative Commons Licence" style="border-width:0"
-				src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
-
-		<span class="texte lang-en">Created by </span>
-		<span class="texte lang-fr">Créé par </span>
-		<span class="texte lang-es">Creado por </span>
-		<span class="texte lang-nl">Gemaakt door </span>
-		<a target="_blank" href="https://people.irisa.fr/Sebastien.Ferre">Sébastien Ferré</a>
-		<a target="_blank" href="https://www-semlis.irisa.fr/"><img src="semlis.png" alt="SemLIS team" height="30"></a>
-		<a target="_blank" href="https://www.irisa.fr/"><img src="irisa.jpg" alt="IRISA" height="30"></a>
-		<a target="_blank" href="https://www.univ-rennes1.fr/"><img src="UR1.png" alt="Université Rennes 1"
-				height="40"></a>
-		<br />
-
-		<span class="texte lang-es">
-			Traducido al Español por <a target="_blank" href="mailto:jose.ortizv@ucuenca.ec">José Enrique Ortiz
-				Vivar</a>, revisado por <a target="_blank" href="https://webdiis.unizar.es/people/cbobed">Carlos
-				Bobed</a>.
-			<br />
-		</span>
-		<span class="texte lang-nl">
-			Vertaald naar het Nederlands door <a target="_blank" href="mailto:Erwin.Folmer@kadaster.nl">Erwin
-				Folmer</a>.
-			<br />
-		</span>
-
-		<span>Citation: <em>Ferré, Sébastien. ‘Sparklis: An Expressive Query Builder for SPARQL Endpoints with Guidance
-				in Natural Language’. Semantic Web 8(3) : 405-418. IOS Press, 2017.</em> (<a
-				href="https://hal.inria.fr/hal-01485093/file/sparklis-preprint.pdf">PDF</a>)</span>
-
-		<br />
-
-		<span class="texte lang-en">Last modified May 26th, 2021. Visit </span>
-		<span class="texte lang-fr">Dernière modification le 26 mai 2021. Visiter </span>
-		<span class="texte lang-es">Última modificación el 26 de Mayo 2021. Visite </span>
-		<span class="texte lang-nl">Voor het laatst gewijzigd op 26 Mei 2021. Bezoek </span>
-		<a target="_blank" href="https://people.irisa.fr/Sebastien.Ferre/software/">
-			<span class="texte lang-en">my homepage</span>
-			<span class="texte lang-fr">ma page Web</span>
-			<span class="texte lang-es">mi página Web</span>
-			<span class="texte lang-nl">mijn website </span>
-		</a>
-		<span class="texte lang-en"> for more information.</span>
-		<span class="texte lang-fr"> pour plus d'information.</span>
-		<span class="texte lang-es"> para más información.</span>
-		<span class="texte lang-nl"> voor meer informatie.</span>
-	</footer>
-</body>
 {% endblock %}
-</html>
