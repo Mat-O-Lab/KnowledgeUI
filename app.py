@@ -12,7 +12,7 @@ import requests
 import io
 
 from config import config
-from utilities import parse_sunburst
+from utilities import parse_sunburst, fetch_overview_data
 
 config_name = os.environ.get("APP_MODE") or "development"
 
@@ -22,38 +22,20 @@ app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
 
 ENDPOINT = app.config['SPARQL_ENDPOINT']
+SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
+app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
 
 """
 Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
 """
 @app.context_processor
 def init_global_vars_template():
-    return dict(endpoint=ENDPOINT)
+    return {"endpoint": ENDPOINT, "sparklis_options": SPARKLIS_OPTIONS}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-    app.logger.info('querying for sunburst graph')
-
-    query = """
-            PREFIX owl: <http://www.w3.org/2002/07/owl#>
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            SELECT ?c (MIN(?label) AS ?label1) ?superclass (count(?x) as ?count) WHERE {
-            SERVICE <https://fuseki.matolab.org/alutrace/sparql> {
-                ?x a ?c.
-                ?c rdfs:label ?label.
-                ?c rdfs:subClassOf ?superclass.
-                filter (?c != ?superclass &&
-                        !exists {?c rdfs:subClassOf ?othersuper. ?othersuper rdfs:subClassOf ?superclass.
-                                filter(?c != ?othersuper && ?othersuper != ?superclass)})
-            }
-            } group by ?c ?label1 ?superclass HAVING(?count > 1) order by desc(?count)
-            """
-
-    res = requests.get(ENDPOINT, params={'query': query}, headers={'Accept': 'text/csv'})
-    
-    sunburst_data = parse_sunburst(res.text)
+    #sunburst_data = parse_sunburst(res.text)
 
     logo = './static/resources/MatOLab-Logo.svg'
     message = ''
@@ -63,7 +45,7 @@ def index():
         logo=logo,
         message=message,
         result=result,
-        sunburst_data=sunburst_data
+        sunburst_data=app.overview_data
         )
 
 @app.route('/osparklis.html', methods=['GET'])
