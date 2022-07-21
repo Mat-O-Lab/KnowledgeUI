@@ -6,11 +6,6 @@ from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
 
-from rdflib import Graph
-from rdflib.query import Result
-import requests
-import io
-
 from config import config
 from utilities import parse_sunburst, fetch_overview_data
 
@@ -25,16 +20,23 @@ ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
 app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
 
-"""
-Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
-"""
 @app.context_processor
 def init_global_vars_template():
-    return {"endpoint": ENDPOINT, "sparklis_options": SPARKLIS_OPTIONS}
+    """ Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
+    """
+    return dict(endpoint=app.config['SPARQL_ENDPOINT'])
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """ This is the main function which redirects here after lunching
 
+    It allows both post and get methods and initializes some general parameters
+    like logo and message once called
+
+    Parameters
+    ----------
+
+    """
     #sunburst_data = parse_sunburst(res.text)
 
     logo = './static/resources/MatOLab-Logo.svg'
@@ -48,8 +50,12 @@ def index():
         sunburst_data=app.overview_data
         )
 
+
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
+    """ Display Sparklis Web Application for /osparklis.html route.      
+    """
+    
     logo = './static/resources/MatOLab-Logo.svg'
     return render_template(
         "osparklis.html", 

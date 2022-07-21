@@ -2,6 +2,8 @@ import json
 import requests
 
 def fetch_overview_data(ENDPOINT):
+    """ Fetches an overview of the class hierarchies of the specified triples store.
+    """
     query = """
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -23,6 +25,8 @@ def fetch_overview_data(ENDPOINT):
 
 
 def parse_sunburst(csv: str):
+    """ Converts a class hierarchy csv dataset into a hierarchical JSON format.
+    """
     reverse_dict = {}
 
     # go through each line of results, excluding the header
@@ -37,10 +41,9 @@ def parse_sunburst(csv: str):
     #base_node = {'iri': 'http://www.w3.org/2002/07/owl#Thing', 'label': 'Thing'}
     base_node = {'iri': 'http://purl.obolibrary.org/obo/BFO_0000001', 'label': 'Entity'}
 
-    return json.dumps(make_children(base_node, reverse_dict))
+    return json.dumps(__make_children(base_node, reverse_dict))
 
-def make_children(node, reverse_dict):
-
+def __make_children(node, reverse_dict):
     obj = {'name': node['label'], 'iri': node['iri']}
     if node['iri'] in reverse_dict:
         children = []
