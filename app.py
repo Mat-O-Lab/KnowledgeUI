@@ -4,7 +4,6 @@ from flask import Flask, flash, request, jsonify, render_template
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
-
 from config import config
 
 config_name = os.environ.get("APP_MODE") or "development"
@@ -14,15 +13,18 @@ CORS(app)
 app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
 
-"""
-Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
-"""
-@app.context_processor
-def init_global_vars_template():
-    return dict(endpoint=app.config['SPARQL_ENDPOINT'])
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """ This is the main function which redirects here after lunching
+
+    It allows both post and get methods and initializes some general parameters
+    like logo and message once called
+
+    Parameters
+    ----------
+
+    """
+
     logo = './static/resources/MatOLab-Logo.svg'
     message = ''
     result = ''
@@ -37,6 +39,14 @@ def index():
 
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
+    """ render explore tab in the main page
+    it only allows get methods
+
+    Parameters
+    
+    
+    """
+    
     logo = './static/resources/MatOLab-Logo.svg'
     return render_template(
         "osparklis.html",
