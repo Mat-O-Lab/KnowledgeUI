@@ -2,7 +2,7 @@ import os
 
 class Config:
     """
-    This class defines some gneral configs 
+    This class defines some general configs 
 
     ....
 

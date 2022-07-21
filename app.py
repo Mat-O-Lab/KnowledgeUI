@@ -15,11 +15,11 @@ CORS(app)
 app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
 
-"""
-Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
-"""
+
 @app.context_processor
 def init_global_vars_template():
+    """Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
+    """
     return dict(endpoint=app.config['SPARQL_ENDPOINT'])
 
 @app.route('/', methods=['GET', 'POST'])
@@ -44,12 +44,12 @@ def index():
         result=result
         )
 
-""" 
-Display Sparklis Web Application for /osparklis.html route.      
-"""
+
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
-   
+    """ Display Sparklis Web Application for /osparklis.html route.      
+    """
+    
     logo = './static/resources/MatOLab-Logo.svg'
     message = ''
     result = ''
