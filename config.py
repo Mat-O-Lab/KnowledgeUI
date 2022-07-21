@@ -22,6 +22,7 @@ class Config:
     TEMPORAL_FOLDER = os.environ.get("TEMPORAL_FOLDER") or "tmp"
     TEMPLATES_AUTORELOAD = True
     SPARQL_ENDPOINT = 'https://fuseki.matolab.org/alutrace/sparql'
+    SPARKLIS_OPTIONS = "&entity_lexicon_select=http%3A//www.w3.org/2000/01/rdf-schema%23label&concept_lexicons_select=http%3A//www.w3.org/2000/01/rdf-schema%23label&concept_tooltips_select=http%3A//www.w3.org/2000/01/rdf-schema%23comment"
 
 class DevelopmentConfig(Config):
     """

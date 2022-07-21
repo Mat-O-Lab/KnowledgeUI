@@ -7,3 +7,4 @@ flask_swagger_ui
 flask_cors
 wtforms
 pandas
+requests

@@ -1,12 +1,8 @@
-{% extends "bootstrap/base.html" %}
-{% from 'macros.html' import navigation with context %}
-{% block title %}Knowledge UI{% endblock %}
+{% extends "base.html" %}
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="#">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script type="text/javascript" src="{{ url_for('static', filename='sunburst.js') }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
@@ -14,40 +10,69 @@
 
   gtag('config', 'your_analytiks_tag');
 </script>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+  function filterNodesById(nodes, id) {
+    return nodes.filter(function (n) { return n.id === id; });
+  }
+
+  function triplesToGraph(triples) {
+
+    svg.html("");
+    //Graph
+    var graph = { nodes: [], links: [] };
+
+    //Initial Graph from triples
+    triples.forEach(function (triple) {
+      var subjId = triple.subject;
+      var predId = triple.predicate;
+      var objId = triple.object;
+
+      var subjNode = filterNodesById(graph.nodes, subjId)[0];
+      var objNode = filterNodesById(graph.nodes, objId)[0];
+
+      if (subjNode == null) {
+        subjNode = { id: subjId, label: subjId, weight: 1 };
+        graph.nodes.push(subjNode);
+      }
+
+      if (objNode == null) {
+        objNode = { id: objId, label: objId, weight: 1 };
+        graph.nodes.push(objNode);
+      }
+
+
+      graph.links.push({ source: subjNode, target: objNode, predicate: predId, weight: 1 });
+    });
+
+    return graph;
+  }
+</script>
 {% endblock %}
 
-{% block html_attribs %} lang="en"{% endblock %}
+{% block main %}
+  <div id="chart">
+    <meta id="sunburst_data" data-nodes="{{ sunburst_data }}">
+    <svg id="sunburst" width="1000" height="1000"></svg>
+    <script>
+      var nodeData = $('#sunburst_data').data("nodes")
 
-{% block content %}
-<header class="pb-3 mb-4 border-bottom">
-  <a href="/" class="d-flex align-items-center text-dark text-decoration-none m-3 pb-1">
-    <img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
-  </a>
-</header>
-<body class="bg-light rounded-3 px-3">
-  {{navigation()}}
-  <div class="container-fluid mb-3">
-    <p class="col-md-12 ps-0 fs-4">
-      Dashboard
-    </p>
+      prefix = "http://example.com/"
+
+      chart = Sunburst(nodeData, {
+        value: d => d.size, // size of each node (file); null for internal nodes (folders)
+        label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
+        title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
+        link: (d, n) => d.iri,
+        width: 1000,
+        height: 1000
+      });
+
+      svg = document.getElementById("sunburst");
+      svg.appendChild(chart)
+    </script>
   </div>
-  {% with messages = get_flashed_messages() %}
-  {% endwith %}
-</body>
-
-{% block footer %}
-<footer class="pt-3 my-4 text-center text-muted border-top">
-  <span class="site-footer-owner"><a href="https://github.com/Mat-O-Lab/KnowledgeUI">KnowledgeUI</a> is maintained by <a
-      href="https://matolab.org"><img src="{{ logo }}" width="5%" alt="mat-o-lab-logo" /></a>.</span>
-</footer>
-{% endblock %}
-{% endblock %}
-
-
-{% block scripts %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script
-  src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
-{{super()}}
 {% endblock %}

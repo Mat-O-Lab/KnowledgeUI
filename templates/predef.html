@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block main %}
+<div class="row text-left">
+    <h2>Example queries for Sparklis</h2>
+  <p>
+    This page lists a number of predefined queries over different datasets
+      that can be built in <a target="_blank"
+                href="osparklis.html">Sparklis</a>.
+  </p>
+  <p>
+    For
+    each example query, a link enables to directly jump to it in
+    Sparklis, and to navigate further.
+  </p>
+</div>
+<div class="row">
+  <div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link text-left active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Alutrace Dataset</button>
+      <button class="nav-link text-left " id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">BWMD Dataset</button>
+      <button class="nav-link text-left " id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Web4Gen Dataset</button>
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade in show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <h3>Predefined queries demonstrated in the <a target="_blank" href="">Alutrace Dataset</a></h3>
+        <ol>  
+          <li><strong>Example Query by Andre</strong>
+            <a class="sparklis-permalink" target="_blank" href="http://127.0.0.1:5000/osparklis.html?title=&endpoint={{ endpoint }}{{ sparklis_options }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid%23BWMD_00036%22%29%29%2CSome%28Triple%28S%2CDet%28An%28103%2CModif%28Select%2CUnordered%29%2CThing%29%2CNone%29%2CDet%28An%28104%2CModif%28Select%2CUnordered%29%2CThing%29%2CSome%28Rel%28%22https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid%23BWMD_00319%22%2CBwd%2CDet%28An%28236%2CModif%28Select%2CUnordered%29%2CThing%29%2CNone%29%29%29%29%29%29%29%29&sparklis-path=DDDRDD"><button class="btn btn-default btn-sm">Open in Sparklis</button></a>
+            <div id="lisql"><span id="focus1" class="focus">give me <span id="focus2" class="focus">every <span class="classURI" title="">BWMD 00036</span> that has a <span id="focus3" class="focus"><ul class="coordination"><li><span id="focus4" class="focus">relation to the <span class="propURI" title="">BWMD 00319</span> of something</li></ul></span></span></span></div>
+          </li>
+          <li><strong>More will come</strong>
+          </li>
+        </ol>
+      </div>
+      <div class="tab-pane fade in" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Comming Soon</div>
+      <div class="tab-pane fade in" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Comming Soon</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
