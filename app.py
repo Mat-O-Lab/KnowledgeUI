@@ -4,6 +4,8 @@ from flask import Flask, flash, request, jsonify, render_template
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
+
+from rdflib import Graph
 from config import config
 
 config_name = os.environ.get("APP_MODE") or "development"
@@ -12,6 +14,13 @@ app = Flask(__name__)
 CORS(app)
 app.config.from_object(config[config_name])
 bootstrap = Bootstrap(app)
+
+"""
+Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
+"""
+@app.context_processor
+def init_global_vars_template():
+    return dict(endpoint=app.config['SPARQL_ENDPOINT'])
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -35,22 +44,21 @@ def index():
         result=result
         )
 
-# TODO: add logo, message and result to a general function instead of defining in every function separately
-
+""" 
+Display Sparklis Web Application for /osparklis.html route.      
+"""
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
-    """ render explore tab in the main page
-    it only allows get methods
-
-    Parameters
-    
-    
-    """
-    
+   
     logo = './static/resources/MatOLab-Logo.svg'
+    message = ''
+    result = ''
+
     return render_template(
         "osparklis.html",
-        logo=logo
+        logo=logo,
+        message=message,
+        result=result,
     )
 
 if __name__ == "__main__":
