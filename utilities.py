@@ -48,7 +48,7 @@ def __make_children(node, reverse_dict):
     if node['iri'] in reverse_dict:
         children = []
         for child in reverse_dict[node['iri']]:
-            children.append(make_children(child, reverse_dict))
+            children.append(__make_children(child, reverse_dict))
         obj['children'] = children
     else:
         obj['size'] = node['count']
