@@ -24,7 +24,9 @@ app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
 def init_global_vars_template():
     """ Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
     """
-    return dict(endpoint=app.config['SPARQL_ENDPOINT'])
+    return dict(endpoint=ENDPOINT,
+        sparklis_options=SPARKLIS_OPTIONS
+    )
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
