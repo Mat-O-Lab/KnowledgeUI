@@ -72,6 +72,14 @@ def query():
         logo=logo
     )
 
+@app.route('/predict', methods=['GET'])
+def predict():
+    logo = './static/resources/MatOLab-Logo.svg'
+    return render_template(
+        "predict.html",
+        logo=logo
+    )
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=app.config["DEBUG"])
