@@ -111,18 +111,25 @@
 
 		function getTitle(Id){
 			let myStrList = Id.split(':');
-			let t = "";
+			var titleElement = document.createElement("div");
+			var myList = document.createElement("ul")
+			titleElement.append(myList)
 			if(myStrList.length == 2){
 				for (const k in nameSpaces){
 					console.log(nameSpaces[k])
 					if(nameSpaces[k] == myStrList[0]){
-						t = "shorten uri: " + Id + '\n' + nameSpaces[k] + ':' + k;
-						return t;
+						//titleElement.innerHTML = "shorten uri: " + Id + '\n' + nameSpaces[k] + ':' + k;
+						shorten1 = document.createElement('li')
+						shorten1.innerHTML = "shorten uri: " + Id
+						shorten2 = document.createElement('li')
+						shorten2.innerHTML = nameSpaces[k] + ':' + k;
+						myList.append(shorten1, shorten2)
+						return titleElement;
 					}
 				}
 			}
-			t = 'value:' + Id;
-			return t;
+			titleElement.innerHTML = 'value:' + Id;
+			return titleElement;
 		}
 		//Graph
 		var graph = { nodes: [], links: [] };
