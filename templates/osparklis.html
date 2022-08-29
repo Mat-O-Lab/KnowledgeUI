@@ -27,8 +27,10 @@
 <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
 <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <script>
+	var nameSpaces = {};
 
-	alert = function(){}
+	legacyAlert = alert;
+	alert = function () {};
 
 	function filterNodesById(nodes, id) {
 		return nodes.filter(function (n) { return n.id === id; });
@@ -65,11 +67,99 @@
 					edges: new vis.DataSet(graph.links)};
 		return data;
 	}
+
+	function generateGraph(weirdObject) {
+
+		var triples = [];
+		
+		function generateNamespace(result){
+			var res = "";
+			if(result.type == 'uri'){
+				let myStrList =result.uri.split('/');
+				lastElement = myStrList[myStrList.length-1];
+				console.log(lastElement);
+				myStrList.pop();
+				nspace = myStrList.join('/');
+				if(!nameSpaces.hasOwnProperty(nspace)){
+					var size = Object.keys(nameSpaces).length;
+					nameSpaces[nspace] = 'x'+size;
+				}
+				res = nameSpaces[nspace] + ':' + lastElement; 
+			}
+			else {
+				if (result.type == 'bnode'){
+					res = result.id;
+				}
+				else if (result.type == 'var'){
+					res = result.name;
+				}
+				else{
+					res = result.str;
+				}
+			}
+			return res;
+		}
+
+		for (let i = 0; i < weirdObject.rows.length; i++) {
+			triple = {}
+			subj = generateNamespace(weirdObject.rows[i][0]);
+			pred = generateNamespace(weirdObject.rows[i][1]);
+			obj = generateNamespace(weirdObject.rows[i][2]);
+			triples.push({ subject: subj, predicate: pred, object: obj});
+		}
+		// svg.html("");
+
+		function getTitle(Id){
+			let myStrList = Id.split(':');
+			let t = "";
+			if(myStrList.length == 2){
+				for (const k in nameSpaces){
+					console.log(nameSpaces[k])
+					if(nameSpaces[k] == myStrList[0]){
+						t = "shorten uri: " + Id + '\n' + nameSpaces[k] + ':' + k;
+						return t;
+					}
+				}
+			}
+			t = 'value:' + Id;
+			return t;
+		}
+		//Graph
+		var graph = { nodes: [], links: [] };
+
+		//Initial Graph from triples
+		triples.forEach(function (triple) {
+			var subjId = triple.subject;
+			var predId = triple.predicate;
+			var objId = triple.object;
+
+			var subjNode = filterNodesById(graph.nodes, subjId)[0];
+
+			var objNode = filterNodesById(graph.nodes, objId)[0];
+
+			if (subjNode == null) {
+				subjTitle = getTitle(subjId);
+				subjNode = { id: subjId, label: subjId, title:subjTitle};
+				graph.nodes.push(subjNode);
+			}
+
+			if (objNode == null) {
+				objTitle = getTitle(objId);
+				objNode = { id: objId, label: objId, title:subjTitle};
+				graph.nodes.push(objNode);
+			}
+
+			graph.links.push({ from: subjId, to: objId, label: predId, title: getTitle(predId)});
+		});
+		var data = {nodes: new vis.DataSet(graph.nodes),
+					edges: new vis.DataSet(graph.links)};
+		return data;
+		}
 	// function cleanUri(myUri) {
 	// 	let myStrList = myUri.split('/');
 	// 	return myStrList[myStrList.length - 1];
 	// }
-	
+
 	function parseThisShit(weirdObject) {
 		var triples = [];
 		for (let i = 0; i < weirdObject.rows.length; i++) {
@@ -101,10 +191,9 @@
 		console.log(sparResults)
 		var container = document.getElementById('mynetwork');
 		if(sparResults.columns.length == 3){
-			var triples = parseThisShit(sparResults);
+			//var triples = parseThisShit(sparResults);
 
-			var data = triplesToGraph(triples);
-			container.innerHTML = '';
+			var data = generateGraph(sparResults); //triplesToGraph(triples);
 			var options = {}
 
 
@@ -119,7 +208,7 @@
 		}
 		else{
 			console.log('test');
-			container.innerHTML='Results are not triples.'
+			legacyAlert('Results are not triples');
 		}
 	}
 	//Wait until object sparklis get instanciated
