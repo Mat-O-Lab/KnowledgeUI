@@ -66,7 +66,7 @@
         value: d => d.size, // size of each node (file); null for internal nodes (folders)
         label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
         title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
-        link: (d, n) => d.iri,
+        link: (d, n) => 'http://127.0.0.1:5000/osparklis.html?title=&endpoint={{ endpoint }}{{ sparklis_options }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22' + d.iri +'%22%29%29%2CNone%29%29&sparklis-path=D', //d.iri,
         width: 1000,
         height: 1000
       });
