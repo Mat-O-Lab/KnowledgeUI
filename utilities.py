@@ -30,9 +30,10 @@ def parse_sunburst(csv: str):
     reverse_dict = {}
 
     # go through each line of results, excluding the header
+
     for line in csv.split('\n')[1:-1]:
-        iri, label, parent, count = [elem.strip() for elem in line.split(',')]
-        
+        if len(line.split(','))==4:
+            iri, label, parent, count = [elem.strip() for elem in line.split(',')]
         try:
             reverse_dict[parent].append({'iri': iri, 'label': label, 'count': count})
         except KeyError:
