@@ -77,7 +77,6 @@
 			if(result.type == 'uri'){
 				let myStrList =result.uri.split('/');
 				lastElement = myStrList[myStrList.length-1];
-				console.log(lastElement);
 				myStrList.pop();
 				nspace = myStrList.join('/');
 				if(!nameSpaces.hasOwnProperty(nspace)){
@@ -116,7 +115,6 @@
 			titleElement.append(myList)
 			if(myStrList.length == 2){
 				for (const k in nameSpaces){
-					console.log(nameSpaces[k])
 					if(nameSpaces[k] == myStrList[0]){
 						//titleElement.innerHTML = "shorten uri: " + Id + '\n' + nameSpaces[k] + ':' + k;
 						shorten1 = document.createElement('li')
@@ -195,9 +193,10 @@
 
 	function updateView(){
 		var sparResults = sparklis.currentPlace().results()
-		console.log(sparResults)
+		console.log(sparResults);
+		console.log(sparklis.currentPlace().focusPath())
 		var container = document.getElementById('mynetwork');
-		if(sparResults.columns.length == 3){
+		if(sparResults.columns.length >= 3){
 			//var triples = parseThisShit(sparResults);
 
 			var data = generateGraph(sparResults); //triplesToGraph(triples);
@@ -214,7 +213,6 @@
 			network.setOptions(options);
 		}
 		else{
-			console.log('test');
 			legacyAlert('Results are not triples');
 		}
 	}
@@ -222,7 +220,6 @@
 	// $.getScript("{{ url_for('static', filename='osparklis.js') }}", function(){
 	// 	sparklis_extension.hookResults = runWhenSparklisUpdate;
 	// });
-		alert('Test')
 </script>
 {% endblock %}
 
