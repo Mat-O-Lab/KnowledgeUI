@@ -7,38 +7,13 @@
 
 {% block head %}
 {{ super() }}
-<style type="text/css">
-	.node {
-		stroke: #fff;
-		fill: #ddd;
-		stroke-width: 1.5px;
-	}
-
-	.link {
-		stroke: #999;
-		stroke-opacity: .6;
-		stroke-width: 1px;
-	}
-
-	marker {
-		stroke: #999;
-		fill: rgba(124, 240, 10, 0);
-	}
-
-	.node-text {
-		font: 11px sans-serif;
-		fill: black;
-	}
-
-	.link-text {
-		font: 9px sans-serif;
-		fill: grey;
-	}
-
-	svg {
-		border: 1px solid black;
-	}
-	</style>
+	<style type="text/css">
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+    </style>
 <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() { dataLayer.push(arguments); }
@@ -49,10 +24,13 @@
 <link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <script>
+	var nameSpaces = {};
 
-	alert = function(){}
+	legacyAlert = alert;
+	alert = function () {};
 
 	function filterNodesById(nodes, id) {
 		return nodes.filter(function (n) { return n.id === id; });
@@ -60,7 +38,7 @@
 
 	function triplesToGraph(triples) {
 
-		svg.html("");
+		// svg.html("");
 		//Graph
 		var graph = { nodes: [], links: [] };
 
@@ -74,180 +52,174 @@
 			var objNode = filterNodesById(graph.nodes, objId)[0];
 
 			if (subjNode == null) {
-				subjNode = { id: subjId, label: subjId, weight: 1 };
+				subjNode = { id: subjId, label: subjId};
 				graph.nodes.push(subjNode);
 			}
 
 			if (objNode == null) {
-				objNode = { id: objId, label: objId, weight: 1 };
+				objNode = { id: objId, label: objId};
 				graph.nodes.push(objNode);
 			}
 
-
-			graph.links.push({ source: subjNode, target: objNode, predicate: predId, weight: 1 });
+			graph.links.push({ from: subjId, to: objId, label: predId});
 		});
-		return graph;
+		var data = {nodes: new vis.DataSet(graph.nodes),
+					edges: new vis.DataSet(graph.links)};
+		return data;
 	}
 
-	function cleanUri(myUri) {
-		let myStrList = myUri.split('/');
-		return myStrList[myStrList.length - 1];
-	}
-	
+	function generateGraph(weirdObject) {
+
+		var triples = [];
+		
+		function generateNamespace(result){
+			var res = "";
+			if(result.type == 'uri'){
+				let myStrList =result.uri.split('/');
+				lastElement = myStrList[myStrList.length-1];
+				myStrList.pop();
+				nspace = myStrList.join('/');
+				if(!nameSpaces.hasOwnProperty(nspace)){
+					var size = Object.keys(nameSpaces).length;
+					nameSpaces[nspace] = 'x'+size;
+				}
+				res = nameSpaces[nspace] + ':' + lastElement; 
+			}
+			else {
+				if (result.type == 'bnode'){
+					res = result.id;
+				}
+				else if (result.type == 'var'){
+					res = result.name;
+				}
+				else{
+					res = result.str;
+				}
+			}
+			return res;
+		}
+
+		for (let i = 0; i < weirdObject.rows.length; i++) {
+			triple = {}
+			subj = generateNamespace(weirdObject.rows[i][0]);
+			pred = generateNamespace(weirdObject.rows[i][1]);
+			obj = generateNamespace(weirdObject.rows[i][2]);
+			triples.push({ subject: subj, predicate: pred, object: obj});
+		}
+		// svg.html("");
+
+		function getTitle(Id){
+			let myStrList = Id.split(':');
+			var titleElement = document.createElement("div");
+			var myList = document.createElement("ul")
+			titleElement.append(myList)
+			if(myStrList.length == 2){
+				for (const k in nameSpaces){
+					if(nameSpaces[k] == myStrList[0]){
+						//titleElement.innerHTML = "shorten uri: " + Id + '\n' + nameSpaces[k] + ':' + k;
+						shorten1 = document.createElement('li')
+						shorten1.innerHTML = "shorten uri: " + Id
+						shorten2 = document.createElement('li')
+						shorten2.innerHTML = nameSpaces[k] + ':' + k;
+						myList.append(shorten1, shorten2)
+						return titleElement;
+					}
+				}
+			}
+			titleElement.innerHTML = 'value:' + Id;
+			return titleElement;
+		}
+		//Graph
+		var graph = { nodes: [], links: [] };
+
+		//Initial Graph from triples
+		triples.forEach(function (triple) {
+			var subjId = triple.subject;
+			var predId = triple.predicate;
+			var objId = triple.object;
+
+			var subjNode = filterNodesById(graph.nodes, subjId)[0];
+
+			var objNode = filterNodesById(graph.nodes, objId)[0];
+
+			if (subjNode == null) {
+				subjTitle = getTitle(subjId);
+				subjNode = { id: subjId, label: subjId, title:subjTitle};
+				graph.nodes.push(subjNode);
+			}
+
+			if (objNode == null) {
+				objTitle = getTitle(objId);
+				objNode = { id: objId, label: objId, title:subjTitle};
+				graph.nodes.push(objNode);
+			}
+
+			graph.links.push({ from: subjId, to: objId, label: predId, title: getTitle(predId)});
+		});
+		var data = {nodes: new vis.DataSet(graph.nodes),
+					edges: new vis.DataSet(graph.links)};
+		return data;
+		}
+	// function cleanUri(myUri) {
+	// 	let myStrList = myUri.split('/');
+	// 	return myStrList[myStrList.length - 1];
+	// }
+
 	function parseThisShit(weirdObject) {
 		var triples = [];
 		for (let i = 0; i < weirdObject.rows.length; i++) {
-			triples.push({ subject: cleanUri(weirdObject.rows[i][0].uri), predicate: cleanUri(weirdObject.rows[i][1].uri), object: cleanUri(weirdObject.rows[i][2].uri) });
+			triples.push({ subject: weirdObject.rows[i][0].uri, predicate: weirdObject.rows[i][1].uri, object: weirdObject.rows[i][2].uri});
 		}
 		return triples;
 	}
 
-	function update(graph) {
-		// ==================== Add Marker ====================
-		svg.append("svg:defs").selectAll("marker")
-			.data(["end"])
-			.enter().append("svg:marker")
-			.attr("id", String)
-			.attr("viewBox", "0 -5 10 10")
-			.attr("refX", 30)
-			.attr("refY", -0.5)
-			.attr("markerWidth", 6)
-			.attr("markerHeight", 6)
-			.attr("orient", "auto")
-			.append("svg:polyline")
-			.attr("points", "0,-5 10,0 0,5")
-			;
+	// function runWhenSparklisUpdate(sparResults){
+	// 	var triples = parseThisShit(sparResults);
 
-		// ==================== Add Links ====================
-		var links = svg.selectAll(".link")
-			.data(graph.links)
-			.enter()
-			.append("line")
-			.attr("marker-end", "url(#end)")
-			.attr("class", "link")
-			.attr("stroke-width", 10)
-			;//links
-
-		// ==================== Add Link Names =====================
-		var linkTexts = svg.selectAll(".link-text")
-			.data(graph.links)
-			.enter()
-			.append("text")
-			.attr("class", "link-text")
-			.text(function (d) { return d.predicate; })
-			;
-
-		//linkTexts.append("title")
-		//		.text(function(d) { return d.predicate; });
-
-		// ==================== Add Link Names =====================
-		var nodeTexts = svg.selectAll(".node-text")
-			.data(graph.nodes)
-			.enter()
-			.append("text")
-			.attr("class", "node-text")
-			.text(function (d) { return d.label; })
-			;
-		//nodeTexts.append("title")
-		//		.text(function(d) { return d.label; });
-
-		// ==================== Add Node =====================
-		var nodes = svg.selectAll(".node")
-			.data(graph.nodes)
-			.enter()
-			.append("circle")
-			.attr("class", "node")
-			.attr("r", 8)
-			.call(force.drag)
-			;//nodes
-
-		// ==================== Force ====================
-		force.on("tick", function () {
-			nodes
-				.attr("cx", function (d) { return d.x; })
-				.attr("cy", function (d) { return d.y; })
-				;
-
-			links
-				.attr("x1", function (d) { return d.source.x; })
-				.attr("y1", function (d) { return d.source.y; })
-				.attr("x2", function (d) { return d.target.x; })
-				.attr("y2", function (d) { return d.target.y; })
-				;
-
-			nodeTexts
-				.attr("x", function (d) { return d.x + 12; })
-				.attr("y", function (d) { return d.y + 3; })
-				;
+	// 	var data = triplesToGraph(triples);
+	// 	var container = document.getElementById('mynetwork');
+	// 	var options = {}
 
 
-			linkTexts
-				.attr("x", function (d) { return 4 + (d.source.x + d.target.x) / 2; })
-				.attr("y", function (d) { return 4 + (d.source.y + d.target.y) / 2; })
-				;
-		});
+    // 	// initialize your network!
+    // 	var network = new vis.Network(container, data, options);
+	// 	options = {
+	// 		edges: {
+  	// 		length: 500
+	// 		}
+	// 	}
+	// 	network.setOptions(options);
+	// }	
 
-		// ==================== Run ====================
-		force
-			.nodes(graph.nodes)
-			.links(graph.links)
-			.charge(-500)
-			.linkDistance(100)
-			.start()
-			;
-	}
+	function updateView(){
+		var sparResults = sparklis.currentPlace().results()
+		console.log(sparResults);
+		console.log(sparklis.currentPlace().focusPath())
+		var container = document.getElementById('mynetwork');
+		if(sparResults.columns.length >= 3){
+			//var triples = parseThisShit(sparResults);
 
-	function responsivefy(svg) {
-		// container will be the DOM element
-		// that the svg is appended to
-		// we then measure the container
-		// and find its aspect ratio
-		const container = d3.select(svg.node().parentNode),
-			width = parseInt(svg.style('width'), 10),
-			height = parseInt(svg.style('height'), 10),
-			aspect = width / height;
-		
-		// set viewBox attribute to the initial size
-		// control scaling with preserveAspectRatio
-		// resize svg on inital page load
-		svg.attr('viewBox', `0 0 ${width} ${height}`)
-			.attr('preserveAspectRatio', 'xMinYMid')
-			.call(resize);
-		
-		// add a listener so the chart will be resized
-		// when the window resizes
-		// multiple listeners for the same event type
-		// requires a namespace, i.e., 'click.foo'
-		// api docs: https://goo.gl/F3ZCFr
-		d3.select(window).on(
-			'resize.' + container.attr('id'), 
-			resize
-		);
-		
-		// this is the code that resizes the chart
-		// it will be called on load
-		// and in response to window resizes
-		// gets the width of the container
-		// and resizes the svg to fill it
-		// while maintaining a consistent aspect ratio
-		function resize() {
-			const w = parseInt(container.style('width'));
-			svg.attr('width', w);
-			svg.attr('height', Math.round(w / aspect));
+			var data = generateGraph(sparResults); //triplesToGraph(triples);
+			var options = {}
+
+
+			// initialize your network!
+			var network = new vis.Network(container, data, options);
+			options = {
+				edges: {
+				length: 500
+				}
+			}
+			network.setOptions(options);
+		}
+		else{
+			legacyAlert('Results are not triples');
 		}
 	}
-	function runWhenSparklisUpdate(sparResults){
-		var triples = parseThisShit(sparResults);
-
-		var graph = triplesToGraph(triples);
-
-		update(graph);
-	}
 	//Wait until object sparklis get instanciated
-	$.getScript("{{ url_for('static', filename='osparklis.js') }}", function(){
-		sparklis_extension.hookResults = runWhenSparklisUpdate;
-	});
-
+	// $.getScript("{{ url_for('static', filename='osparklis.js') }}", function(){
+	// 	sparklis_extension.hookResults = runWhenSparklisUpdate;
+	// });
 </script>
 {% endblock %}
 
@@ -803,8 +775,11 @@
 									<span class="texte lang-nl">Diavoorstelling</span>
 								</a></li>
 								<li id="nav-results-view"><a id="nav-tab-view" data-toggle="tab"
-									data-target="#results-view">
+									data-target=".results-view">
 									<span class="texte lang-en">View</span>
+								</a></li>
+								<li class="tab-pane fade show results-view"><a onclick="updateView()">
+									<span class="texte lang-en">Update</span>
 								</a></li>
 						</ul>
 						<div class="tab-content">
@@ -907,8 +882,9 @@
 								</div>
 							</div>
 
-							<div id="results-view" class="tab-pane fade show">
-								<div id="svg-body" class="panel-body"></div>
+							<div id="results-view" class="tab-pane fade show results-view">
+								<!-- <div id="svg-body" class="panel-body"></div> -->
+								<div id="mynetwork"></div>
 							</div>
 						</div> <!-- .tab-content -->
 
@@ -960,12 +936,12 @@
 	</div>
 		<script>
 			//Global variables for vizualization. Will probably get changed.
-			var svg = d3.select("#svg-body").append("svg")
-				.attr("width", 800)
-				.attr("height", 600)
-				.call(responsivefy)
-				;
-			var force = d3.layout.force();
+			// var svg = d3.select("#svg-body").append("svg")
+			// 	.attr("width", 800)
+			// 	.attr("height", 600)
+			// 	.call(responsivefy)
+			// 	;
+			// var force = d3.layout.force();
 		</script>
 	</div>
 {% endblock %}
