@@ -56,7 +56,8 @@
 {% block main %}
   <div id="chart">
     <meta id="sunburst_data" data-nodes="{{ sunburst_data }}">
-    <svg id="sunburst" width="1000" height="1000"></svg>
+    <svg id="sunburst" width="1000" height="1000" viewBox="0 0 1000 1000"
+    preserveAspectRatio="xMidYMid meet"></svg>
     <script>
       var nodeData = $('#sunburst_data').data("nodes")
 
@@ -73,6 +74,16 @@
 
       svg = document.getElementById("sunburst");
       svg.appendChild(chart)
+
+      // make sunburst responsive
+      var responsive_sunburst = $("#sunburst"),
+      aspect = responsive_sunburst.width() / responsive_sunburst.height(),
+      container = responsive_sunburst.parent();
+      $(window).on("resize", function() {
+          var targetWidth = container.width();
+          responsive_sunburst.attr("width", targetWidth);
+          responsive_sunburst.attr("height", Math.round(targetWidth / aspect));
+      }).trigger("resize");
     </script>
   </div>
 {% endblock %}
