@@ -28,7 +28,6 @@ def parse_sunburst(csv: str):
     """ Converts a class hierarchy csv dataset into a hierarchical JSON format.
     """
     reverse_dict = {}
-
     # go through each line of results, excluding the header
 
     for line in csv.split('\n')[1:-1]:
