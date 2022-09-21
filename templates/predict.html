@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
+
 {% block head %}
 {{ super() }}
+
 <link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block main %}
-<iframe frameborder='0' noresize='noresize' style='background: transparent; width: 100%; height:100rem;' src="http://localhost:8866/" frameborder="0"></iframe>
+<div id="test"></div>
+<script>
+    document.getElementById('test').innerText = localStorage.getItem('results')
+</script>
+
 {% endblock %}
 

@@ -1,10 +1,12 @@
 from email import header
 import os
+import io
 
-from flask import Flask, flash, request, jsonify, render_template
+from flask import Flask, flash, request, jsonify, render_template, redirect, url_for
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
+import pandas as df
 
 from config import config
 from utilities import parse_sunburst, fetch_overview_data
@@ -79,6 +81,11 @@ def predict():
         "predict.html",
         logo=logo
     )
+
+def parse_json_object_to_df(json_data):
+    csv_rows = [','.join(json_data.columns)] + [','.join(row) for row in json_data.columns]
+    dataframe = df.read_csv(io.StringIO('\n'.join(csv_rows)))
+    return dataframe
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

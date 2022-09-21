@@ -238,6 +238,15 @@
 	// $.getScript("{{ url_for('static', filename='osparklis.js') }}", function(){
 	// 	sparklis_extension.hookResults = runWhenSparklisUpdate;
 	// });
+
+</script>
+
+<!-- Run JS after everything is loaded -->
+<script>
+	var redirect = function() {
+		localStorage.setItem('results', JSON.stringify(sparklis.currentPlace().results()))
+		window.location = 'predict'
+	}
 </script>
 {% endblock %}
 
@@ -750,6 +759,7 @@
 						<span class="texte lang-es">Resultados de tu consulta</span>
 						<span class="texte lang-nl">Resultaten van uw query</span>
 						&nbsp;
+						<!-- &nbsp;
 						<span class="tooltiped">
 							<span class="tooltip lang-en">Download results as a CSV file</span>
 							<span class="tooltip lang-fr">Télécharger les résultats sous forme de fichier CSV</span>
@@ -759,7 +769,10 @@
 								data-target="#download-results-modal" class="btn btn-primary btn-xs">
 								<span class="glyphicon glyphicon-download-alt"></span>
 							</button>
-						</span>
+						</span> -->
+						<button id="button-predict" class="btn btn-primary btn-xs" onclick="redirect()">
+								<span>Predict</span>
+							</button>
 					</h5>
 				</div>
 				<div id="collapse-results" class="panel-collapse collapse show">
