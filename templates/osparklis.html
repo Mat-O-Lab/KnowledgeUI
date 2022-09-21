@@ -117,10 +117,10 @@
 			titleElement.append(cardBody)
 			var myList = document.createElement("table")
 			myList.classList.add("table")
-			// myList.classList.add("table-borderless")
+			myList.classList.add("table-borderless")
 			var myBodyT = document.createElement("tbody")
-			cardBody.append(myBodyT)
-			titleElement.append(myList)
+			myList.append(myBodyT)
+			cardBody.append(myList)
 			if(myStrList.length == 2){
 				for (const k in nameSpaces){
 					if(nameSpaces[k] == myStrList[0]){
