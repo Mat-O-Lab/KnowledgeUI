@@ -111,22 +111,40 @@
 		function getTitle(Id){
 			let myStrList = Id.split(':');
 			var titleElement = document.createElement("div");
-			var myList = document.createElement("ul")
-			titleElement.append(myList)
+			titleElement.classList.add("card")
+			var cardBody = document.createElement("div");
+			cardBody.classList.add("card-body");
+			titleElement.append(cardBody)
+			var myList = document.createElement("table")
+			myList.classList.add("table")
+			myList.classList.add("table-borderless")
+			var myBodyT = document.createElement("tbody")
+			myList.append(myBodyT)
+			cardBody.append(myList)
 			if(myStrList.length == 2){
 				for (const k in nameSpaces){
 					if(nameSpaces[k] == myStrList[0]){
 						//titleElement.innerHTML = "shorten uri: " + Id + '\n' + nameSpaces[k] + ':' + k;
-						shorten1 = document.createElement('li')
-						shorten1.innerHTML = "shorten uri: " + Id
-						shorten2 = document.createElement('li')
-						shorten2.innerHTML = nameSpaces[k] + ':' + k;
-						myList.append(shorten1, shorten2)
+						shorten1 = document.createElement('tr')
+						th1 = document.createElement('th')
+						th1.setAttribute("scope", "row")
+						th1.innerHTML = "Shorten URI"
+						td1 = document.createElement('td')
+						td1.innerHTML = Id
+						shorten1.append(th1,td1)
+						shorten2 = document.createElement('tr')
+						th2 = document.createElement("th")
+						th2.setAttribute("scope", "row")
+						th2.innerHTML = nameSpaces[k]
+						td2 = document.createElement("td")
+						td2.innerHTML = k
+						shorten2.append(th2,td2)
+						myBodyT.append(shorten1, shorten2)
 						return titleElement;
 					}
 				}
 			}
-			titleElement.innerHTML = 'value:' + Id;
+			cardBody.innerHTML = 'value:' + Id;
 			return titleElement;
 		}
 		//Graph
