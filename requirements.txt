@@ -1,10 +1,13 @@
 gunicorn
 rdflib
-flask
+flask~=2.2.2
 flask-bootstrap
 flask_wtf
 flask_swagger_ui
 flask_cors
 wtforms
-pandas
-requests
+pandas~=1.5.0
+requests~=2.28.1
+
+numpy~=1.23.3
+matplotlib~=3.6.0
