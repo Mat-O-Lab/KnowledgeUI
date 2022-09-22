@@ -28,7 +28,7 @@ bootstrap = Bootstrap(app)
 ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
 app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
-
+dataset = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
 
 @app.context_processor
 def init_global_vars_template():
@@ -97,7 +97,9 @@ def predict():
 
 
 @app.route('/predict', methods=['POST'])
-def model_process():
+def model_process(dataset=dataset):
+    logo = './static/resources/MatOLab-Logo.svg'
+
     model = request.form.get('models')
     target_df = request.form.getlist('targets')
     feature_df = request.form.getlist('feature_df')
@@ -107,7 +109,7 @@ def model_process():
     sigma = float(request.form.get('sigma_factor'))
 
     # dataframe = loadDataset(dataset)
-
+    dataframe = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
     # --- This is the min_max of benchmarking ---------
     min_or_max_target = {}
     for t in target_df:
@@ -130,7 +132,7 @@ def model_process():
         fixedtarget_selected_number2[t] = int(request.form.get(x))
     # ------------------------------------------------
 
-    l = learn(dataframe, model, target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
+    l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
               fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
     l.start_learning()
     n = l.start_learning()
@@ -141,7 +143,7 @@ def model_process():
     print(df_column)
     df_only_data = df_table
 
-    return render_template('scores.html', dataset=dataset, logo=logo, df_column=df_column, df_only_data=df_only_data,
+    return render_template('predict.html', logo=logo, df_column=df_column, df_only_data=df_only_data,
                            n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                        escape=False))
 

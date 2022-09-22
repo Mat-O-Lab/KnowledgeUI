@@ -8,17 +8,6 @@
 {% block main %}
 <iframe frameborder='0' noresize='noresize' style='background: transparent; width: 100%; height:100rem;' src="http://localhost:8866/" frameborder="0"></iframe>
 
-<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/datasets/{{dataset}}/preprocessing">sequential</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Overview</li>
-    </ol>
-  </nav>
-  <form class="form-group" method="post" action='/datasets/{{dataset}}/sequentialprocess'>
-    <h3 class="form-features-heading" align=''>Settings</h3>
-    <br>
-
     <!-- selecting features, fixed_target and target data -->
 <!-- ------------------------------------------------------------------------------- -->
   <div class="row">
@@ -278,6 +267,6 @@
 
   </script>
 </main>
-
 {% endblock %}
+
 
