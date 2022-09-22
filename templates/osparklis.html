@@ -244,8 +244,9 @@
 <!-- Run JS after everything is loaded -->
 <script>
 	var redirect = function() {
-		localStorage.setItem('results', JSON.stringify(sparklis.currentPlace().results()))
-		window.location = 'predict'
+		//localStorage.setItem('results', JSON.stringify(sparklis.currentPlace().results()))
+		//window.location = 'predict?results=' + JSON.stringify(sparklis.currentPlace().results())
+		$.redirect('/predict', {'results': JSON.stringify(sparklis.currentPlace().results())})
 	}
 </script>
 {% endblock %}
