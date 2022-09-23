@@ -54,36 +54,43 @@
 {% endblock %}
 
 {% block main %}
-  <div id="chart">
     <meta id="sunburst_data" data-nodes="{{ sunburst_data }}">
-    <svg id="sunburst" width="1000" height="1000" viewBox="0 0 1000 1000"
-    preserveAspectRatio="xMidYMid meet"></svg>
+    <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
     <script>
-      var nodeData = $('#sunburst_data').data("nodes")
-
-      prefix = "http://example.com/"
-
+      var nodeData = $('#sunburst_data').data("nodes");
+      var query_url = new URL(window.location.protocol + "//" + window.location.host + "/osparklis.html");
+      prefix = "http://example.com/";
+      // var search_params = new URLSearchParams(url.search);
+      query_url.searchParams.append('endpoint','{{ endpoint }}');
+      query_url.searchParams.append('sparklis-path','D');
+      // query_url.searchParams.append('sparklis-query', '');
+      console.log(query_url.toString())
       chart = Sunburst(nodeData, {
         value: d => d.size, // size of each node (file); null for internal nodes (folders)
         label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
         title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
-        link: (d, n) => 'http://127.0.0.1:5000/osparklis.html?title=&endpoint={{ endpoint }}{{ sparklis_options }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22' + d.iri +'%22%29%29%2CNone%29%29&sparklis-path=D', //d.iri,
-        width: 1000,
-        height: 1000
+        // link_url = query_url.searchParams.set('sparklis-query','test'),
+        link: (d, n) => query_url.toString()+`&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${d.iri}%22%29%29%2CNone%29%29`,
+        // link: (d, n) => `"${d.iri}"`,
+        
+        // link: (d, n) => `osparklis.html?&endpoint={{ endpoint }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${d.iri}%22%29%29%2CNone%29%29&sparklis-path=D`,
+        //link: (d, n) => 'osparklis.html?&endpoint={{ endpoint }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22'+d.iri+'%22%29%29%2CNone%29%29&sparklis-path=D',
+        // link: (d, n) => 'osparklis.html?title=&endpoint={{ endpoint }}{{ sparklis_options }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22' + d.iri +'%22%29%29%2CNone%29%29&sparklis-path=D', //d.iri,
+        width: 900,
+        height: 900,
       });
-
       svg = document.getElementById("sunburst");
       svg.appendChild(chart)
-
-      // make sunburst responsive
+      // svg.replaceWith(chart);
       var responsive_sunburst = $("#sunburst"),
       aspect = responsive_sunburst.width() / responsive_sunburst.height(),
       container = responsive_sunburst.parent();
+      
+      // make sunburst responsive
       $(window).on("resize", function() {
-          var targetWidth = container.width();
-          responsive_sunburst.attr("width", targetWidth);
-          responsive_sunburst.attr("height", Math.round(targetWidth / aspect));
+          var targetHeight = container.height();
+          responsive_sunburst.attr("height", targetHeight);
+          responsive_sunburst.attr("width", Math.round(targetHeight * aspect));
       }).trigger("resize");
     </script>
-  </div>
 {% endblock %}
