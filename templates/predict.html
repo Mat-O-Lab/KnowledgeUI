@@ -3,15 +3,253 @@
 
 {% block head %}
 {{ super() }}
-
-<link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block main %}
-<div id="test"></div>
-<script>
-    document.getElementById('test').innerText = localStorage.getItem('results')
-</script>
+<!-- selecting features, fixed_target and target data -->
+<!-- ------------------------------------------------------------------------------- -->
+<form class="col-12">
+  <div class="row mt-3">
+    <div class="col-sm-4">
+      <h6>Materials Data (Input)</h6>
+       <select multiple id="select_feature" name="features" class="form-control" required>
+  		    <option value=""></option>
+            {% for col in columns %}
+  			      <option value="{{col}}">{{col}}</option>
+  		      {% endfor %}
+      </select>
+    </div>
 
+    <div class="col-sm-4">
+      <h6>Target Properties</h6>
+        <select multiple id="select_target" name="targets" class="form-control" required>
+        </select>
+    </div>
+
+    <div class="col-sm-4">
+      <h6>A-priori inforation:</h6>
+        <select multiple id="select_fixedtargets" name="fixedtargets" class="form-control">
+
+        </select>
+    </div>
+  </div>
+<!-- ------------------------------------------------------------------------------- -->
+  <div class="row mt-3" id="sub_option">
+    <div class="col-sm-4" id="sub_option2">
+    </div>
+  </div>
+  <div class="row mt-3" id="sub1_option">
+    <div class="col-sm-4" id="sub_option1">
+    </div>
+  </div>
+<!-- ------------------------------------------------------------------------------- -->
+
+<!-- selecting Initial sample size and model_selection -->
+  <div class="row mt-3">
+    <div class="col-sm-4">
+      <h6>Batch Size</h6>
+      <input name='batch_size' type="number" class="form-control" min="1" max="100" >
+    </div>
+
+    <div class="col-sm-8">
+      <label for="tquantile" class="form-label">Target quantile:</label>
+      <input name='tquantile' type="range" class="form-range form-range-thumb-width" min="1" max="100"  onInput="$('#rangeval6').html($(this).val())">
+      <span id="rangeval6"><!-- Default value --></span>
+    </div>
+
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-4">
+      <h6>Initial Samples Size:</h6>
+      <input name='initial_sample_size' type="number" class="form-control" min="1" max="100">
+    </div>
+
+
+    <div class="col-sm-4">
+      <h7>Model:</h7>
+        <select name="models" class="form-control" >
+          <option hidden>Select Model</option>
+          <option value="Gaussian Process Regression (GPR)">Gaussian Process Regression (GPR)</option>
+          <option value="lolo Random Forrest (RF)">lolo Random Forrest (RF)</option>
+          <option value="Decision Trees (DT)">Decision Trees (DT)</option>
+          <option value="Random Forrest (RFscikit)">Random Forrest (RFscikit)</option>
+        </select>
+    </div>
+    <div class="col-sm-4" id="prediction">
+      <label for="customRange4" class="form-label">Prediction quantile:</label>
+      <input name='target_treshhold' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange4" onInput="$('#rangeval4').html($(this).val())">
+      <span id="rangeval4"><!-- Default value --></span>
+    </div>
+  </div>
+<!-- ------------------------------------------------------------------------------- -->
+  <div class="row mt-3">
+    <div class="col-sm-4">
+      <h6># of SL runs:</h6>
+      <input name='number_of_executions' type="range" class="form-range form-range-thumb-width" min="1" max="100" id="customRange3" onInput="$('#rangeval2').html($(this).val())">
+      <span id="rangeval2"><!-- Default value --></span>
+    </div>
+    <div class="col-sm-4">
+      <h7>Strategy:</h7>
+        <select id="strategy" name="strategies" class="form-control">
+          <option hidden>Select Strategy</option>
+          <option value="MEI (exploit)">MEI (exploit)</option>
+          <option value="MU (explore)">MU (explore)</option>
+          <option value="MLI (exploit & explore)">MLI (exploit & explore)</option>
+          <option value="MEID (exploit)">MEID (exploit)</option>
+          <option value="MLID (explore & exploit)">MLID (explore & exploit)</option>
+        </select>
+    </div>
+    <div class="col-sm-4" id="sigma">
+      <label for="customRange5" class="form-label">σ factor:</label>
+      <input name='sigma_factor' type="range" class="form-range form-range-thumb-width" min="0.1" max="5.8" step="0.01" id="customRange5" onInput="$('#rangeval5').html($(this).val())">
+      <span id="rangeval5"><!-- Default value --></span>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------- -->
+  <div class="d-grid gap-2 mt-3">
+    <button class="btn btn-primary" type="submit">Fit Model</button>
+  </div>
+</form>
+  <script>
+    $("#strategy").change(function(){
+      var abc = $('#strategy').val();
+      if (abc == 'MEI (exploit)'){
+        //alert('hello');
+        //$document.getElementByID('first').show();
+        $('#sigma').hide();
+        $('#prediction').hide();
+      } else if (abc == 'MU (explore)'){
+        $('#prediction').hide();
+        $('#sigma').hide();
+      } else if (abc == 'MLI (exploit & explore)'){
+        $('#prediction').hide();
+        $('#sigma').show();
+      } else if (abc == 'MEID (exploit)'){
+        $('#sigma').hide();
+        $('#prediction').show();
+      } else if (abc == 'MLID (explore & exploit)'){
+        $('#sigma').show();
+        $('#prediction').show();
+      } else {
+        alert('select a option');
+      }
+
+    });
+
+    $('#select_feature').change(function(){
+
+      if ($("#select_feature").find('option').not(':selected').length > 0){
+        var notSelected = $("#select_feature").find('option').not(':selected');
+        var unselectedgltype = notSelected.map(function () { return this.value; }).get();}
+
+      $('#select_target').empty();
+        //alert(unselectedgltype);
+      $(unselectedgltype).each(function(index, element) {
+        $('<option/>').val(element).text(element).appendTo('#select_target');
+      });
+    });
+
+    $('#select_target').change(function(){
+      var mylist = $('#select_target').val();
+
+      if ($("#select_target").find('option').not(':selected').length > 0){
+        var notSelected2 = $("#select_target").find('option').not(':selected');
+        var unselectedgltype2 = notSelected2.map(function () { return this.value; }).get();}
+
+
+
+      $('#select_fixedtargets').empty();
+
+        //alert(unselectedgltype);
+      $(unselectedgltype2).each(function(index, element) {
+        $('<option/>').val(element).text(element).appendTo('#select_fixedtargets');
+
+      });
+      // how by selecting a feature, the min/max, threshold, etc should be visible.
+      var3 = $('#select_target').val().length;
+      $('#sub_option').empty();
+      for (i=0; i< var3; i++) {
+
+      //console.log($('#sigma2').val());
+      //$('#sigma2');
+        arr = $('#select_target').val();
+
+//$('#sub_option').text($('#sigma2').val());
+        $('#sub_option').append(`
+          <div class="col-sm-1">
+          <label for=${arr[i]}>${arr[i]}</label>
+          </div>
+          <div class="col-sm-2">
+          <label for=${arr[i]}>minimize</label>
+
+          <input type="radio" name="R_${arr[i]}" value='min'  id=${arr[i]}></input></br>
+          <label for=${arr[i]}>maximize</label>
+          <input type="radio" name="R_${arr[i]}" value="max"  id=${arr[i]}></input>
+          </div>
+
+          <div class="col-sm-3">
+          <label for=${arr[i]}>Check to use Threshold</label>
+          <input type="checkbox" name="C_${arr[i]}" value=True  id=${arr[i]}></input>
+          </div>
+
+          <div class="col-sm-1">
+          <label for=${arr[i]}>${arr[i]}</label>
+          </div>
+          <div class="col-sm-2">
+          <input type="number" name="N1_${arr[i]}" step="1"> </input>
+          </div>
+
+          <div class="col-sm-1">
+          <label for=${arr[i]}> Weight ${arr[i]} </label>
+          </div>
+          <div class="col-sm-2">
+          <input type="number" name="N2_${arr[i]}" value="1" step="1"> </input>
+          </div> </br>`);
+      };
+
+
+    });
+    $('#select_fixedtargets').change(function(){
+      priori = $('#select_fixedtargets').val().length;
+      $('#sub1_option').empty();
+      for (j=0; j< priori; j++) {
+        arr1 = $('#select_fixedtargets').val();
+        $('#sub1_option').append(`
+          <div class="col-sm-1">
+          <label for=${arr1[j]}>${arr1[j]}</label>
+          </div>
+          <div class="col-sm-2">
+          <label for=${arr1[j]}>minimize</label>
+
+          <input type="radio" name="R1_${arr1[j]}" value="min" id=${arr1[j]}></input></br>
+          <label for=${arr1[j]}>maximize</label>
+          <input type="radio" name='R1_${arr1[j]}' value="max"></input>
+          </div>
+
+          <div class="col-sm-3">
+          <label for=${arr1[j]}>Check to use Threshold</label>
+
+          <input type="checkbox" name="C1_${arr1[j]}" value='1'></input>
+          </div>
+          <div class="col-sm-1">
+          <label for=${arr1[j]}>${arr1[j]}</label>
+          </div>
+          <div class="col-sm-2">
+          <input type="number" name="N11_${arr1[j]}" step="1"> </input>
+          </div>
+          <div class="col-sm-1">
+          <label for=${arr1[j]}> Weight ${arr1[j]}</label>
+          </div>
+          <div class="col-sm-2">
+          <input type="number" name="N22_${arr1[j]}" step="1"> </input>
+          </div> </br>`);
+      };
+
+    });
+
+
+  </script>
 {% endblock %}
+
 

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/sl-1.3.0/datatables.min.css"/>
+   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/sl-1.3.0/datatables.min.js"></script>
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">Materal Discovery</li>
+          <li class="breadcrumb-item active" aria-current="page">Result</li>
+
+      </ol>
+  </nav>
+
+<div class="mt-4">
+
+
+  <table id="proxies" class="display hover  compact cell-border table nowrap responsive" style="width: 100%">
+    <thead>
+      <tr>
+        {% for header in df_column %}
+          <th>{{header}}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for index, row in df_only_data.iterrows() %}
+        <tr>
+          {% for col in df_column %}
+            <td>{{row[col]}}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+<p>{{ img }}</p>
+
+  <img src={{url_for('static', filename='img.png')}}>
+<script type='text/javascript'>
+  $('#proxies').DataTable();
+</script>
+
+
+</main>
+{% endblock %}

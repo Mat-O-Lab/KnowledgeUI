@@ -17,9 +17,9 @@
     <img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
   </a>
 </header>
-<body class="bg-light rounded-3 px-3">
+<body class="bg-light rounded-3 px-3 d-flex flex-column min-vh-100">
   {{navigation()}}
-  <div class="container-fluid mb-3 text-center">
+  <div class="mb-3 text-center row flex-grow-1" id="main">
     {% block main %}
     Dashboard
     {% endblock %}
@@ -29,7 +29,7 @@
 </body>
 
 {% block footer %}
-<footer class="pt-3 my-4 text-center text-muted border-top">
+<footer class="pt-3 my-4 text-center text-muted border-top mt-auto">
   <span class="site-footer-owner"><a href="https://github.com/Mat-O-Lab/KnowledgeUI">KnowledgeUI</a> is maintained by <a
       href="https://matolab.org"><img src="{{ logo }}" width="5%" alt="mat-o-lab-logo" /></a>.</span>
 </footer>
