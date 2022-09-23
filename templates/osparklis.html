@@ -268,7 +268,7 @@
     var input = document.createElement('input');
 	input.type = 'hidden';
 	input.name = 'results';
-	input.value = JSON.stringify(sparklis.currentPlace().results());
+	input.value = JSON.stringify(resultsTableToJson());
 	form.appendChild(input);
     form.submit();
 }
