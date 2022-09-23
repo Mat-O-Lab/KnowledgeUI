@@ -96,8 +96,8 @@ def predict():
 """
 
 
-@app.route('/predict', methods=['POST'])
-def model_process(dataset=dataset):
+@app.route('/predict', methods=['POST', 'GET'])
+def model_process():
     logo = './static/resources/MatOLab-Logo.svg'
 
     model = request.form.get('models')
@@ -106,10 +106,11 @@ def model_process(dataset=dataset):
     fixed_target_df = request.form.getlist('fixedtargets')
     strategy = request.form.get('strategies')
     # distance = request.form.get('initial_sample')
-    sigma = float(request.form.get('sigma_factor'))
+    sigma = request.form.get('sigma_factor')
 
     # dataframe = loadDataset(dataset)
     dataframe = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
+    columns = dataframe.columns
     # --- This is the min_max of benchmarking ---------
     min_or_max_target = {}
     for t in target_df:
@@ -130,8 +131,9 @@ def model_process(dataset=dataset):
     for t in fixed_target_df:
         x = 'Nd1_' + t
         fixedtarget_selected_number2[t] = int(request.form.get(x))
+    return render_template('predict.html')
     # ------------------------------------------------
-
+    """ 
     l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
               fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
     l.start_learning()
@@ -143,10 +145,10 @@ def model_process(dataset=dataset):
     print(df_column)
     df_only_data = df_table
 
-    return render_template('predict.html', logo=logo, df_column=df_column, df_only_data=df_only_data,
+    return render_template('predict.html', columns=columns, logo=logo, df_column=df_column, df_only_data=df_only_data,
                            n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                        escape=False))
-
+    """
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
