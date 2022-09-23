@@ -61,6 +61,6 @@ def parse_json_string_to_df(json_data):
     #print(json_data)
     json_obj = json.loads(json_data)
     print(json_obj)
-    csv_rows = [','.join(json_obj['columns'])] + [','.join([elem for elem in row ]) for row in json_obj['rows']]
+    csv_rows = [','.join(json_obj['columns'])] + [','.join(row) for row in json_obj['rows']]
     dataframe = pd.read_csv(StringIO('\n'.join(csv_rows)))
     return dataframe
