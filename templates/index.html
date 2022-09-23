@@ -63,13 +63,16 @@
       // var search_params = new URLSearchParams(url.search);
       query_url.searchParams.append('endpoint','{{ endpoint }}');
       query_url.searchParams.append('sparklis-path','D');
-      // query_url.searchParams.append('sparklis-query', '%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28"https%3A//www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid%23BWMD_00009"%29%29%2CNone%29%29'), 
+      // query_url.searchParams.append('sparklis-query', '');
       console.log(query_url.toString())
       chart = Sunburst(nodeData, {
         value: d => d.size, // size of each node (file); null for internal nodes (folders)
         label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
         title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
-        link: (d, n) => query_url.toString(),
+        // link_url = query_url.searchParams.set('sparklis-query','test'),
+        link: (d, n) => query_url.toString()+`&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${d.iri}%22%29%29%2CNone%29%29`,
+        // link: (d, n) => `"${d.iri}"`,
+        
         // link: (d, n) => `osparklis.html?&endpoint={{ endpoint }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${d.iri}%22%29%29%2CNone%29%29&sparklis-path=D`,
         //link: (d, n) => 'osparklis.html?&endpoint={{ endpoint }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22'+d.iri+'%22%29%29%2CNone%29%29&sparklis-path=D',
         // link: (d, n) => 'osparklis.html?title=&endpoint={{ endpoint }}{{ sparklis_options }}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22' + d.iri +'%22%29%29%2CNone%29%29&sparklis-path=D', //d.iri,
