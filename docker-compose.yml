@@ -10,6 +10,12 @@ services:
     restart: always
     networks:
       - knowledgeui_net
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: ${ELASTIC_SERVER}:24224
+        tag: app.knowledgeui
+
   slamd:
     container_name: slamd
     image: ghcr.io/mat-o-lab/sequentiallearningapp:main
@@ -20,6 +26,12 @@ services:
     restart: always
     networks:
       - knowledgeui_net
+    #logging:
+      #driver: fluentd
+      #options:
+      #  fluentd-address: ${ELASTIC_SERVER}:24224
+      #  tag: app.slamd
+
 networks:
   knowledgeui_net:
     name: knowledgeui
