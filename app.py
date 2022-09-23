@@ -111,14 +111,14 @@ def model_process():
     for t in fixed_target_df:
         x = 'Nd1_' + t
         fixedtarget_selected_number2[t] = int(request.form.get(x))
-    return render_template('predict.html')
+    #return render_template('predict.html')
     # ------------------------------------------------
-    """ 
     #Just remove the comment and run the model:
-    l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
-              fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
-    l.start_learning()
-    n = l.start_learning()
+    # l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
+    #           fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
+    # l.start_learning()
+    # n = l.start_learning()
+    n = None
 
     df_table = pd.DataFrame(n)
     df_column = df_table.columns
@@ -126,10 +126,11 @@ def model_process():
     print(df_column)
     df_only_data = df_table
 
-    return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
-                           n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
-                                       escape=False))
-    """
+    # return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
+    #                        n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
+    #                                    escape=False))
+    return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data)
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

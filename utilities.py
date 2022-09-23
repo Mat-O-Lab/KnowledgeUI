@@ -58,7 +58,9 @@ def __make_children(node, reverse_dict):
     return obj
 
 def parse_json_string_to_df(json_data):
+    #print(json_data)
     json_obj = json.loads(json_data)
-    csv_rows = [','.join(json_obj['columns'])] + [','.join([elem['uri'] for elem in row]) for row in json_obj['rows']]
+    print(json_obj)
+    csv_rows = [','.join(json_obj['columns'])] + [','.join([elem['uri'] if 'uri' in elem.keys() else '' for elem in row ]) for row in json_obj['rows']]
     dataframe = pd.read_csv(StringIO('\n'.join(csv_rows)))
     return dataframe
