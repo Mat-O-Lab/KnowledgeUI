@@ -241,9 +241,26 @@
 
 </script>
 
-<!-- Run JS after everything is loaded -->
+<!-- Extract Results and send them to SLAMD -->
 <script>
-	function redirect() {
+
+	var resultsTableToJson = function() {
+
+		var columns = $('#list-results th').slice(1).map(function() {
+			return $(this).children('span').first().text()
+		}).get()
+
+		var rows = $('#list-results tr').slice(1).map(function() {
+			return [$(this).find('.cell').map(function() {
+				return $(this).children('span').text()
+			}).get()]
+		}).get()
+		
+		return {'columns': columns, 'rows': rows}
+	}
+
+
+	var redirect = function() {
     var form = document.createElement('form');
     document.body.appendChild(form);
     form.method = 'post';
