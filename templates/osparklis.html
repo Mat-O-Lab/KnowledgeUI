@@ -245,8 +245,19 @@
 <script>
 
 	var resultsTableToJson = function() {
-
 		var columns = $('#list-results th').slice(1).map(function() {
+			return $(this).children('span').first().text()
+		}).get()
+		var rows = $('#list-results tr').slice(1).map(function() {
+			return [$(this).find('.cell').map(function() {
+				return $(this).children('span').text()
+			}).get()]
+		}).get()
+		return {'columns': columns, 'rows': rows}
+	}
+
+	var nestedResultsTableToJson = function() {
+		var columns = $('#results-nested-table > div > div > table > thead').find('th').slice(1).map(function() {
 			return $(this).children('span').first().text()
 		}).get()
 
@@ -255,8 +266,7 @@
 				return $(this).children('span').text()
 			}).get()]
 		}).get()
-		
-		return {'columns': columns, 'rows': rows}
+		return columns
 	}
 
 
