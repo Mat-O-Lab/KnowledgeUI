@@ -134,6 +134,7 @@ def model_process():
     return render_template('predict.html')
     # ------------------------------------------------
     """ 
+    #Just remove the comment and run the model:
     l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
               fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
     l.start_learning()
