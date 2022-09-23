@@ -10,16 +10,6 @@ services:
     restart: always
     networks:
       - knowledgeui_net
-  slamd:
-    container_name: slamd
-    image: ghcr.io/mat-o-lab/sequentiallearningapp:main
-    volumes:
-      - ./temp:/src/temp
-    ports:
-      - 8866:8866
-    restart: always
-    networks:
-      - knowledgeui_net
 networks:
   knowledgeui_net:
     name: knowledgeui

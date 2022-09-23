@@ -5,9 +5,7 @@
 {% endblock %}
 
 {% block main %}
-<iframe frameborder='0' noresize='noresize' style='background: transparent; width: 100%; height:100rem;' src="http://localhost:8866/" frameborder="0"></iframe>
-
-    <!-- selecting features, fixed_target and target data -->
+<!-- selecting features, fixed_target and target data -->
 <!-- ------------------------------------------------------------------------------- -->
   <div class="row">
     <div class="col-sm-4">
@@ -120,13 +118,6 @@
     <button class="btn btn-warning btn-block" type="submit" align='center'>Fit Model</button>
   </form>
   <script>
-
-    $(document).ready(function(){
-    //  $("#sub_option").show();
-
-
-    });
-
     $("#strategy").change(function(){
       var abc = $('#strategy').val();
       if (abc == 'MEI (exploit)'){

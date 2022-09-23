@@ -35,7 +35,8 @@ def init_global_vars_template():
     """ Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
     """
     return dict(endpoint=ENDPOINT,
-                sparklis_options=SPARKLIS_OPTIONS
+                sparklis_options=SPARKLIS_OPTIONS,
+                logo='./static/resources/MatOLab-Logo.svg'
                 )
 
 
@@ -51,13 +52,10 @@ def index():
 
     """
     # sunburst_data = parse_sunburst(res.text)
-
-    logo = './static/resources/MatOLab-Logo.svg'
     message = ''
     result = ''
     return render_template(
         "index.html",
-        logo=logo,
         message=message,
         result=result,
         sunburst_data=app.overview_data
@@ -68,38 +66,16 @@ def index():
 def explore():
     """ Display Sparklis Web Application for /osparklis.html route.      
     """
-
-    logo = './static/resources/MatOLab-Logo.svg'
-    return render_template(
-        "osparklis.html",
-        logo=logo
-    )
+    return render_template("osparklis.html")
 
 
 @app.route('/predef.html', methods=['GET'])
 def query():
-    logo = './static/resources/MatOLab-Logo.svg'
-    return render_template(
-        "predef.html",
-        logo=logo
-    )
-
-
-""" 
-@app.route('/predictt', methods=['GET'])
-def predict():
-    logo = './static/resources/MatOLab-Logo.svg'
-    return render_template(
-        "predict.html",
-        logo=logo
-    )
-"""
+    return render_template("predef.html")
 
 
 @app.route('/predict', methods=['POST', 'GET'])
 def model_process():
-    logo = './static/resources/MatOLab-Logo.svg'
-
     model = request.form.get('models')
     target_df = request.form.getlist('targets')
     feature_df = request.form.getlist('feature_df')
@@ -107,6 +83,7 @@ def model_process():
     strategy = request.form.get('strategies')
     # distance = request.form.get('initial_sample')
     sigma = request.form.get('sigma_factor')
+
 
     # dataframe = loadDataset(dataset)
     dataframe = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
@@ -146,7 +123,7 @@ def model_process():
     print(df_column)
     df_only_data = df_table
 
-    return render_template('predict.html', columns=columns, logo=logo, df_column=df_column, df_only_data=df_only_data,
+    return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
                            n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                        escape=False))
     """
