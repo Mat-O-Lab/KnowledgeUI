@@ -249,8 +249,12 @@
 			return $(this).children('span').first().text()
 		}).get()
 		var rows = $('#list-results tr').slice(1).map(function() {
-			return [$(this).find('.cell').map(function() {
-				return $(this).children('span').text()
+			return [$(this).children().slice(1).map(function() {
+				if ($(this).children().length == 0) {
+					return ''
+				} else {
+					return $(this).find('span').text()
+				}
 			}).get()]
 		}).get()
 		return {'columns': columns, 'rows': rows}
