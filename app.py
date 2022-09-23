@@ -1,8 +1,5 @@
 from email import header
 import os
-<<<<<<< HEAD
-import io
-=======
 import pandas as pd
 import numpy as np
 from material_discovery import *
@@ -12,7 +9,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from io import BytesIO
->>>>>>> origin/main
 
 from flask import Flask, flash, request, jsonify, render_template, redirect, url_for
 from flask_wtf import FlaskForm
@@ -21,7 +17,7 @@ from flask_cors import CORS
 import pandas as df
 
 from config import config
-from utilities import parse_sunburst, fetch_overview_data
+from utilities import parse_sunburst, fetch_overview_data, parse_json_string_to_df
 
 config_name = os.environ.get("APP_MODE") or "development"
 
@@ -80,7 +76,11 @@ def query():
 
 
 @app.route('/predict', methods=['POST', 'GET'])
-def model_process():
+def model_process():    
+    results = request.values.get('results')
+    if not results:
+        flash('No input data given')
+        return render_template('predict.html')
     model = request.form.get('models')
     target_df = request.form.getlist('targets')
     feature_df = request.form.getlist('feature_df')
@@ -89,9 +89,7 @@ def model_process():
     # distance = request.form.get('initial_sample')
     sigma = request.form.get('sigma_factor')
 
-
-    # dataframe = loadDataset(dataset)
-    dataframe = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
+    dataframe = parse_json_string_to_df(results)
     columns = dataframe.columns
     # --- This is the min_max of benchmarking ---------
     min_or_max_target = {}
@@ -132,11 +130,6 @@ def model_process():
                            n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                        escape=False))
     """
-
-def parse_json_object_to_df(json_data):
-    csv_rows = [','.join(json_data.columns)] + [','.join(row) for row in json_data.columns]
-    dataframe = df.read_csv(io.StringIO('\n'.join(csv_rows)))
-    return dataframe
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

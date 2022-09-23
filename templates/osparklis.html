@@ -243,11 +243,18 @@
 
 <!-- Run JS after everything is loaded -->
 <script>
-	var redirect = function() {
-		//localStorage.setItem('results', JSON.stringify(sparklis.currentPlace().results()))
-		//window.location = 'predict?results=' + JSON.stringify(sparklis.currentPlace().results())
-		$.redirect('/predict', {'results': JSON.stringify(sparklis.currentPlace().results())})
-	}
+	function redirect() {
+    var form = document.createElement('form');
+    document.body.appendChild(form);
+    form.method = 'post';
+    form.action = '/predict';
+    var input = document.createElement('input');
+	input.type = 'hidden';
+	input.name = 'results';
+	input.value = JSON.stringify(sparklis.currentPlace().results());
+	form.appendChild(input);
+    form.submit();
+}
 </script>
 {% endblock %}
 
