@@ -76,60 +76,61 @@ def query():
 
 
 @app.route('/predict', methods=['POST', 'GET'])
-def model_process():    
+def model_process():
     results = request.values.get('results')
+    print(request.method)
     if not results:
         flash('No input data given')
         return render_template('predict.html')
-    model = request.form.get('models')
-    target_df = request.form.getlist('targets')
-    feature_df = request.form.getlist('feature_df')
-    fixed_target_df = request.form.getlist('fixedtargets')
-    strategy = request.form.get('strategies')
-    # distance = request.form.get('initial_sample')
-    sigma = request.form.get('sigma_factor')
-
+    
     dataframe = parse_json_string_to_df(results)
     columns = dataframe.columns
-    # --- This is the min_max of benchmarking ---------
-    min_or_max_target = {}
-    for t in target_df:
-        x = 'Rd_' + t
-        min_or_max_target[t] = request.form.get(x)
+    
+    if request.method == 'POST':
+        model = request.form.get('models')
+        target_df = request.form.getlist('targets')
+        feature_df = request.form.getlist('feature_df')
+        fixed_target_df = request.form.getlist('fixedtargets')
+        strategy = request.form.get('strategies')
+        # distance = request.form.get('initial_sample')
+        sigma = request.form.get('sigma_factor')
+        print(target_df)
+        # --- This is the min_max of benchmarking ---------
+        min_or_max_target = {}
+        for t in target_df:
+            x = 'Rd_' + t
+            min_or_max_target[t] = request.form.get(x)
 
-    target_selected_number2 = {}
-    for t in target_df:
-        x = 'Nd_' + t
-        target_selected_number2[t] = int(request.form.get(x))
-    # ---------------------------------
-    min_or_max_fixedtarget = {}
-    for t in fixed_target_df:
-        x = 'Rd1_' + t
-        min_or_max_fixedtarget[t] = request.form.get(x)
+        target_selected_number2 = {}
+        for t in target_df:
+            x = 'Nd_' + t
+            target_selected_number2[t] = int(request.form.get(x))
+        # ---------------------------------
+        min_or_max_fixedtarget = {}
+        for t in fixed_target_df:
+            x = 'Rd1_' + t
+            min_or_max_fixedtarget[t] = request.form.get(x)
 
-    fixedtarget_selected_number2 = {}
-    for t in fixed_target_df:
-        x = 'Nd1_' + t
-        fixedtarget_selected_number2[t] = int(request.form.get(x))
-    #return render_template('predict.html')
-    # ------------------------------------------------
-    #Just remove the comment and run the model:
-    # l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
-    #           fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
-    # l.start_learning()
-    # n = l.start_learning()
-    n = None
+        fixedtarget_selected_number2 = {}
+        for t in fixed_target_df:
+            x = 'Nd1_' + t
+            fixedtarget_selected_number2[t] = int(request.form.get(x))
 
-    df_table = pd.DataFrame(n)
-    df_column = df_table.columns
-    # df_table2 = df_table1[1:]
-    print(df_column)
-    df_only_data = df_table
+        l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
+                  fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
+        l.start_learning()
+        n = l.start_learning()
+        df_table = pd.DataFrame(n)
+        df_column = df_table.columns
+        # df_table2 = df_table1[1:]
+        #print(df_column)
+        df_only_data = df_table
 
-    # return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
-    #                        n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
-    #                                    escape=False))
-    return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data)
+        return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
+                            n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
+                                        escape=False))
+    else:
+        return render_template('predict.html', columns=columns)
 
 
 if __name__ == "__main__":
