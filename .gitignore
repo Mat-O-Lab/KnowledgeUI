@@ -131,3 +131,5 @@ dmypy.json
 # Pipenv
 Pipfile
 Pipfile.lock
+
+/.idea/

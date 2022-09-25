@@ -10,20 +10,21 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from io import BytesIO
 
-from flask import Flask, flash, request, jsonify, render_template
+from flask import Flask, flash, request, jsonify, render_template, redirect, url_for
 from flask_wtf import FlaskForm
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap5
 from flask_cors import CORS
+import pandas as df
 
 from config import config
-from utilities import parse_sunburst, fetch_overview_data
+from utilities import parse_sunburst, fetch_overview_data, parse_json_string_to_df
 
 config_name = os.environ.get("APP_MODE") or "development"
 
 app = Flask(__name__)
 CORS(app)
 app.config.from_object(config[config_name])
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap5(app)
 
 ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
@@ -75,7 +76,11 @@ def query():
 
 
 @app.route('/predict', methods=['POST', 'GET'])
-def model_process():
+def model_process():    
+    results = request.values.get('results')
+    if not results:
+        flash('No input data given')
+        return render_template('predict.html')
     model = request.form.get('models')
     target_df = request.form.getlist('targets')
     feature_df = request.form.getlist('feature_df')
@@ -84,9 +89,7 @@ def model_process():
     # distance = request.form.get('initial_sample')
     sigma = request.form.get('sigma_factor')
 
-
-    # dataframe = loadDataset(dataset)
-    dataframe = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
+    dataframe = parse_json_string_to_df(results)
     columns = dataframe.columns
     # --- This is the min_max of benchmarking ---------
     min_or_max_target = {}
@@ -108,14 +111,14 @@ def model_process():
     for t in fixed_target_df:
         x = 'Nd1_' + t
         fixedtarget_selected_number2[t] = int(request.form.get(x))
-    return render_template('predict.html')
+    #return render_template('predict.html')
     # ------------------------------------------------
-    """ 
     #Just remove the comment and run the model:
-    l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
-              fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
-    l.start_learning()
-    n = l.start_learning()
+    # l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
+    #           fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
+    # l.start_learning()
+    # n = l.start_learning()
+    n = None
 
     df_table = pd.DataFrame(n)
     df_column = df_table.columns
@@ -123,10 +126,11 @@ def model_process():
     print(df_column)
     df_only_data = df_table
 
-    return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
-                           n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
-                                       escape=False))
-    """
+    # return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
+    #                        n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
+    #                                    escape=False))
+    return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data)
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

@@ -1,7 +1,7 @@
 gunicorn
 rdflib
 flask~=2.2.2
-flask-bootstrap
+bootstrap-flask
 flask_wtf
 flask_swagger_ui
 flask_cors

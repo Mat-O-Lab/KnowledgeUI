@@ -1,5 +1,7 @@
 import json
 import requests
+from io import StringIO
+import pandas as pd
 
 def fetch_overview_data(ENDPOINT):
     """ Fetches an overview of the class hierarchies of the specified triples store.
@@ -55,4 +57,10 @@ def __make_children(node, reverse_dict):
     
     return obj
 
-    
+def parse_json_string_to_df(json_data):
+    #print(json_data)
+    json_obj = json.loads(json_data)
+    print(json_obj)
+    csv_rows = [','.join(json_obj['columns'])] + [','.join(row) for row in json_obj['rows']]
+    dataframe = pd.read_csv(StringIO('\n'.join(csv_rows)))
+    return dataframe

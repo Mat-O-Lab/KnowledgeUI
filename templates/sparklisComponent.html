@@ -24,8 +24,8 @@
 	<!-- jQuery library -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 	<!-- Sparklis -->
 	<link href="osparklis.css?v=2" rel="stylesheet" type="text/css" />
 	<script src="osparklis.js"></script>
@@ -236,6 +236,12 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
+							<li>
+								<a
+									href="osparklis.html?endpoint={{ endpoint }}{{ sparklis_options }}">
+									KnowledgeUI Default
+								</a>
+							</li>
 							<li>
 								<a
 									href="osparklis.html?title=Core%20English%20DBpedia&endpoint=http%3A//servolis.irisa.fr/dbpedia/sparql">
@@ -1442,10 +1448,10 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">
-						<span class="glyphicon glyphicon-remove"></span>
+						<span class="bi-x"></span>
 					</button>
 					<button id="ok-download-results" type="button" class="btn btn-primary" data-dismiss="modal">
-						<span class="glyphicon glyphicon-ok"></span>
+						<span class="bi-check"></span>
 					</button>
 				</div>
 			</div>
