@@ -12,7 +12,7 @@ from io import BytesIO
 
 from flask import Flask, flash, request, jsonify, render_template, redirect, url_for
 from flask_wtf import FlaskForm
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap5
 from flask_cors import CORS
 import pandas as df
 
@@ -24,7 +24,7 @@ config_name = os.environ.get("APP_MODE") or "development"
 app = Flask(__name__)
 CORS(app)
 app.config.from_object(config[config_name])
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap5(app)
 
 ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
