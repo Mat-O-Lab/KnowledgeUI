@@ -1,21 +1,31 @@
 {% macro navigation() -%}
-<div class="navbar justify-content-center navbar-light bg-light nav-fill rounded-10 px-3 border">
-    <ul class="nav ">
-        <li class="nav-item px-5 h3 active">
-            <a class="nav-link" href="/">Overview</a>
-        </li>
-        <li class="nav-item px-5 h3">
-            <a class="nav-link" href="predef.html">Predefined Queries</a>
-        </li>
-        <li class="nav-item px-5 h3">
-            <a class="nav-link" href="osparklis.html?endpoint={{ endpoint }}{{ sparklis_options }}">Explore</a>
-        </li>
-        <li class="nav-item px-5 h3">
-            <a class="nav-link" href="/predict">Predict</a>
-        </li>
-        <!-- <li class="nav-item px-5 h3">
-            <a class="nav-link" href="/optimize">Optimize</a>
-        </li> -->
-    </ul>
+<div class="navbar navbar-expand" style="background-color: #e3f2fd;" rounded-10 px-3 border">
+    <div class="container-fluid">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none m-3 pb-1">
+            <img class='me-3' src="{{ logo }}" height="30" alt="mat-o-lab-logo" />
+          </a>        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="predef.html">Predefined Queries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="osparklis.html?endpoint={{ endpoint }}{{ sparklis_options }}">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/predict">Predict</a>
+                </li>
+                <!-- <li class="nav-item px-5 h3">
+                    <a class="nav-link" href="/optimize">Optimize</a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
 </div>
 {%- endmacro %}

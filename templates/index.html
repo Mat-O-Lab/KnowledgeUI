@@ -3,14 +3,6 @@
 {% block head %}
 {{ super() }}
 <script type="text/javascript" src="{{ url_for('static', filename='sunburst.js') }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'your_analytiks_tag');
-</script>
-
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -56,37 +48,41 @@
 {% block main %}
     <meta id="sunburst_data" data-nodes="{{ sunburst_data }}">
     <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
-    <script>
-      var nodeData = $('#sunburst_data').data("nodes");
-      var query_url = new URL(window.location.protocol + "//" + window.location.host + "/osparklis.html");
-      prefix = "http://example.com/";
-      // var search_params = new URLSearchParams(url.search);
-      query_url.searchParams.append('endpoint','{{ endpoint }}');
-      query_url.searchParams.append('sparklis-path','D');
-      query_url.searchParams.append('entity_lexicon_select','http://www.w3.org/2000/01/rdf-schema#label');
-      query_url.searchParams.append('concept_lexicons_select','http://www.w3.org/2000/01/rdf-schema#label');
-      query_url.searchParams.append('concept_tooltips_select','http://www.w3.org/2000/01/rdf-schema#label');
-      chart = Sunburst(nodeData, {
-        value: d => d.size, // size of each node (file); null for internal nodes (folders)
-        label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
-        title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
-        // link_url = query_url.searchParams.set('sparklis-query','test'),
-        link: (d, n) => `${query_url.toString()}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${encodeURIComponent(d.iri)}%22%29%29%2CNone%29%29`,
-        width: 900,
-        height: 900,
-      });
-      svg = document.getElementById("sunburst");
-      svg.appendChild(chart)
-      // svg.replaceWith(chart);
-      var responsive_sunburst = $("#sunburst"),
-      aspect = responsive_sunburst.width() / responsive_sunburst.height(),
-      container = responsive_sunburst.parent();
-      
-      // make sunburst responsive
-      $(window).on("resize", function() {
-          var targetHeight = container.height();
-          responsive_sunburst.attr("height", targetHeight);
-          responsive_sunburst.attr("width", Math.round(targetHeight * aspect));
-      }).trigger("resize");
-    </script>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  var nodeData = $('#sunburst_data').data("nodes");
+  var query_url = new URL(window.location.protocol + "//" + window.location.host + "/osparklis.html");
+  prefix = "http://example.com/";
+  // var search_params = new URLSearchParams(url.search);
+  query_url.searchParams.append('endpoint','{{ endpoint }}');
+  query_url.searchParams.append('sparklis-path','D');
+  query_url.searchParams.append('entity_lexicon_select','http://www.w3.org/2000/01/rdf-schema#label');
+  query_url.searchParams.append('concept_lexicons_select','http://www.w3.org/2000/01/rdf-schema#label');
+  query_url.searchParams.append('concept_tooltips_select','http://www.w3.org/2000/01/rdf-schema#label');
+  chart = Sunburst(nodeData, {
+    value: d => d.size, // size of each node (file); null for internal nodes (folders)
+    label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
+    title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
+    // link_url = query_url.searchParams.set('sparklis-query','test'),
+    link: (d, n) => `${query_url.toString()}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${encodeURIComponent(d.iri)}%22%29%29%2CNone%29%29`,
+    width: 900,
+    height: 900,
+  });
+  svg = document.getElementById("sunburst");
+  svg.appendChild(chart)
+  // svg.replaceWith(chart);
+  var responsive_sunburst = $("#sunburst"),
+  aspect = responsive_sunburst.width() / responsive_sunburst.height(),
+  container = responsive_sunburst.parent();
+  
+  // make sunburst responsive
+  $(window).on("resize", function() {
+      var targetHeight = container.height();
+      responsive_sunburst.attr("height", targetHeight);
+      responsive_sunburst.attr("width", Math.round(targetHeight * aspect));
+  }).trigger("resize");
+</script>
 {% endblock %}
