@@ -4,20 +4,23 @@
   This file is part of Sparklis.
   -->
 {% extends "base.html" %}
-
-{% block head %}
-{{ super() }}
 {% block styles %}
 {{ super() }}
-  <link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
-  <style type="text/css">
+<link href="{{ url_for('static', filename='osparklis.css') }}" rel="stylesheet" type="text/css" />
+<style type="text/css">
 	#mynetwork {
 		width: 100%;
 		height: 800px;
 		border: 1px solid lightgray;
 	}
 	</style>
+<!-- YASGUI -->
+<link href="https://cdn.jsdelivr.net/yasgui/2.6.1/yasgui.min.css" rel="stylesheet" type="text/css"/>
 {% endblock %}
+
+
+{% block head %}
+{{ super() }}
 
 <script>
 	window.dataLayer = window.dataLayer || [];
@@ -28,6 +31,8 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='osparklis.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/yasgui/2.6.1/yasgui.min.js"></script>
+
 <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
 <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <script>
@@ -350,11 +355,8 @@
 			<div class="btn-group btn-group-toggle me-2" data-bs-toggle="buttons">
 				<input class="btn-check" type="radio" name="options" autocomplete="off" id="button-sparklis-view" checked>
 				<label for="button-sparklis-view" class="btn btn-primary">Sparklis</label>
-				
-				<!-- <label id="button-yasgui-view" class="btn btn-default btn-md navbar-btn">
-					<input type="radio" name="options" autocomplete="off">
-					YASGUI
-				</label> -->
+				<input  class="btn-check" type="radio" name="options" autocomplete="off"  id="button-yasgui-view">
+				<label for="button-yasgui-view" class="btn btn-primary">YASGUI</label>
 				<input class="btn-check" type="radio" name="options" autocomplete="off" id="button-log-view">
 				<label for="button-log-view" class="btn btn-primary">
 					<span class="texte lang-en">History</span>
@@ -1022,45 +1024,47 @@
 			</div>
 		</div>
 	</div>
-	<div id="yasgui-view" class="card bg-info" style="display:none">
-		<div class="card-header">
-			<h5 class="card-title">
-				<span class="texte lang-en">Your query in SPARQL + results (with YASGUI)</span>
-				<span class="texte lang-fr">Votre requête en SPARQL + résultats (avec YASGUI)</span>
-				<span class="texte lang-es">Tu consulta en SPARQL + resultados (con YASGUI)</span>
-				<span class="texte lang-nl">Uw query in SPARQL + resultaten (met YASGUI)</span>
-			</h5>
-		</div>
-		<div class="card-body">
-			<div id="sparql-query"></div>
-			<div id="sparklis-yasgui"></div>
-		</div>
-	</div>
-
-	<div id="log-view" class="card bg-info" style="display:none">
-		<div class="card-header">
-			<h5 class="card-title">
-				<span class="texte lang-en">Your navigation history on this endpoint</span>
-				<span class="texte lang-fr">Votre historique de navigation sur ce point d'accès</span>
-				<span class="texte lang-es">Su historial de navegación en este SPARQL endpoint</span>
-				<span class="texte lang-nl">Uw navigatiegeschiedenis op dit SPARQL endpoint</span>
-				<button id="clear-log" class="btn btn-primary btn-xs" style="float: right">
-					<span class="tooltiped">
-						<span class="tooltip lang-en">Clear this history</span>
-						<span class="tooltip lang-fr">Effacer cet historique</span>
-						<span class="tooltip lang-es">Borrar este historial</span>
-						<span class="tooltip lang-nl">Wis deze geschiedenis</span>
-						<span class="bi-trash"></span>
-					</span>
-				</button>
-			</h5>
-		</div>
-		<div class="card-body">
-			<div id="endpoint-log">
+	<div class="col-12">
+		<div id="yasgui-view" class="card bg-light mt-1" style="display:none">
+			<div class="card-header">
+				<h5 class="card-title">
+					<span class="texte lang-en">Your query in SPARQL + results (with YASGUI)</span>
+					<span class="texte lang-fr">Votre requête en SPARQL + résultats (avec YASGUI)</span>
+					<span class="texte lang-es">Tu consulta en SPARQL + resultados (con YASGUI)</span>
+					<span class="texte lang-nl">Uw query in SPARQL + resultaten (met YASGUI)</span>
+				</h5>
+			</div>
+			<div class="card-body">
+				<div id="sparql-query"></div>
+				<div id="sparklis-yasgui"></div>
 			</div>
 		</div>
 	</div>
-
+	<div class="col-12">
+		<div id="log-view" class="card bg-light" style="display:none">
+			<div class="card-header">
+				<h5 class="card-title">
+					<span class="texte lang-en">Your navigation history on this endpoint</span>
+					<span class="texte lang-fr">Votre historique de navigation sur ce point d'accès</span>
+					<span class="texte lang-es">Su historial de navegación en este SPARQL endpoint</span>
+					<span class="texte lang-nl">Uw navigatiegeschiedenis op dit SPARQL endpoint</span>
+					<button id="clear-log" class="btn btn-primary btn-xs" style="float: right">
+						<span class="tooltiped">
+							<span class="tooltip lang-en">Clear this history</span>
+							<span class="tooltip lang-fr">Effacer cet historique</span>
+							<span class="tooltip lang-es">Borrar este historial</span>
+							<span class="tooltip lang-nl">Wis deze geschiedenis</span>
+							<span class="bi-trash"></span>
+						</span>
+					</button>
+				</h5>
+			</div>
+			<div class="card-body">
+				<div id="endpoint-log">
+				</div>
+			</div>
+		</div>
+	</div>
 	<script>
 		//Global variables for vizualization. Will probably get changed.
 		// var svg = d3.select("#svg-body").append("svg")
