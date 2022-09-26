@@ -7,4 +7,4 @@ COPY requirements.txt /src/
 RUN pip install -r /src/requirements.txt
 WORKDIR /src
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "wsgi:app", "--workers=3", "--limit-request-line", "0" ]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "wsgi:app", "--workers=1", "--limit-request-line", "0" ]

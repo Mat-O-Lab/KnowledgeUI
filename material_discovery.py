@@ -279,8 +279,8 @@ class learn():
             # target_df = self.dataframe[self.target_df]
             y = self.target_df[temp_new].iloc[self.SampIdx].to_numpy()
             x = self.features_df.iloc[self.SampIdx].to_numpy()
-            # print('x', x)
-            # print('y', y)
+            print('x', x)
+            print('y', y)
             dtr.fit(x, y)
             self.Expected_Pred, uncertainty = dtr.predict(self.features_df.iloc[self.PredIdx], return_std=True)
 

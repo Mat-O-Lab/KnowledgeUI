@@ -1,5 +1,6 @@
 from email import header
 import os
+import re
 import pandas as pd
 import numpy as np
 from material_discovery import *
@@ -29,8 +30,6 @@ bootstrap = Bootstrap5(app)
 ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
 app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
-dataset = pd.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
-
 @app.context_processor
 def init_global_vars_template():
     """ Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
@@ -77,14 +76,24 @@ def query():
 
 @app.route('/predict', methods=['POST', 'GET'])
 def model_process():
-    results = request.values.get('results')
-    print(request.method)
-    if not results:
-        flash('No input data given')
-        return render_template('predict.html')
-    
-    dataframe = parse_json_string_to_df(results)
+    dataframe=pd.DataFrame()
+    if "results" in request.values.keys():
+        results = request.values.get('results')
+        dataframe = parse_json_string_to_df(results)
+
+    else:
+        dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result.csv')
     columns = dataframe.columns
+    form=request.form
+    
+    print(request.method)
+    #print(dataframe)
+    print(form)
+    # if not dataframe.empty:
+    #     flash('No input data given')
+    #     return render_template('predict.html', columns=columns, form=form)
+    
+
     
     if request.method == 'POST':
         model = request.form.get('models')
@@ -94,28 +103,52 @@ def model_process():
         strategy = request.form.get('strategies')
         # distance = request.form.get('initial_sample')
         sigma = request.form.get('sigma_factor')
-        print(target_df)
+        #print(target_df)
         # --- This is the min_max of benchmarking ---------
         min_or_max_target = {}
         for t in target_df:
-            x = 'Rd_' + t
-            min_or_max_target[t] = request.form.get(x)
+            x = 'R_'+t
+            min_or_max_target[t]= request.form.get(x)
+
+
+        check_to_use_threshold_t = {}
+        for t in target_df:
+            x = 'C_'+t
+            check_to_use_threshold_t[t]= request.form.get(x)
+
+
+        target_selected_number1 = {}
+        for t in target_df:
+            x = 'N1_'+t
+            target_selected_number1[t]= request.form.get(x)
 
         target_selected_number2 = {}
         for t in target_df:
-            x = 'Nd_' + t
-            target_selected_number2[t] = int(request.form.get(x))
-        # ---------------------------------
+            x = 'N2_'+t
+            target_selected_number2[t]= request.form.get(x)
+
         min_or_max_fixedtarget = {}
         for t in fixed_target_df:
-            x = 'Rd1_' + t
-            min_or_max_fixedtarget[t] = request.form.get(x)
+            x = 'R1_'+t
+            min_or_max_fixedtarget[t]= request.form.get(x)
+
+
+        check_to_use_threshold_ft = {}
+        for t in fixed_target_df:
+            x = 'C1_'+t
+            check_to_use_threshold_ft[t]= request.form.get(x)
+
+
+        fixedtarget_selected_number1 = {}
+        for t in fixed_target_df:
+            x = 'N11_'+t
+            fixedtarget_selected_number1[t]= request.form.get(x)
 
         fixedtarget_selected_number2 = {}
         for t in fixed_target_df:
-            x = 'Nd1_' + t
-            fixedtarget_selected_number2[t] = int(request.form.get(x))
-
+            x = 'N22_'+t
+            fixedtarget_selected_number2[t]= request.form.get(x)
+            
         l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
                   fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
         l.start_learning()
@@ -130,7 +163,7 @@ def model_process():
                             n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                         escape=False))
     else:
-        return render_template('predict.html', columns=columns)
+        return render_template('predict.html', columns=columns, dataframe=dataframe, form=form)
 
 
 if __name__ == "__main__":
