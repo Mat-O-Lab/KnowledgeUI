@@ -77,18 +77,19 @@ def query():
 @app.route('/predict', methods=['POST', 'GET'])
 def model_process():
     dataframe=pd.DataFrame()
-    if "results" in request.values.keys():
+    if dataframe.empty and "results" in request.values.keys():
         results = request.values.get('results')
         dataframe = parse_json_string_to_df(results)
 
     else:
-        dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result.csv')
+        dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result_extra.csv')
+        #dataframe = df.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
     columns = dataframe.columns
     form=request.form
     
-    print(request.method)
+    #print(request.method)
     #print(dataframe)
-    print(form)
+    #print(form)
     # if not dataframe.empty:
     #     flash('No input data given')
     #     return render_template('predict.html', columns=columns, form=form)
@@ -159,7 +160,7 @@ def model_process():
         #print(df_column)
         df_only_data = df_table
 
-        return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,
+        return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,  dataframe=dataframe, 
                             n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                         escape=False))
     else:

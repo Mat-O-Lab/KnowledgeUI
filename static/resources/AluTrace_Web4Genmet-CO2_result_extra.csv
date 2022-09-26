@@ -1,0 +1,127 @@
+﻿PartSetID,TensilePartSetID_Extern,TensileTestID_Intern,BuildOrientationAngle,LayerThickness,LayerThicknessUnit,NameOfProcessParameter,HTatEMI,TemperatureControlParameterValue,TemperatureUnitSymbol,Ym_value,Ym_unit,Rp02_value,Rp02_unit,R_UTS_value,R_UTS_unit,A_value,A_unit,HeatTreatment_ID,Surface,CO2value_LPBF,CO2value_PartSet,CO2value_PL,CO2value_HT,CO2value_Sep,CO2value_waste,CO2value
+Statisch 0° - Static_8 - Nr. 1,Statisch 0° - Static_8 - Nr. 1,AHH1_RTzl701,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.3734E+11,MPa ,24293013,MPa ,343881348,MPa ,1.96953E+11,%,none,polished,1099,139,0,0,3,66,1307
+Statisch 0° - Static_8 - Nr. 1,Statisch 0° - Static_8 - Nr. 1,AHH1_RTzl702,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,74205159826,MPa ,241442611,MPa ,350877936,MPa ,2.42186E+11,%,none,polished,1099,139,0,0,3,66,1307
+Statisch 0° - Static_8 - Nr. 1,Statisch 0° - Static_8 - Nr. 1,AHH1_RTzl703,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.39563E+11,MPa ,2.53615E+16,MPa ,368066561,MPa ,2.63935E+11,%,none,polished,1099,139,0,0,3,66,1307
+MEF-2 17-03-01 0°,MEF-2 17-03-01 0°,AHH3_RTzl701,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,69009164206,MPa ,1.36711E+16,MPa ,248929189,MPa ,6.04113E+16,%,T5,polished,1099,139,0,462,3,66,1769
+MEF-2 17-03-01 0°,MEF-2 17-03-01 0°,AHH3_RTzl702,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.96139E+11,MPa ,137249322,MPa ,251192156,MPa ,5.99153E+16,%,T5,polished,1099,139,0,462,3,66,1769
+MEF-2 17-03-01 0°,MEF-2 17-03-01 0°,AHH3_RTzl703,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.88915E+15,MPa ,138157455,MPa ,2.54626E+16,MPa ,6.66627E+15,%,T5,polished,1099,139,0,462,3,66,1769
+MEF-2 17-03-01 0°,MEF-2 17-03-01 0°,AHH4_RTzl701,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.93803E+15,MPa ,227605011,MPa ,273418363,MPa ,6020278164,%,T6,polished,1099,139,0,6406,3,66,7713
+MEF-2 17-03-01 0°,MEF-2 17-03-01 0°,AHH4_RTzl702,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7190473065,MPa ,2.24895E+16,MPa ,270596252,MPa ,6797638018,%,T6,polished,1099,139,0,6406,3,66,7713
+MEF-2 17-03-01 0°,MEF-2 17-03-01 0°,AHH4_RTzl703,0,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7122769287,MPa ,219058318,MPa ,264305609,MPa ,6.30727E+16,%,T6,polished,1099,139,0,6406,3,66,7713
+X 0°,X 0°,AHH5_RTzl701,0,3,mm,_Split,FALSCH,20,°C,7.68276E+11,MPa ,281538232,MPa ,413937293,MPa ,7.15127E+15,%,none,polished,1099,139,0,0,3,66,1307
+X 0°,X 0°,AHH5_RTzl702,0,3,mm,_Split,FALSCH,20,°C,7.68243E+11,MPa ,2.82918E+16,MPa ,41454336,MPa ,7.50358E+11,%,none,polished,1099,139,0,0,3,66,1307
+X 0°,X 0°,AHH5_RTzl703,0,3,mm,_Split,FALSCH,20,°C,7.50338E+11,MPa ,288800079,MPa ,421464175,MPa ,7.67414E+11,%,none,polished,1099,139,0,0,3,66,1307
+X 0° 2h 300 °C,X 0° 2h 300 °C,AHH6_RTzl701,0,3,mm,_Split,WAHR,20,°C,6.81758E+15,MPa ,167790416,MPa ,264975078,MPa ,1.67904E+11,%,T5,polished,1099,139,0,462,3,66,1769
+X 0° 2h 300 °C,X 0° 2h 300 °C,AHH6_RTzl702,0,3,mm,_Split,WAHR,20,°C,7.15819E+11,MPa ,167563154,MPa ,264532407,MPa ,1.70139E+11,%,T5,polished,1099,139,0,462,3,66,1769
+X 0° 2h 300 °C,X 0° 2h 300 °C,AHH6_RTzl703,0,3,mm,_Split,WAHR,20,°C,7.25084E+11,MPa ,171052226,MPa ,265205197,MPa ,1.73165E+11,%,T5,polished,1099,139,0,462,3,66,1769
+Statisch 45° - Static_8 - Nr. 1,Statisch 45° - Static_8 - Nr. 1,AHH1_RTzl707,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.945E+11,MPa ,247485691,MPa ,365387897,MPa ,2.30302E+11,%,none,polished,100,142,0,0,3,343,1488
+Statisch 45° - Static_8 - Nr. 1,Statisch 45° - Static_8 - Nr. 1,AHH1_RTzl708,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.64866E+11,MPa ,2.4613E+16,MPa ,361135315,MPa ,2.14335E+11,%,none,polished,100,142,0,0,3,343,1488
+Statisch 45° - Static_8 - Nr. 1,Statisch 45° - Static_8 - Nr. 1,AHH1_RTzl709,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.89248E+11,MPa ,2.53535E+16,MPa ,366323469,MPa ,2.03278E+11,%,none,polished,100,142,0,0,3,343,1488
+MEF-2 17-03-01 45°,MEF-2 17-03-01 45°,AHH3_RTzl704,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,5.9864E+16,MPa ,137424633,MPa ,248907403,MPa ,82380390164,%,T5,polished,100,142,0,462,3,343,195
+MEF-2 17-03-01 45°,MEF-2 17-03-01 45°,AHH3_RTzl705,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.24344E+15,MPa ,138564953,MPa ,249487793,MPa ,8.17816E+11,%,T5,polished,100,142,0,462,3,343,195
+MEF-2 17-03-01 45°,MEF-2 17-03-01 45°,AHH3_RTzl706,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,69234936365,MPa ,137412646,MPa ,248229296,MPa ,7.31684E+11,%,T5,polished,100,142,0,462,3,343,195
+MEF-2 17-03-01 45°,MEF-2 17-03-01 45°,AHH4_RTzl704,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7315046167,MPa ,2.46484E+16,MPa ,292839452,MPa ,7.09069E+15,%,T6,polished,100,142,0,6406,3,343,7894
+MEF-2 17-03-01 45°,MEF-2 17-03-01 45°,AHH4_RTzl705,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7407989018,MPa ,2.47621E+16,MPa ,294153748,MPa ,677829268,%,T6,polished,100,142,0,6406,3,343,7894
+MEF-2 17-03-01 45°,MEF-2 17-03-01 45°,AHH4_RTzl706,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7280200131,MPa ,244592504,MPa ,291803964,MPa ,768387802,%,T6,polished,100,142,0,6406,3,343,7894
+XY 45°,XY 45°,AHH5_RTzl704,45,3,mm,_Split,FALSCH,20,°C,7.91141E+11,MPa ,274171565,MPa ,427149546,MPa ,5.54321E+11,%,none,polished,100,142,0,0,3,343,1488
+XY 45°,XY 45°,AHH5_RTzl705,45,3,mm,_Split,FALSCH,20,°C,7.53717E+11,MPa ,270053796,MPa ,407354831,MPa ,3.15585E+11,%,none,polished,100,142,0,0,3,343,1488
+XY 45°,XY 45°,AHH5_RTzl706,45,3,mm,_Split,FALSCH,20,°C,7.18257E+11,MPa ,274070086,MPa ,400295477,MPa ,2.62662E+16,%,none,polished,100,142,0,0,3,343,1488
+XY 45° 2h 300 °C,XY 45° 2h 300 °C,AHH6_RTzl704,45,3,mm,_Split,WAHR,20,°C,7.36152E+11,MPa ,1.65804E+16,MPa ,265824123,MPa ,1.65908E+11,%,T5,polished,100,142,0,462,3,343,195
+XY 45° 2h 300 °C,XY 45° 2h 300 °C,AHH6_RTzl705,45,3,mm,_Split,WAHR,20,°C,7.09707E+15,MPa ,167615159,MPa ,267510246,MPa ,1.63171E+11,%,T5,polished,100,142,0,462,3,343,195
+XY 45° 2h 300 °C,XY 45° 2h 300 °C,AHH6_RTzl706,45,3,mm,_Split,WAHR,20,°C,6.87294E+11,MPa ,168241803,MPa ,267932776,MPa ,1.59588E+11,%,T5,polished,100,142,0,462,3,343,195
+Statisch 90° - Static_8 - Nr. 1 ,Statisch 90° - Static_8 - Nr. 1 ,AHH1_RTzl716,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.79174E+11,MPa ,2.51805E+16,MPa ,39449296,MPa ,2.48193E+16,%,none,polished,2473,141,0,0,3,44,2.661E+16
+Statisch 90° - Static_8 - Nr. 1 ,Statisch 90° - Static_8 - Nr. 1 ,AHH1_RTzl717,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.98326E+11,MPa ,249941654,MPa ,373909071,MPa ,1.86137E+11,%,none,polished,2473,141,0,0,3,44,2.661E+16
+Statisch 90° - Static_8 - Nr. 1 ,Statisch 90° - Static_8 - Nr. 1 ,AHH1_RTzl718,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.77643E+15,MPa ,264809973,MPa ,380872031,MPa ,1.72404E+11,%,none,polished,2473,141,0,0,3,44,2.661E+16
+MEF-2 17-03-01 90°,MEF-2 17-03-01 90°,AHH3_RTzl707,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.95408E+11,MPa ,144747203,MPa ,245491823,MPa ,1.09003E+16,%,T5,polished,2473,141,0,462,3,44,3.123E+16
+MEF-2 17-03-01 90°,MEF-2 17-03-01 90°,AHH3_RTzl708,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.86697E+15,MPa ,142937419,MPa ,2.45953E+16,MPa ,1.03905E+11,%,T5,polished,2473,141,0,462,3,44,3.123E+16
+MEF-2 17-03-01 90°,MEF-2 17-03-01 90°,AHH3_RTzl709,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.44383E+16,MPa ,144947204,MPa ,2.45836E+16,MPa ,1.0356E+11,%,T5,polished,2473,141,0,462,3,44,3.123E+16
+MEF-2 17-03-01 90°,MEF-2 17-03-01 90°,AHH4_RTzl707,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7135289156,MPa ,2.44143E+16,MPa ,296783375,MPa ,8.35407E+15,%,T6,polished,2473,141,0,6406,3,44,9067
+MEF-2 17-03-01 90°,MEF-2 17-03-01 90°,AHH4_RTzl708,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,728004471,MPa ,2.41675E+16,MPa ,2.96559E+16,MPa ,9812186272,%,T6,polished,2473,141,0,6406,3,44,9067
+MEF-2 17-03-01 90°,MEF-2 17-03-01 90°,AHH4_RTzl709,90,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.04842E+15,MPa ,223656792,MPa ,280022983,MPa ,8041127009,%,T6,polished,2473,141,0,6406,3,44,9067
+Z 90°,Z 90°,AHH5_RTzl710,90,3,mm,_Split,FALSCH,20,°C,7.34711E+15,MPa ,262132323,MPa ,4.43445E+16,MPa ,4.56127E+11,%,none,polished,2473,141,0,0,3,44,2.661E+16
+Z 90°,Z 90°,AHH5_RTzl711,90,3,mm,_Split,FALSCH,20,°C,7.38875E+11,MPa ,260377423,MPa ,442388825,MPa ,4.73283E+15,%,none,polished,2473,141,0,0,3,44,2.661E+16
+Z 90°,Z 90°,AHH5_RTzl712,90,3,mm,_Split,FALSCH,20,°C,7.39514E+15,MPa ,266376891,MPa ,448449182,MPa ,4.57027E+15,%,none,polished,2473,141,0,0,3,44,2.661E+16
+Z 90° 2h 300 °C,Z 90° 2h 300 °C,AHH6_RTzl710,90,3,mm,_Split,WAHR,20,°C,7.19496E+11,MPa ,164679607,MPa ,266639304,MPa ,1.48554E+11,%,T5,polished,2473,141,0,462,3,44,3.123E+16
+Z 90° 2h 300 °C,Z 90° 2h 300 °C,AHH6_RTzl711,90,3,mm,_Split,WAHR,20,°C,7.07926E+15,MPa ,1.64959E+16,MPa ,2.67099E+16,MPa ,1.44958E+11,%,T5,polished,2473,141,0,462,3,44,3.123E+16
+Z 90° 2h 300 °C,Z 90° 2h 300 °C,AHH6_RTzl712,90,3,mm,_Split,WAHR,20,°C,6.94695E+15,MPa ,165849311,MPa ,267127766,MPa ,1.49595E+16,%,T5,polished,2473,141,0,462,3,44,3.123E+16
+Statisch 45° - Static_15 - Nr. 1,Statisch 45° - Static_15 - Nr. 1,AHH1_15zl713,45,9,mm,______Standard_160324_only_up,FALSCH,150,°C,7.31826E+15,MPa ,211200591,MPa ,258513668,MPa ,6.84347E+15,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° - Static_15 - Nr. 1,Statisch 45° - Static_15 - Nr. 1,AHH1_25zl714,45,9,mm,______Standard_160324_only_up,FALSCH,250,°C,5.59688E+11,MPa ,127130628,MPa ,140000572,MPa ,1.24286E+11,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° - Static_15 - Nr. 1,Statisch 45° - Static_15 - Nr. 1,AHH1_28zl715,45,9,mm,______Standard_160324_only_up,FALSCH,280,°C,4.66604E+11,MPa ,100952912,MPa ,104817477,MPa ,1.46168E+11,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° nicht abdrehen - Static_8 - Nr. 1,Statisch 45° nicht abdrehen - Static_8 - Nr. 1,AHH1_RTzl704,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.80543E+11,MPa ,235642429,MPa ,296558615,MPa ,9.83661E+15,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° nicht abdrehen - Static_8 - Nr. 1,Statisch 45° nicht abdrehen - Static_8 - Nr. 1,AHH1_RTzl705,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.19856E+15,MPa ,231755521,MPa ,297942477,MPa ,1.09721E+11,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° nicht abdrehen - Static_8 - Nr. 1,Statisch 45° nicht abdrehen - Static_8 - Nr. 1,AHH1_RTzl706,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,78865632647,MPa ,2.31573E+16,MPa ,286856264,MPa ,9.17472E+15,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° nicht abdrehen - Static_15 - Nr. 1,Statisch 45° nicht abdrehen - Static_15 - Nr. 1,AHH1_RTzl710,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.66564E+11,MPa ,266505033,MPa ,383740408,MPa ,2.1769E+16,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° nicht abdrehen - Static_15 - Nr. 1,Statisch 45° nicht abdrehen - Static_15 - Nr. 1,AHH1_RTzl711,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.5853E+15,MPa ,256972011,MPa ,3.71794E+16,MPa ,2.10005E+11,%,none,raw,100,142,0,0,3,0,1145
+Statisch 45° nicht abdrehen - Static_15 - Nr. 1,Statisch 45° nicht abdrehen - Static_15 - Nr. 1,AHH1_RTzl712,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,7.89674E+11,MPa ,264973081,MPa ,381972997,MPa ,2.15989E+11,%,none,raw,100,142,0,0,3,0,1145
+Extra - Nicht abdrehen!,Extra - Nicht abdrehen!,AHH3_RTzl710,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.64078E+11,MPa ,12169022,MPa ,2.37785E+16,MPa ,5.95831E+11,%,T5,raw,100,142,0,462,3,0,1607
+Extra - Nicht abdrehen!,Extra - Nicht abdrehen!,AHH3_RTzl711,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.73474E+11,MPa ,133015984,MPa ,2.4419E+16,MPa ,5.19139E+11,%,T5,raw,100,142,0,462,3,0,1607
+Extra - Nicht abdrehen!,Extra - Nicht abdrehen!,AHH3_RTzl712,45,9,mm,______Standard_160324_only_up,FALSCH,20,°C,6.57976E+11,MPa ,1.33323E+16,MPa ,246015567,MPa ,6.68076E+11,%,T5,raw,100,142,0,462,3,0,1607
+XY 45° Oberfläche,XY 45° Oberfläche,AHH5_RTzl707,45,3,mm,_Split,FALSCH,20,°C,7.4173E+15,MPa ,2.52292E+16,MPa ,369605103,MPa ,2.5785E+11,%,none,raw,100,142,0,0,3,0,1145
+XY 45° Oberfläche,XY 45° Oberfläche,AHH5_RTzl708,45,3,mm,_Split,FALSCH,20,°C,7.07271E+15,MPa ,243597096,MPa ,362980376,MPa ,2.63453E+11,%,none,raw,100,142,0,0,3,0,1145
+XY 45° Oberfläche,XY 45° Oberfläche,AHH5_RTzl709,45,3,mm,_Split,FALSCH,20,°C,7.07705E+11,MPa ,2.52195E+16,MPa ,364675503,MPa ,2.29621E+11,%,none,raw,100,142,0,0,3,0,1145
+XY 45° Oberfläche 2h 300 °C,XY 45° Oberfläche 2h 300 °C,AHH6_RTzl707,45,3,mm,_Split,WAHR,20,°C,6.91384E+11,MPa ,1.56721E+16,MPa ,258036188,MPa ,1.15883E+11,%,T5,raw,100,142,0,462,3,0,1607
+XY 45° Oberfläche 2h 300 °C,XY 45° Oberfläche 2h 300 °C,AHH6_RTzl708,45,3,mm,_Split,WAHR,20,°C,6.83941E+11,MPa ,155498178,MPa ,258109985,MPa ,1.15915E+11,%,T5,raw,100,142,0,462,3,0,1607
+XY 45° Oberfläche 2h 300 °C,XY 45° Oberfläche 2h 300 °C,AHH6_RTzl709,45,3,mm,_Split,WAHR,20,°C,7.09282E+11,MPa ,1.59829E+16,MPa ,2.63022E+16,MPa ,9.52974E+11,%,T5,raw,100,142,0,462,3,0,1607
+NaN,NaN,NaN,0,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,7,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,8,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,3,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,7,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,8,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,3,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,4,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,5,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,0,6,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,7,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,8,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,7,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,8,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,4,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,5,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,6,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,7,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,8,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,3,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T6,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,7,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,8,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,3,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,4,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,5,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,90,6,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,polished,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,4,mm,______Standard_160324_only_up,FALSCH,150,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,5,mm,______Standard_160324_only_up,FALSCH,250,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,6,mm,______Standard_160324_only_up,FALSCH,280,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,7,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,8,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,4,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,5,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,6,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,7,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,8,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,______Standard_160324_only_up,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,4,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,5,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,6,mm,_Split,FALSCH,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,none,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+NaN,NaN,NaN,45,3,mm,_Split,WAHR,20,°C,NaN,MPa ,NaN,MPa ,NaN,MPa ,NaN,%,T5,raw,NaN,NaN,NaN,NaN,NaN,NaN,NaN
