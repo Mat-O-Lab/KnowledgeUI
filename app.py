@@ -161,7 +161,7 @@ def model_process():
         #print(df_column)
         df_only_data = df_table
 
-        return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,  dataframe=dataframe, 
+        return render_template('score.html', columns=columns, df_column=df_column, df_only_data=df_only_data,  dataframe=dataframe,
                             n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                         escape=False))
     else:
