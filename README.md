@@ -1,5 +1,5 @@
 # KnowledgeUI
-Flask App Frontend Application demonstrating the use of a sematic dataset for m.
+Flask App Frontend Application Showing The Benefits Of Rich Semantic Material Science Data And Exemplar Usage.
 
 # how to use
 The code is supposed to run as docker-compose stack
