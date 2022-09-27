@@ -160,9 +160,9 @@ class learn():
 
         target_weight = []
         for i in self.target_selected_number2:
-            target_weight.append(self.target_selected_number2[i])
+            target_weight.append(float(self.target_selected_number2[i]))
         print('target_weight',target_weight)
-        
+        print(self.Expected_Pred)
         if (self.Expected_Pred.ndim > 2):
             for weights in range(len(target_weight)):
                 self.Expected_Pred[:, weights] = self.Expected_Pred[:, weights] * target_weight[weights]

@@ -69,7 +69,7 @@
       <h7>Model:</h7>
         <select name="models" class="form-control" >
           <option hidden>Select Model</option>
-          <option value="Gaussian Process Regression (GPR)">Gaussian Process Regression (GPR)</option>
+          <option selected="selected" value="Gaussian Process Regression (GPR)">Gaussian Process Regression (GPR)</option>
           <option value="lolo Random Forrest (RF)">lolo Random Forrest (RF)</option>
           <option value="Decision Trees (DT)">Decision Trees (DT)</option>
           <option value="Random Forrest (RFscikit)">Random Forrest (RFscikit)</option>
@@ -91,7 +91,7 @@
       <h7>Strategy:</h7>
         <select id="strategy" name="strategies" class="form-control">
           <option hidden>Select Strategy</option>
-          <option value="MEI (exploit)">MEI (exploit)</option>
+          <option selected="selected" value="MEI (exploit)">MEI (exploit)</option>
           <option value="MU (explore)">MU (explore)</option>
           <option value="MLI (exploit & explore)">MLI (exploit & explore)</option>
           <option value="MEID (exploit)">MEID (exploit)</option>
@@ -184,7 +184,7 @@
 
           <input type="radio" name="R_${arr[i]}" value='min'  id=${arr[i]}></input></br>
           <label for=${arr[i]}>maximize</label>
-          <input type="radio" name="R_${arr[i]}" value="max"  id=${arr[i]}></input>
+          <input type="radio" name="R_${arr[i]}" value="max" checked="checked" id=${arr[i]}></input>
           </div>
 
           <div class="col-sm-3">
@@ -196,14 +196,14 @@
           <label for=${arr[i]}>${arr[i]}</label>
           </div>
           <div class="col-sm-2">
-          <input type="number" name="N1_${arr[i]}" step="1"> </input>
+          <input type="number" name="N1_${arr[i]}" value="1.0" step="1.0"> </input>
           </div>
 
           <div class="col-sm-1">
           <label for=${arr[i]}> Weight ${arr[i]} </label>
           </div>
           <div class="col-sm-2">
-          <input type="number" name="N2_${arr[i]}" value="1" step="1"> </input>
+          <input type="number" name="N2_${arr[i]}" value="1.0" step="1.0"> </input>
           </div> </br>`);
       };
 
@@ -223,7 +223,7 @@
 
           <input type="radio" name="R1_${arr1[j]}" value="min" id=${arr1[j]}></input></br>
           <label for=${arr1[j]}>maximize</label>
-          <input type="radio" name='R1_${arr1[j]}' value="max"></input>
+          <input type="radio" name='R1_${arr1[j]}' value="max" checked="checked"></input>
           </div>
 
           <div class="col-sm-3">
@@ -235,13 +235,13 @@
           <label for=${arr1[j]}>${arr1[j]}</label>
           </div>
           <div class="col-sm-2">
-          <input type="number" name="N11_${arr1[j]}" step="1"> </input>
+          <input type="number" name="N11_${arr1[j]}" value="1.0" step="1.0"> </input>
           </div>
           <div class="col-sm-1">
           <label for=${arr1[j]}> Weight ${arr1[j]}</label>
           </div>
           <div class="col-sm-2">
-          <input type="number" name="N22_${arr1[j]}" step="1"> </input>
+          <input type="number" name="N22_${arr1[j]}" value="1.0" step="1.0"> </input>
           </div> </br>`);
       };
 
@@ -250,5 +250,5 @@
 
   </script>
 {% endblock %}
-
+  
 
