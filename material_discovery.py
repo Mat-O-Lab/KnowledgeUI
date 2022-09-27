@@ -88,7 +88,7 @@ class learn():
         self.target_selection_idxs = self.targets  # confirm_target(target_selection_application)
         self.features_df = self.feature_df  # confirm_features(feature_selector_application)]
         # self.target_df=self.dataframe[self.targets]#confirm_target(target_selection_application)]
-        # print('feature', self.features_df)
+        print('feature', self.features_df)
         self.decide_model(self.model)
         if self.strategy == 'MEI (exploit)':
             self.sigma = 0
@@ -161,6 +161,8 @@ class learn():
         target_weight = []
         for i in self.target_selected_number2:
             target_weight.append(self.target_selected_number2[i])
+        print('target_weight',target_weight)
+        
         if (self.Expected_Pred.ndim > 2):
             for weights in range(len(target_weight)):
                 self.Expected_Pred[:, weights] = self.Expected_Pred[:, weights] * target_weight[weights]
@@ -327,6 +329,7 @@ class learn():
         return td, tl
 
     def update_strategy(self, strategy):
+        util2=None
         if strategy == 'MEI (exploit)':
             util2 = self.updateIndexMEI()
         # elif strategy=='MU (explore)':
