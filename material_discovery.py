@@ -52,7 +52,7 @@ class learn():
         # print('Sam', self.SampIdx.shape, self.SampIdx)
         print('self.target_df', self.target_df)
 
-    """
+
     def scale_data(self):
         dataframe_norm=(self.dataframe-self.dataframe.mean())/self.dataframe.std()
         target_df_norm=(self.target_df-self.target_df.mean())/self.target_df.std()
@@ -63,8 +63,8 @@ class learn():
         self.target_df=target_df_norm
         self.dataframe=dataframe_norm
         self.fixed_target_df=fixed_target_df_norm
-    """
 
+    """ 
     def scale_data(self):
         scaler = StandardScaler()
         dataframe_norm = scaler.fit_transform(self.dataframe)
@@ -76,8 +76,8 @@ class learn():
         self.target_df = pd.DataFrame(target_df_norm)
         self.dataframe = pd.DataFrame(dataframe_norm)
         self.fixed_target_df = pd.DataFrame(fixed_target_df_norm)
-        # print(self.dataframe)
-
+        print('dataframe',self.dataframe)
+    """
     def start_learning(self):
         self.dataframe = self.decide_max_or_min(self.min_or_max_target, self.dataframe)
         self.dataframe = self.decide_max_or_min(self.min_or_max_fixedtarget, self.dataframe)
@@ -88,7 +88,7 @@ class learn():
         self.target_selection_idxs = self.targets  # confirm_target(target_selection_application)
         self.features_df = self.feature_df  # confirm_features(feature_selector_application)]
         # self.target_df=self.dataframe[self.targets]#confirm_target(target_selection_application)]
-        # print('feature', self.features_df)
+        print('feature', self.features_df)
         self.decide_model(self.model)
         if self.strategy == 'MEI (exploit)':
             self.sigma = 0
@@ -112,7 +112,7 @@ class learn():
         print('test df', df, df.columns)
         if (self.Uncertainty.ndim > 1):
             for i in range(len(self.targets)):
-                df[self.targets[i]] = self.Expected_Pred[:, i]
+                df[self.targets[i]] = self.Expected_Pred[i]
                 uncertainty_name_column = 'Uncertainty (' + self.targets[i] + ' )'
                 df[uncertainty_name_column] = self.Uncertainty[:, i].tolist()
                 # df = df.loc[self.PredIdx].assign(Uncertainty=pd.Series(self.Uncertainty[:,i]).values)
@@ -153,14 +153,16 @@ class learn():
         fixed_targets_in_prediction = self.fixed_target_df.iloc[self.PredIdx].to_numpy()
 
         for weights in range(len(fixedtarget_weight)):
-            fixed_targets_in_prediction[weights] = fixed_targets_in_prediction[weights] * fixedtarget_weight[weights]
+            fixed_targets_in_prediction[weights] = fixed_targets_in_prediction[weights] * np.array(fixedtarget_weight[weights], dtype='float64')
         return fixed_targets_in_prediction.sum(axis=1)
 
     def weight_Pred(self):
 
         target_weight = []
         for i in self.target_selected_number2:
-            target_weight.append(self.target_selected_number2[i])
+            target_weight.append(float(self.target_selected_number2[i]))
+        print('target_weight',target_weight)
+        print(self.Expected_Pred)
         if (self.Expected_Pred.ndim > 2):
             for weights in range(len(target_weight)):
                 self.Expected_Pred[:, weights] = self.Expected_Pred[:, weights] * target_weight[weights]
@@ -170,16 +172,18 @@ class learn():
 
     def updateIndexMEI(self):
         self.weight_Pred()
+        print('self.Expected_Pred', self.Expected_Pred.shape)
+        print('self.target_df.iloc[self.SampIdx]', self.target_df.iloc[self.SampIdx].shape)
+        #self.scale_data()
+        Expected_Pred_norm = (self.Expected_Pred - np.array((self.target_df.iloc[self.SampIdx][:].to_numpy().flatten()).mean(axis=0)))/np.array(self.target_df.iloc[self.SampIdx][:].to_numpy().flatten()).std(axis=0)
 
-        Expected_Pred_norm = (self.Expected_Pred - np.array(self.target_df.iloc[self.SampIdx].mean(axis=0))) / np.array(
-            self.target_df.iloc[self.SampIdx].std(axis=0))
-        # self.scale_data()
+        #self.scale_data()
         if (len(self.fixed_targets) > 0):
             fixed_targets_in_prediction = self.weight_fixed_tars()
         else:
             fixed_targets_in_prediction = np.zeros(len(self.PredIdx))
         if (len(self.targets) > 1):
-            util = fixed_targets_in_prediction.squeeze() + Expected_Pred_norm.sum(axis=1).squeeze()
+            util = fixed_targets_in_prediction.squeeze() + Expected_Pred_norm.sum(axis=0).squeeze()
         else:
             util = fixed_targets_in_prediction.squeeze() + Expected_Pred_norm.squeeze()
         return util
@@ -327,6 +331,7 @@ class learn():
         return td, tl
 
     def update_strategy(self, strategy):
+        util2=None
         if strategy == 'MEI (exploit)':
             util2 = self.updateIndexMEI()
         # elif strategy=='MU (explore)':

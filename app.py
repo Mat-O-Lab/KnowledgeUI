@@ -82,14 +82,14 @@ def model_process():
         dataframe = parse_json_string_to_df(results)
 
     else:
-        dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result_extra.csv')
-        #dataframe = df.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
+        #dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result_extra.csv')
+        dataframe = df.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
     columns = dataframe.columns
     form=request.form
     
     #print(request.method)
     #print(dataframe)
-    #print(form)
+    print(form)
     # if not dataframe.empty:
     #     flash('No input data given')
     #     return render_template('predict.html', columns=columns, form=form)
@@ -99,11 +99,12 @@ def model_process():
     if request.method == 'POST':
         model = request.form.get('models')
         target_df = request.form.getlist('targets')
-        feature_df = request.form.getlist('feature_df')
+        feature_df = request.form.getlist('features')
         fixed_target_df = request.form.getlist('fixedtargets')
         strategy = request.form.get('strategies')
         # distance = request.form.get('initial_sample')
         sigma = request.form.get('sigma_factor')
+        print(feature_df)
         #print(target_df)
         # --- This is the min_max of benchmarking ---------
         min_or_max_target = {}
@@ -149,7 +150,7 @@ def model_process():
         for t in fixed_target_df:
             x = 'N22_'+t
             fixedtarget_selected_number2[t]= request.form.get(x)
-            
+        
         l = learn(dataframe, model,  target_df, feature_df, fixed_target_df, strategy, sigma, target_selected_number2,
                   fixedtarget_selected_number2, min_or_max_target, min_or_max_fixedtarget)
         l.start_learning()
@@ -160,7 +161,7 @@ def model_process():
         #print(df_column)
         df_only_data = df_table
 
-        return render_template('predict.html', columns=columns, df_column=df_column, df_only_data=df_only_data,  dataframe=dataframe, 
+        return render_template('score.html', columns=columns, df_column=df_column, df_only_data=df_only_data,  dataframe=dataframe,
                             n=n.to_html(index=False, classes='table table-striped table-hover table-responsive',
                                         escape=False))
     else:
