@@ -82,8 +82,8 @@ def model_process():
         dataframe = parse_json_string_to_df(results)
 
     else:
-        #dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result_extra.csv')
-        dataframe = df.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
+        dataframe = df.read_csv('static/resources/AluTrace_Web4Genmet-CO2_result_extra.csv')
+        #dataframe = df.read_csv('static/resources/MaterialsDiscoveryExampleData.csv')
     columns = dataframe.columns
     form=request.form
     
