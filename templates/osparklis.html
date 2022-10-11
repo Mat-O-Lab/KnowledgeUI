@@ -287,6 +287,12 @@
 	form.appendChild(input);
     form.submit();
 }
+
+var savequery = function() {
+	console.log(window.location.href);
+    var urlquery = window.location.href;
+	alert("Ah: " + urlquery);
+}
 </script>
 {% endblock %}
 
@@ -356,6 +362,11 @@
 					<span class="texte lang-es">Historial</span>
 					<span class="texte lang-nl">Geschiedenis</span>
 				</label>
+				
+				<label for="button-save-query" class="btn btn-primary">Save query</label>
+				<input  class="btn-check" type="radio" name="options" autocomplete="off"  id="button-save-query" onclick="savequery()">
+				
+
 			</div>
 
 		</div>
@@ -365,6 +376,7 @@
 		<div id="query" class="card bg-light mt-1">
 			<div class="card-header">
 				<h5 class="card-title">
+				<span class="tooltiped">
 					<span class="texte lang-en">Your query and its <span class="highlighted">current
 							focus</span></span>
 					<span class="texte lang-fr">Votre requête et son <span class="highlighted">focus
@@ -982,6 +994,14 @@
 			</div>
 			<div class="modal-body">
 		  <ul class="list-group">
+		  
+		  
+		 
+	   
+		<input id="sparql-endpoint-input" class="form-control no-padding" type="url">
+		<button id="sparql-endpoint-button" class="btn btn-primary navbar-btn">Apply SPARQL endpoint!</button>
+	  		  
+		  
 			<li class="list-group-item">
 			  <div id="config-proxy" class="config-param">
 				<input id="input-proxy" type="checkbox">
@@ -989,7 +1009,7 @@
 				<span class="texte lang-fr">Utiliser comme proxy le point d'accès suivant </span>	  
 				<span class="texte lang-es">Utilizar como proxy el siguiente endpoint</span>
 				<span class="texte lang-nl">Gebruik een proxy naar de volgende endpoint</span>
-				<input id="input-proxy-url" type="text" value="http://servolis.irisa.fr/dbpedia/sparql"> <!-- default value -->
+				<input id="input-proxy-url" type="text">
 				<span class="texte lang-en"> (useful to avoid cross-domain blocking by Web browsers)</span>
 				<span class="texte lang-fr"> (utile pour éviter le blocage des requêtes cross-domain par les navigateurs)</span>
 				<span class="texte lang-es"> (útil para evitar el bloqueo de peticiones entre dominios por los navegadores)</span>
