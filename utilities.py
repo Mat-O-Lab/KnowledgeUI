@@ -1,13 +1,10 @@
 import json
 import requests
-<<<<<<< HEAD
-from io import StringIO
-import pandas as pd
-=======
 from sklearn import datasets
 import os
 
->>>>>>> d0eea48 (handle error when database server is not accessible and show the proper)
+from io import StringIO
+import pandas as pd
 
 def fetch_overview_data(ENDPOINT):
     """ Fetches an overview of the class hierarchies of the specified triples store.
@@ -47,10 +44,6 @@ def parse_sunburst(csv: str):
     """
     reverse_dict = {}
     # go through each line of results, excluding the header
-<<<<<<< HEAD
-=======
-    csv = os.linesep.join([s for s in csv.splitlines() if s])
->>>>>>> d0eea48 (handle error when database server is not accessible and show the proper)
 
     for line in csv.split('\n')[1:-1]:
         if len(line.split(','))==4:
