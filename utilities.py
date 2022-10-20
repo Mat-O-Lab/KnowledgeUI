@@ -1,7 +1,13 @@
 import json
 import requests
+<<<<<<< HEAD
 from io import StringIO
 import pandas as pd
+=======
+from sklearn import datasets
+import os
+
+>>>>>>> d0eea48 (handle error when database server is not accessible and show the proper)
 
 def fetch_overview_data(ENDPOINT):
     """ Fetches an overview of the class hierarchies of the specified triples store.
@@ -21,8 +27,18 @@ def fetch_overview_data(ENDPOINT):
             }
             } group by ?c ?label1 ?superclass HAVING(?count > 1) order by desc(?count)
             """
+    """
+    define a default dataset in case the expected one is not accessible
+    or database is down
+    """
+    try:
 
-    return requests.get(ENDPOINT, params={'query': query}, headers={'Accept': 'text/csv'}).text
+        response = requests.get(ENDPOINT, params={'query': query}, headers={'Accept': 'text/csv'})
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.HTTPError as err:
+        raise requests.HTTPError(err)
+
 
 
 
@@ -31,6 +47,10 @@ def parse_sunburst(csv: str):
     """
     reverse_dict = {}
     # go through each line of results, excluding the header
+<<<<<<< HEAD
+=======
+    csv = os.linesep.join([s for s in csv.splitlines() if s])
+>>>>>>> d0eea48 (handle error when database server is not accessible and show the proper)
 
     for line in csv.split('\n')[1:-1]:
         if len(line.split(','))==4:

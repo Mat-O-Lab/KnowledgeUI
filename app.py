@@ -16,6 +16,8 @@ from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap5
 from flask_cors import CORS
 import pandas as df
+from requests import HTTPError
+import requests
 
 from config import config
 from utilities import parse_sunburst, fetch_overview_data, parse_json_string_to_df
@@ -29,7 +31,25 @@ bootstrap = Bootstrap5(app)
 
 ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
-app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
+# try:
+#     app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
+# except HTTPError as h:
+#      app.overview_data = str(h)
+app.overview_data = None
+app.error_occured = False
+app.error_message = None
+
+#  fetch_dataset function enhances the ability of calling
+#  fuseki database to fetch the data during the run time
+def fetch_data_from_endpoint() :
+    try:
+        app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
+        app.error_occured = False
+    except Exception as e:
+        app.error_occured = True
+        app.error_message = e.args[0]
+    return app.overview_data
+
 @app.context_processor
 def init_global_vars_template():
     """ Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
@@ -54,12 +74,25 @@ def index():
     # sunburst_data = parse_sunburst(res.text)
     message = ''
     result = ''
-    return render_template(
-        "index.html",
-        message=message,
-        result=result,
-        sunburst_data=app.overview_data
-    )
+    sunburst_data_from_endpoint = fetch_data_from_endpoint()
+    # check if the error flag is true and then render the error template
+    if (app.error_occured == True):
+        return render_template(
+           "error.html",
+            logo=logo,
+            message=message,
+            result=result,
+            error_message=app.error_message
+            # message=app.
+        )
+    else:
+        return render_template(
+            "index.html",
+            logo=logo,
+            message=message,
+            result=result,
+            sunburst_data=sunburst_data_from_endpoint
+            )
 
 
 @app.route('/osparklis.html', methods=['GET'])
