@@ -81,7 +81,6 @@ def index():
     if (app.error_occured == True):
         return render_template(
            "error.html",
-            logo=logo,
             message=message,
             result=result,
             error_message=app.error_message
@@ -90,7 +89,6 @@ def index():
     else:
         return render_template(
             "index.html",
-            logo=logo,
             message=message,
             result=result,
             sunburst_data=sunburst_data_from_endpoint,
