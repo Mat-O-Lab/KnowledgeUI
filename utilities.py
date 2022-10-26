@@ -9,12 +9,13 @@ import pandas as pd
 def fetch_overview_data(ENDPOINT):
     """ Fetches an overview of the class hierarchies of the specified triples store.
     """
+    user_defined_query = None
     query = """
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             SELECT ?c (MIN(?label) AS ?label1) ?superclass (count(?x) as ?count) WHERE {
-            SERVICE <https://fuseki.matolab.org/alutrace/sparql> {
+            SERVICE <""" + ENDPOINT + """> {
                 ?x a ?c.
                 ?c rdfs:label ?label.
                 ?c rdfs:subClassOf ?superclass.
@@ -29,8 +30,16 @@ def fetch_overview_data(ENDPOINT):
     or database is down
     """
     try:
-
-        response = requests.get(ENDPOINT, params={'query': query}, headers={'Accept': 'text/csv'})
+        if (ENDPOINT == "https://fuseki.matolab.org/alutrace/sparql"):
+            user_defined_query = query
+        else:
+            user_defined_query = """
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT * WHERE {
+              ?sub ?pred ?obj .
+            } LIMIT 10"""
+        response = requests.get(ENDPOINT, params={'query': user_defined_query}, headers={'Accept': 'text/csv'})
         response.raise_for_status()
         return response.text
     except requests.exceptions.HTTPError as err:
