@@ -38,12 +38,12 @@ SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
 app.overview_data = None
 app.error_occured = False
 app.error_message = None
-
+user_endpoint = None
 #  fetch_dataset function enhances the ability of calling
 #  fuseki database to fetch the data during the run time
-def fetch_data_from_endpoint() :
+def fetch_data_from_endpoint(endpoint) :
     try:
-        app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
+        app.overview_data = parse_sunburst(fetch_overview_data(endpoint))
         app.error_occured = False
     except Exception as e:
         app.error_occured = True
@@ -63,18 +63,20 @@ def init_global_vars_template():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """ This is the main function which redirects here after lunching
-
     It allows both post and get methods and initializes some general parameters
     like logo and message once called
-
     Parameters
     ----------
-
     """
     # sunburst_data = parse_sunburst(res.text)
+    user_endpoint = request.values.get('sparql-endpoint-input')
+    if (user_endpoint == None):
+        user_endpoint = ENDPOINT
     message = ''
     result = ''
-    sunburst_data_from_endpoint = fetch_data_from_endpoint()
+    logo = './static/resources/MatOLab-Logo.svg'
+
+    sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
     # check if the error flag is true and then render the error template
     if (app.error_occured == True):
         return render_template(
@@ -91,9 +93,9 @@ def index():
             logo=logo,
             message=message,
             result=result,
-            sunburst_data=sunburst_data_from_endpoint
+            sunburst_data=sunburst_data_from_endpoint,
+            endpoint=user_endpoint
             )
-
 
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
