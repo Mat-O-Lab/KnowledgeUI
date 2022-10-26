@@ -74,7 +74,6 @@ def parse_sunburst(csv: str):
         except KeyError:
             reverse_dict[parent] = [{'iri': iri, 'label': label, 'count': count}]
 
-    #base_node = {'iri': 'http://www.w3.org/2002/07/owl#Thing', 'label': 'Thing'}
     possible_parents = parents - iris
     
     # if there are more than one possible parenty, try to find the one that has Thing in it
@@ -84,6 +83,7 @@ def parse_sunburst(csv: str):
         use_parent = list(possible_parents)
     
     base_node = {'iri': use_parent[0], 'label': use_parent[0], 'count': 1}
+    #base_node = {'iri': 'http://www.w3.org/2002/07/owl#Thing', 'label': 'Thing'}
 
     return json.dumps(__make_children(base_node, reverse_dict))
 
