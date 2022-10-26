@@ -1,7 +1,12 @@
 import json
+from multiprocessing.sharedctypes import Value
+from turtle import pos
+from typing import Set
 import requests
 from sklearn import datasets
 import os
+
+from rdflib import URIRef
 
 from io import StringIO
 import pandas as pd
@@ -52,12 +57,16 @@ def parse_sunburst(csv: str):
     """ Converts a class hierarchy csv dataset into a hierarchical JSON format.
     """
     reverse_dict = {}
+    parents = set()
+    iris = set()
     # go through each line of results, excluding the header
 
     for line in csv.split('\n')[1:-1]:
         elems = line.split(',')
         if len(elems)==4:
             iri, label, parent, count = [elem.strip() for elem in elems]
+            parents.add(parent)
+            iris.add(iri)
         else:
             raise RuntimeError("No 4 elements in csv line!")
         try:
@@ -66,7 +75,15 @@ def parse_sunburst(csv: str):
             reverse_dict[parent] = [{'iri': iri, 'label': label, 'count': count}]
 
     #base_node = {'iri': 'http://www.w3.org/2002/07/owl#Thing', 'label': 'Thing'}
-    base_node = {'iri': 'http://purl.obolibrary.org/obo/BFO_0000001', 'label': 'Entity', 'count': 1}
+    possible_parents = parents - iris
+    
+    # if there are more than one possible parenty, try to find the one that has Thing in it
+    if len(possible_parents) > 1:
+        use_parent = [elem for elem in list(possible_parents) if 'Thing' in elem]
+    else:
+        use_parent = list(possible_parents)
+    
+    base_node = {'iri': use_parent[0], 'label': use_parent[0], 'count': 1}
 
     return json.dumps(__make_children(base_node, reverse_dict))
 
