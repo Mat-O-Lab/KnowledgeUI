@@ -6,7 +6,7 @@ import os
 from io import StringIO
 import pandas as pd
 
-def fetch_overview_data(ENDPOINT):
+def fetch_overview_data(endpoint):
     """ Fetches an overview of the class hierarchies of the specified triples store.
     """
     user_defined_query = None
@@ -15,7 +15,7 @@ def fetch_overview_data(ENDPOINT):
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             SELECT ?c (MIN(?label) AS ?label1) ?superclass (count(?x) as ?count) WHERE {
-            SERVICE <""" + ENDPOINT + """> {
+            SERVICE <""" + endpoint + """> {
                 ?x a ?c.
                 ?c rdfs:label ?label.
                 ?c rdfs:subClassOf ?superclass.
@@ -30,7 +30,7 @@ def fetch_overview_data(ENDPOINT):
     or database is down
     """
     try:
-        if (ENDPOINT == "https://fuseki.matolab.org/alutrace/sparql"):
+        if (endpoint == "https://fuseki.matolab.org/alutrace/sparql"):
             user_defined_query = query
         else:
             user_defined_query = """
@@ -39,7 +39,7 @@ def fetch_overview_data(ENDPOINT):
             SELECT * WHERE {
               ?sub ?pred ?obj .
             } LIMIT 10"""
-        response = requests.get(ENDPOINT, params={'query': user_defined_query}, headers={'Accept': 'text/csv'})
+        response = requests.get(endpoint, params={'query': query}, headers={'Accept': 'text/csv'})
         response.raise_for_status()
         return response.text
     except requests.exceptions.HTTPError as err:
@@ -55,15 +55,18 @@ def parse_sunburst(csv: str):
     # go through each line of results, excluding the header
 
     for line in csv.split('\n')[1:-1]:
-        if len(line.split(','))==4:
-            iri, label, parent, count = [elem.strip() for elem in line.split(',')]
+        elems = line.split(',')
+        if len(elems)==4:
+            iri, label, parent, count = [elem.strip() for elem in elems]
+        else:
+            raise RuntimeError("No 4 elements in csv line!")
         try:
             reverse_dict[parent].append({'iri': iri, 'label': label, 'count': count})
         except KeyError:
             reverse_dict[parent] = [{'iri': iri, 'label': label, 'count': count}]
 
     #base_node = {'iri': 'http://www.w3.org/2002/07/owl#Thing', 'label': 'Thing'}
-    base_node = {'iri': 'http://purl.obolibrary.org/obo/BFO_0000001', 'label': 'Entity'}
+    base_node = {'iri': 'http://purl.obolibrary.org/obo/BFO_0000001', 'label': 'Entity', 'count': 1}
 
     return json.dumps(__make_children(base_node, reverse_dict))
 

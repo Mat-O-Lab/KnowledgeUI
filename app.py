@@ -47,7 +47,7 @@ def fetch_data_from_endpoint(endpoint) :
         app.error_occured = False
     except Exception as e:
         app.error_occured = True
-        app.error_message = e.args[0]
+        app.error_message = list(e.args) + [type(e)]
     return app.overview_data
 
 @app.context_processor
@@ -62,7 +62,7 @@ def init_global_vars_template():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    """ This is the main function which redirects here after lunching
+    """ This is the main function which redirects here after launching
     It allows both post and get methods and initializes some general parameters
     like logo and message once called
     Parameters
@@ -74,7 +74,6 @@ def index():
         user_endpoint = ENDPOINT
     message = ''
     result = ''
-    logo = './static/resources/MatOLab-Logo.svg'
 
     sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
     # check if the error flag is true and then render the error template
