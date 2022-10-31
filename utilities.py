@@ -14,7 +14,6 @@ import pandas as pd
 def fetch_overview_data(endpoint):
     """ Fetches an overview of the class hierarchies of the specified triples store.
     """
-    user_defined_query = None
     query = """
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -22,7 +21,7 @@ def fetch_overview_data(endpoint):
             SELECT ?c (MIN(?label) AS ?label1) ?superclass (count(?x) as ?count) WHERE {
             SERVICE <""" + endpoint + """> {
                 ?x a ?c.
-                ?c rdfs:label ?label.
+                OPTIONAL {?c rdfs:label ?label} .
                 ?c rdfs:subClassOf ?superclass.
                 filter (?c != ?superclass &&
                         !exists {?c rdfs:subClassOf ?othersuper. ?othersuper rdfs:subClassOf ?superclass.
@@ -47,15 +46,18 @@ def fetch_overview_data(endpoint):
 def parse_sunburst(csv: str):
     """ Converts a class hierarchy csv dataset into a hierarchical JSON format.
     """
+
+
     reverse_dict = {}
     parents = set()
     iris = set()
     # go through each line of results, excluding the header
-
     for line in csv.split('\n')[1:-1]:
         elems = line.split(',')
         if len(elems)==4:
             iri, label, parent, count = [elem.strip() for elem in elems]
+            if label == "":
+                label = iri
             parents.add(parent)
             iris.add(iri)
         else:
@@ -65,11 +67,16 @@ def parse_sunburst(csv: str):
         except KeyError:
             reverse_dict[parent] = [{'iri': iri, 'label': label, 'count': count}]
 
+    # no data was returned
+    if reverse_dict == {}:
+        return json.dumps({})
+
     possible_parents = parents - iris
-    
-    # if there are more than one possible parenty, try to find the one that has Thing in it
+    # if there is more than one possible parent, try to find the one that has Thing in it
     if len(possible_parents) > 1:
         use_parent = [elem for elem in list(possible_parents) if 'Thing' in elem]
+        if len(use_parent) == 0:
+            use_parent = list(possible_parents)
     else:
         use_parent = list(possible_parents)
     
