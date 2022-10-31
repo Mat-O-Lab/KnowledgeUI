@@ -35,15 +35,6 @@ def fetch_overview_data(endpoint):
     or database is down
     """
     try:
-        if (endpoint == "https://fuseki.matolab.org/alutrace/sparql"):
-            user_defined_query = query
-        else:
-            user_defined_query = """
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            SELECT * WHERE {
-              ?sub ?pred ?obj .
-            } LIMIT 10"""
         response = requests.get(endpoint, params={'query': query}, headers={'Accept': 'text/csv'})
         response.raise_for_status()
         return response.text
