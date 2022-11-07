@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='sunburst.js') }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'your_analytiks_tag');
+</script>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+{% endblock %}
+
+{% block main %}
+  <div id="error">
+    <h4 class="alert-heading">
+      <div class="alert alert-danger" role="alert">
+        Error occured in loading data. Please <a href="/" class="alert-link">try again</a> </br>
+        Error Message: {{ error_message }}
+      </div>
+    </h4>
+  </div>
+{% endblock %}

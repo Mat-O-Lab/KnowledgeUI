@@ -46,6 +46,15 @@
 {% endblock %}
 
 {% block main %}
+	<form action="/">
+		<div class="input-group mb-3">
+			<input id="sparql-endpoint-input" value="{{ endpoint }}" name="sparql-endpoint-input" class="form-control no-padding" type="url">
+		  <div class="input-group-append">
+			<button type="submit" id="sparql-endpoint-button" class="btn btn-primary">Apply SPARQL endpoint!</button>
+		  </div>
+		</div>
+	</form>
+
     <meta id="sunburst_data" data-nodes="{{ sunburst_data }}">
     <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
 {% endblock %}

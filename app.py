@@ -16,6 +16,8 @@ from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap5
 from flask_cors import CORS
 import pandas as df
+from requests import HTTPError
+import requests
 
 from config import config
 from utilities import parse_sunburst, fetch_overview_data, parse_json_string_to_df
@@ -29,7 +31,25 @@ bootstrap = Bootstrap5(app)
 
 ENDPOINT = app.config['SPARQL_ENDPOINT']
 SPARKLIS_OPTIONS = app.config['SPARKLIS_OPTIONS']
-app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
+# try:
+#     app.overview_data = parse_sunburst(fetch_overview_data(ENDPOINT))
+# except HTTPError as h:
+#      app.overview_data = str(h)
+app.overview_data = None
+app.error_occured = False
+app.error_message = None
+user_endpoint = None
+#  fetch_dataset function enhances the ability of calling
+#  fuseki database to fetch the data during the run time
+def fetch_data_from_endpoint(endpoint) :
+    try:
+        app.overview_data = parse_sunburst(fetch_overview_data(endpoint))
+        app.error_occured = False
+    except Exception as e:
+        app.error_occured = True
+        app.error_message = list(e.args) + [type(e)]
+    return app.overview_data
+
 @app.context_processor
 def init_global_vars_template():
     """ Initialize global variables for jinja2 templates (e.g. allow global access to the specified SPARQL endpoint).
@@ -42,25 +62,37 @@ def init_global_vars_template():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    """ This is the main function which redirects here after lunching
-
+    """ This is the main function which redirects here after launching
     It allows both post and get methods and initializes some general parameters
     like logo and message once called
-
     Parameters
     ----------
-
     """
     # sunburst_data = parse_sunburst(res.text)
+    user_endpoint = request.values.get('sparql-endpoint-input')
+    if (user_endpoint == None):
+        user_endpoint = ENDPOINT
     message = ''
     result = ''
-    return render_template(
-        "index.html",
-        message=message,
-        result=result,
-        sunburst_data=app.overview_data
-    )
 
+    sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
+    # check if the error flag is true and then render the error template
+    if (app.error_occured == True):
+        return render_template(
+           "error.html",
+            message=message,
+            result=result,
+            error_message=app.error_message
+            # message=app.
+        )
+    else:
+        return render_template(
+            "index.html",
+            message=message,
+            result=result,
+            sunburst_data=sunburst_data_from_endpoint,
+            endpoint=user_endpoint
+            )
 
 @app.route('/osparklis.html', methods=['GET'])
 def explore():
