@@ -129,6 +129,8 @@ async function getNodeData(endpoint) {
     url: endpoint,
     type: 'GET',
     data: {query},
-    dataType: 'text/csv'
+    headers: {          
+        Accept: "text/csv"         
+      },
   })
 }

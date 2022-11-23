@@ -69,9 +69,7 @@ def index():
     ----------
     """
     # sunburst_data = parse_sunburst(res.text)
-    user_endpoint = request.values.get('sparql-endpoint-input')
-    if (user_endpoint == None):
-        user_endpoint = ENDPOINT
+    
     message = ''
     result = ''
 
@@ -91,7 +89,7 @@ def index():
             message=message,
             result=result,
             #sunburst_data=sunburst_data_from_endpoint,
-            endpoint=user_endpoint
+            #sendpoint=user_endpoint
             )
 
 @app.route('/osparklis.html', methods=['GET'])
