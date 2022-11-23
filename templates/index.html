@@ -2,72 +2,14 @@
 
 {% block head %}
 {{ super() }}
-<script type="text/javascript" src="{{ url_for('static', filename='sunburst.js') }}"></script>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-
-  function filterNodesById(nodes, id) {
-    return nodes.filter(function (n) { return n.id === id; });
-  }
-
-  function triplesToGraph(triples) {
-
-    svg.html("");
-    //Graph
-    var graph = { nodes: [], links: [] };
-
-    //Initial Graph from triples
-    triples.forEach(function (triple) {
-      var subjId = triple.subject;
-      var predId = triple.predicate;
-      var objId = triple.object;
-
-      var subjNode = filterNodesById(graph.nodes, subjId)[0];
-      var objNode = filterNodesById(graph.nodes, objId)[0];
-
-      if (subjNode == null) {
-        subjNode = { id: subjId, label: subjId, weight: 1 };
-        graph.nodes.push(subjNode);
-      }
-
-      if (objNode == null) {
-        objNode = { id: objId, label: objId, weight: 1 };
-        graph.nodes.push(objNode);
-      }
-
-
-      graph.links.push({ source: subjNode, target: objNode, predicate: predId, weight: 1 });
-    });
-
-    return graph;
-  }
-</script>
-{% endblock %}
-
-{% block main %}
-	<form id="set-endpoint">
-		<div class="input-group mb-3">
-			<input id="endpoint-field" value="" name="endpoint" class="form-control no-padding" type="url">
-		  <div class="input-group-append">
-			<button type="submit" id="sparql-endpoint-button" class="btn btn-primary">Set endpoint</button>
-		  </div>
-		</div>
-	</form>
-
-    <!-- <meta id="sunburst_data" data-nodes="{{ sunburst_data }}"> -->
-    <div class="alert alert-info" id="sunburst-loading" role="alert">
-      Loading overview data...
-    </div>
-    <div class="alert alert-danger" id="sunburst-error" role="alert">
-      
-    </div>
-    <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
-<script>
+<script type="text/javascript" src="{{ url_for('static', filename='sunburst.js') }}"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script id="sunburst-chart-creation">
   (async function() {
 
     // get endpoint parameter and mirror in form field
@@ -92,7 +34,7 @@
 
     try {
       const res = await getNodeData(endpoint)
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 4000));
       const nodeData = await parseCSV(res)
     
       const chart = Sunburst(nodeData, {
@@ -133,3 +75,25 @@
   })();
 </script>
 {% endblock %}
+
+{% block main %}
+	<form id="set-endpoint">
+		<div class="input-group mb-3">
+			<input id="endpoint-field" value="" name="endpoint" class="form-control no-padding" type="url">
+		  <div class="input-group-append">
+			<button type="submit" id="sparql-endpoint-button" class="btn btn-primary">Set endpoint</button>
+		  </div>
+		</div>
+	</form>
+
+    <!-- <meta id="sunburst_data" data-nodes="{{ sunburst_data }}"> -->
+    <div class="alert alert-info" id="sunburst-loading" role="alert">
+      Loading overview data...
+    </div>
+    <div class="alert alert-danger" id="sunburst-error" role="alert">
+      
+    </div>
+    <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
+{% endblock %}
+
+
