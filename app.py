@@ -75,7 +75,7 @@ def index():
     message = ''
     result = ''
 
-    sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
+    #sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
     # check if the error flag is true and then render the error template
     if (app.error_occured == True):
         return render_template(
@@ -90,7 +90,7 @@ def index():
             "index.html",
             message=message,
             result=result,
-            sunburst_data=sunburst_data_from_endpoint,
+            #sunburst_data=sunburst_data_from_endpoint,
             endpoint=user_endpoint
             )
 

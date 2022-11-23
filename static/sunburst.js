@@ -101,3 +101,34 @@ function Sunburst(data, { // data is either tabular (array of objects) or hierar
 
     return svg.node();
 }
+
+function parseCSV(csvData) {
+    return d3.csvParse(csvData);
+}
+
+async function getNodeData(endpoint) {
+    var query = `
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT ?c (MIN(?label) AS ?label1) ?superclass (count(?x) as ?count) WHERE {
+            SERVICE <` + endpoint + `> {
+                ?x a ?c.
+                OPTIONAL {?c rdfs:label ?label} .
+                ?c rdfs:subClassOf ?superclass.
+                filter (?c != ?superclass &&
+                        !exists {?c rdfs:subClassOf ?othersuper. ?othersuper rdfs:subClassOf ?superclass.
+                                filter(?c != ?othersuper && ?othersuper != ?superclass)})
+            }
+            } group by ?c ?label1 ?superclass HAVING(?count > 1) order by desc(?count)
+            `
+
+
+  //return $.get(endpoint, {query}, d => d, "text/csv")
+  return $.ajax({
+    url: endpoint,
+    type: 'GET',
+    data: {query},
+    dataType: 'text/csv'
+  })
+}
