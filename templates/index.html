@@ -6,39 +6,45 @@
 
 {% block scripts %}
 {{ super() }}
-<script type="text/javascript" src="{{ url_for('static', filename='sunburst.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='sunburst_utilities.js') }}"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script id="sunburst-chart-creation">
+<script id="sunburst-chart-creation">  
   (async function() {
 
     // get endpoint parameter and mirror in form field
-    const urlParams = await new URLSearchParams(window.location.search);
-    const endpoint = await urlParams.get('endpoint');
-    const formField = await $('#endpoint-field')
-    await formField.val(endpoint)
+    const urlParams = new URLSearchParams(window.location.search);
+    const endpoint = urlParams.get('endpoint');
+    const formField = $('#endpoint-field')
+    formField.val(endpoint)
 
     // make Form submit redirect with new endpoint parameter but keep other params
-    await $('#set-endpoint').submit(async (event) => {
-      await event.preventDefault()
-      await urlParams.set('endpoint', formField.val())
-      await console.log(urlParams.toString())
+    $('#set-endpoint').submit((event) => {
+      event.preventDefault()
+      urlParams.set('endpoint', formField.val())
+      console.log(urlParams.toString())
       window.location.href = window.location.origin + window.location.pathname + '?' + urlParams.toString()
     })
     
-    const errorAlert = await $('#sunburst-error')
-    await errorAlert.hide()
+    const errorAlert = $('#sunburst-error')
+    errorAlert.hide()
     // loading screen is shown by default
-    const infoBox = await $('#sunburst-loading');
-    await infoBox.show()
+    const infoBox = $('#sunburst-loading');
+    infoBox.show()
 
     try {
       const res = await getNodeData(endpoint)
-      await new Promise(r => setTimeout(r, 4000));
-      const nodeData = await parseCSV(res)
-    
+
+      nodeData = []
+      res.results.bindings.forEach((e) => nodeData.push({c: e.c.value, count: e.count.value, label1: e.label1?.value? e.c.value : '', superclass: e.superclass.value}))
+      nodeData.columns = res.head.vars
+
+      window.nodeData = nodeData
+
       const chart = Sunburst(nodeData, {
-        value: d => d.size, // size of each node (file); null for internal nodes (folders)
+        id: d => d.c,
+        parentId: d => d.superclass,
+        value: d => d.count, // size of each node (file); null for internal nodes (folders)
         label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
         title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
         // link_url = query_url.searchParams.set('sparklis-query','test'),
@@ -47,28 +53,28 @@
         height: 900,
       });
 
-      const svg = await $("#sunburst");
+      const svg = $("#sunburst");
       svg.append(chart)
 
       // svg.replaceWith(chart);
-      const responsive_sunburst = await $("#sunburst"),
+      const responsive_sunburst = $("#sunburst"),
       aspect = responsive_sunburst.width() / responsive_sunburst.height(),
       container = responsive_sunburst.parent();
       
       // make sunburst responsive
-      await $(window).on("resize", function() {
+      $(window).on("resize", function() {
           var targetHeight = container.height();
           responsive_sunburst.attr("height", targetHeight);
           responsive_sunburst.attr("width", Math.round(targetHeight * aspect));
       }).trigger("resize");
 
     } catch(e) {
-      errorAlert.text(e)
-      console.log(e)
+      errorAlert.text(e.responseText? e.responseText : e)
       errorAlert.show()
+      console.log(e)
     } finally {
       // sunburst is done, hide loading screen here
-      await infoBox.hide()
+      infoBox.hide()
     }
 
     
@@ -87,10 +93,10 @@
 	</form>
 
     <!-- <meta id="sunburst_data" data-nodes="{{ sunburst_data }}"> -->
-    <div class="alert alert-info" id="sunburst-loading" role="alert">
+    <div class="alert alert-info" id="sunburst-loading" role="alert" style="display: none;">
       Loading overview data...
     </div>
-    <div class="alert alert-danger" id="sunburst-error" role="alert">
+    <div class="alert alert-danger" id="sunburst-error" role="alert" style="display: none;">
       
     </div>
     <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
