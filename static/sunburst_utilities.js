@@ -102,7 +102,6 @@ function Sunburst(data, { // data is either tabular (array of objects) or hierar
     return svg.node();
 }
 
-
 async function getNodeData(endpoint) {
     var query = `
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -131,6 +130,14 @@ async function getNodeData(endpoint) {
   })
 }
 
+function difference(setA, setB) {
+    const _difference = new Set(setA);
+    for (const elem of setB) {
+      _difference.delete(elem);
+    }
+    return _difference;
+  }
+
 function parseNodeData(jsonp_result) {
     var n = []
     jsonp_result.results.bindings.forEach((e) => n.push({
@@ -144,8 +151,14 @@ function parseNodeData(jsonp_result) {
 }
 
 function parseNodeDataReverse(jsonp_result) {
-    var n = {}
+    let n = {}
+    let parents = new Set()
+    let elements = new Set()
     jsonp_result.results.bindings.forEach((e) => {
+
+        // note all encountered parents and nodes to later find all parents that aren't also nodes
+        parents.add(e.superclass.value)
+        elements.add(e.c.value)
         if (n[e.superclass.value] === undefined) {
             n[e.superclass.value] = [{
                     c: e.c.value,
@@ -162,7 +175,7 @@ function parseNodeDataReverse(jsonp_result) {
     })
 
     //n.columns = jsonp_result.head.vars
-    return n
+    return {nodes: n, roots: Array.from(difference(parents, elements))}
 }
 
 function makeHierarchy(node, reverseDict) {
