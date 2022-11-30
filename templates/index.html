@@ -35,22 +35,72 @@
     try {
       const res = await getNodeData(endpoint)
 
-      nodeData = []
-      res.results.bindings.forEach((e) => nodeData.push({c: e.c.value, count: e.count.value, label1: e.label1?.value? e.c.value : '', superclass: e.superclass.value}))
-      nodeData.columns = res.head.vars
 
-      window.nodeData = nodeData
+      nodeData = parseNodeData(res)
+      nodeData = [
+        {
+          "c": "a",
+          "label1": "a"
+        },
+        {
+          "c": "b",
+          "label1": "b",
+          "superclass": "a"
+        },
+        {
+          "c": "c",
+          "label1": "c",
+          "superclass": "a"
+        },
+        {
+          "c": "d",
+          "count": "2",
+          "label1": "d",
+          "superclass": "c"
+        },
+        {
+          "c": "e",
+          "count": "1",
+          "label1": "e",
+          "superclass": "c"
+        },
+        {
+          "c": "f",
+          "label1": "f",
+          "superclass": "b"
+        },
+        {
+          "c": "g",
+          "count": "1",
+          "label1": "g",
+          "superclass": "f"
+        },
+        {
+          "c": "h",
+          "count": "1",
+          "label1": "h",
+          "superclass": "f"
+        }
+      ]
+      nodeData.columns = [
+        "c",
+        "label1",
+        "superclass",
+        "count"
+      ]
 
-      const chart = Sunburst(nodeData, {
-        id: d => d.c,
-        parentId: d => d.superclass,
+      const reverseDict = parseNodeDataReverse(res)
+      const nodeHierarchy = makeHierarchy({'c': 'http://purl.obolibrary.org/obo/BFO_0000001', 'label1': 'Continuant'}, reverseDict)
+
+      const chart = Sunburst(nodeHierarchy, {
+        children: d => d.children,
         value: d => d.count, // size of each node (file); null for internal nodes (folders)
-        label: d => d.name.length <= 6 ? d.name : d.name.substring(0, 6)+'...', // display name for each cell
-        title: (d, n) => `${n.ancestors().reverse().map(d => d.data.name).join(".")}\n${n.value.toLocaleString("en")}`, // hover text
+        label: d => d.label1.length <= 6 ? d.label1 : d.label1.substring(0, 6)+'...', // display name for each cell
+        title: (d, n) => `${n.ancestors().reverse().map(d => d.data.label1).join(".")}\ncount: ${n.value}`, // hover text
         // link_url = query_url.searchParams.set('sparklis-query','test'),
-        link: (d, n) => `${query_url.toString()}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${encodeURIComponent(d.iri)}%22%29%29%2CNone%29%29`,
-        width: 900,
-        height: 900,
+        link: (d, n) => `endpoint=${endpoint}&sparklis-query=%5BVId%5DReturn%28Det%28An%281%2CModif%28Select%2CUnordered%29%2CClass%28%22${encodeURIComponent(d.c)}%22%29%29%2CNone%29%29`,
+        width: 800,
+        height: 800,
       });
 
       const svg = $("#sunburst");
@@ -99,7 +149,7 @@
     <div class="alert alert-danger" id="sunburst-error" role="alert" style="display: none;">
       
     </div>
-    <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 170 850 620"></svg>
+    <svg class="img-fluid" height="100%" id="sunburst" viewBox="0 0 800 800" style="display:block; margin:0 auto;"></svg>
 {% endblock %}
 
 
