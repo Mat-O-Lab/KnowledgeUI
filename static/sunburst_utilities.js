@@ -196,7 +196,7 @@ async function getNodeData(endpoint) {
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             SELECT ?c (MIN(?label) AS ?label1) ?superclass (count(?x) as ?count) WHERE {
-                ?x a ?c.
+                ?x a ?c .
                 OPTIONAL {?c rdfs:label ?label} .
                 ?c rdfs:subClassOf ?superclass.
                 filter (?c != ?superclass &&
@@ -205,14 +205,12 @@ async function getNodeData(endpoint) {
             } group by ?c ?label1 ?superclass HAVING(?count > 1) order by desc(?count)
             `
 
-
-  //return $.get(endpoint, {query}, d => d, "text/csv")
   return $.ajax({
     url: endpoint,
     type: 'GET',
     data: {query},
     crossDomain: true,
-    dataType : 'jsonp'
+    dataType: 'jsonp',
   })
 }
 

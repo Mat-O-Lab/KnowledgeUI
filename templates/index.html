@@ -29,7 +29,7 @@
     const errorAlert = $('#sunburst-error')
     errorAlert.hide()
     // loading screen is shown by default
-    const infoBox = $('#sunburst-loading');
+    const infoBox = $('#sunburst-loading')
     infoBox.show()
 
     const sunburstConfig = {
@@ -44,6 +44,13 @@
     }
 
     try {
+
+      if (endpoint == undefined) {
+        throw 'Please set an endpoint!'
+      }
+
+      console.log('Attempting to load data...')
+
       const res = await getNodeData(endpoint)
 
       console.log('Data was loaded!')
@@ -91,8 +98,9 @@
       }).trigger("resize");
 
     } catch (e) {
-      errorAlert.text(e.responseText ? e.responseText : e)
+      errorAlert.text(e.responseText ? e.responseText : JSON.stringify(e))
       errorAlert.show()
+      console.log('Error occurred!')
       console.log(e)
     } finally {
       // sunburst is done, hide loading screen here
