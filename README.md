@@ -1,6 +1,6 @@
 # KnowledgeUI
 Flask App Frontend Application Showing The Benefits Of Rich Semantic Material Science Data And Exemplar Usage.
-![workflow](https://user-images.githubusercontent.com/9248325/215751482-63e49bcc-8ce8-43d7-a601-26b4decd4470.png)
+![workflow](https://user-images.githubusercontent.com/9248325/215797610-0e838dca-e8ed-4c2a-8ac7-af8ffffec162.png)
 
 # how to use
 The code is supposed to run as docker-compose stack
