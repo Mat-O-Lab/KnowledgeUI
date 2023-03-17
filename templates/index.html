@@ -98,7 +98,7 @@
       }).trigger("resize");
 
     } catch (e) {
-      errorAlert.text(e.responseText ? e.responseText : JSON.stringify(e))
+      errorAlert.text("Could not show endpoint data! Reason: " + (e.responseText ? e.responseText : JSON.stringify(e)))
       errorAlert.show()
       console.log('Error occurred!')
       console.log(e)
