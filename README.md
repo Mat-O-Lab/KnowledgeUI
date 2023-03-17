@@ -33,3 +33,19 @@ Build and start the container.
 ```bash
 docker-compose up
 ```
+
+#Cite us:
+```
+@software{andre_valdestilhas_2023_7744532,
+  author       = {Andre Valdestilhas and
+                  Thomas Hanke},
+  title        = {{NaturalMSEQueries - A natural way to query 
+                   Material Sciences Engineering data experiments}},
+  month        = mar,
+  year         = 2023,
+  publisher    = {Zenodo},
+  version      = {1.0},
+  doi          = {10.5281/zenodo.7744532},
+  url          = {https://doi.org/10.5281/zenodo.7744532}
+}
+```
