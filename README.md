@@ -1,4 +1,4 @@
-# NaturalMSEQueries: A natural way to query Material Sciences Engineering data experiments
+# NaturalMSEQueries: A natural way to query Materials Science Engineering data experiments
 
 ## Abstract
 Materials science experiments involve complex data that are often very heterogeneous and challenging to reproduce. This was observed, for example, in a previous study on harnessing lightweight design potentials via the Materials Data Space [3] for which the data from materials sciences engineering experiments were generated using linked open data principles [1,2], e.g., Resource Description Framework (RDF) as the standard model for data interchange on the Web. However, detailed knowledge of formulating questions in the query language SPARQL is necessary to query the data. A lack of knowledge in SPARQL to query data was observed by domain experts in materials science.
