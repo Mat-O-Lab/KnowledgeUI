@@ -13,7 +13,7 @@ With this work, we aim to develop NaturalMSEQueries an approach for the material
 
 # KnowledgeUI
 Flask App Frontend Application Showing The Benefits Of Rich Semantic Material Science Data And Exemplar Usage.
-![workflow](https://user-images.githubusercontent.com/9248325/215797610-0e838dca-e8ed-4c2a-8ac7-af8ffffec162.png)
+![workflow2](https://user-images.githubusercontent.com/9248325/234210802-46070254-6d76-43a1-a894-584e432b40e6.png)
 
 # how to use
 The code is supposed to run as docker-compose stack
