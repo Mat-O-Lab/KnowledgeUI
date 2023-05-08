@@ -69,13 +69,11 @@ def index():
     ----------
     """
     # sunburst_data = parse_sunburst(res.text)
-    user_endpoint = request.values.get('sparql-endpoint-input')
-    if (user_endpoint == None):
-        user_endpoint = ENDPOINT
+    
     message = ''
     result = ''
 
-    sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
+    #sunburst_data_from_endpoint = fetch_data_from_endpoint(user_endpoint)
     # check if the error flag is true and then render the error template
     if (app.error_occured == True):
         return render_template(
@@ -90,8 +88,8 @@ def index():
             "index.html",
             message=message,
             result=result,
-            sunburst_data=sunburst_data_from_endpoint,
-            endpoint=user_endpoint
+            #sunburst_data=sunburst_data_from_endpoint,
+            #sendpoint=user_endpoint
             )
 
 @app.route('/osparklis.html', methods=['GET'])
