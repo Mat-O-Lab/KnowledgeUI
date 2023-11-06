@@ -49,16 +49,17 @@ docker-compose up
 
 # Cite us:
 ```
-@software{andre_valdestilhas_2023_7744532,
-  author       = {Andre Valdestilhas and
-                  Thomas Hanke},
+@inproceedings{andre_valdestilhas_2023_7744532,
+  author       = {Andre Valdestilhas and Thomas Hanke and Soudeh Javamasoudian and Ghezal 
+Ahmad Jan Zia and Horst Fellenberg and Thilo Muth},
   title        = {{NaturalMSEQueries - A natural way to query 
                    Material Sciences Engineering data experiments}},
-  month        = mar,
   year         = 2023,
-  publisher    = {Zenodo},
-  version      = {1.0},
-  doi          = {10.5281/zenodo.7744532},
-  url          = {https://doi.org/10.5281/zenodo.7744532}
+  booktitle={22nd International Conference on WWW/Internet - ICWI 2023},
+  pages={125--132},
+  year={2023},
+  volume = {22},
+  doi          = {10.13140/RG.2.2.35533.41444/2},
+  url          = {http://dx.doi.org/10.13140/RG.2.2.35533.41444/2}
 }
 ```
